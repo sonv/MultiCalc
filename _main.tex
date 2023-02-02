@@ -1,0 +1,632 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={MATH 104: Multivariable Calculus},
+  pdfauthor={Truong-Son Van},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{longtable,booktabs}
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+
+\title{MATH 104: Multivariable Calculus}
+\author{Truong-Son Van}
+\date{Spring 2023}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\hypertarget{syllabus}{%
+\section*{Syllabus}\label{syllabus}}
+\addcontentsline{toc}{section}{Syllabus}
+
+\hypertarget{key-information}{%
+\subsubsection*{Key information}\label{key-information}}
+\addcontentsline{toc}{subsubsection}{Key information}
+
+\begin{itemize}
+\tightlist
+\item
+  Instructor: Truong-Son Van
+\item
+  Email: \href{mailto:son.van+104@fulbright.edu.vn}{\nolinkurl{son.van+104@fulbright.edu.vn}}
+\item
+  Class time: T \& Th: 9:45a - 11:15a
+\item
+  Class Location: CR 502
+\item
+  Office hours: TBD
+\item
+  Prerequisites: Calculus (MATH 101)
+\end{itemize}
+
+\hypertarget{textbooks-and-references}{%
+\subsection*{Textbooks and references}\label{textbooks-and-references}}
+\addcontentsline{toc}{subsection}{Textbooks and references}
+
+It is highly recommended that students read the textbooks.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  In-class worksheets.
+\item
+  Active Calculus: Multivariable by Schlicker et al.~2018 edition.
+  (\url{https://activecalculus.org/multi/preface-2.html})
+\item
+  Thomas' Calculus: Early Transcendentals by Hass, Heil, et al.~\(14^{th}\) edition.
+\item
+  Calculus Early Transcendental by Stewart. \(8^{th}\) edition.
+\item
+  Anything you can find on Google would work.
+  Calculus is a subject that people have written about
+  so much. So, there's no excuse for not having access
+  to the knowledge.
+\end{enumerate}
+
+\hypertarget{course-description}{%
+\subsubsection*{Course description}\label{course-description}}
+\addcontentsline{toc}{subsubsection}{Course description}
+
+How do we describe the trajectory of a space shuttle? How is the human body affected by
+scuba diving to different depths for different lengths of time? The mathematics required to
+describe most real life systems involves functions of more than one variable. The concepts
+of the derivative and integral from a first course in calculus must therefore be extended to
+higher dimensional settings. In this course students will be guided through the essential ideas
+of multivariable calculus, including partial derivatives, multiple integrals and vector calculus,
+and their applications. These mathematical tools are used extensively in the physical sciences
+and engineering, and in other areas including economics and computer graphics.
+
+\hypertarget{learning-objectives}{%
+\subsubsection*{Learning objectives}\label{learning-objectives}}
+\addcontentsline{toc}{subsubsection}{Learning objectives}
+
+After the course, students are expected to:
+
+\begin{itemize}
+\item
+  Be confident in handling functions of two or more variables and familiar with how
+  they can be represented graphically
+\item
+  Understand the key concepts of multivariable calculus, including partial derivatives,
+  the gradient vector, multiple integrals, line and surface integrals, the divergence and
+  curl of a vector function
+\item
+  Know how such derivatives and integrals are calculated and some of their uses
+\item
+  Be able to apply these ideas to real world problems
+\item
+  Have improved analytic, computational and problem solving skills
+\end{itemize}
+
+\hypertarget{assessment}{%
+\subsection*{Assessment}\label{assessment}}
+\addcontentsline{toc}{subsection}{Assessment}
+
+During the course, students are expected to compute their own percentage
+points based on the following scheme.
+The instructor is not responsible for providing the running percentage.
+
+\begin{longtable}[]{@{}cc@{}}
+\toprule
+\textbf{Form of assessment} & \textbf{Weight}\tabularnewline
+\midrule
+\endhead
+Weekly homeworks & 25\%\tabularnewline
+Class worksheets & 15\%\tabularnewline
+Mini-project & 15\%\tabularnewline
+Midterm & 15\%\tabularnewline
+Final & 30\%\tabularnewline
+\bottomrule
+\end{longtable}
+
+The following is the non-negotiable letter grade breakdown. It is based on
+common practice in the United States for standard courses such as Calculus.
+
+\begin{longtable}[]{@{}cc@{}}
+\toprule
+\textbf{Letter Grade} & \textbf{Percentage}\tabularnewline
+\midrule
+\endhead
+A & {[}93,100{]}\tabularnewline
+A- & {[}90,93)\tabularnewline
+B+ & {[}87,90)\tabularnewline
+B & {[}83,87)\tabularnewline
+B- & {[}80, 83)\tabularnewline
+C+ & {[}77,80)\tabularnewline
+C & {[}73,77)\tabularnewline
+C- & {[}70,73)\tabularnewline
+D+ & {[}67,70)\tabularnewline
+D & {[}60, 66)\tabularnewline
+F & {[}0,60)\tabularnewline
+\bottomrule
+\end{longtable}
+
+\hypertarget{core-content}{%
+\subsection*{Core content}\label{core-content}}
+\addcontentsline{toc}{subsection}{Core content}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Introduction
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Functions of two variables
+\item
+  Graphs in three dimensions, surfaces and level curves
+\item
+  Functions of three or more variables
+\item
+  Limits and continuity
+\item
+  Vectors (review)
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Partial Derivatives
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Partial derivatives
+\item
+  Tangent planes, linear approximations and differentials
+\item
+  Chain rule
+\item
+  Directional derivatives and gradient vectors
+\item
+  Extrema and optimization
+\item
+  Lagrange Multipliers
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Multiple Integrals
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Double integrals
+\item
+  Double integrals in polar coordinates
+\item
+  Triple integrals
+\item
+  Triple integrals in cylindrical and spherical coordinates
+\item
+  Applications of multiple integrals
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  Vector Calculus
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Vector functions and their derivatives
+\item
+  Vector fields
+\item
+  Line integrals
+\item
+  The fundamental theorem of line integrals
+\item
+  Green's Theorem
+\item
+  Parametric surfaces and surface integrals
+\item
+  Curl and divergence
+\item
+  Divergence Theorem
+\item
+  Stokes Theorem
+\end{itemize}
+
+\hypertarget{late-assignments}{%
+\subsection*{Late assignments}\label{late-assignments}}
+\addcontentsline{toc}{subsection}{Late assignments}
+
+\begin{itemize}
+\tightlist
+\item
+  15\% of the possible total mark will be deducted for every 24 hrs (or part of 24 hrs) after the
+  deadline. Work more than 2 days late will not be accepted.
+\item
+  Except for exceptional circumstances (see \href{https://onestop.fulbright.edu.vn/s/article/Exceptional-Circumstance}{definition}),
+  I will not extend the deadlines.
+\end{itemize}
+
+\hypertarget{time-expectations}{%
+\subsection*{Time expectations}\label{time-expectations}}
+\addcontentsline{toc}{subsection}{Time expectations}
+
+Some materials require time to be accustomed to. Some students are quicker than
+others. However, on average, you should expect 10-15 hours per week (including class time)
+on the materials in order to know the subject relatively well.
+
+\hypertarget{collaboration-plagiarism}{%
+\subsubsection*{Collaboration \& Plagiarism}\label{collaboration-plagiarism}}
+\addcontentsline{toc}{subsubsection}{Collaboration \& Plagiarism}
+
+Plagiarism is the act of submitting the intellectual property of another person as your own.
+It is one of the most serious of academic offences. Acts of plagiarism include, but are not
+limited to:
+- Copying all or a part of another person's work and presenting it as your own, or not
+giving proper credit.
+- Purchasing a paper from someone (or a website) and presenting it as your own work.
+- Re-submitting your work from one course to fulfill a requirement in another course.
+Olin College's Rob Martello says: ``You must always take extreme care to acknowledge the
+source of all quotes, content, and theories. Even if you paraphrase the information, you need
+to cite all sources that informed your analysis. Citations must include page numbers, website
+addresses, times of interviews, or other details as needed. When in doubt, cite.''
+Further details can be found in the Code of Academic Integrity.
+
+\hypertarget{learning-support}{%
+\subsection*{Learning Support}\label{learning-support}}
+\addcontentsline{toc}{subsection}{Learning Support}
+
+In addition to your course instructors, there are other resources available to support your
+academic work at Fulbright, including one-on-one consultations with learning support staff,
+supplementary workshops, and both individual and group tutoring and mentoring in course
+content, language learning, and academic skills. If you would like to request learning support,
+please contact Fulbright Learning Support (\url{https://learning-support.notion.site}).
+
+\hypertarget{wellbeing}{%
+\subsection*{Wellbeing}\label{wellbeing}}
+\addcontentsline{toc}{subsection}{Wellbeing}
+
+Mental health and wellbeing are essential for the success of your academic journey. The
+Fulbright Wellness Center provides various services including counseling, safer community,
+and accessibility services. If you are experiencing undue personal or academic stress, are
+feeling unsafe, or would like to know more about issues related to wellbeing, please contact
+the Wellness Center via \href{mailto:wellness@fulbright.edu.vn}{\nolinkurl{wellness@fulbright.edu.vn}} or visit the Wellness Center office on
+Level 5 of the Crescent campus.
+
+For more information, pleaes check
+\url{https://onestop.fulbright.edu.vn/s/article/Health-and-Wellness-Introduction}
+
+\newpage
+
+\hypertarget{tentative-course-schedule}{%
+\subsection*{Tentative Course Schedule}\label{tentative-course-schedule}}
+\addcontentsline{toc}{subsection}{Tentative Course Schedule}
+
+The following schedule will be updated as we go so that students will know what to read
+before/after class.
+
+\begin{longtable}[]{@{}cclc@{}}
+\toprule
+\begin{minipage}[b]{0.12\columnwidth}\centering
+\textbf{Date}\strut
+\end{minipage} & \begin{minipage}[b]{0.10\columnwidth}\centering
+\textbf{Session}\strut
+\end{minipage} & \begin{minipage}[b]{0.55\columnwidth}\raggedright
+\textbf{Content}\strut
+\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\centering
+\textbf{Deadlines}\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.12\columnwidth}\centering
+Feb 7 \& 9\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering
+1\&2\strut
+\end{minipage} & \begin{minipage}[t]{0.55\columnwidth}\raggedright
+Linear algebra crash course \& Vector-valued functions\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\centering
+Feb 14 \& 16\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering
+3 \& 4\strut
+\end{minipage} & \begin{minipage}[t]{0.55\columnwidth}\raggedright
+Integration: arc length\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\centering
+Feb 21 \& 23\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering
+5 \& 6\strut
+\end{minipage} & \begin{minipage}[t]{0.55\columnwidth}\raggedright
+Introduction and functions of several variables\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\centering
+Feb 28 \& Mar 2\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering
+7 \& 8\strut
+\end{minipage} & \begin{minipage}[t]{0.55\columnwidth}\raggedright
+Limits \& continuity\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\centering
+Mar 7 \& 9\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering
+9 \& 10\strut
+\end{minipage} & \begin{minipage}[t]{0.55\columnwidth}\raggedright
+Partial derivatives \& Tangent planes, chain rules \& higher derivatives\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\centering
+Mar 14 \& 16\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering
+11 \& 12\strut
+\end{minipage} & \begin{minipage}[t]{0.55\columnwidth}\raggedright
+Directional derivatives, gradient vectors \& Extrema and Optimization\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\centering
+Mar 21 \& 23\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering
+13 \& 14\strut
+\end{minipage} & \begin{minipage}[t]{0.55\columnwidth}\raggedright
+Extrema and Optimization (cont.)\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\centering
+Mar 28\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering
+15\strut
+\end{minipage} & \begin{minipage}[t]{0.55\columnwidth}\raggedright
+Midterm exam\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.55\columnwidth}\raggedright
+\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\centering
+\textbf{Mar 30}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.55\columnwidth}\raggedright
+\textbf{Break}\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.55\columnwidth}\raggedright
+\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\centering
+Apr 4 \& 6\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering
+16 \& 17\strut
+\end{minipage} & \begin{minipage}[t]{0.55\columnwidth}\raggedright
+Double integrals\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\centering
+Apr 11\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering
+18\strut
+\end{minipage} & \begin{minipage}[t]{0.55\columnwidth}\raggedright
+Applications of Double Integrals\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\centering
+Apr 13\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering
+19\strut
+\end{minipage} & \begin{minipage}[t]{0.55\columnwidth}\raggedright
+Surface Area\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\centering
+Apr 18 \& 20\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering
+20 \& 21\strut
+\end{minipage} & \begin{minipage}[t]{0.55\columnwidth}\raggedright
+Triple Integrals\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\centering
+Apr 25 \& 27\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering
+22 \& 23\strut
+\end{minipage} & \begin{minipage}[t]{0.55\columnwidth}\raggedright
+Change of variables\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.55\columnwidth}\raggedright
+\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\centering
+\textbf{May 2}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.55\columnwidth}\raggedright
+\textbf{Break}\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.55\columnwidth}\raggedright
+\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\centering
+May 4\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering
+24\strut
+\end{minipage} & \begin{minipage}[t]{0.55\columnwidth}\raggedright
+\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\centering
+May 9\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering
+25\strut
+\end{minipage} & \begin{minipage}[t]{0.55\columnwidth}\raggedright
+\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\centering
+May 11\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering
+26\strut
+\end{minipage} & \begin{minipage}[t]{0.55\columnwidth}\raggedright
+\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\centering
+May 16\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering
+27\strut
+\end{minipage} & \begin{minipage}[t]{0.55\columnwidth}\raggedright
+\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\centering
+May 18\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering
+28\strut
+\end{minipage} & \begin{minipage}[t]{0.55\columnwidth}\raggedright
+\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\centering
+May 23\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering
+29\strut
+\end{minipage} & \begin{minipage}[t]{0.55\columnwidth}\raggedright
+\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.12\columnwidth}\centering
+May 25\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering
+30\strut
+\end{minipage} & \begin{minipage}[t]{0.55\columnwidth}\raggedright
+\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+\end{document}
