@@ -4,17 +4,20 @@
 %
 \documentclass[
 ]{article}
-\usepackage{lmodern}
-\usepackage{amssymb,amsmath}
-\usepackage{ifxetex,ifluatex}
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
 \else % if luatex or xetex
-  \usepackage{unicode-math}
+  \usepackage{unicode-math} % this also loads fontspec
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -33,16 +36,9 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
-\hypersetup{
-  pdftitle={MATH 104: Multivariable Calculus},
-  pdfauthor={Truong-Son Van},
-  hidelinks,
-  pdfcreator={LaTeX via pandoc}}
-\urlstyle{same} % disable monospaced font for URLs
 \usepackage[margin=1in]{geometry}
-\usepackage{longtable,booktabs}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
 \makeatletter
@@ -68,6 +64,17 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={MATH 104: Multivariable Calculus},
+  pdfauthor={Truong-Son Van},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
 
 \title{MATH 104: Multivariable Calculus}
 \author{Truong-Son Van}
@@ -172,38 +179,40 @@ points based on the following scheme.
 The instructor is not responsible for providing the running percentage.
 
 \begin{longtable}[]{@{}cc@{}}
-\toprule
-\textbf{Form of assessment} & \textbf{Weight}\tabularnewline
-\midrule
+\toprule\noalign{}
+\textbf{Form of assessment} & \textbf{Weight} \\
+\midrule\noalign{}
 \endhead
-Weekly homeworks & 25\%\tabularnewline
-Class worksheets & 15\%\tabularnewline
-Mini-project & 15\%\tabularnewline
-Midterm & 15\%\tabularnewline
-Final & 30\%\tabularnewline
-\bottomrule
+\bottomrule\noalign{}
+\endlastfoot
+Weekly homework & 25\% \\
+Class worksheets & 15\% \\
+Mini-project & 15\% \\
+Midterm & 15\% \\
+Final & 30\% \\
 \end{longtable}
 
 The following is the non-negotiable letter grade breakdown. It is based on
 common practice in the United States for standard courses such as Calculus.
 
 \begin{longtable}[]{@{}cc@{}}
-\toprule
-\textbf{Letter Grade} & \textbf{Percentage}\tabularnewline
-\midrule
+\toprule\noalign{}
+\textbf{Letter Grade} & \textbf{Percentage} \\
+\midrule\noalign{}
 \endhead
-A & {[}93,100{]}\tabularnewline
-A- & {[}90,93)\tabularnewline
-B+ & {[}87,90)\tabularnewline
-B & {[}83,87)\tabularnewline
-B- & {[}80, 83)\tabularnewline
-C+ & {[}77,80)\tabularnewline
-C & {[}73,77)\tabularnewline
-C- & {[}70,73)\tabularnewline
-D+ & {[}67,70)\tabularnewline
-D & {[}60, 66)\tabularnewline
-F & {[}0,60)\tabularnewline
-\bottomrule
+\bottomrule\noalign{}
+\endlastfoot
+A & {[}93,100{]} \\
+A- & {[}90,93) \\
+B+ & {[}87,90) \\
+B & {[}83,87) \\
+B- & {[}80, 83) \\
+C+ & {[}77,80) \\
+C & {[}73,77) \\
+C- & {[}70,73) \\
+D+ & {[}67,70) \\
+D & {[}60, 66) \\
+F & {[}0,60) \\
 \end{longtable}
 
 \hypertarget{core-content}{%
@@ -379,254 +388,51 @@ For more information, pleaes check
 The following schedule will be updated as we go so that students will know what to read
 before/after class.
 
-\begin{longtable}[]{@{}cclc@{}}
-\toprule
-\begin{minipage}[b]{0.12\columnwidth}\centering
-\textbf{Date}\strut
-\end{minipage} & \begin{minipage}[b]{0.10\columnwidth}\centering
-\textbf{Session}\strut
-\end{minipage} & \begin{minipage}[b]{0.55\columnwidth}\raggedright
-\textbf{Content}\strut
-\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\centering
-\textbf{Deadlines}\strut
-\end{minipage}\tabularnewline
-\midrule
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1304}}
+  >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1130}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.6261}}
+  >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1304}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\centering
+\textbf{Date}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\textbf{Session}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Content}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\textbf{Deadlines}
+\end{minipage} \\
+\midrule\noalign{}
 \endhead
-\begin{minipage}[t]{0.12\columnwidth}\centering
-Feb 7 \& 9\strut
-\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering
-1\&2\strut
-\end{minipage} & \begin{minipage}[t]{0.55\columnwidth}\raggedright
-Linear algebra crash course \& Vector-valued functions\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.12\columnwidth}\centering
-Feb 14 \& 16\strut
-\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering
-3 \& 4\strut
-\end{minipage} & \begin{minipage}[t]{0.55\columnwidth}\raggedright
-Integration: arc length\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.12\columnwidth}\centering
-Feb 21 \& 23\strut
-\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering
-5 \& 6\strut
-\end{minipage} & \begin{minipage}[t]{0.55\columnwidth}\raggedright
-Introduction and functions of several variables\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.12\columnwidth}\centering
-Feb 28 \& Mar 2\strut
-\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering
-7 \& 8\strut
-\end{minipage} & \begin{minipage}[t]{0.55\columnwidth}\raggedright
-Limits \& continuity\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.12\columnwidth}\centering
-Mar 7 \& 9\strut
-\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering
-9 \& 10\strut
-\end{minipage} & \begin{minipage}[t]{0.55\columnwidth}\raggedright
-Partial derivatives \& Tangent planes, chain rules \& higher derivatives\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.12\columnwidth}\centering
-Mar 14 \& 16\strut
-\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering
-11 \& 12\strut
-\end{minipage} & \begin{minipage}[t]{0.55\columnwidth}\raggedright
-Directional derivatives, gradient vectors \& Extrema and Optimization\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.12\columnwidth}\centering
-Mar 21 \& 23\strut
-\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering
-13 \& 14\strut
-\end{minipage} & \begin{minipage}[t]{0.55\columnwidth}\raggedright
-Extrema and Optimization (cont.)\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.12\columnwidth}\centering
-Mar 28\strut
-\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering
-15\strut
-\end{minipage} & \begin{minipage}[t]{0.55\columnwidth}\raggedright
-Midterm exam\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.12\columnwidth}\centering
-\strut
-\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering
-\strut
-\end{minipage} & \begin{minipage}[t]{0.55\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.12\columnwidth}\centering
-\textbf{Mar 30}\strut
-\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering
-\strut
-\end{minipage} & \begin{minipage}[t]{0.55\columnwidth}\raggedright
-\textbf{Break}\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.12\columnwidth}\centering
-\strut
-\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering
-\strut
-\end{minipage} & \begin{minipage}[t]{0.55\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.12\columnwidth}\centering
-Apr 4 \& 6\strut
-\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering
-16 \& 17\strut
-\end{minipage} & \begin{minipage}[t]{0.55\columnwidth}\raggedright
-Double integrals\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.12\columnwidth}\centering
-Apr 11\strut
-\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering
-18\strut
-\end{minipage} & \begin{minipage}[t]{0.55\columnwidth}\raggedright
-Applications of Double Integrals\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.12\columnwidth}\centering
-Apr 13\strut
-\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering
-19\strut
-\end{minipage} & \begin{minipage}[t]{0.55\columnwidth}\raggedright
-Surface Area\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.12\columnwidth}\centering
-Apr 18 \& 20\strut
-\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering
-20 \& 21\strut
-\end{minipage} & \begin{minipage}[t]{0.55\columnwidth}\raggedright
-Triple Integrals\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.12\columnwidth}\centering
-Apr 25 \& 27\strut
-\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering
-22 \& 23\strut
-\end{minipage} & \begin{minipage}[t]{0.55\columnwidth}\raggedright
-Change of variables\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.12\columnwidth}\centering
-\strut
-\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering
-\strut
-\end{minipage} & \begin{minipage}[t]{0.55\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.12\columnwidth}\centering
-\textbf{May 2}\strut
-\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering
-\strut
-\end{minipage} & \begin{minipage}[t]{0.55\columnwidth}\raggedright
-\textbf{Break}\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.12\columnwidth}\centering
-\strut
-\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering
-\strut
-\end{minipage} & \begin{minipage}[t]{0.55\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.12\columnwidth}\centering
-May 4\strut
-\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering
-24\strut
-\end{minipage} & \begin{minipage}[t]{0.55\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.12\columnwidth}\centering
-May 9\strut
-\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering
-25\strut
-\end{minipage} & \begin{minipage}[t]{0.55\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.12\columnwidth}\centering
-May 11\strut
-\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering
-26\strut
-\end{minipage} & \begin{minipage}[t]{0.55\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.12\columnwidth}\centering
-May 16\strut
-\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering
-27\strut
-\end{minipage} & \begin{minipage}[t]{0.55\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.12\columnwidth}\centering
-May 18\strut
-\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering
-28\strut
-\end{minipage} & \begin{minipage}[t]{0.55\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.12\columnwidth}\centering
-May 23\strut
-\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering
-29\strut
-\end{minipage} & \begin{minipage}[t]{0.55\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.12\columnwidth}\centering
-May 25\strut
-\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\centering
-30\strut
-\end{minipage} & \begin{minipage}[t]{0.55\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
-\strut
-\end{minipage}\tabularnewline
-\bottomrule
+\bottomrule\noalign{}
+\endlastfoot
+Feb 7 \& 9 & 1\&2 & Linear algebra crash course \& Vector-valued functions & \\
+Feb 14 \& 16 & 3 \& 4 & Integration: arc length & \\
+Feb 21 \& 23 & 5 \& 6 & Introduction and functions of several variables & \\
+Feb 28 \& Mar 2 & 7 \& 8 & Limits \& continuity & \\
+Mar 7 \& 9 & 9 \& 10 & Partial derivatives \& Tangent planes, chain rules \& higher derivatives & \\
+Mar 14 \& 16 & 11 \& 12 & Directional derivatives, gradient vectors \& Extrema and Optimization & \\
+Mar 21 \& 23 & 13 \& 14 & Extrema and Optimization (cont.) & \\
+Mar 28 & 15 & Midterm exam & \\
+& & & \\
+\textbf{Mar 30} & & \textbf{Break} & \\
+& & & \\
+Apr 4 \& 6 & 16 \& 17 & Double integrals & \\
+Apr 11 & 18 & Applications of Double Integrals & \\
+Apr 13 & 19 & Surface Area & \\
+Apr 18 \& 20 & 20 \& 21 & Triple Integrals & \\
+Apr 25 \& 27 & 22 \& 23 & Change of variables & \\
+& & & \\
+\textbf{May 2} & & \textbf{Break} & \\
+& & & \\
+May 4 & 24 & & \\
+May 9 & 25 & & \\
+May 11 & 26 & & \\
+May 16 & 27 & & \\
+May 18 & 28 & & \\
+May 23 & 29 & & \\
+May 25 & 30 & & \\
 \end{longtable}
 
 \end{document}
