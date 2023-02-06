@@ -1,0 +1,309 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{book}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={MATH 104: Multivariable Calculus (brief notes)},
+  pdfauthor={Truong-Son Van},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{MATH 104: Multivariable Calculus (brief notes)}
+\author{Truong-Son Van}
+\date{Spring 2023}
+
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}{Lemma}[chapter]
+\newtheorem{corollary}{Corollary}[chapter]
+\newtheorem{proposition}{Proposition}[chapter]
+\newtheorem{conjecture}{Conjecture}[chapter]
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[chapter]
+\theoremstyle{definition}
+\newtheorem{example}{Example}[chapter]
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}[chapter]
+\theoremstyle{definition}
+\newtheorem{hypothesis}{Hypothesis}[chapter]
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newtheorem*{solution}{Solution}
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\newcommand{\vectorproj}[2][]{\mathrm{proj}_{\vect{#1}}\vect{#2}}
+\newcommand{\vectorcomp}[2][]{\mathrm{comp}_{\vect{#1}}\vect{#2}}
+\newcommand{\vect}{\mathbf}
+
+\newpage
+
+\hypertarget{vectors}{%
+\chapter{Vectors}\label{vectors}}
+
+\hypertarget{basics}{%
+\section{Basics}\label{basics}}
+
+\textbf{Reading: Stewart Chapter 12, Thomas Calculus Chapter 12,
+Active Calculus Chapter 9}
+
+You should be able to answer the following questions after reading this section:
+
+\begin{itemize}
+\item
+  What is a vector?
+\item
+  What does it mean for two vectors to be equal?
+\item
+  How do we add two vectors together and multiply a vector by a scalar?
+\item
+  How do we determine the magnitude of a vector?
+\item
+  What is a unit vector
+\item
+  How do we find a unit vector in the direction of a given vector?
+\end{itemize}
+
+Typically, we talk about 3-dimensional vectors (as discussed in Stewart and Thomas).
+However, since talking about \(n\)-dimensional vectors doesn't
+require much more effort,
+we will talk about \(n\)-dimensional vectors instead.
+
+\begin{definition}
+An \(n\)-dimensional Euclidean space \(\mathbb{R}^n\)
+is the Cartesian product of \(n\) Euclidean spaces \(\mathbb{R}\).
+\end{definition}
+
+\begin{definition}
+An \(n\)-dimensional vector \(\textbf{v}\in \mathbb{R}^n\) is a tuple
+\begin{equation}
+    \textbf{v} = \langle v_1,\dots, v_n \rangle \,,
+\end{equation}
+where \(v_i \in \mathbb{R}\).
+\end{definition}
+
+In dimensions less than or equal to 3, we represent a vector
+geometrically by an arrow, whose length represents the magnitude.
+
+\begin{remark}
+A point in \(\mathbb{R}^n\) is also represented by an \(n\)-tuple
+but with round brackets.
+A vector connecting two points \(A= (a_1, \dots, a_n)\)
+and \(B=(b_1, \dots, b_n)\) can be constructed as
+\begin{equation*}
+    \textbf{x} =  \langle b_1-a_1, \dots, b_n - a_n \rangle \,.
+\end{equation*}
+
+We denote the above vector as \(\vec{AB}\) where \(A\) is the tail (initial point)
+and \(B\) is the tip/head (terminal point).
+We denote \(\textbf{0}\) to be the zero vector, i.e.,
+\begin{equation*}
+    \textbf{0} = \langle 0, \dots, 0 \rangle \,.
+\end{equation*}
+\end{remark}
+
+\begin{definition}
+The length of a vector \(\textbf{v}\) (denoted by \(| \textbf{v}|\)) is defined to be
+\begin{equation}
+    |\textbf{v}| = \sqrt{ v_1^2 + \dots + v_n^2} \,.
+\end{equation}
+\end{definition}
+
+\begin{definition}
+A unit vector is a vector that has magnitude 1.
+\end{definition}
+
+\begin{exercise}
+Turn a vector \(\textbf{v} \in \mathbb{R}^n\) into a unit vector with the same
+direction.
+\end{exercise}
+
+\hypertarget{rules-to-manipulate-vectors}{%
+\section*{Rules to manipulate vectors}\label{rules-to-manipulate-vectors}}
+\addcontentsline{toc}{section}{Rules to manipulate vectors}
+
+Let \(\textbf{a}, \textbf{b} \in \mathbb{R}^n\) and \(c \in \mathbb{R}\). Then,
+
+\begin{equation*}
+    c( \textbf{a} + \textbf{b}) = \langle c a_1 + c b_1, \dots, c a_n + c b_n \rangle  
+    = c\textbf{a} + c\textbf{b} \,.
+\end{equation*}
+This formula is deceptively simple. Make sure you understand all the implications.
+
+\hypertarget{properties-of-vector-operations}{%
+\section*{Properties of vector operations}\label{properties-of-vector-operations}}
+\addcontentsline{toc}{section}{Properties of vector operations}
+
+Read the book
+
+(Make sure you understand the geometric intepretation)
+
+\hypertarget{products}{%
+\section{Products}\label{products}}
+
+\hypertarget{dot-product}{%
+\subsection{Dot product}\label{dot-product}}
+
+\begin{itemize}
+\item
+  How is the dot product of two vectors defined and what geometric information does it tell us?
+\item
+  How can we tell if two vectors in \(\mathbb{R}^n\)
+  are perpendicular?
+\item
+  How do we find the projection of one vector onto another?
+\end{itemize}
+
+\begin{definition}
+The dot product of vectors \(\textbf{u} = \langle u_1, \dots, u_n \rangle\)
+and \(\textbf{v} = \langle v_1, \dots, v_n \rangle\) in \(\mathbb{R}^n\) is the
+scalar
+\begin{equation*}
+    \textbf{u} \cdot \textbf{v} = u_1 v_1 +\dots + u_n v_n \,.
+\end{equation*}
+\end{definition}
+
+\hypertarget{properties-of-dot-product}{%
+\subsection*{Properties of dot product}\label{properties-of-dot-product}}
+\addcontentsline{toc}{subsection}{Properties of dot product}
+
+Let \(\textbf{u}, \textbf{v}, \textbf{w} \in \mathbb{R}^n\). Then,
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \(\textbf{u}\cdot \textbf{v} = \textbf{v}\cdot \textbf{u}\),
+\item
+  \((\textbf{u} + \textbf{v})\cdot \textbf{w} = (\textbf{u}\cdot \textbf{w}) + (\textbf{v}\cdot \textbf{w})\),
+\item
+  If \(c\) is a scalar, then \((c \textbf{u})\cdot \textbf{w} = c (\textbf{u}\cdot \textbf{w})\).
+\end{enumerate}
+
+\begin{theorem}[Law of cosine]
+If \(\theta\) is the angle between the vectors \(\textbf{u}\) and \(\textbf{v}\), then
+\begin{equation*}
+        \textbf{u}\cdot \textbf{v} = |\textbf{u}|| \textbf{v}| \cos \theta \,.
+   \end{equation*}
+\end{theorem}
+
+\begin{corollary}
+Two vectors \(\textbf{u}\) and \(\textbf{v}\) are orthogonal to each other
+if \(\textbf{u} \cdot \textbf{v} = 0\).
+\end{corollary}
+
+\hypertarget{projection}{%
+\subsection*{Projection}\label{projection}}
+\addcontentsline{toc}{subsection}{Projection}
+
+Let \(\textbf{u}, \textbf{v}\in \mathbb{R}^n\). The component of \(\textbf{u}\)
+in the direction of \(\textbf{v}\) is the scalar
+\begin{equation*}
+\mathrm{comp}_{\mathbf{v}}\mathbf{u} = \frac{\mathbf{u}\cdot \mathbf{v}}{|\mathbf{v}|} \,,
+\end{equation*}
+and the projection of \(\mathbf{u}\) onto \(\mathbf{v}\) is the vector
+\begin{equation*}
+    \mathrm{proj}_{\mathbf{v}}\mathbf{u} 
+    =\left( \mathbf{u}\cdot \frac{\mathbf{v}}{|\mathbf{v}|}\right) \frac{\mathbf{v}}{|\mathbf{v}|} 
+    = \frac{\mathbf{u}\cdot \mathbf{v}}{\mathbf{v} \cdot\mathbf{v}} \mathbf{v} \,.
+\end{equation*}
+
+Read the book for more details.
+Make sure you understand the geometric meaning.
+
+\hypertarget{d-special-cross-product}{%
+\subsection{3D special: Cross product}\label{d-special-cross-product}}
+
+This concept is very specific to \(\mathbb{R}^3\).
+It will not make sense in other dimensions.
+
+\begin{definition}
+Let \(\mathbf{a}, \mathbf{b} \in \mathbb{R}^3\).
+The cross product of \(\mathbf{a}\) and \(\mathbf{b}\) is defined to be
+\begin{equation*}
+    \mathbf{a} \times \mathbf{b} = \langle a_2 b_3 - a_3 b_2, a_3b_1 - a_1 b_3, a_1b_2 - a_2b_1 \rangle \,.
+\end{equation*}
+\end{definition}
+
+\begin{theorem}
+Let \(\theta\) be the angle between \(\mathbf{a}\) and \(\mathbf{b}\). Then,
+\begin{equation*}
+    | \mathbf{a} \times \mathbf{b} | = |\mathbf{a}||\mathbf{b}| \sin\theta \,.
+\end{equation*}
+\end{theorem}
+
+\begin{theorem}
+The vector \(\mathbf{a}\times \mathbf{b}\) is orthogonal to both \(\mathbf{a}\) and \(\mathbf{b}\).
+\end{theorem}
+
+\end{document}
