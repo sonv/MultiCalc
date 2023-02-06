@@ -179,12 +179,29 @@ direction.</p>
 </div>
 <div id="rules-to-manipulate-vectors" class="section level2 unnumbered hasAnchor">
 <h2>Rules to manipulate vectors<a href="vectors.html#rules-to-manipulate-vectors" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Let <span class="math inline">\(\textbf{a}, \textbf{b} \in \mathbb{R}^n\)</span> and <span class="math inline">\(c \in \mathbb{R}\)</span>. Then,</p>
+<p>Let <span class="math inline">\(\textbf{a}, \textbf{b} \in \mathbb{R}^n\)</span> and <span class="math inline">\(c,d \in \mathbb{R}\)</span>. Then,</p>
 <p><span class="math display">\[\begin{equation*}
     c( \textbf{a} + \textbf{b}) = \langle c a_1 + c b_1, \dots, c a_n + c b_n \rangle  
-    = c\textbf{a} + c\textbf{b} \,.
+    = c\textbf{a} + c\textbf{b} \,,
 \end{equation*}\]</span>
-This formula is deceptively simple. Make sure you understand all the implications.</p>
+and
+<span class="math display">\[\begin{equation*}
+(c+d) \textbf{a} = c\mathbf{a} + d\mathbf{a} \,.
+\end{equation*}\]</span></p>
+<p>These formulas are deceptively simple. Make sure you understand all the implications.</p>
+<p>Because of this rule, sometimes it is good to write vectors in terms of elementary vectors:
+<span class="math display">\[\begin{equation*}
+    \mathbf{u} = u_1 \mathbf{e_1} + \dots + u_n \mathbf{e_n} \,,
+\end{equation*}\]</span>
+where
+<span class="math inline">\(e_i = \langle 0,\dots, 1, \dots, 0\rangle\)</span> is the vector which has zero at all entries
+except that the <span class="math inline">\(i^{th}\)</span> entry is 1.</p>
+<p>In 3D,
+<span class="math display">\[\begin{equation*}
+    \mathbf{e_1} = \mathbf{i} \,, \qquad
+    \mathbf{e_2} = \mathbf{j} \,, \qquad
+    \mathbf{e_3} = \mathbf{k} \,.
+\end{equation*}\]</span></p>
 </div>
 <div id="properties-of-vector-operations" class="section level2 unnumbered hasAnchor">
 <h2>Properties of vector operations<a href="vectors.html#properties-of-vector-operations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
