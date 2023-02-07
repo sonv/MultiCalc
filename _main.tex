@@ -3,7 +3,7 @@
 \PassOptionsToPackage{hyphens}{url}
 %
 \documentclass[
-]{book}
+]{article}
 \usepackage{amsmath,amssymb}
 \usepackage{iftex}
 \ifPDFTeX
@@ -36,6 +36,7 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
 \usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
@@ -77,43 +78,26 @@
 
 \title{MATH 104: Multivariable Calculus (brief notes)}
 \author{Truong-Son Van}
-\date{Spring 2023}
+\date{}
 
-\usepackage{amsthm}
-\newtheorem{theorem}{Theorem}[chapter]
-\newtheorem{lemma}{Lemma}[chapter]
-\newtheorem{corollary}{Corollary}[chapter]
-\newtheorem{proposition}{Proposition}[chapter]
-\newtheorem{conjecture}{Conjecture}[chapter]
-\theoremstyle{definition}
-\newtheorem{definition}{Definition}[chapter]
-\theoremstyle{definition}
-\newtheorem{example}{Example}[chapter]
-\theoremstyle{definition}
-\newtheorem{exercise}{Exercise}[chapter]
-\theoremstyle{definition}
-\newtheorem{hypothesis}{Hypothesis}[chapter]
-\theoremstyle{remark}
-\newtheorem*{remark}{Remark}
-\newtheorem*{solution}{Solution}
 \begin{document}
 \maketitle
 
 {
-\setcounter{tocdepth}{1}
+\setcounter{tocdepth}{2}
 \tableofcontents
 }
-\newcommand{\vectorproj}[2][]{\mathrm{proj}_{\vect{#1}}\vect{#2}}
-\newcommand{\vectorcomp}[2][]{\mathrm{comp}_{\vect{#1}}\vect{#2}}
-\newcommand{\vect}{\mathbf}
+\hypertarget{spring-2023}{%
+\section*{Spring 2023}\label{spring-2023}}
+\addcontentsline{toc}{section}{Spring 2023}
 
 \hypertarget{syllabus}{%
-\chapter*{Syllabus}\label{syllabus}}
-\addcontentsline{toc}{chapter}{Syllabus}
+\section*{Syllabus}\label{syllabus}}
+\addcontentsline{toc}{section}{Syllabus}
 
 \hypertarget{key-information}{%
-\subsection*{Key information}\label{key-information}}
-\addcontentsline{toc}{subsection}{Key information}
+\subsubsection*{Key information}\label{key-information}}
+\addcontentsline{toc}{subsubsection}{Key information}
 
 \begin{itemize}
 \tightlist
@@ -132,8 +116,8 @@
 \end{itemize}
 
 \hypertarget{textbooks-and-references}{%
-\section*{Textbooks and references}\label{textbooks-and-references}}
-\addcontentsline{toc}{section}{Textbooks and references}
+\subsection*{Textbooks and references}\label{textbooks-and-references}}
+\addcontentsline{toc}{subsection}{Textbooks and references}
 
 It is highly recommended that students read the textbooks.
 
@@ -158,8 +142,8 @@ It is highly recommended that students read the textbooks.
 \end{enumerate}
 
 \hypertarget{course-description}{%
-\subsection*{Course description}\label{course-description}}
-\addcontentsline{toc}{subsection}{Course description}
+\subsubsection*{Course description}\label{course-description}}
+\addcontentsline{toc}{subsubsection}{Course description}
 
 How do we describe the trajectory of a space shuttle? How is the human body affected by
 scuba diving to different depths for different lengths of time? The mathematics required to
@@ -171,8 +155,8 @@ and their applications. These mathematical tools are used extensively in the phy
 and engineering, and in other areas including economics and computer graphics.
 
 \hypertarget{learning-objectives}{%
-\subsection*{Learning objectives}\label{learning-objectives}}
-\addcontentsline{toc}{subsection}{Learning objectives}
+\subsubsection*{Learning objectives}\label{learning-objectives}}
+\addcontentsline{toc}{subsubsection}{Learning objectives}
 
 After the course, students are expected to:
 
@@ -193,8 +177,8 @@ After the course, students are expected to:
 \end{itemize}
 
 \hypertarget{assessment}{%
-\section*{Assessment}\label{assessment}}
-\addcontentsline{toc}{section}{Assessment}
+\subsection*{Assessment}\label{assessment}}
+\addcontentsline{toc}{subsection}{Assessment}
 
 During the course, students are expected to compute their own percentage
 points based on the following scheme.
@@ -238,8 +222,8 @@ F & {[}0,60) \\
 \end{longtable}
 
 \hypertarget{core-content}{%
-\section*{Core content}\label{core-content}}
-\addcontentsline{toc}{section}{Core content}
+\subsection*{Core content}\label{core-content}}
+\addcontentsline{toc}{subsection}{Core content}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -339,8 +323,8 @@ F & {[}0,60) \\
 \end{itemize}
 
 \hypertarget{late-assignments}{%
-\section*{Late assignments}\label{late-assignments}}
-\addcontentsline{toc}{section}{Late assignments}
+\subsection*{Late assignments}\label{late-assignments}}
+\addcontentsline{toc}{subsection}{Late assignments}
 
 \begin{itemize}
 \tightlist
@@ -353,16 +337,16 @@ F & {[}0,60) \\
 \end{itemize}
 
 \hypertarget{time-expectations}{%
-\section*{Time expectations}\label{time-expectations}}
-\addcontentsline{toc}{section}{Time expectations}
+\subsection*{Time expectations}\label{time-expectations}}
+\addcontentsline{toc}{subsection}{Time expectations}
 
 Some materials require time to be accustomed to. Some students are quicker than
 others. However, on average, you should expect 10-15 hours per week (including class time)
 on the materials in order to know the subject relatively well.
 
 \hypertarget{collaboration-plagiarism}{%
-\subsection*{Collaboration \& Plagiarism}\label{collaboration-plagiarism}}
-\addcontentsline{toc}{subsection}{Collaboration \& Plagiarism}
+\subsubsection*{Collaboration \& Plagiarism}\label{collaboration-plagiarism}}
+\addcontentsline{toc}{subsubsection}{Collaboration \& Plagiarism}
 
 Plagiarism is the act of submitting the intellectual property of another person as your own. It is one of the most serious of academic offenses. Acts of plagiarism include, but are not limited to:
 
@@ -378,8 +362,8 @@ Plagiarism is the act of submitting the intellectual property of another person 
 Further details can be found in the Code of Academic Integrity {[}\href{https://fulbright.edu.vn/articles/Code\%20of\%20Academic\%20Integrity/Code\%20of\%20Academic\%20Integrity_\%20Excom\%20Endorsed.pdf}{link}{]}.
 
 \hypertarget{learning-support}{%
-\section*{Learning Support}\label{learning-support}}
-\addcontentsline{toc}{section}{Learning Support}
+\subsection*{Learning Support}\label{learning-support}}
+\addcontentsline{toc}{subsection}{Learning Support}
 
 In addition to your course instructors, there are other resources available to support your
 academic work at Fulbright, including one-on-one consultations with learning support staff,
@@ -388,8 +372,8 @@ content, language learning, and academic skills. If you would like to request le
 please contact Fulbright Learning Support (\url{https://learning-support.notion.site}).
 
 \hypertarget{wellbeing}{%
-\section*{Wellbeing}\label{wellbeing}}
-\addcontentsline{toc}{section}{Wellbeing}
+\subsection*{Wellbeing}\label{wellbeing}}
+\addcontentsline{toc}{subsection}{Wellbeing}
 
 Mental health and wellbeing are essential for the success of your academic journey. The
 Fulbright Wellness Center provides various services including counseling, safer community,
@@ -404,8 +388,8 @@ For more information, pleaes check
 \newpage
 
 \hypertarget{tentative-course-schedule}{%
-\section*{Tentative Course Schedule}\label{tentative-course-schedule}}
-\addcontentsline{toc}{section}{Tentative Course Schedule}
+\subsection*{Tentative Course Schedule}\label{tentative-course-schedule}}
+\addcontentsline{toc}{subsection}{Tentative Course Schedule}
 
 The following schedule will be updated as we go so that students will know what to read
 before/after class.
@@ -456,224 +440,5 @@ May 18 & 28 & & \\
 May 23 & 29 & & \\
 May 25 & 30 & & \\
 \end{longtable}
-
-\newpage
-
-\hypertarget{vectors}{%
-\chapter{Vectors}\label{vectors}}
-
-\hypertarget{basics}{%
-\section{Basics}\label{basics}}
-
-\textbf{Reading: Stewart Chapter 12, Thomas Calculus Chapter 12,
-Active Calculus Chapter 9}
-
-You should be able to answer the following questions after reading this section:
-
-\begin{itemize}
-\item
-  What is a vector?
-\item
-  What does it mean for two vectors to be equal?
-\item
-  How do we add two vectors together and multiply a vector by a scalar?
-\item
-  How do we determine the magnitude of a vector?
-\item
-  What is a unit vector
-\item
-  How do we find a unit vector in the direction of a given vector?
-\end{itemize}
-
-Typically, we talk about 3-dimensional vectors (as discussed in Stewart and Thomas).
-However, since talking about \(n\)-dimensional vectors doesn't
-require much more effort,
-we will talk about \(n\)-dimensional vectors instead.
-
-\begin{definition}
-An \(n\)-dimensional Euclidean space \(\mathbb{R}^n\)
-is the Cartesian product of \(n\) Euclidean spaces \(\mathbb{R}\).
-\end{definition}
-
-\begin{definition}
-An \(n\)-dimensional vector \(\textbf{v}\in \mathbb{R}^n\) is a tuple
-\begin{equation}
-    \textbf{v} = \langle v_1,\dots, v_n \rangle \,,
-\end{equation}
-where \(v_i \in \mathbb{R}\).
-\end{definition}
-
-In dimensions less than or equal to 3, we represent a vector
-geometrically by an arrow, whose length represents the magnitude.
-
-\begin{remark}
-A point in \(\mathbb{R}^n\) is also represented by an \(n\)-tuple
-but with round brackets.
-A vector connecting two points \(A= (a_1, \dots, a_n)\)
-and \(B=(b_1, \dots, b_n)\) can be constructed as
-\begin{equation*}
-    \textbf{x} =  \langle b_1-a_1, \dots, b_n - a_n \rangle \,.
-\end{equation*}
-
-We denote the above vector as \(\vec{AB}\) where \(A\) is the tail (initial point)
-and \(B\) is the tip/head (terminal point).
-We denote \(\textbf{0}\) to be the zero vector, i.e.,
-\begin{equation*}
-    \textbf{0} = \langle 0, \dots, 0 \rangle \,.
-\end{equation*}
-\end{remark}
-
-\begin{definition}
-The length of a vector \(\textbf{v}\) (denoted by \(| \textbf{v}|\)) is defined to be
-\begin{equation}
-    |\textbf{v}| = \sqrt{ v_1^2 + \dots + v_n^2} \,.
-\end{equation}
-\end{definition}
-
-\begin{definition}
-A unit vector is a vector that has magnitude 1.
-\end{definition}
-
-\begin{exercise}
-Turn a vector \(\textbf{v} \in \mathbb{R}^n\) into a unit vector with the same
-direction.
-\end{exercise}
-
-\hypertarget{rules-to-manipulate-vectors}{%
-\section*{Rules to manipulate vectors}\label{rules-to-manipulate-vectors}}
-\addcontentsline{toc}{section}{Rules to manipulate vectors}
-
-Let \(\textbf{a}, \textbf{b} \in \mathbb{R}^n\) and \(c,d \in \mathbb{R}\). Then,
-
-\begin{equation*}
-    c( \textbf{a} + \textbf{b}) = \langle c a_1 + c b_1, \dots, c a_n + c b_n \rangle  
-    = c\textbf{a} + c\textbf{b} \,,
-\end{equation*}
-and
-\begin{equation*}
- (c+d) \textbf{a} = c\mathbf{a} + d\mathbf{a} \,.
-\end{equation*}
-
-These formulas are deceptively simple. Make sure you understand all the implications.
-
-Because of this rule, sometimes it is good to write vectors in terms of elementary vectors:
-\begin{equation*}
-    \mathbf{u} = u_1 \mathbf{e_1} + \dots + u_n \mathbf{e_n} \,,
-\end{equation*}
-where
-\(e_i = \langle 0,\dots, 1, \dots, 0\rangle\) is the vector which has zero at all entries
-except that the \(i^{th}\) entry is 1.
-
-In 3D,
-\begin{equation*}
-    \mathbf{e_1} = \mathbf{i} \,, \qquad 
-    \mathbf{e_2} = \mathbf{j} \,, \qquad
-    \mathbf{e_3} = \mathbf{k} \,.
-\end{equation*}
-
-\hypertarget{properties-of-vector-operations}{%
-\section*{Properties of vector operations}\label{properties-of-vector-operations}}
-\addcontentsline{toc}{section}{Properties of vector operations}
-
-Read the book
-
-(Make sure you understand the geometric intepretation)
-
-\hypertarget{products}{%
-\section{Products}\label{products}}
-
-\hypertarget{dot-product}{%
-\subsection{Dot product}\label{dot-product}}
-
-\begin{itemize}
-\item
-  How is the dot product of two vectors defined and what geometric information does it tell us?
-\item
-  How can we tell if two vectors in \(\mathbb{R}^n\)
-  are perpendicular?
-\item
-  How do we find the projection of one vector onto another?
-\end{itemize}
-
-\begin{definition}
-The dot product of vectors \(\textbf{u} = \langle u_1, \dots, u_n \rangle\)
-and \(\textbf{v} = \langle v_1, \dots, v_n \rangle\) in \(\mathbb{R}^n\) is the
-scalar
-\begin{equation*}
-    \textbf{u} \cdot \textbf{v} = u_1 v_1 +\dots + u_n v_n \,.
-\end{equation*}
-\end{definition}
-
-\hypertarget{properties-of-dot-product}{%
-\subsection*{Properties of dot product}\label{properties-of-dot-product}}
-\addcontentsline{toc}{subsection}{Properties of dot product}
-
-Let \(\textbf{u}, \textbf{v}, \textbf{w} \in \mathbb{R}^n\). Then,
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\item
-  \(\textbf{u}\cdot \textbf{v} = \textbf{v}\cdot \textbf{u}\),
-\item
-  \((\textbf{u} + \textbf{v})\cdot \textbf{w} = (\textbf{u}\cdot \textbf{w}) + (\textbf{v}\cdot \textbf{w})\),
-\item
-  If \(c\) is a scalar, then \((c \textbf{u})\cdot \textbf{w} = c (\textbf{u}\cdot \textbf{w})\).
-\end{enumerate}
-
-\begin{theorem}[Law of cosine]
-If \(\theta\) is the angle between the vectors \(\textbf{u}\) and \(\textbf{v}\), then
-\begin{equation*}
-        \textbf{u}\cdot \textbf{v} = |\textbf{u}|| \textbf{v}| \cos \theta \,.
-   \end{equation*}
-\end{theorem}
-
-\begin{corollary}
-Two vectors \(\textbf{u}\) and \(\textbf{v}\) are orthogonal to each other
-if \(\textbf{u} \cdot \textbf{v} = 0\).
-\end{corollary}
-
-\hypertarget{projection}{%
-\subsection*{Projection}\label{projection}}
-\addcontentsline{toc}{subsection}{Projection}
-
-Let \(\textbf{u}, \textbf{v}\in \mathbb{R}^n\). The component of \(\textbf{u}\)
-in the direction of \(\textbf{v}\) is the scalar
-\begin{equation*}
-\mathrm{comp}_{\mathbf{v}}\mathbf{u} = \frac{\mathbf{u}\cdot \mathbf{v}}{|\mathbf{v}|} \,,
-\end{equation*}
-and the projection of \(\mathbf{u}\) onto \(\mathbf{v}\) is the vector
-\begin{equation*}
-    \mathrm{proj}_{\mathbf{v}}\mathbf{u} 
-    =\left( \mathbf{u}\cdot \frac{\mathbf{v}}{|\mathbf{v}|}\right) \frac{\mathbf{v}}{|\mathbf{v}|} 
-    = \frac{\mathbf{u}\cdot \mathbf{v}}{\mathbf{v} \cdot\mathbf{v}} \mathbf{v} \,.
-\end{equation*}
-
-Read the book for more details.
-Make sure you understand the geometric meaning.
-
-\hypertarget{d-special-cross-product}{%
-\subsection{3D special: Cross product}\label{d-special-cross-product}}
-
-This concept is very specific to \(\mathbb{R}^3\).
-It will not make sense in other dimensions.
-
-\begin{definition}
-Let \(\mathbf{a}, \mathbf{b} \in \mathbb{R}^3\).
-The cross product of \(\mathbf{a}\) and \(\mathbf{b}\) is defined to be
-\begin{equation*}
-    \mathbf{a} \times \mathbf{b} = \langle a_2 b_3 - a_3 b_2, a_3b_1 - a_1 b_3, a_1b_2 - a_2b_1 \rangle \,.
-\end{equation*}
-\end{definition}
-
-\begin{theorem}
-Let \(\theta\) be the angle between \(\mathbf{a}\) and \(\mathbf{b}\). Then,
-\begin{equation*}
-    | \mathbf{a} \times \mathbf{b} | = |\mathbf{a}||\mathbf{b}| \sin\theta \,.
-\end{equation*}
-\end{theorem}
-
-\begin{theorem}
-The vector \(\mathbf{a}\times \mathbf{b}\) is orthogonal to both \(\mathbf{a}\) and \(\mathbf{b}\).
-\end{theorem}
 
 \end{document}
