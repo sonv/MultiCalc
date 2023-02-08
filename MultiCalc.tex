@@ -4,20 +4,17 @@
 %
 \documentclass[
 ]{article}
-\usepackage{amsmath,amssymb}
-\usepackage{iftex}
-\ifPDFTeX
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
 \else % if luatex or xetex
-  \usepackage{unicode-math} % this also loads fontspec
+  \usepackage{unicode-math}
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
-\fi
-\usepackage{lmodern}
-\ifPDFTeX\else
-  % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -36,9 +33,16 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={MATH 104: Multivariable Calculus (brief notes)},
+  pdfauthor={Truong-Son Van},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
 \usepackage[margin=1in]{geometry}
-\usepackage{longtable,booktabs,array}
-\usepackage{calc} % for calculating minipage widths
+\usepackage{longtable,booktabs}
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
 \makeatletter
@@ -64,17 +68,6 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
-\ifLuaTeX
-  \usepackage{selnolig}  % disable illegal ligatures
-\fi
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\urlstyle{same}
-\hypersetup{
-  pdftitle={MATH 104: Multivariable Calculus (brief notes)},
-  pdfauthor={Truong-Son Van},
-  hidelinks,
-  pdfcreator={LaTeX via pandoc}}
 
 \title{MATH 104: Multivariable Calculus (brief notes)}
 \author{Truong-Son Van}
@@ -112,6 +105,7 @@
 \newcommand{\vectorproj}[2][]{\mathrm{proj}_{\vect{#1}}\vect{#2}}
 \newcommand{\vectorcomp}[2][]{\mathrm{comp}_{\vect{#1}}\vect{#2}}
 \newcommand{\vect}{\mathbf}
+\newcommand{\R}{\mathbb{R}}
 
 \hypertarget{vectors}{%
 \section{Vectors}\label{vectors}}
@@ -281,6 +275,10 @@ If \(\theta\) is the angle between the vectors \(\textbf{u}\) and \(\textbf{v}\)
    \end{equation*}
 \end{theorem}
 
+\begin{exercise}
+Prove this theorem in \(\mathbb{R}^2\).
+\end{exercise}
+
 \begin{corollary}
 Two vectors \(\textbf{u}\) and \(\textbf{v}\) are orthogonal to each other
 if \(\textbf{u} \cdot \textbf{v} = 0\).
@@ -312,12 +310,39 @@ This concept is very specific to \(\mathbb{R}^3\).
 It will not make sense in other dimensions.
 
 \begin{definition}
-Let \(\mathbf{a}, \mathbf{b} \in \mathbb{R}^3\).
+Let \(\mathbf{u}, \mathbf{v} \in \mathbb{R}^3\).
 The cross product of \(\mathbf{a}\) and \(\mathbf{b}\) is defined to be
 \begin{equation*}
-    \mathbf{a} \times \mathbf{b} = \langle a_2 b_3 - a_3 b_2, a_3b_1 - a_1 b_3, a_1b_2 - a_2b_1 \rangle \,.
+    \mathbf{u} \times \mathbf{v} = \langle u_2 v_3 - u_3 v_2, u_3v_1 - u_1 v_3, u_1v_2 - u_2v_1 \rangle \,.
 \end{equation*}
 \end{definition}
+
+\begin{exercise}
+Write down a few other representations of the definition of the cross product.
+\end{exercise}
+
+\hypertarget{properties-of-cross-product}{%
+\subsubsection*{Properties of cross product}\label{properties-of-cross-product}}
+\addcontentsline{toc}{subsubsection}{Properties of cross product}
+
+Let \(\mathbf{u}, \mathbf{v}, \mathbf{w}\) be vectors in \(\mathbb{R}^3\) and
+\(c\in \mathbb{R}\). Then
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  (anti-symmetry) \(\mathbf{u}\times \mathbf{v} = - \mathbf{v}\times \mathbf{u}\)
+\item
+  \((\mathbf{u} + \mathbf{v})\times \mathbf{w} = (\mathbf{u}\times \mathbf{w}) + (\mathbf{v}\times \mathbf{w})\)
+\item
+  \((c \mathbf{u})\times \mathbf{w} = c(\mathbf{u}\times \mathbf{w}) = \mathbf{u}\times (c\mathbf{w})\)
+\item
+  \(\mathbf{u}\times \mathbf{v} = \mathbf{0}\) if \(\mathbf{u}\) and \(\mathbf{v}\) are
+  parallel
+\item
+  \textbf{WARNING:} in general
+  \((\mathbf{u}\times \mathbf{v})\times \mathbf{w} \not = \mathbf{u}\times (\mathbf{v}\times \mathbf{w})\)
+\end{enumerate}
 
 \begin{theorem}
 Let \(\theta\) be the angle between \(\mathbf{a}\) and \(\mathbf{b}\). Then,
@@ -329,5 +354,22 @@ Let \(\theta\) be the angle between \(\mathbf{a}\) and \(\mathbf{b}\). Then,
 \begin{theorem}
 The vector \(\mathbf{a}\times \mathbf{b}\) is orthogonal to both \(\mathbf{a}\) and \(\mathbf{b}\).
 \end{theorem}
+
+\begin{corollary}
+Let \(\mathbf{u}\) and \(\mathbf{v}\) be vectors in \(\mathbb{R}^3\).
+\begin{equation*}
+    \mathbf{u}\cdot (\mathbf{u}\times \mathbf{v}) = 0 \,.
+\end{equation*}
+\end{corollary}
+
+\begin{theorem}
+The length, \(|\mathbf{u}\times\mathbf{v}|\), of the cross product of
+vectors \(\mathbf{u}\) and \(\mathbf{v}\) is the area of the parallelogram
+determined by \(\mathbf{u}\) and \(\mathbf{v}\).
+\end{theorem}
+
+\begin{exercise}
+Write a table to compare cross product and dot product.
+\end{exercise}
 
 \end{document}

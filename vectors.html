@@ -48,6 +48,7 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
@@ -67,6 +68,7 @@
       <nav role="navigation">
 
 <ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Spring 2023</a></li>
 <li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html"><i class="fa fa-check"></i>Syllabus</a>
 <ul>
 <li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#key-information"><i class="fa fa-check"></i>Key information</a></li>
@@ -97,6 +99,7 @@
 <li class="chapter" data-level="" data-path="vectors.html"><a href="vectors.html#properties-of-dot-product"><i class="fa fa-check"></i>Properties of dot product</a></li>
 <li class="chapter" data-level="" data-path="vectors.html"><a href="vectors.html#projection"><i class="fa fa-check"></i>Projection</a></li>
 <li class="chapter" data-level="1.2.2" data-path="vectors.html"><a href="vectors.html#d-special-cross-product"><i class="fa fa-check"></i><b>1.2.2</b> 3D special: Cross product</a></li>
+<li class="chapter" data-level="" data-path="vectors.html"><a href="vectors.html#properties-of-cross-product"><i class="fa fa-check"></i>Properties of cross product</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -177,7 +180,7 @@ We denote <span class="math inline">\(\textbf{0}\)</span> to be the zero vector,
 direction.</p>
 </div>
 </div>
-<div id="rules-to-manipulate-vectors" class="section level2 unnumbered hasAnchor">
+<div id="rules-to-manipulate-vectors" class="section level2 unnumbered hasAnchor" number="">
 <h2>Rules to manipulate vectors<a href="vectors.html#rules-to-manipulate-vectors" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Let <span class="math inline">\(\textbf{a}, \textbf{b} \in \mathbb{R}^n\)</span> and <span class="math inline">\(c,d \in \mathbb{R}\)</span>. Then,</p>
 <p><span class="math display">\[\begin{equation*}
@@ -186,7 +189,7 @@ direction.</p>
 \end{equation*}\]</span>
 and
 <span class="math display">\[\begin{equation*}
-(c+d) \textbf{a} = c\mathbf{a} + d\mathbf{a} \,.
+ (c+d) \textbf{a} = c\mathbf{a} + d\mathbf{a} \,.
 \end{equation*}\]</span></p>
 <p>These formulas are deceptively simple. Make sure you understand all the implications.</p>
 <p>Because of this rule, sometimes it is good to write vectors in terms of elementary vectors:
@@ -198,12 +201,12 @@ where
 except that the <span class="math inline">\(i^{th}\)</span> entry is 1.</p>
 <p>In 3D,
 <span class="math display">\[\begin{equation*}
-    \mathbf{e_1} = \mathbf{i} \,, \qquad
+    \mathbf{e_1} = \mathbf{i} \,, \qquad 
     \mathbf{e_2} = \mathbf{j} \,, \qquad
     \mathbf{e_3} = \mathbf{k} \,.
 \end{equation*}\]</span></p>
 </div>
-<div id="properties-of-vector-operations" class="section level2 unnumbered hasAnchor">
+<div id="properties-of-vector-operations" class="section level2 unnumbered hasAnchor" number="">
 <h2>Properties of vector operations<a href="vectors.html#properties-of-vector-operations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Read the book</p>
 <p>(Make sure you understand the geometric intepretation)</p>
@@ -227,7 +230,7 @@ scalar
 \end{equation*}\]</span></p>
 </div>
 </div>
-<div id="properties-of-dot-product" class="section level3 unnumbered hasAnchor">
+<div id="properties-of-dot-product" class="section level3 unnumbered hasAnchor" number="">
 <h3>Properties of dot product<a href="vectors.html#properties-of-dot-product" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Let <span class="math inline">\(\textbf{u}, \textbf{v}, \textbf{w} \in \mathbb{R}^n\)</span>. Then,</p>
 <ol style="list-style-type: decimal">
@@ -241,12 +244,15 @@ scalar
         \textbf{u}\cdot \textbf{v} = |\textbf{u}|| \textbf{v}| \cos \theta \,.
    \end{equation*}\]</span></p>
 </div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-9" class="exercise"><strong>Exercise 1.2  </strong></span>Prove this theorem in <span class="math inline">\(\mathbb{R}^2\)</span>.</p>
+</div>
 <div class="corollary">
-<p><span id="cor:unlabeled-div-9" class="corollary"><strong>Corollary 1.1  </strong></span>Two vectors <span class="math inline">\(\textbf{u}\)</span> and <span class="math inline">\(\textbf{v}\)</span> are orthogonal to each other
+<p><span id="cor:unlabeled-div-10" class="corollary"><strong>Corollary 1.1  </strong></span>Two vectors <span class="math inline">\(\textbf{u}\)</span> and <span class="math inline">\(\textbf{v}\)</span> are orthogonal to each other
 if <span class="math inline">\(\textbf{u} \cdot \textbf{v} = 0\)</span>.</p>
 </div>
 </div>
-<div id="projection" class="section level3 unnumbered hasAnchor">
+<div id="projection" class="section level3 unnumbered hasAnchor" number="">
 <h3>Projection<a href="vectors.html#projection" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Let <span class="math inline">\(\textbf{u}, \textbf{v}\in \mathbb{R}^n\)</span>. The component of <span class="math inline">\(\textbf{u}\)</span>
 in the direction of <span class="math inline">\(\textbf{v}\)</span> is the scalar
@@ -255,8 +261,8 @@ in the direction of <span class="math inline">\(\textbf{v}\)</span> is the scala
 \end{equation*}\]</span>
 and the projection of <span class="math inline">\(\mathbf{u}\)</span> onto <span class="math inline">\(\mathbf{v}\)</span> is the vector
 <span class="math display">\[\begin{equation*}
-    \mathrm{proj}_{\mathbf{v}}\mathbf{u}
-    =\left( \mathbf{u}\cdot \frac{\mathbf{v}}{|\mathbf{v}|}\right) \frac{\mathbf{v}}{|\mathbf{v}|}
+    \mathrm{proj}_{\mathbf{v}}\mathbf{u} 
+    =\left( \mathbf{u}\cdot \frac{\mathbf{v}}{|\mathbf{v}|}\right) \frac{\mathbf{v}}{|\mathbf{v}|} 
     = \frac{\mathbf{u}\cdot \mathbf{v}}{\mathbf{v} \cdot\mathbf{v}} \mathbf{v} \,.
 \end{equation*}\]</span></p>
 <p>Read the book for more details.
@@ -267,20 +273,51 @@ Make sure you understand the geometric meaning.</p>
 <p>This concept is very specific to <span class="math inline">\(\mathbb{R}^3\)</span>.
 It will not make sense in other dimensions.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-10" class="definition"><strong>Definition 1.6  </strong></span>Let <span class="math inline">\(\mathbf{a}, \mathbf{b} \in \mathbb{R}^3\)</span>.
+<p><span id="def:unlabeled-div-11" class="definition"><strong>Definition 1.6  </strong></span>Let <span class="math inline">\(\mathbf{u}, \mathbf{v} \in \mathbb{R}^3\)</span>.
 The cross product of <span class="math inline">\(\mathbf{a}\)</span> and <span class="math inline">\(\mathbf{b}\)</span> is defined to be
 <span class="math display">\[\begin{equation*}
-    \mathbf{a} \times \mathbf{b} = \langle a_2 b_3 - a_3 b_2, a_3b_1 - a_1 b_3, a_1b_2 - a_2b_1 \rangle \,.
+    \mathbf{u} \times \mathbf{v} = \langle u_2 v_3 - u_3 v_2, u_3v_1 - u_1 v_3, u_1v_2 - u_2v_1 \rangle \,.
 \end{equation*}\]</span></p>
 </div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-12" class="exercise"><strong>Exercise 1.3  </strong></span>Write down a few other representations of the definition of the cross product.</p>
+</div>
+</div>
+<div id="properties-of-cross-product" class="section level3 unnumbered hasAnchor" number="">
+<h3>Properties of cross product<a href="vectors.html#properties-of-cross-product" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Let <span class="math inline">\(\mathbf{u}, \mathbf{v}, \mathbf{w}\)</span> be vectors in <span class="math inline">\(\mathbb{R}^3\)</span> and
+<span class="math inline">\(c\in \mathbb{R}\)</span>. Then</p>
+<ol style="list-style-type: decimal">
+<li><p>(anti-symmetry) <span class="math inline">\(\mathbf{u}\times \mathbf{v} = - \mathbf{v}\times \mathbf{u}\)</span></p></li>
+<li><p><span class="math inline">\((\mathbf{u} + \mathbf{v})\times \mathbf{w} = (\mathbf{u}\times \mathbf{w}) + (\mathbf{v}\times \mathbf{w})\)</span></p></li>
+<li><p><span class="math inline">\((c \mathbf{u})\times \mathbf{w} = c(\mathbf{u}\times \mathbf{w}) = \mathbf{u}\times (c\mathbf{w})\)</span></p></li>
+<li><p><span class="math inline">\(\mathbf{u}\times \mathbf{v} = \mathbf{0}\)</span> if <span class="math inline">\(\mathbf{u}\)</span> and <span class="math inline">\(\mathbf{v}\)</span> are
+parallel</p></li>
+<li><p><strong>WARNING:</strong> in general
+<span class="math inline">\((\mathbf{u}\times \mathbf{v})\times \mathbf{w} \not = \mathbf{u}\times (\mathbf{v}\times \mathbf{w})\)</span></p></li>
+</ol>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-11" class="theorem"><strong>Theorem 1.2  </strong></span>Let <span class="math inline">\(\theta\)</span> be the angle between <span class="math inline">\(\mathbf{a}\)</span> and <span class="math inline">\(\mathbf{b}\)</span>. Then,
+<p><span id="thm:unlabeled-div-13" class="theorem"><strong>Theorem 1.2  </strong></span>Let <span class="math inline">\(\theta\)</span> be the angle between <span class="math inline">\(\mathbf{a}\)</span> and <span class="math inline">\(\mathbf{b}\)</span>. Then,
 <span class="math display">\[\begin{equation*}
     | \mathbf{a} \times \mathbf{b} | = |\mathbf{a}||\mathbf{b}| \sin\theta \,.
 \end{equation*}\]</span></p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-12" class="theorem"><strong>Theorem 1.3  </strong></span>The vector <span class="math inline">\(\mathbf{a}\times \mathbf{b}\)</span> is orthogonal to both <span class="math inline">\(\mathbf{a}\)</span> and <span class="math inline">\(\mathbf{b}\)</span>.</p>
+<p><span id="thm:unlabeled-div-14" class="theorem"><strong>Theorem 1.3  </strong></span>The vector <span class="math inline">\(\mathbf{a}\times \mathbf{b}\)</span> is orthogonal to both <span class="math inline">\(\mathbf{a}\)</span> and <span class="math inline">\(\mathbf{b}\)</span>.</p>
+</div>
+<div class="corollary">
+<p><span id="cor:unlabeled-div-15" class="corollary"><strong>Corollary 1.2  </strong></span>Let <span class="math inline">\(\mathbf{u}\)</span> and <span class="math inline">\(\mathbf{v}\)</span> be vectors in <span class="math inline">\(\mathbb{R}^3\)</span>.
+<span class="math display">\[\begin{equation*}
+    \mathbf{u}\cdot (\mathbf{u}\times \mathbf{v}) = 0 \,.
+\end{equation*}\]</span></p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-16" class="theorem"><strong>Theorem 1.4  </strong></span>The length, <span class="math inline">\(|\mathbf{u}\times\mathbf{v}|\)</span>, of the cross product of
+vectors <span class="math inline">\(\mathbf{u}\)</span> and <span class="math inline">\(\mathbf{v}\)</span> is the area of the parallelogram
+determined by <span class="math inline">\(\mathbf{u}\)</span> and <span class="math inline">\(\mathbf{v}\)</span>.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-17" class="exercise"><strong>Exercise 1.4  </strong></span>Write a table to compare cross product and dot product.</p>
 </div>
 
 </div>
