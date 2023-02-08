@@ -1,0 +1,2 @@
+\beamer@sectionintoc {1}{Dot product}{2}{0}{1}
+\beamer@sectionintoc {2}{3D special: Cross product}{9}{0}{2}
