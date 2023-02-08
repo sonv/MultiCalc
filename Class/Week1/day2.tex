@@ -1,0 +1,70 @@
+\documentclass[aspectratio=169]{beamer}
+\usetheme{Copenhagen}
+%% Remove draft for real article, put twocolumn for two columns
+\usepackage[utf8]{inputenc}
+
+\newcommand{\vectorproj}[2][]{\mathrm{proj}_{\vect{#1}}\vect{#2}}
+\newcommand{\vectorcomp}[2][]{\mathrm{comp}_{\vect{#1}}\vect{#2}}
+\newcommand{\vect}{\mathbf}
+%% commentary bubble
+\newcommand{\SV}[2][]{\sidenote[colback=green!10]{\textbf{SV\xspace #1:} #2}}
+
+%% Title 
+\title{ Multivariable Calculus \\ Day 2}
+\institute{Fulbright University Vietnam}
+%\author[1]{Co-author}
+\author{Truong-Son Van}
+\date{Spring 2023}
+
+\begin{document}
+
+\maketitle
+\begin{frame}
+    \frametitle{Dot product}
+    \begin{definition}
+The dot product of vectors $\textbf{u} = \langle u_1, \dots, u_n \rangle$
+and $\textbf{v} = \langle v_1, \dots, v_n \rangle$ in $\mathbb{R}^n$ is the
+scalar
+\begin{equation*}
+    \textbf{u} \cdot \textbf{v} = u_1 v_1 +\dots + u_n v_n \,.
+\end{equation*}
+    \end{definition}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Geometric meaning}
+    \begin{theorem}
+If $\theta$ is the angle between the vectors $\textbf{u}$ and $\textbf{v}$, then
+   \begin{equation*}
+        \textbf{u}\cdot \textbf{v} = |\textbf{u}|| \textbf{v}| \cos \theta \,.
+   \end{equation*}
+    \end{theorem}
+    \pause
+
+    \begin{proof}[Proof in $\mathbb{R}^2$]
+        Homework
+    \end{proof}
+
+    \pause
+    \begin{corollary}
+Two vectors $\textbf{u}$ and $\textbf{v}$ are orthogonal to each other
+if $\textbf{u} \cdot \textbf{v} = 0$.
+    \end{corollary}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Projection}
+Let $\textbf{u}, \textbf{v}\in \mathbb{R}^n$. The component of $\textbf{u}$ 
+in the direction of $\textbf{v}$ is the scalar
+\begin{equation*}
+\vectorcomp[v]{u} =  
+\end{equation*}
+and the projection of $\vect{u}$ onto $\vect{v}$ is the vector
+\begin{equation*}
+    \vectorproj[v]{u}  =
+\end{equation*}
+\end{frame}
+
+
+
+\end{document}
