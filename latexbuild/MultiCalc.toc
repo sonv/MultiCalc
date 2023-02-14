@@ -1,0 +1,11 @@
+\contentsline {section}{\numberline {1}Vectors}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Basics}{2}{subsection.1.1}%
+\contentsline {subsection}{Rules to manipulate vectors}{2}{section*.3}%
+\contentsline {subsection}{Properties of vector operations}{3}{section*.4}%
+\contentsline {subsection}{\numberline {1.2}Products}{3}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Dot product}{3}{subsubsection.1.2.1}%
+\contentsline {subsubsection}{Properties of dot product}{3}{section*.5}%
+\contentsline {subsubsection}{Projection}{3}{section*.6}%
+\contentsline {subsubsection}{\numberline {1.2.2}3D special: Cross product}{4}{subsubsection.1.2.2}%
+\contentsline {section}{\numberline {2}Multivariable functions}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Equations for lines and planes}{4}{subsection.2.1}%
