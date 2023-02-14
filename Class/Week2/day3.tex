@@ -13,7 +13,7 @@
 \newcommand{\SV}[2][]{\sidenote[colback=green!10]{\textbf{SV\xspace #1:} #2}}
 
 %% Title 
-\title{ Multivariable Calculus \\ Day 3 \\ Equations for lines and planes} 
+\title{ Multivariable Calculus \\ Day 3 \\ Some toy examples in $\R^3$} 
 \institute{Fulbright University Vietnam}
 %\author[1]{Co-author}
 \author{Truong-Son Van}
@@ -27,17 +27,47 @@
 
 \begin{frame}
     \frametitle{Equation for a line}
-    High school version:
-
-    \vspace{2cm}
-    \pause
-    Grown-up version:
+A line is a collection of points that is parallel to a vector and goes through a 
+\begin{equation*}
+    L = \{\vect{r}(t) \,|  \vect{r}(t) = \vect{r}_0 + t \vect{v}, t\in \R \}  \,,
+\end{equation*}
+where ${r}_0$ is the initial position and $\vect{v}$ is the direction.
+The equation for $\vect{r}(t)$ is called a \textbf{vector equation for a line $L$}.
 \end{frame}
 
+\begin{frame}
+    \frametitle{Equation for a line}
+Let $\vect{v} = \langle v_1, v_2, v_3 \rangle$ and $\vect{r}_0 = ( x_0, y_0, z_0 )$.
+The \textbf{parametric equations} of $L$ is the following system of equations
+
+\begin{gather*}
+    x = x_0 + v_1 t\,, \\
+    y = y_0 + v_2 t\,, \\
+    z = z_0 + v_3 t \,. 
+\end{gather*}
+
+This leads to the \textbf{symmetric equations} of $L$
+
+\begin{equation*}
+    \frac{x - x_0}{v_1} = \frac{y - y_0}{v_2} = \frac{z - z_0}{v_3} \,.
+\end{equation*}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Worksheet}
+    Find parametric equations and symmetric equations of the line that passes 
+    through the points $A(2,4,-4)$ and $B(3,-1,1)$.
+\end{frame}
 
 
 \begin{frame}
     \frametitle{Equation for plane}
+A plane is a collection of points that is perpendicular to one specific direction 
+\begin{equation*}
+    P = \{ \vect{r} \, | \, \vect{n} \cdot (\vect{r}- \vect{r}_0 ) = 0 \} \,.
+\end{equation*}
+$\vect{n}$ is the perpendicular vector to the plane called the normal vector.
+In higher dimension, planes are called hyperplanes.
 \end{frame}
 
 
