@@ -9,6 +9,7 @@
 \newcommand{\vectorproj}[2][]{\mathrm{proj}_{\vect{#1}}\vect{#2}}
 \newcommand{\vectorcomp}[2][]{\mathrm{comp}_{\vect{#1}}\vect{#2}}
 \newcommand{\vect}{\mathbf}
+\newcommand{\R}{\mathbb{R}}
 %% commentary bubble
 \newcommand{\SV}[2][]{\sidenote[colback=green!10]{\textbf{SV\xspace #1:} #2}}
 
@@ -55,8 +56,15 @@ This leads to the \textbf{symmetric equations} of $L$
 
 \begin{frame}
     \frametitle{Worksheet}
-    Find parametric equations and symmetric equations of the line that passes 
+    \begin{enumerate}
+        \item \begin{itemize}
+                \item Find parametric equations and symmetric equations of the line that passes 
     through the points $A(2,4,-4)$ and $B(3,-1,1)$.
+        \item At what point does this line intersect the $xy$-plane?
+            \end{itemize}
+        \item What would be an equation that describe the line segment 
+            connecting two points $A$ and $B$ in $\R^3$?
+    \end{enumerate}
 \end{frame}
 
 
@@ -67,7 +75,18 @@ A plane is a collection of points that is perpendicular to one specific directio
     P = \{ \vect{r} \, | \, \vect{n} \cdot (\vect{r}- \vect{r}_0 ) = 0 \} \,.
 \end{equation*}
 $\vect{n}$ is the perpendicular vector to the plane called the normal vector.
+
 In higher dimension, planes are called hyperplanes.
+This is an important concept in data classification.
+\end{frame}
+
+\begin{frame}
+    \frametitle{Worksheet}
+    \begin{enumerate}
+        \item Find an equation of the plane through the point $(2,4,-1)$
+            with normal vector $\vect{n} = \langle 2,3,4 \rangle$.
+            Sketch the plane on the coordinate system.
+    \end{enumerate}
 \end{frame}
 
 
