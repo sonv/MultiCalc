@@ -65,6 +65,73 @@ $D$ is called the domain of $f$ and $C$ is called the codomain of $f$.
 
 \end{frame}
 
+\section{Vector functions}
+
+\begin{frame}
+    \frametitle{\secname}
+\begin{definition}
+A vector function (vector-valued function) is a function that has the codomain that belongs to $\R^n$ where $n\geq 2$. In other words, $f: D  \to \R^n$.
+\end{definition}
+
+\begin{example}
+The following are some examples of vector functions.
+
+\begin{itemize}
+    \item  Line: $\vect{r}(t) = \vect{r}_0 + t\vect{v}$
+    \item  Helix: $\vect{f}(t) = \langle \cos(t),\sin(t), t \rangle$
+\end{itemize}
+\end{example}
+\end{frame}
+
+\begin{frame}
+    \begin{theorem}
+    Let $\vect{r}: \R \to \R^n$, given by $\vect{r}(t) = \langle r_1(t), \dots , r_n(t) \rangle$.
+    Then, $\vect{r}$ is said to be continuous at $t_0$ if
+    \begin{equation*}
+        \vect{r}(t_0) = \lim_{t\to t_0} \vect{r}(t) \,,
+    \end{equation*}
+    where
+    \begin{equation*}
+        \lim_{t\to t_0} \vect{r}(t) = \langle \lim_{t\to t_0}r_1(t) , \dots , \lim_{t\to t_0} r_n(t) \rangle \,. 
+    \end{equation*}
+    Furthermore, we can define the derivative of $\vect{r}$
+    \begin{equation*}
+        \frac{d}{dt} \vect{r}(t) = \vect{r}'(t) = \lim_{h\to 0} \frac{\vect{r}(t+h) - \vect{r}(t)}{h} 
+    \end{equation*}
+    if this limit exists.
+    \end{theorem}
+\end{frame}
+\begin{frame}
+    \frametitle{Worksheet}
+    \begin{itemize}
+        \item Draw the helix $\vect{f}(t) = \langle \cos(t),\sin(t), t \rangle$
+        \item Find $\lim_{t\to \pi} \vect{f}(t)$
+        \item Find $\vect{f}'(t)$
+        \item Fill in the right-hand side
+            \begin{enumerate}
+            \item  $(\vect{u}(t) + \vect{v}(t))' = $
+            \item  $(c \vect{u}(t))' = $
+            \item  $(f(t) \vect{u}(t))' = $
+            \item  $(\vect{u}(t) \cdot \vect{v}(t))' = $
+            \item  $(\vect{u}(t) \times \vect{v}(t))' = $
+            \item  $(\vect{u}(f(t)))' = $
+            \end{enumerate}
+    \end{itemize}
+\end{frame}
+
+\section{Integrals}
+
+\begin{frame}
+    \frametitle{Indefinite integral}
+\begin{equation*}
+    \int_a^b \vect{r}(t) \, dt = \left\langle \int_a^b r_1(t) \, dt, \int_a^b r_2(t) \, dt, \int_a^b r_3(t) \, dt \right\rangle
+\end{equation*}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Worksheet}
+    How would one measure the length of a curve?
+\end{frame}
 
 \end{document}
 
