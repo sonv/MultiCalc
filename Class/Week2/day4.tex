@@ -14,7 +14,7 @@
 \newcommand{\SV}[2][]{\sidenote[colback=green!10]{\textbf{SV\xspace #1:} #2}}
 
 %% Title 
-\title{ Multivariable Calculus \\ Day 3 \\ Some toy examples in $\R^3$} 
+\title{ Multivariable Calculus \\ Day 4 \\ Multivariable and vector functions} 
 \institute{Fulbright University Vietnam}
 %\author[1]{Co-author}
 \author{Truong-Son Van}
@@ -24,93 +24,10 @@
 
 \maketitle
 
-\section{Equations for lines and planes}
 
 \begin{frame}
-    \frametitle{Equation for a line}
-A line is a collection of points that is parallel to a vector and goes through a 
-\begin{equation*}
-    L = \{\vect{r}(t) \,|  \vect{r}(t) = \vect{r}_0 + t \vect{v}, t\in \R \}  \,,
-\end{equation*}
-where ${r}_0$ is the initial position and $\vect{v}$ is the direction.
-The equation for $\vect{r}(t)$ is called a \textbf{vector equation for a line $L$}.
-\end{frame}
-
-\begin{frame}
-    \frametitle{Equation for a line}
-Let $\vect{v} = \langle v_1, v_2, v_3 \rangle$ and $\vect{r}_0 = ( x_0, y_0, z_0 )$.
-The \textbf{parametric equations} of $L$ is the following system of equations
-
-\begin{gather*}
-    x = x_0 + v_1 t\,, \\
-    y = y_0 + v_2 t\,, \\
-    z = z_0 + v_3 t \,. 
-\end{gather*}
-
-This leads to the \textbf{symmetric equations} of $L$
-
-\begin{equation*}
-    \frac{x - x_0}{v_1} = \frac{y - y_0}{v_2} = \frac{z - z_0}{v_3} \,.
-\end{equation*}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Equation for a line}
-    Two lines are parallel if their directional vectors are parallel (scalar multiple of each other).
-
-    Two lines that are not parallel and don't intersect each other are said to be skewed.
-\end{frame}
-
-\begin{frame}
-    \frametitle{Worksheet}
+    \frametitle{From last time}
     \begin{enumerate}
-                \item Find parametric equations and symmetric equations of the line that passes 
-    through the points $A(2,4,-4)$ and $B(3,-1,1)$.
-         At what point does this line intersect the $xy$-plane?
-        \item What would be an equation that describe the line segment 
-            connecting two points $A$ and $B$ in $\R^3$?
-        \item Determine if the following lines are skew or not
-            $$L_1: x= 1 +t, y = -2 + 3t, z= 4-t$$
-            $$ L_2: x = 2s, y = 3+s, z= -3 + 4s$$
-    \end{enumerate}
-\end{frame}
-
-
-\begin{frame}
-    \frametitle{Equation for plane}
-A plane is a collection of points that is perpendicular to one specific direction 
-\begin{equation*}
-    P = \{ \vect{r} \, | \, \vect{n} \cdot (\vect{r}- \vect{r}_0 ) = 0 \} \,.
-\end{equation*}
-$\vect{n}$ is the perpendicular vector to the plane called the normal vector.
-
-This is called a vector equation for the plane $P$.
-
-In higher dimension, planes are called hyperplanes.
-This is an important concept in data classification.
-\end{frame}
-
-\begin{frame}
-Multiplying things out, we have the scalar equation of the plane $P$ with 
-normal vector $\vect{n} = \langle n_1, n_2, n_3 \rangle$ through a point $P_0(x_0, y_0, z_0)$
-\begin{equation*}
-    n_1(r_1- x_0) + n_2 (r_2 - y_0) + n_3(r_3 - z_0) = 0 \,.
-\end{equation*}
-This is called the scalar equation for the plane $P$.
-
-The equation of the form
-\begin{equation*}
-    ax + by + cz + d = 0 
-\end{equation*}
-is called a linear equation.
-\end{frame}
-
-\begin{frame}
-    \frametitle{Worksheet}
-    \begin{enumerate}
-        \item Find an equation of the plane through the point $(2,4,-1)$
-            with normal vector $\vect{n} = \langle 2,3,4 \rangle$.
-            Sketch the plane on the coordinate system.
         \item Find the angle between the planes $x+y+z = 1$ and 
             $x -2y + 3z =1$. Find an equation for the line of intersection.
         \item Find a formula for the distance from a point $P(x_1,y_1,z_1)$
@@ -118,8 +35,35 @@ is called a linear equation.
     \end{enumerate}
 \end{frame}
 
+\begin{frame}
+    \frametitle{Quadric surfaces}
+    A quadric surface is the graph of a second-degree equation in three variables
+    $x,y$ and $z$. 
+    The equation that represents these surfaces is
+    $$Ax^2 + By^2 + Cz^2 + Dz = E\,.$$
+\end{frame}
 
 
+\section{Functions of several variables}
+\begin{frame}
+\begin{definition}
+    \frametitle{\secname}
+A function of several variables is a function
+$f: D \to C$ where $D \subseteq \R^m$ and $C \subseteq \R^n$.
+$$f({x}) = ( f_1(x_1,\dots, x_m),\dots, f_n(x_1,\dots, x_m)  ) \,.$$
+$D$ is called the domain of $f$ and $C$ is called the codomain of $f$.
+\end{definition}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Examples}
+
+    \begin{enumerate}
+        \item $f(x,y) = x^2 - 2xy + y^2$
+        \item $f(x,y,z) = \frac{1}{1 - xy^2}$
+    \end{enumerate}
+
+\end{frame}
 
 
 \end{document}
