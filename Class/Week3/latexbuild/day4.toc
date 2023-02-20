@@ -1,2 +1,0 @@
-\beamer@sectionintoc {1}{Functions of several variables}{4}{0}{1}
-\beamer@sectionintoc {2}{Vector functions}{7}{0}{2}
