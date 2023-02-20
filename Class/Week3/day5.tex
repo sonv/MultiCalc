@@ -1,0 +1,44 @@
+\documentclass[aspectratio=169]{beamer}
+\usetheme{Copenhagen}
+%% Remove draft for real article, put twocolumn for two columns
+\usetheme{metropolis}
+
+\usepackage[utf8]{inputenc}
+\newtheorem*{question}{Question}
+
+\newcommand{\vectorproj}[2][]{\mathrm{proj}_{\vect{#1}}\vect{#2}}
+\newcommand{\vectorcomp}[2][]{\mathrm{comp}_{\vect{#1}}\vect{#2}}
+\newcommand{\vect}{\mathbf}
+\newcommand{\R}{\mathbb{R}}
+%% commentary bubble
+\newcommand{\SV}[2][]{\sidenote[colback=green!10]{\textbf{SV\xspace #1:} #2}}
+
+%% Title 
+\title{ Multivariable Calculus \\ Day 4 \\ Integrations of vector functions} 
+\institute{Fulbright University Vietnam}
+%\author[1]{Co-author}
+\author{Truong-Son Van}
+\date{Spring 2023}
+
+\begin{document}
+
+\maketitle
+
+
+
+\section{Integrals}
+
+\begin{frame}
+    \frametitle{Indefinite integral}
+\begin{equation*}
+    \int_a^b \vect{r}(t) \, dt = \left\langle \int_a^b r_1(t) \, dt, \int_a^b r_2(t) \, dt, \int_a^b r_3(t) \, dt \right\rangle
+\end{equation*}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Worksheet}
+    How would one measure the length of a curve?
+\end{frame}
+
+\end{document}
+
