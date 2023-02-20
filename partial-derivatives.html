@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4 Partial derivatives | MATH 104: Multivariable Calculus (brief notes)</title>
+  <meta name="description" content="4 Partial derivatives | MATH 104: Multivariable Calculus (brief notes)" />
+  <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4 Partial derivatives | MATH 104: Multivariable Calculus (brief notes)" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4 Partial derivatives | MATH 104: Multivariable Calculus (brief notes)" />
+  
+  
+  
+
+<meta name="author" content="Truong-Son Van" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="functions-in-higher-dimensions.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Spring 2023</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html"><i class="fa fa-check"></i>Syllabus</a>
+<ul>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#key-information"><i class="fa fa-check"></i>Key information</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#textbooks-and-references"><i class="fa fa-check"></i>Textbooks and references</a>
+<ul>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#course-description"><i class="fa fa-check"></i>Course description</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#learning-objectives"><i class="fa fa-check"></i>Learning objectives</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#assessment"><i class="fa fa-check"></i>Assessment</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#core-content"><i class="fa fa-check"></i>Core content</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#late-assignments"><i class="fa fa-check"></i>Late assignments</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#time-expectations"><i class="fa fa-check"></i>Time expectations</a>
+<ul>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#collaboration-plagiarism"><i class="fa fa-check"></i>Collaboration &amp; Plagiarism</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#learning-support"><i class="fa fa-check"></i>Learning Support</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#wellbeing"><i class="fa fa-check"></i>Wellbeing</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#tentative-course-schedule"><i class="fa fa-check"></i>Tentative Course Schedule</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="vectors.html"><a href="vectors.html"><i class="fa fa-check"></i><b>1</b> Vectors</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="vectors.html"><a href="vectors.html#basics"><i class="fa fa-check"></i><b>1.1</b> Basics</a></li>
+<li class="chapter" data-level="" data-path="vectors.html"><a href="vectors.html#rules-to-manipulate-vectors"><i class="fa fa-check"></i>Rules to manipulate vectors</a></li>
+<li class="chapter" data-level="" data-path="vectors.html"><a href="vectors.html#properties-of-vector-operations"><i class="fa fa-check"></i>Properties of vector operations</a></li>
+<li class="chapter" data-level="1.2" data-path="vectors.html"><a href="vectors.html#products"><i class="fa fa-check"></i><b>1.2</b> Products</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="vectors.html"><a href="vectors.html#dot-product"><i class="fa fa-check"></i><b>1.2.1</b> Dot product</a></li>
+<li class="chapter" data-level="" data-path="vectors.html"><a href="vectors.html#properties-of-dot-product"><i class="fa fa-check"></i>Properties of dot product</a></li>
+<li class="chapter" data-level="" data-path="vectors.html"><a href="vectors.html#projection"><i class="fa fa-check"></i>Projection</a></li>
+<li class="chapter" data-level="1.2.2" data-path="vectors.html"><a href="vectors.html#d-special-cross-product"><i class="fa fa-check"></i><b>1.2.2</b> 3D special: Cross product</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="some-basic-equations-in-mathbbr3.html"><a href="some-basic-equations-in-mathbbr3.html"><i class="fa fa-check"></i><b>2</b> Some basic equations in <span class="math inline">\(\mathbb{R}^3\)</span></a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="some-basic-equations-in-mathbbr3.html"><a href="some-basic-equations-in-mathbbr3.html#equations-for-lines"><i class="fa fa-check"></i><b>2.1</b> Equations for lines</a></li>
+<li class="chapter" data-level="2.2" data-path="some-basic-equations-in-mathbbr3.html"><a href="some-basic-equations-in-mathbbr3.html#equations-for-planes"><i class="fa fa-check"></i><b>2.2</b> Equations for planes</a></li>
+<li class="chapter" data-level="2.3" data-path="some-basic-equations-in-mathbbr3.html"><a href="some-basic-equations-in-mathbbr3.html#cylinders"><i class="fa fa-check"></i><b>2.3</b> Cylinders</a></li>
+<li class="chapter" data-level="2.4" data-path="some-basic-equations-in-mathbbr3.html"><a href="some-basic-equations-in-mathbbr3.html#quadric-surfaces"><i class="fa fa-check"></i><b>2.4</b> Quadric surfaces</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="functions-in-higher-dimensions.html"><a href="functions-in-higher-dimensions.html"><i class="fa fa-check"></i><b>3</b> Functions in higher dimensions</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="functions-in-higher-dimensions.html"><a href="functions-in-higher-dimensions.html#functions-of-several-variables"><i class="fa fa-check"></i><b>3.1</b> Functions of several variables</a></li>
+<li class="chapter" data-level="3.2" data-path="functions-in-higher-dimensions.html"><a href="functions-in-higher-dimensions.html#vector-functions"><i class="fa fa-check"></i><b>3.2</b> Vector functions</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="functions-in-higher-dimensions.html"><a href="functions-in-higher-dimensions.html#limit-continuity-and-differentiation"><i class="fa fa-check"></i><b>3.2.1</b> Limit, continuity and differentiation</a></li>
+<li class="chapter" data-level="3.2.2" data-path="functions-in-higher-dimensions.html"><a href="functions-in-higher-dimensions.html#integrals"><i class="fa fa-check"></i><b>3.2.2</b> Integrals</a></li>
+<li class="chapter" data-level="3.2.3" data-path="functions-in-higher-dimensions.html"><a href="functions-in-higher-dimensions.html#space-curve-in-mathbbr3-and-motion-in-space"><i class="fa fa-check"></i><b>3.2.3</b> Space curve in <span class="math inline">\(\mathbb{R}^3\)</span> and motion in space</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="partial-derivatives.html"><a href="partial-derivatives.html"><i class="fa fa-check"></i><b>4</b> Partial derivatives</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="partial-derivatives.html"><a href="partial-derivatives.html#multivariable-scalar-function"><i class="fa fa-check"></i><b>4.1</b> Multivariable scalar function</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="partial-derivatives.html"><a href="partial-derivatives.html#graphs"><i class="fa fa-check"></i><b>4.1.1</b> Graphs</a></li>
+<li class="chapter" data-level="4.1.2" data-path="partial-derivatives.html"><a href="partial-derivatives.html#level"><i class="fa fa-check"></i><b>4.1.2</b> Level</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="partial-derivatives.html"><a href="partial-derivatives.html#limits-and-continuity"><i class="fa fa-check"></i><b>4.2</b> Limits and continuity</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">MATH 104: Multivariable Calculus (brief notes)</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="partial-derivatives" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">4</span> Partial derivatives<a href="partial-derivatives.html#partial-derivatives" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Read Stewart Chapter 14, Thomas Chapter 14,</p>
+<p>We will study multivariable scalar functions
+<span class="math display">\[ f: D \to \mathbb{R}\,,\]</span>
+where <span class="math inline">\(D\subseteq \mathbb{R}^n\)</span>, <span class="math inline">\(n\geq 2\)</span>.</p>
+<div id="multivariable-scalar-function" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Multivariable scalar function<a href="partial-derivatives.html#multivariable-scalar-function" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The following definition is from Thomas’s book.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-28" class="definition"><strong>Definition 4.1  </strong></span>Suppose <span class="math inline">\(D\)</span> is a set of <span class="math inline">\(n\)</span>-tuples of real numbers <span class="math inline">\((x_1, x_2, \ldots, x_n)\)</span>.
+A real-valued/scalar function <span class="math inline">\(f\)</span> on <span class="math inline">\(D\)</span> is a rule that assigns a unique (single) real
+number
+<span class="math display">\[w = f(x_1, x_2, \ldots, x_n)\]</span>
+to each element in <span class="math inline">\(D\)</span>.
+The set <span class="math inline">\(D\)</span> is the function’s domain. The set of <span class="math inline">\(w\)</span>-values taken on by <span class="math inline">\(f\)</span> is
+the function’s range. The symbol <span class="math inline">\(w\)</span> is the dependent variable of <span class="math inline">\(f\)</span>, and <span class="math inline">\(f\)</span>
+is said to be a function of the <span class="math inline">\(n\)</span> independent variables <span class="math inline">\(x_1\)</span> to <span class="math inline">\(x_n\)</span>.
+We also call the <span class="math inline">\(x_j\)</span>’s the function’s input variables and call <span class="math inline">\(w\)</span> the function’s output variable.</p>
+</div>
+<p>As prototypes, we only focus on <span class="math inline">\(n=2\)</span> and <span class="math inline">\(n=3\)</span>.</p>
+<div id="graphs" class="section level3 hasAnchor" number="4.1.1">
+<h3><span class="header-section-number">4.1.1</span> Graphs<a href="partial-derivatives.html#graphs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="definition">
+<p><span id="def:unlabeled-div-29" class="definition"><strong>Definition 4.2  </strong></span>The graph of function <span class="math inline">\(f:D \to \mathbb{R}\)</span> is the set of all points
+<span class="math inline">\((\mathbf{x}, f(\mathbf{x}))\)</span>, where <span class="math inline">\(\mathbf{x}\in D\)</span>.
+Here <span class="math inline">\(D\subseteq \mathbb{R}^n\)</span>.</p>
+</div>
+<p>For 2D, the graph of <span class="math inline">\(f\)</span> is also called the <strong>surface</strong> <span class="math inline">\(z = f(x_1,x_2)\)</span>.</p>
+<p>We cannot visualize the graph of a 3D function since it will be a four dimensional object.</p>
+</div>
+<div id="level" class="section level3 hasAnchor" number="4.1.2">
+<h3><span class="header-section-number">4.1.2</span> Level<a href="partial-derivatives.html#level" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="definition">
+<p><span id="def:unlabeled-div-30" class="definition"><strong>Definition 4.3  </strong></span>In 2D, the <strong><span class="math inline">\(c\)</span>-level curves</strong> of a function <span class="math inline">\(f\)</span> of two variables are curves with equations
+<span class="math inline">\(f(x,y) = c\)</span>, where <span class="math inline">\(c\)</span> is a constant.</p>
+<p>In 3D, the <strong><span class="math inline">\(c\)</span>-level surface</strong> of a function <span class="math inline">\(f\)</span> of three variables are surfaces
+with equations <span class="math inline">\(f(x,y,z) = c\)</span>, where <span class="math inline">\(c\)</span> is a constant.</p>
+</div>
+</div>
+</div>
+<div id="limits-and-continuity" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Limits and continuity<a href="partial-derivatives.html#limits-and-continuity" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The following definition is from Stewart.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-31" class="definition"><strong>Definition 4.4  </strong></span>Let <span class="math inline">\(f\)</span> be a function of two variables whose domain <span class="math inline">\(D\)</span> includes points arbitrarily close to <span class="math inline">\((a,b)\)</span>. Then we say that the limit of <span class="math inline">\(f(x,y)\)</span> as <span class="math inline">\((x,y)\)</span> approaches <span class="math inline">\((a,b)\)</span> is <span class="math inline">\(L\)</span> and we write</p>
+<p><span class="math display">\[\lim_{(x,y)\to(a,b)} f(x,y) = L\]</span></p>
+<p>if for every number <span class="math inline">\(\epsilon &gt; 0\)</span> there is a corresponding number <span class="math inline">\(\delta &gt; 0\)</span> such that
+<span class="math inline">\(|f(x,y) - L| &lt; \epsilon\)</span>
+if <span class="math inline">\((x,y) \in D\)</span> and <span class="math inline">\(0 &lt; \sqrt{(x-a)^2 + (y-b)^2} &lt; \delta\)</span>.</p>
+</div>
+<p>Finding if a function has limit as a point in higher dimension is not as simple as
+the case for 1 dimension.
+However, here is a typical strategy to identify if a function does NOT have a limit at <span class="math inline">\((a,b)\)</span>:</p>
+<p>If <span class="math inline">\(\lim_{(x,y) \to (a,b)} f(x,y) = L_1\)</span> as <span class="math inline">\((x,y) \to (a,b)\)</span> along a path <span class="math inline">\(C_1\)</span>,
+and <span class="math inline">\(\lim_{(x,y) \to (a,b)} f(x,y) = L_2\)</span> as <span class="math inline">\((x,y) \to (a,b)\)</span> along a path <span class="math inline">\(C_2\)</span>,
+where <span class="math inline">\(L_1 \neq L_2\)</span>, then <span class="math inline">\(\lim_{(x,y) \to (a,b)} f(x,y)\)</span> does not exist.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-32" class="example"><strong>Example 4.1  </strong></span><span class="math inline">\(\lim_{(x,y)\to (0,0)} \frac{x^2 - y^2}{x^2 + y^2}\)</span> does not exist.</p>
+<p><span class="math inline">\(\lim_{(x,y)\to (0,0)} \frac{xy}{x^2 + y^2}\)</span> does not exist.</p>
+<p><span class="math inline">\(\lim_{(x,y)\to (0,0)} \frac{xy^2}{x^4 + y^4}\)</span> does not exist.</p>
+<p><span class="math inline">\(\lim_{(x,y)\to (0,0)} \frac{3x^2y}{x^2 + y^2} = 0\)</span>.</p>
+</div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="functions-in-higher-dimensions.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
