@@ -1,0 +1,51 @@
+\documentclass[12pt]{amsart}
+\usepackage[draft,noshift]{marktext} 
+%% Remove draft for real article, put twocolumn for two columns
+\usepackage[draft]{svmacro}
+\usepackage[utf8]{inputenc}
+\usepackage[style=alphabetic, backend=biber]{biblatex}
+\addbibresource{bibliography.bib}
+
+%% commentary bubble
+\newcommand{\SV}[2][]{\sidenote[colback=green!10]{\textbf{SV\xspace #1:} #2}}
+
+%% Title 
+\title{ On osculating circle and curvature in 2D }
+%\author[1]{Co-author}
+\author{Truong-Son Van}
+%\affil[1]{Institute}
+\address{Fulbright University Vietnam}
+\email{son.van@fulbright.edu.vn}
+
+\date{\today}
+
+\begin{document}
+
+
+\maketitle
+
+
+\section{Introduction}
+In this expository note, we derive the relationship between curvature and the radius of the osculating circle.
+In particular, let $p$ be a point on a twice differentiable curve, $R$ be
+the radius of the osculating circle at that point and $\kappa$ is the curvature of the curve 
+at that point. Then,
+\begin{equation*}
+    R = \frac{1}{\kappa} \,.
+\end{equation*}
+
+
+From Wikipedia, the definition of an osculating circle is the following.
+
+\begin{definition}
+The osculating circle of a sufficiently smooth plane curve at a given point $p$
+on the curve has been traditionally defined as the circle passing through $p$
+and a pair of additional points on the curve infinitesimally close to $p$.
+\end{definition}
+
+\printbibliography 
+%\bibliography{refs}
+%\bibliographystyle{halpha-abbrv}
+
+
+\end{document}
