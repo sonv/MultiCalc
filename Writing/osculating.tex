@@ -1,7 +1,7 @@
 \documentclass[12pt]{amsart}
-\usepackage[draft,noshift]{marktext} 
+\usepackage{marktext} 
 %% Remove draft for real article, put twocolumn for two columns
-\usepackage[draft]{svmacro}
+\usepackage{svmacro}
 \usepackage[utf8]{inputenc}
 \usepackage[style=alphabetic, backend=biber]{biblatex}
 \addbibresource{bibliography.bib}
@@ -35,7 +35,7 @@ at that point. Then,
 \begin{equation*}
     R = \frac{1}{\kappa} \,.
 \end{equation*}
-
+There is an article by Fuchs~\cite{Fuchs2013} about this for those who are interested in the geometry of curves.
 
 From Wikipedia, the definition of an osculating circle is the following.
 
@@ -139,7 +139,7 @@ For a point $A=\vect{r}(t)$ on the curve, where $t\in (a,b)$, we have two other 
         R = \frac{\abs{ \vect{r}'(t)}}{\abs{\vect{T}'(t)}}\,.
     \end{equation*}
 
-    From Stewart, the curvature of the curve is
+    From Stewart~\cite{Stewart2015}, the curvature of the curve is
     \begin{equation*}
         \kappa = \frac{\abs{\vect{T}'(t)}}{\abs{ \vect{r}'(t)}} = \frac{1}{R} \,.
     \end{equation*}
