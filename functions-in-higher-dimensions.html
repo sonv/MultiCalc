@@ -30,7 +30,7 @@
   
   
 <link rel="prev" href="some-basic-equations-in-mathbbr3.html"/>
-<link rel="next" href="partial-derivatives.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -48,7 +48,6 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
@@ -68,7 +67,6 @@
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Spring 2023</a></li>
 <li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html"><i class="fa fa-check"></i>Syllabus</a>
 <ul>
 <li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#key-information"><i class="fa fa-check"></i>Key information</a></li>
@@ -115,17 +113,7 @@
 <ul>
 <li class="chapter" data-level="3.2.1" data-path="functions-in-higher-dimensions.html"><a href="functions-in-higher-dimensions.html#limit-continuity-and-differentiation"><i class="fa fa-check"></i><b>3.2.1</b> Limit, continuity and differentiation</a></li>
 <li class="chapter" data-level="3.2.2" data-path="functions-in-higher-dimensions.html"><a href="functions-in-higher-dimensions.html#integrals"><i class="fa fa-check"></i><b>3.2.2</b> Integrals</a></li>
-<li class="chapter" data-level="3.2.3" data-path="functions-in-higher-dimensions.html"><a href="functions-in-higher-dimensions.html#space-curve-in-mathbbr3-and-motion-in-space"><i class="fa fa-check"></i><b>3.2.3</b> Space curve in <span class="math inline">\(\mathbb{R}^3\)</span> and motion in space</a></li>
 </ul></li>
-</ul></li>
-<li class="chapter" data-level="4" data-path="partial-derivatives.html"><a href="partial-derivatives.html"><i class="fa fa-check"></i><b>4</b> Partial derivatives</a>
-<ul>
-<li class="chapter" data-level="4.1" data-path="partial-derivatives.html"><a href="partial-derivatives.html#multivariable-scalar-function"><i class="fa fa-check"></i><b>4.1</b> Multivariable scalar function</a>
-<ul>
-<li class="chapter" data-level="4.1.1" data-path="partial-derivatives.html"><a href="partial-derivatives.html#graphs"><i class="fa fa-check"></i><b>4.1.1</b> Graphs</a></li>
-<li class="chapter" data-level="4.1.2" data-path="partial-derivatives.html"><a href="partial-derivatives.html#level"><i class="fa fa-check"></i><b>4.1.2</b> Level</a></li>
-</ul></li>
-<li class="chapter" data-level="4.2" data-path="partial-derivatives.html"><a href="partial-derivatives.html#limits-and-continuity"><i class="fa fa-check"></i><b>4.2</b> Limits and continuity</a></li>
 </ul></li>
 </ul>
 
@@ -196,11 +184,11 @@ Then, <span class="math inline">\(\mathbf{r}\)</span> is said to be continuous a
 \end{equation*}\]</span>
 where
 <span class="math display">\[\begin{equation*}
-    \lim_{t\to t_0} \mathbf{r}(t) = \langle \lim_{t\to t_0}r_1(t) , \dots , \lim_{t\to t_0} r_n(t) \rangle \,. 
+    \lim_{t\to t_0} \mathbf{r}(t) = \langle \lim_{t\to t_0}r_1(t) , \dots , \lim_{t\to t_0} r_n(t) \rangle \,.
 \end{equation*}\]</span>
 Furthermore, we can define the derivative of <span class="math inline">\(\mathbf{r}\)</span>
 <span class="math display">\[\begin{equation*}
-    \frac{d}{dt} \mathbf{r}(t) = \mathbf{r}&#39;(t) = \lim_{h\to 0} \frac{\mathbf{r}(t+h) - \mathbf{r}(t)}{h} 
+    \frac{d}{dt} \mathbf{r}(t) = \mathbf{r}&#39;(t) = \lim_{h\to 0} \frac{\mathbf{r}(t+h) - \mathbf{r}(t)}{h}
 \end{equation*}\]</span>
 if this limit exists.</p>
 </div>
@@ -251,8 +239,11 @@ at any time <span class="math inline">\(t\)</span>, one uses the <strong>arc len
 <p><span class="math display">\[\begin{equation*}
     \ell(t) = \int_a^t \left| \mathbf{r}&#39;(u) \right| \, du \,.
 \end{equation*}\]</span></p>
+<p>For those who are interested in the geometrical meaning of the curvature without having
+to accept from the book that the curvature is the inverse of the radius of the osculating circle,
+please take a look at <a href="https://github.com/sonv/MultiCalc/blob/main/Writing/latexbuild/osculating.pdf">this expository note</a>.</p>
 </div>
-<div id="re-parametrize-with-respect-to-arc-length" class="section level4 unnumbered hasAnchor" number="">
+<div id="re-parametrize-with-respect-to-arc-length" class="section level4 unnumbered hasAnchor">
 <h4>Re-parametrize with respect to arc length<a href="functions-in-higher-dimensions.html#re-parametrize-with-respect-to-arc-length" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The nice thing about <span class="math inline">\(s(t)\)</span> is that it is a strictly increasing function with respect to <span class="math inline">\(t\)</span>,
 given that <span class="math inline">\(\mathbf{r}&#39;\)</span> is non-zero for all <span class="math inline">\(t\)</span>.
@@ -269,13 +260,8 @@ Therefore, we can re-write
 Thus,
 <span class="math display">\[l(s) = \int_0^s \left| \frac{d}{ds} \mathbf{r}(t) \right| \, dt = s \,.\]</span></p>
 </div>
-</div>
-</div>
-<div id="space-curve-in-mathbbr3-and-motion-in-space" class="section level3 hasAnchor" number="3.2.3">
-<h3><span class="header-section-number">3.2.3</span> Space curve in <span class="math inline">\(\mathbb{R}^3\)</span> and motion in space<a href="functions-in-higher-dimensions.html#space-curve-in-mathbbr3-and-motion-in-space" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Read the book. This part is not required but it is so beautiful, you may want to read it
-as an exercise at home (to test how much you understand what we’ve been discussing so far).</p>
 
+</div>
 </div>
 </div>
 </div>
@@ -284,8 +270,8 @@ as an exercise at home (to test how much you understand what we’ve been discus
           </div>
         </div>
       </div>
-<a href="some-basic-equations-in-mathbbr3.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="partial-derivatives.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="some-basic-equations-in-mathbbr3.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

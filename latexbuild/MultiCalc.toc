@@ -7,5 +7,11 @@
 \contentsline {subsubsection}{Properties of dot product}{3}{section*.5}%
 \contentsline {subsubsection}{Projection}{3}{section*.6}%
 \contentsline {subsubsection}{\numberline {1.2.2}3D special: Cross product}{4}{subsubsection.1.2.2}%
-\contentsline {section}{\numberline {2}Multivariable functions}{4}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Equations for lines and planes}{4}{subsection.2.1}%
+\contentsline {section}{\numberline {2}Some basic equations in \(\mathbb {R}^3\)}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Equations for lines}{5}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Equations for planes}{5}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Cylinders}{6}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Quadric surfaces}{6}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Functions in higher dimensions}{7}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Functions of several variables}{7}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Vector functions}{7}{subsection.3.2}%

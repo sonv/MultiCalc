@@ -4,17 +4,20 @@
 %
 \documentclass[
 ]{article}
-\usepackage{lmodern}
-\usepackage{amssymb,amsmath}
-\usepackage{ifxetex,ifluatex}
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
 \else % if luatex or xetex
-  \usepackage{unicode-math}
+  \usepackage{unicode-math} % this also loads fontspec
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -33,16 +36,9 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
-\hypersetup{
-  pdftitle={MATH 104: Multivariable Calculus (brief notes)},
-  pdfauthor={Truong-Son Van},
-  hidelinks,
-  pdfcreator={LaTeX via pandoc}}
-\urlstyle{same} % disable monospaced font for URLs
 \usepackage[margin=1in]{geometry}
-\usepackage{longtable,booktabs}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
 \makeatletter
@@ -68,6 +64,17 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={MATH 104: Multivariable Calculus (brief notes)},
+  pdfauthor={Truong-Son Van},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
 
 \title{MATH 104: Multivariable Calculus (brief notes)}
 \author{Truong-Son Van}
@@ -604,6 +611,10 @@ at any time \(t\), one uses the \textbf{arc length function}
     \ell(t) = \int_a^t \left| \mathbf{r}'(u) \right| \, du \,.
 \end{equation*}
 
+For those who are interested in the geometrical meaning of the curvature without having
+to accept from the book that the curvature is the inverse of the radius of the osculating circle,
+please take a look at \href{https://github.com/sonv/MultiCalc/blob/main/Writing/latexbuild/osculating.pdf}{this expository note}.
+
 \hypertarget{re-parametrize-with-respect-to-arc-length}{%
 \paragraph*{Re-parametrize with respect to arc length}\label{re-parametrize-with-respect-to-arc-length}}
 \addcontentsline{toc}{paragraph}{Re-parametrize with respect to arc length}
@@ -624,96 +635,5 @@ Therefore, we can re-write
 Thus,
 \[l(s) = \int_0^s \left| \frac{d}{ds} \mathbf{r}(t) \right| \, dt = s \,.\]
 \end{theorem}
-
-\hypertarget{space-curve-in-mathbbr3-and-motion-in-space}{%
-\subsubsection{\texorpdfstring{Space curve in \(\mathbb{R}^3\) and motion in space}{Space curve in \textbackslash mathbb\{R\}\^{}3 and motion in space}}\label{space-curve-in-mathbbr3-and-motion-in-space}}
-
-Read the book. This part is not required but it is so beautiful, you may want to read it
-as an exercise at home (to test how much you understand what we've been discussing so far).
-
-\hypertarget{partial-derivatives}{%
-\section{Partial derivatives}\label{partial-derivatives}}
-
-Read Stewart Chapter 14, Thomas Chapter 14,
-
-We will study multivariable scalar functions
-\[ f: D \to \mathbb{R}\,,\]
-where \(D\subseteq \mathbb{R}^n\), \(n\geq 2\).
-
-\hypertarget{multivariable-scalar-function}{%
-\subsection{Multivariable scalar function}\label{multivariable-scalar-function}}
-
-The following definition is from Thomas's book.
-
-\begin{definition}
-Suppose \(D\) is a set of \(n\)-tuples of real numbers \((x_1, x_2, \ldots, x_n)\).
-A real-valued/scalar function \(f\) on \(D\) is a rule that assigns a unique (single) real
-number
-\[w = f(x_1, x_2, \ldots, x_n)\]
-to each element in \(D\).
-The set \(D\) is the function's domain. The set of \(w\)-values taken on by \(f\) is
-the function's range. The symbol \(w\) is the dependent variable of \(f\), and \(f\)
-is said to be a function of the \(n\) independent variables \(x_1\) to \(x_n\).
-We also call the \(x_j\)'s the function's input variables and call \(w\) the function's output variable.
-\end{definition}
-
-As prototypes, we only focus on \(n=2\) and \(n=3\).
-
-\hypertarget{graphs}{%
-\subsubsection{Graphs}\label{graphs}}
-
-\begin{definition}
-The graph of function \(f:D \to \mathbb{R}\) is the set of all points
-\((\mathbf{x}, f(\mathbf{x}))\), where \(\mathbf{x}\in D\).
-Here \(D\subseteq \mathbb{R}^n\).
-\end{definition}
-
-For 2D, the graph of \(f\) is also called the \textbf{surface} \(z = f(x_1,x_2)\).
-
-We cannot visualize the graph of a 3D function since it will be a four dimensional object.
-
-\hypertarget{level}{%
-\subsubsection{Level}\label{level}}
-
-\begin{definition}
-In 2D, the \textbf{\(c\)-level curves} of a function \(f\) of two variables are curves with equations
-\(f(x,y) = c\), where \(c\) is a constant.
-
-In 3D, the \textbf{\(c\)-level surface} of a function \(f\) of three variables are surfaces
-with equations \(f(x,y,z) = c\), where \(c\) is a constant.
-\end{definition}
-
-\hypertarget{limits-and-continuity}{%
-\subsection{Limits and continuity}\label{limits-and-continuity}}
-
-The following definition is from Stewart.
-
-\begin{definition}
-Let \(f\) be a function of two variables whose domain \(D\) includes points arbitrarily close to \((a,b)\). Then we say that the limit of \(f(x,y)\) as \((x,y)\) approaches \((a,b)\) is \(L\) and we write
-
-\[\lim_{(x,y)\to(a,b)} f(x,y) = L\]
-
-if for every number \(\epsilon > 0\) there is a corresponding number \(\delta > 0\) such that
-\(|f(x,y) - L| < \epsilon\)
-if \((x,y) \in D\) and \(0 < \sqrt{(x-a)^2 + (y-b)^2} < \delta\).
-\end{definition}
-
-Finding if a function has limit as a point in higher dimension is not as simple as
-the case for 1 dimension.
-However, here is a typical strategy to identify if a function does NOT have a limit at \((a,b)\):
-
-If \(\lim_{(x,y) \to (a,b)} f(x,y) = L_1\) as \((x,y) \to (a,b)\) along a path \(C_1\),
-and \(\lim_{(x,y) \to (a,b)} f(x,y) = L_2\) as \((x,y) \to (a,b)\) along a path \(C_2\),
-where \(L_1 \neq L_2\), then \(\lim_{(x,y) \to (a,b)} f(x,y)\) does not exist.
-
-\begin{example}
-\(\lim_{(x,y)\to (0,0)} \frac{x^2 - y^2}{x^2 + y^2}\) does not exist.
-
-\(\lim_{(x,y)\to (0,0)} \frac{xy}{x^2 + y^2}\) does not exist.
-
-\(\lim_{(x,y)\to (0,0)} \frac{xy^2}{x^4 + y^4}\) does not exist.
-
-\(\lim_{(x,y)\to (0,0)} \frac{3x^2y}{x^2 + y^2} = 0\).
-\end{example}
 
 \end{document}
