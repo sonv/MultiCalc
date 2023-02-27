@@ -117,6 +117,7 @@
 <li class="chapter" data-level="3.2.2" data-path="functions-in-higher-dimensions.html"><a href="functions-in-higher-dimensions.html#integrals"><i class="fa fa-check"></i><b>3.2.2</b> Integrals</a></li>
 <li class="chapter" data-level="3.2.3" data-path="functions-in-higher-dimensions.html"><a href="functions-in-higher-dimensions.html#space-curve-in-mathbbr3-and-motion-in-space"><i class="fa fa-check"></i><b>3.2.3</b> Space curve in <span class="math inline">\(\mathbb{R}^3\)</span> and motion in space</a></li>
 </ul></li>
+<li class="chapter" data-level="3.3" data-path="functions-in-higher-dimensions.html"><a href="functions-in-higher-dimensions.html#activity-on-osculating-circle-and-curvature"><i class="fa fa-check"></i><b>3.3</b> Activity: on osculating circle and curvature</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="partial-derivatives.html"><a href="partial-derivatives.html"><i class="fa fa-check"></i><b>4</b> Partial derivatives</a>
 <ul>
@@ -154,7 +155,7 @@ where <span class="math inline">\(D\subseteq \mathbb{R}^n\)</span>, <span class=
 <h2><span class="header-section-number">4.1</span> Multivariable scalar function<a href="partial-derivatives.html#multivariable-scalar-function" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The following definition is from Thomas’s book.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-28" class="definition"><strong>Definition 4.1  </strong></span>Suppose <span class="math inline">\(D\)</span> is a set of <span class="math inline">\(n\)</span>-tuples of real numbers <span class="math inline">\((x_1, x_2, \ldots, x_n)\)</span>.
+<p><span id="def:unlabeled-div-30" class="definition"><strong>Definition 4.1  </strong></span>Suppose <span class="math inline">\(D\)</span> is a set of <span class="math inline">\(n\)</span>-tuples of real numbers <span class="math inline">\((x_1, x_2, \ldots, x_n)\)</span>.
 A real-valued/scalar function <span class="math inline">\(f\)</span> on <span class="math inline">\(D\)</span> is a rule that assigns a unique (single) real
 number
 <span class="math display">\[w = f(x_1, x_2, \ldots, x_n)\]</span>
@@ -168,7 +169,7 @@ We also call the <span class="math inline">\(x_j\)</span>’s the function’s i
 <div id="graphs" class="section level3 hasAnchor" number="4.1.1">
 <h3><span class="header-section-number">4.1.1</span> Graphs<a href="partial-derivatives.html#graphs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="definition">
-<p><span id="def:unlabeled-div-29" class="definition"><strong>Definition 4.2  </strong></span>The graph of function <span class="math inline">\(f:D \to \mathbb{R}\)</span> is the set of all points
+<p><span id="def:unlabeled-div-31" class="definition"><strong>Definition 4.2  </strong></span>The graph of function <span class="math inline">\(f:D \to \mathbb{R}\)</span> is the set of all points
 <span class="math inline">\((\mathbf{x}, f(\mathbf{x}))\)</span>, where <span class="math inline">\(\mathbf{x}\in D\)</span>.
 Here <span class="math inline">\(D\subseteq \mathbb{R}^n\)</span>.</p>
 </div>
@@ -178,7 +179,7 @@ Here <span class="math inline">\(D\subseteq \mathbb{R}^n\)</span>.</p>
 <div id="level" class="section level3 hasAnchor" number="4.1.2">
 <h3><span class="header-section-number">4.1.2</span> Level<a href="partial-derivatives.html#level" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="definition">
-<p><span id="def:unlabeled-div-30" class="definition"><strong>Definition 4.3  </strong></span>In 2D, the <strong><span class="math inline">\(c\)</span>-level curves</strong> of a function <span class="math inline">\(f\)</span> of two variables are curves with equations
+<p><span id="def:unlabeled-div-32" class="definition"><strong>Definition 4.3  </strong></span>In 2D, the <strong><span class="math inline">\(c\)</span>-level curves</strong> of a function <span class="math inline">\(f\)</span> of two variables are curves with equations
 <span class="math inline">\(f(x,y) = c\)</span>, where <span class="math inline">\(c\)</span> is a constant.</p>
 <p>In 3D, the <strong><span class="math inline">\(c\)</span>-level surface</strong> of a function <span class="math inline">\(f\)</span> of three variables are surfaces
 with equations <span class="math inline">\(f(x,y,z) = c\)</span>, where <span class="math inline">\(c\)</span> is a constant.</p>
@@ -189,20 +190,38 @@ with equations <span class="math inline">\(f(x,y,z) = c\)</span>, where <span cl
 <h2><span class="header-section-number">4.2</span> Limits and continuity<a href="partial-derivatives.html#limits-and-continuity" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The following definition is from Stewart.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-31" class="definition"><strong>Definition 4.4  </strong></span>Let <span class="math inline">\(f\)</span> be a function of two variables whose domain <span class="math inline">\(D\)</span> includes points arbitrarily close to <span class="math inline">\((a,b)\)</span>. Then we say that the limit of <span class="math inline">\(f(x,y)\)</span> as <span class="math inline">\((x,y)\)</span> approaches <span class="math inline">\((a,b)\)</span> is <span class="math inline">\(L\)</span> and we write</p>
+<p><span id="def:unlabeled-div-33" class="definition"><strong>Definition 4.4  </strong></span>Let <span class="math inline">\(f\)</span> be a function of two variables whose domain <span class="math inline">\(D\)</span> includes points arbitrarily close to <span class="math inline">\((a,b)\)</span>. Then we say that the limit of <span class="math inline">\(f(x,y)\)</span> as <span class="math inline">\((x,y)\)</span> approaches <span class="math inline">\((a,b)\)</span> is <span class="math inline">\(L\)</span> and we write</p>
 <p><span class="math display">\[\lim_{(x,y)\to(a,b)} f(x,y) = L\]</span></p>
 <p>if for every number <span class="math inline">\(\epsilon &gt; 0\)</span> there is a corresponding number <span class="math inline">\(\delta &gt; 0\)</span> such that
 <span class="math inline">\(|f(x,y) - L| &lt; \epsilon\)</span>
 if <span class="math inline">\((x,y) \in D\)</span> and <span class="math inline">\(0 &lt; \sqrt{(x-a)^2 + (y-b)^2} &lt; \delta\)</span>.</p>
 </div>
 <p>Finding if a function has limit as a point in higher dimension is not as simple as
-the case for 1 dimension.
-However, here is a typical strategy to identify if a function does NOT have a limit at <span class="math inline">\((a,b)\)</span>:</p>
+the case for 1 dimension.</p>
+<p>Determining whether a multivariable function has a limit sometimes is an art
+and it requires a lot of experiences and practice.
+However, there are certain rules that could help us.</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-34" class="theorem"><strong>Theorem 4.1  </strong></span>Let <span class="math inline">\(L,M\)</span> and <span class="math inline">\(k\)</span> be real numbers and that
+<span class="math display">\[\begin{equation*}
+    \lim_{(x,y) \to (x_0,y_0)} f(x,y) = L \,, \qquad 
+    \lim_{(x,y) \to (x_0,y_0)} g(x,y) = M \,.
+\end{equation*}\]</span>
+We then have</p>
+<ol style="list-style-type: decimal">
+<li><p><span class="math inline">\(\displaystyle \lim_{(x,y) \to (x_0,y_0)} (f(x,y) + g(x,y)) = L + M\)</span>,</p></li>
+<li><p><span class="math inline">\(\displaystyle \lim_{(x,y) \to (x_0,y_0)} (k f(x,y)) = kL\)</span>,</p></li>
+<li><p><span class="math inline">\(\displaystyle \lim_{(x,y) \to (x_0,y_0)} (f(x,y) g(x,y)) = LM\)</span>,</p></li>
+<li><p><span class="math inline">\(\displaystyle \lim_{(x,y) \to (x_0,y_0)} \frac{f(x,y)}{g(x,y)} = \frac{L}{M}\)</span> if <span class="math inline">\(M \not= 0\)</span>,</p></li>
+<li><p><span class="math inline">\(\displaystyle \lim_{(x,y) \to (x_0,y_0)} {f(x,y)^p} = L^p\)</span> for <span class="math inline">\(p&gt;0\)</span>,</p></li>
+</ol>
+</div>
+<p><strong>Strategy to find out that a two-variable function does NOT have a limit.</strong></p>
 <p>If <span class="math inline">\(\lim_{(x,y) \to (a,b)} f(x,y) = L_1\)</span> as <span class="math inline">\((x,y) \to (a,b)\)</span> along a path <span class="math inline">\(C_1\)</span>,
 and <span class="math inline">\(\lim_{(x,y) \to (a,b)} f(x,y) = L_2\)</span> as <span class="math inline">\((x,y) \to (a,b)\)</span> along a path <span class="math inline">\(C_2\)</span>,
 where <span class="math inline">\(L_1 \neq L_2\)</span>, then <span class="math inline">\(\lim_{(x,y) \to (a,b)} f(x,y)\)</span> does not exist.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-32" class="example"><strong>Example 4.1  </strong></span><span class="math inline">\(\lim_{(x,y)\to (0,0)} \frac{x^2 - y^2}{x^2 + y^2}\)</span> does not exist.</p>
+<p><span id="exm:unlabeled-div-35" class="example"><strong>Example 4.1  </strong></span><span class="math inline">\(\lim_{(x,y)\to (0,0)} \frac{x^2 - y^2}{x^2 + y^2}\)</span> does not exist.</p>
 <p><span class="math inline">\(\lim_{(x,y)\to (0,0)} \frac{xy}{x^2 + y^2}\)</span> does not exist.</p>
 <p><span class="math inline">\(\lim_{(x,y)\to (0,0)} \frac{xy^2}{x^4 + y^4}\)</span> does not exist.</p>
 <p><span class="math inline">\(\lim_{(x,y)\to (0,0)} \frac{3x^2y}{x^2 + y^2} = 0\)</span>.</p>

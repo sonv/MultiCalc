@@ -117,6 +117,7 @@
 <li class="chapter" data-level="3.2.2" data-path="functions-in-higher-dimensions.html"><a href="functions-in-higher-dimensions.html#integrals"><i class="fa fa-check"></i><b>3.2.2</b> Integrals</a></li>
 <li class="chapter" data-level="3.2.3" data-path="functions-in-higher-dimensions.html"><a href="functions-in-higher-dimensions.html#space-curve-in-mathbbr3-and-motion-in-space"><i class="fa fa-check"></i><b>3.2.3</b> Space curve in <span class="math inline">\(\mathbb{R}^3\)</span> and motion in space</a></li>
 </ul></li>
+<li class="chapter" data-level="3.3" data-path="functions-in-higher-dimensions.html"><a href="functions-in-higher-dimensions.html#activity-on-osculating-circle-and-curvature"><i class="fa fa-check"></i><b>3.3</b> Activity: on osculating circle and curvature</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="partial-derivatives.html"><a href="partial-derivatives.html"><i class="fa fa-check"></i><b>4</b> Partial derivatives</a>
 <ul>
@@ -254,9 +255,9 @@ at any time <span class="math inline">\(t\)</span>, one uses the <strong>arc len
 </div>
 <div id="re-parametrize-with-respect-to-arc-length" class="section level4 unnumbered hasAnchor" number="">
 <h4>Re-parametrize with respect to arc length<a href="functions-in-higher-dimensions.html#re-parametrize-with-respect-to-arc-length" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>The nice thing about <span class="math inline">\(s(t)\)</span> is that it is a strictly increasing function with respect to <span class="math inline">\(t\)</span>,
+<p>The nice thing about <span class="math inline">\(\ell(t)\)</span> is that it is a strictly increasing function with respect to <span class="math inline">\(t\)</span>,
 given that <span class="math inline">\(\mathbf{r}&#39;\)</span> is non-zero for all <span class="math inline">\(t\)</span>.
-Therefore, we can talk about the inverse of <span class="math inline">\(\ell\)</span>, <span class="math inline">\(\ell^{-1}:[0,L] \to [a,b]\)</span>
+Therefore, letting <span class="math inline">\(s = \ell(t)\)</span>, we can talk about the inverse of <span class="math inline">\(\ell\)</span>, <span class="math inline">\(\ell^{-1}:[0,L] \to [a,b]\)</span>
 <span class="math display">\[\begin{equation*}
     t = \ell^{-1}(s) \,.
 \end{equation*}\]</span>
@@ -269,14 +270,39 @@ Therefore, we can re-write
 Thus,
 <span class="math display">\[l(s) = \int_0^s \left| \frac{d}{ds} \mathbf{r}(t) \right| \, dt = s \,.\]</span></p>
 </div>
+<p>Because of the unchanging nature of the arc-length (with respect to the
+parametrization),
+it is used to define a geometric quantity of a space curve called <strong>curvature</strong>.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-28" class="definition"><strong>Definition 3.5  (curvature) </strong></span>Let <span class="math inline">\(\mathbf{T}(t)\)</span> be the unit tangent vector of the curve <span class="math inline">\(\mathbf{r}:[a,b] \to \mathbb{R}^3\)</span>.
+The curvature of <span class="math inline">\(\mathbf{r}(t(s))\)</span> is defined to be
+<span class="math display">\[\begin{equation*}
+    \kappa(s) = \frac{\mathbf{T}(t(s))}{ds} \,.
+\end{equation*}\]</span></p>
+</div>
+<p>To convert this into the parameter <span class="math inline">\(t\)</span>, we write <span class="math inline">\(s= s(t)\)</span> and use chain rule
+to get.</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-29" class="theorem"><strong>Theorem 3.4  </strong></span>We have that
+<span class="math display">\[\begin{equation*}
+    \kappa(s(t)) =  \frac{|\mathbf{T}&#39;(t)|}{|\mathbf{r}&#39;(t)|}   \,.
+\end{equation*}\]</span></p>
+</div>
 </div>
 </div>
 <div id="space-curve-in-mathbbr3-and-motion-in-space" class="section level3 hasAnchor" number="3.2.3">
 <h3><span class="header-section-number">3.2.3</span> Space curve in <span class="math inline">\(\mathbb{R}^3\)</span> and motion in space<a href="functions-in-higher-dimensions.html#space-curve-in-mathbbr3-and-motion-in-space" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Read the book. This part is not required but it is so beautiful, you may want to read it
 as an exercise at home (to test how much you understand what we’ve been discussing so far).</p>
-
 </div>
+</div>
+<div id="activity-on-osculating-circle-and-curvature" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Activity: on osculating circle and curvature<a href="functions-in-higher-dimensions.html#activity-on-osculating-circle-and-curvature" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>For those who are interested in the geometrical meaning of the curvature without having
+to accept from the book that the curvature is the inverse of the radius of the osculating circle,
+please take a look at <a href="https://github.com/sonv/MultiCalc/blob/main/Writing/latexbuild/osculating.pdf">https://github.com/sonv/MultiCalc/blob/main/Writing/latexbuild/osculating.pdf</a>.</p>
+
+<div style="page-break-after: always;"></div>
 </div>
 </div>
             </section>

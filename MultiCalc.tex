@@ -608,9 +608,9 @@ at any time \(t\), one uses the \textbf{arc length function}
 \paragraph*{Re-parametrize with respect to arc length}\label{re-parametrize-with-respect-to-arc-length}}
 \addcontentsline{toc}{paragraph}{Re-parametrize with respect to arc length}
 
-The nice thing about \(s(t)\) is that it is a strictly increasing function with respect to \(t\),
+The nice thing about \(\ell(t)\) is that it is a strictly increasing function with respect to \(t\),
 given that \(\mathbf{r}'\) is non-zero for all \(t\).
-Therefore, we can talk about the inverse of \(\ell\), \(\ell^{-1}:[0,L] \to [a,b]\)
+Therefore, letting \(s = \ell(t)\), we can talk about the inverse of \(\ell\), \(\ell^{-1}:[0,L] \to [a,b]\)
 \begin{equation*}
     t = \ell^{-1}(s) \,.
 \end{equation*}
@@ -625,11 +625,42 @@ Thus,
 \[l(s) = \int_0^s \left| \frac{d}{ds} \mathbf{r}(t) \right| \, dt = s \,.\]
 \end{theorem}
 
+Because of the unchanging nature of the arc-length (with respect to the
+parametrization),
+it is used to define a geometric quantity of a space curve called \textbf{curvature}.
+
+\begin{definition}[curvature]
+Let \(\mathbf{T}(t)\) be the unit tangent vector of the curve \(\mathbf{r}:[a,b] \to \mathbb{R}^3\).
+The curvature of \(\mathbf{r}(t(s))\) is defined to be
+\begin{equation*}
+    \kappa(s) = \frac{\mathbf{T}(t(s))}{ds} \,.
+\end{equation*}
+\end{definition}
+
+To convert this into the parameter \(t\), we write \(s= s(t)\) and use chain rule
+to get.
+
+\begin{theorem}
+We have that
+\begin{equation*}
+    \kappa(s(t)) =  \frac{|\mathbf{T}'(t)|}{|\mathbf{r}'(t)|}   \,.
+\end{equation*}
+\end{theorem}
+
 \hypertarget{space-curve-in-mathbbr3-and-motion-in-space}{%
 \subsubsection{\texorpdfstring{Space curve in \(\mathbb{R}^3\) and motion in space}{Space curve in \textbackslash mathbb\{R\}\^{}3 and motion in space}}\label{space-curve-in-mathbbr3-and-motion-in-space}}
 
 Read the book. This part is not required but it is so beautiful, you may want to read it
 as an exercise at home (to test how much you understand what we've been discussing so far).
+
+\hypertarget{activity-on-osculating-circle-and-curvature}{%
+\subsection{Activity: on osculating circle and curvature}\label{activity-on-osculating-circle-and-curvature}}
+
+For those who are interested in the geometrical meaning of the curvature without having
+to accept from the book that the curvature is the inverse of the radius of the osculating circle,
+please take a look at \url{https://github.com/sonv/MultiCalc/blob/main/Writing/latexbuild/osculating.pdf}.
+
+\newpage
 
 \hypertarget{partial-derivatives}{%
 \section{Partial derivatives}\label{partial-derivatives}}
@@ -700,7 +731,37 @@ if \((x,y) \in D\) and \(0 < \sqrt{(x-a)^2 + (y-b)^2} < \delta\).
 
 Finding if a function has limit as a point in higher dimension is not as simple as
 the case for 1 dimension.
-However, here is a typical strategy to identify if a function does NOT have a limit at \((a,b)\):
+
+Determining whether a multivariable function has a limit sometimes is an art
+and it requires a lot of experiences and practice.
+However, there are certain rules that could help us.
+
+\begin{theorem}
+
+Let \(L,M\) and \(k\) be real numbers and that
+\begin{equation*}
+    \lim_{(x,y) \to (x_0,y_0)} f(x,y) = L \,, \qquad 
+    \lim_{(x,y) \to (x_0,y_0)} g(x,y) = M \,.
+\end{equation*}
+We then have
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \(\displaystyle \lim_{(x,y) \to (x_0,y_0)} (f(x,y) + g(x,y)) = L + M\),
+\item
+  \(\displaystyle \lim_{(x,y) \to (x_0,y_0)} (k f(x,y)) = kL\),
+\item
+  \(\displaystyle \lim_{(x,y) \to (x_0,y_0)} (f(x,y) g(x,y)) = LM\),
+\item
+  \(\displaystyle \lim_{(x,y) \to (x_0,y_0)} \frac{f(x,y)}{g(x,y)} = \frac{L}{M}\) if \(M \not= 0\),
+\item
+  \(\displaystyle \lim_{(x,y) \to (x_0,y_0)} {f(x,y)^p} = L^p\) for \(p>0\),
+\end{enumerate}
+
+\end{theorem}
+
+\textbf{Strategy to find out that a two-variable function does NOT have a limit.}
 
 If \(\lim_{(x,y) \to (a,b)} f(x,y) = L_1\) as \((x,y) \to (a,b)\) along a path \(C_1\),
 and \(\lim_{(x,y) \to (a,b)} f(x,y) = L_2\) as \((x,y) \to (a,b)\) along a path \(C_2\),
