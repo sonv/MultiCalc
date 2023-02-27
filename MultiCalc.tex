@@ -4,20 +4,17 @@
 %
 \documentclass[
 ]{article}
-\usepackage{amsmath,amssymb}
-\usepackage{iftex}
-\ifPDFTeX
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
 \else % if luatex or xetex
-  \usepackage{unicode-math} % this also loads fontspec
+  \usepackage{unicode-math}
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
-\fi
-\usepackage{lmodern}
-\ifPDFTeX\else
-  % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -36,9 +33,16 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={MATH 104: Multivariable Calculus (brief notes)},
+  pdfauthor={Truong-Son Van},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
 \usepackage[margin=1in]{geometry}
-\usepackage{longtable,booktabs,array}
-\usepackage{calc} % for calculating minipage widths
+\usepackage{longtable,booktabs}
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
 \makeatletter
@@ -64,17 +68,6 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
-\ifLuaTeX
-  \usepackage{selnolig}  % disable illegal ligatures
-\fi
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\urlstyle{same}
-\hypersetup{
-  pdftitle={MATH 104: Multivariable Calculus (brief notes)},
-  pdfauthor={Truong-Son Van},
-  hidelinks,
-  pdfcreator={LaTeX via pandoc}}
 
 \title{MATH 104: Multivariable Calculus (brief notes)}
 \author{Truong-Son Van}
@@ -611,10 +604,6 @@ at any time \(t\), one uses the \textbf{arc length function}
     \ell(t) = \int_a^t \left| \mathbf{r}'(u) \right| \, du \,.
 \end{equation*}
 
-For those who are interested in the geometrical meaning of the curvature without having
-to accept from the book that the curvature is the inverse of the radius of the osculating circle,
-please take a look at \href{https://github.com/sonv/MultiCalc/blob/main/Writing/latexbuild/osculating.pdf}{this expository note}.
-
 \hypertarget{re-parametrize-with-respect-to-arc-length}{%
 \paragraph*{Re-parametrize with respect to arc length}\label{re-parametrize-with-respect-to-arc-length}}
 \addcontentsline{toc}{paragraph}{Re-parametrize with respect to arc length}
@@ -636,7 +625,6 @@ Thus,
 \[l(s) = \int_0^s \left| \frac{d}{ds} \mathbf{r}(t) \right| \, dt = s \,.\]
 \end{theorem}
 
-<<<<<<< HEAD
 Because of the unchanging nature of the arc-length (with respect to the
 parametrization),
 it is used to define a geometric quantity of a space curve called \textbf{curvature}.
@@ -789,6 +777,4 @@ where \(L_1 \neq L_2\), then \(\lim_{(x,y) \to (a,b)} f(x,y)\) does not exist.
 \(\lim_{(x,y)\to (0,0)} \frac{3x^2y}{x^2 + y^2} = 0\).
 \end{example}
 
-=======
->>>>>>> 6ec0264160808e1b82701598956e79798bb32e39
 \end{document}
