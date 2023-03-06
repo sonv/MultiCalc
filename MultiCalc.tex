@@ -777,4 +777,51 @@ where \(L_1 \neq L_2\), then \(\lim_{(x,y) \to (a,b)} f(x,y)\) does not exist.
 \(\lim_{(x,y)\to (0,0)} \frac{3x^2y}{x^2 + y^2} = 0\).
 \end{example}
 
+\hypertarget{partial-derivatives-1}{%
+\subsection{Partial derivatives}\label{partial-derivatives-1}}
+
+Given a function \(f(x,y)\). The partial derivative of \(f\) with respect to \(x\) and \((a,b)\),
+denoted by \(f_x(a,b)\), is defined to be
+\begin{equation*}
+    f_x(a,b) = \lim_{h\to 0} \frac{ f(a+h,b) - f(a,b)}{h} \,.
+\end{equation*}
+Likewise, the partial derivative of \(f\) with respect to \(y\) and \((a,b)\),
+denoted by \(f_y(a,b)\), is defined to be
+\begin{equation*}
+    f_y(a,b) = \lim_{h\to 0} \frac{ f(a,b+h) - f(a,b)}{h} \,.
+\end{equation*}
+
+Instead of thinking about derivative with respect to \(x,y\), we could think
+about derivative with respect to the first and second direction.
+This way of thinking is a bit better when one thinks about higher dimension.
+
+\textbf{Notations.} If \(z = f(x,y)\), we write
+\begin{equation*}
+    f_x(x,y) = f_x = \frac{\partial f}{\partial x} = \frac{\partial}{\partial x} f(x,y) = f_1 = D_1 f = D_x f \,.
+\end{equation*}
+
+When you take partial derivatives, just treat other variables as constants and proceed as
+in the case of one dimension.
+
+More generally,
+given a function \(f(x_1, \dots, x_n)\), its partial derivative with respect
+to the \(i\)th variable \(x_i\) is
+\begin{equation*}
+    f_{x_i}(x_1, \dots, x_n) 
+    = \lim_{h\to 0} \frac{ f(x_1, \dots, x_{i-1}, x_i + h , x_{i+1}, \dots, x_n) - f(x_1, \dots, x_{i-1}, x_i  , x_{i+1}, \dots, x_n)}{h} \,.
+\end{equation*}
+
+From here, one can define higher partial derivatives.
+
+\begin{theorem}[Clairaut's Theorem]
+Suppose \(f\) is defined on a disk \(D\) that contains the point \((a,b)\).
+If the functions \(f_{xy}\) and \(f_{yx}\) are both continuous on \(D\), then
+\begin{equation*}
+    f_{xy}(a,b) = f_{yx}(a,b) \,.
+\end{equation*}
+\end{theorem}
+
+\hypertarget{tagent-planes-and-linear-approximations}{%
+\subsection{Tagent planes and linear approximations}\label{tagent-planes-and-linear-approximations}}
+
 \end{document}

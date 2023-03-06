@@ -127,6 +127,8 @@
 <li class="chapter" data-level="4.1.2" data-path="partial-derivatives.html"><a href="partial-derivatives.html#level"><i class="fa fa-check"></i><b>4.1.2</b> Level</a></li>
 </ul></li>
 <li class="chapter" data-level="4.2" data-path="partial-derivatives.html"><a href="partial-derivatives.html#limits-and-continuity"><i class="fa fa-check"></i><b>4.2</b> Limits and continuity</a></li>
+<li class="chapter" data-level="4.3" data-path="partial-derivatives.html"><a href="partial-derivatives.html#partial-derivatives-1"><i class="fa fa-check"></i><b>4.3</b> Partial derivatives</a></li>
+<li class="chapter" data-level="4.4" data-path="partial-derivatives.html"><a href="partial-derivatives.html#tagent-planes-and-linear-approximations"><i class="fa fa-check"></i><b>4.4</b> Tagent planes and linear approximations</a></li>
 </ul></li>
 </ul>
 
@@ -226,6 +228,46 @@ where <span class="math inline">\(L_1 \neq L_2\)</span>, then <span class="math 
 <p><span class="math inline">\(\lim_{(x,y)\to (0,0)} \frac{xy^2}{x^4 + y^4}\)</span> does not exist.</p>
 <p><span class="math inline">\(\lim_{(x,y)\to (0,0)} \frac{3x^2y}{x^2 + y^2} = 0\)</span>.</p>
 </div>
+</div>
+<div id="partial-derivatives-1" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Partial derivatives<a href="partial-derivatives.html#partial-derivatives-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Given a function <span class="math inline">\(f(x,y)\)</span>. The partial derivative of <span class="math inline">\(f\)</span> with respect to <span class="math inline">\(x\)</span> and <span class="math inline">\((a,b)\)</span>,
+denoted by <span class="math inline">\(f_x(a,b)\)</span>, is defined to be
+<span class="math display">\[\begin{equation*}
+    f_x(a,b) = \lim_{h\to 0} \frac{ f(a+h,b) - f(a,b)}{h} \,.
+\end{equation*}\]</span>
+Likewise, the partial derivative of <span class="math inline">\(f\)</span> with respect to <span class="math inline">\(y\)</span> and <span class="math inline">\((a,b)\)</span>,
+denoted by <span class="math inline">\(f_y(a,b)\)</span>, is defined to be
+<span class="math display">\[\begin{equation*}
+    f_y(a,b) = \lim_{h\to 0} \frac{ f(a,b+h) - f(a,b)}{h} \,.
+\end{equation*}\]</span></p>
+<p>Instead of thinking about derivative with respect to <span class="math inline">\(x,y\)</span>, we could think
+about derivative with respect to the first and second direction.
+This way of thinking is a bit better when one thinks about higher dimension.</p>
+<p><strong>Notations.</strong> If <span class="math inline">\(z = f(x,y)\)</span>, we write
+<span class="math display">\[\begin{equation*}
+    f_x(x,y) = f_x = \frac{\partial f}{\partial x} = \frac{\partial}{\partial x} f(x,y) = f_1 = D_1 f = D_x f \,.
+\end{equation*}\]</span></p>
+<p>When you take partial derivatives, just treat other variables as constants and proceed as
+in the case of one dimension.</p>
+<p>More generally,
+given a function <span class="math inline">\(f(x_1, \dots, x_n)\)</span>, its partial derivative with respect
+to the <span class="math inline">\(i\)</span>th variable <span class="math inline">\(x_i\)</span> is
+<span class="math display">\[\begin{equation*}
+    f_{x_i}(x_1, \dots, x_n) 
+    = \lim_{h\to 0} \frac{ f(x_1, \dots, x_{i-1}, x_i + h , x_{i+1}, \dots, x_n) - f(x_1, \dots, x_{i-1}, x_i  , x_{i+1}, \dots, x_n)}{h} \,.
+\end{equation*}\]</span></p>
+<p>From here, one can define higher partial derivatives.</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-36" class="theorem"><strong>Theorem 4.2  (Clairaut's Theorem) </strong></span>Suppose <span class="math inline">\(f\)</span> is defined on a disk <span class="math inline">\(D\)</span> that contains the point <span class="math inline">\((a,b)\)</span>.
+If the functions <span class="math inline">\(f_{xy}\)</span> and <span class="math inline">\(f_{yx}\)</span> are both continuous on <span class="math inline">\(D\)</span>, then
+<span class="math display">\[\begin{equation*}
+    f_{xy}(a,b) = f_{yx}(a,b) \,.
+\end{equation*}\]</span></p>
+</div>
+</div>
+<div id="tagent-planes-and-linear-approximations" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> Tagent planes and linear approximations<a href="partial-derivatives.html#tagent-planes-and-linear-approximations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 
 </div>
 </div>
