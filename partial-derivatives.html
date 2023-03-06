@@ -48,7 +48,6 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
@@ -68,7 +67,6 @@
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Spring 2023</a></li>
 <li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html"><i class="fa fa-check"></i>Syllabus</a>
 <ul>
 <li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#key-information"><i class="fa fa-check"></i>Key information</a></li>
@@ -79,6 +77,13 @@
 </ul></li>
 <li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#assessment"><i class="fa fa-check"></i>Assessment</a></li>
 <li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#core-content"><i class="fa fa-check"></i>Core content</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#project-description"><i class="fa fa-check"></i>Project description</a>
+<ul>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#project-guidelines"><i class="fa fa-check"></i>Project Guidelines</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#project-timeline"><i class="fa fa-check"></i>Project Timeline</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#possible-topics"><i class="fa fa-check"></i>Possible topics</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#project-grading-rubric"><i class="fa fa-check"></i>Project grading rubric</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#late-assignments"><i class="fa fa-check"></i>Late assignments</a></li>
 <li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#time-expectations"><i class="fa fa-check"></i>Time expectations</a>
 <ul>
@@ -127,6 +132,8 @@
 <li class="chapter" data-level="4.1.2" data-path="partial-derivatives.html"><a href="partial-derivatives.html#level"><i class="fa fa-check"></i><b>4.1.2</b> Level</a></li>
 </ul></li>
 <li class="chapter" data-level="4.2" data-path="partial-derivatives.html"><a href="partial-derivatives.html#limits-and-continuity"><i class="fa fa-check"></i><b>4.2</b> Limits and continuity</a></li>
+<li class="chapter" data-level="4.3" data-path="partial-derivatives.html"><a href="partial-derivatives.html#partial-derivatives-1"><i class="fa fa-check"></i><b>4.3</b> Partial derivatives</a></li>
+<li class="chapter" data-level="4.4" data-path="partial-derivatives.html"><a href="partial-derivatives.html#differentiability-and-tangent-planes"><i class="fa fa-check"></i><b>4.4</b> Differentiability and tangent planes</a></li>
 </ul></li>
 </ul>
 
@@ -204,7 +211,7 @@ However, there are certain rules that could help us.</p>
 <div class="theorem">
 <p><span id="thm:unlabeled-div-34" class="theorem"><strong>Theorem 4.1  </strong></span>Let <span class="math inline">\(L,M\)</span> and <span class="math inline">\(k\)</span> be real numbers and that
 <span class="math display">\[\begin{equation*}
-    \lim_{(x,y) \to (x_0,y_0)} f(x,y) = L \,, \qquad 
+    \lim_{(x,y) \to (x_0,y_0)} f(x,y) = L \,, \qquad
     \lim_{(x,y) \to (x_0,y_0)} g(x,y) = M \,.
 \end{equation*}\]</span>
 We then have</p>
@@ -226,6 +233,65 @@ where <span class="math inline">\(L_1 \neq L_2\)</span>, then <span class="math 
 <p><span class="math inline">\(\lim_{(x,y)\to (0,0)} \frac{xy^2}{x^4 + y^4}\)</span> does not exist.</p>
 <p><span class="math inline">\(\lim_{(x,y)\to (0,0)} \frac{3x^2y}{x^2 + y^2} = 0\)</span>.</p>
 </div>
+</div>
+<div id="partial-derivatives-1" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Partial derivatives<a href="partial-derivatives.html#partial-derivatives-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Given a function <span class="math inline">\(f(x,y)\)</span>. The partial derivative of <span class="math inline">\(f\)</span> with respect to <span class="math inline">\(x\)</span> and <span class="math inline">\((a,b)\)</span>,
+denoted by <span class="math inline">\(f_x(a,b)\)</span>, is defined to be
+<span class="math display">\[\begin{equation*}
+    f_x(a,b) = \lim_{h\to 0} \frac{ f(a+h,b) - f(a,b)}{h} \,.
+\end{equation*}\]</span>
+Likewise, the partial derivative of <span class="math inline">\(f\)</span> with respect to <span class="math inline">\(y\)</span> and <span class="math inline">\((a,b)\)</span>,
+denoted by <span class="math inline">\(f_y(a,b)\)</span>, is defined to be
+<span class="math display">\[\begin{equation*}
+    f_y(a,b) = \lim_{h\to 0} \frac{ f(a,b+h) - f(a,b)}{h} \,.
+\end{equation*}\]</span></p>
+<p>Instead of thinking about derivative with respect to <span class="math inline">\(x,y\)</span>, we could think
+about derivative with respect to the first and second direction.
+This way of thinking is a bit better when one thinks about higher dimension.</p>
+<p><strong>Notations.</strong> If <span class="math inline">\(z = f(x,y)\)</span>, we write
+<span class="math display">\[\begin{equation*}
+    f_x(x,y) = f_x = \partial_x f =  \frac{\partial f}{\partial x} = \frac{\partial}{\partial x} f(x,y) = f_1 = D_1 f = D_x f \,.
+\end{equation*}\]</span></p>
+<p>When you take partial derivatives, just treat other variables as constants and proceed as
+in the case of one dimension.</p>
+<p>More generally,
+given a function <span class="math inline">\(f(x_1, \dots, x_n)\)</span>, its partial derivative with respect
+to the <span class="math inline">\(i\)</span>th variable <span class="math inline">\(x_i\)</span> is
+<span class="math display">\[\begin{equation*}
+    f_{x_i}(x_1, \dots, x_n)
+    = \lim_{h\to 0} \frac{ f(x_1, \dots, x_{i-1}, x_i + h , x_{i+1}, \dots, x_n) - f(x_1, \dots, x_{i-1}, x_i  , x_{i+1}, \dots, x_n)}{h} \,.
+\end{equation*}\]</span></p>
+<p>From here, one can define higher partial derivatives.</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-36" class="theorem"><strong>Theorem 4.2  (Clairaut's Theorem) </strong></span>Suppose <span class="math inline">\(f\)</span> is defined on a disk <span class="math inline">\(D\)</span> that contains the point <span class="math inline">\((a,b)\)</span>.
+If the functions <span class="math inline">\(f_{xy}\)</span> and <span class="math inline">\(f_{yx}\)</span> are both continuous on <span class="math inline">\(D\)</span>, then
+<span class="math display">\[\begin{equation*}
+    f_{xy}(a,b) = f_{yx}(a,b) \,.
+\end{equation*}\]</span></p>
+</div>
+</div>
+<div id="differentiability-and-tangent-planes" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> Differentiability and tangent planes<a href="partial-derivatives.html#differentiability-and-tangent-planes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Let <span class="math inline">\(S\)</span> be a surface that has equation <span class="math inline">\(z = f(x,y)\)</span>.
+Let <span class="math inline">\(C_1\)</span> and <span class="math inline">\(C_2\)</span> be two different curves on a surface <span class="math inline">\(S\)</span>
+intersect at a point <span class="math inline">\(P(x_0, y_0, z_0)\)</span>.</p>
+<p>“The” <strong>tangent plane</strong> to the surface <span class="math inline">\(S\)</span> at point <span class="math inline">\(P\)</span> is defined the be the plane that contains
+both of the tangent lines of both curves at <span class="math inline">\(P\)</span>.</p>
+<p>How do you know if there is only one tangent plane at a point?
+You actually don’t know.
+That’s why the following definition exists.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-37" class="definition"><strong>Definition 4.5  (Differentiability) </strong></span>Let <span class="math inline">\(z = f(x,y)\)</span> and <span class="math inline">\(\Delta z = f(a + \Delta x, b + \Delta y ) - f(a,b)\)</span>.
+Then <span class="math inline">\(f\)</span> is differentiable at <span class="math inline">\((a,b)\)</span> if <span class="math inline">\(\Delta z\)</span> can be
+expressed in the form
+<span class="math display">\[\begin{equation*}
+    \Delta z = \partial_x f(a,b) \Delta x + \partial_y f(a,b) \Delta y + \epsilon_1 \Delta x + \epsilon_2 \Delta y \,,
+\end{equation*}\]</span>
+where <span class="math inline">\(\epsilon_1, \epsilon_2 \to 0\)</span> as <span class="math inline">\((\Delta x, \Delta y) \to (0,0)\)</span>.</p>
+</div>
+<p>It turns out that if <span class="math inline">\(f\)</span> is differentiable at <span class="math inline">\((a,b)\)</span>, then there is only one
+tangent plane to <span class="math inline">\(S\)</span> at <span class="math inline">\((a,b, f(a,b)\)</span>.</p>
 
 </div>
 </div>

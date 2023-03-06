@@ -4,17 +4,20 @@
 %
 \documentclass[
 ]{article}
-\usepackage{lmodern}
-\usepackage{amssymb,amsmath}
-\usepackage{ifxetex,ifluatex}
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
 \else % if luatex or xetex
-  \usepackage{unicode-math}
+  \usepackage{unicode-math} % this also loads fontspec
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -33,16 +36,9 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
-\hypersetup{
-  pdftitle={MATH 104: Multivariable Calculus (brief notes)},
-  pdfauthor={Truong-Son Van},
-  hidelinks,
-  pdfcreator={LaTeX via pandoc}}
-\urlstyle{same} % disable monospaced font for URLs
 \usepackage[margin=1in]{geometry}
-\usepackage{longtable,booktabs}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
 \makeatletter
@@ -68,6 +64,17 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={MATH 104: Multivariable Calculus (brief notes)},
+  pdfauthor={Truong-Son Van},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
 
 \title{MATH 104: Multivariable Calculus (brief notes)}
 \author{Truong-Son Van}
@@ -776,5 +783,76 @@ where \(L_1 \neq L_2\), then \(\lim_{(x,y) \to (a,b)} f(x,y)\) does not exist.
 
 \(\lim_{(x,y)\to (0,0)} \frac{3x^2y}{x^2 + y^2} = 0\).
 \end{example}
+
+\hypertarget{partial-derivatives-1}{%
+\subsection{Partial derivatives}\label{partial-derivatives-1}}
+
+Given a function \(f(x,y)\). The partial derivative of \(f\) with respect to \(x\) and \((a,b)\),
+denoted by \(f_x(a,b)\), is defined to be
+\begin{equation*}
+    f_x(a,b) = \lim_{h\to 0} \frac{ f(a+h,b) - f(a,b)}{h} \,.
+\end{equation*}
+Likewise, the partial derivative of \(f\) with respect to \(y\) and \((a,b)\),
+denoted by \(f_y(a,b)\), is defined to be
+\begin{equation*}
+    f_y(a,b) = \lim_{h\to 0} \frac{ f(a,b+h) - f(a,b)}{h} \,.
+\end{equation*}
+
+Instead of thinking about derivative with respect to \(x,y\), we could think
+about derivative with respect to the first and second direction.
+This way of thinking is a bit better when one thinks about higher dimension.
+
+\textbf{Notations.} If \(z = f(x,y)\), we write
+\begin{equation*}
+    f_x(x,y) = f_x = \partial_x f =  \frac{\partial f}{\partial x} = \frac{\partial}{\partial x} f(x,y) = f_1 = D_1 f = D_x f \,.
+\end{equation*}
+
+When you take partial derivatives, just treat other variables as constants and proceed as
+in the case of one dimension.
+
+More generally,
+given a function \(f(x_1, \dots, x_n)\), its partial derivative with respect
+to the \(i\)th variable \(x_i\) is
+\begin{equation*}
+    f_{x_i}(x_1, \dots, x_n) 
+    = \lim_{h\to 0} \frac{ f(x_1, \dots, x_{i-1}, x_i + h , x_{i+1}, \dots, x_n) - f(x_1, \dots, x_{i-1}, x_i  , x_{i+1}, \dots, x_n)}{h} \,.
+\end{equation*}
+
+From here, one can define higher partial derivatives.
+
+\begin{theorem}[Clairaut's Theorem]
+Suppose \(f\) is defined on a disk \(D\) that contains the point \((a,b)\).
+If the functions \(f_{xy}\) and \(f_{yx}\) are both continuous on \(D\), then
+\begin{equation*}
+    f_{xy}(a,b) = f_{yx}(a,b) \,.
+\end{equation*}
+\end{theorem}
+
+\hypertarget{differentiability-and-tangent-planes}{%
+\subsection{Differentiability and tangent planes}\label{differentiability-and-tangent-planes}}
+
+Let \(S\) be a surface that has equation \(z = f(x,y)\).
+Let \(C_1\) and \(C_2\) be two different curves on a surface \(S\)
+intersect at a point \(P(x_0, y_0, z_0)\).
+
+``The'' \textbf{tangent plane} to the surface \(S\) at point \(P\) is defined the be the plane that contains
+both of the tangent lines of both curves at \(P\).
+
+How do you know if there is only one tangent plane at a point?
+You actually don't know.
+That's why the following definition exists.
+
+\begin{definition}[Differentiability]
+Let \(z = f(x,y)\) and \(\Delta z = f(a + \Delta x, b + \Delta y ) - f(a,b)\).
+Then \(f\) is differentiable at \((a,b)\) if \(\Delta z\) can be
+expressed in the form
+\begin{equation*}
+    \Delta z = \partial_x f(a,b) \Delta x + \partial_y f(a,b) \Delta y + \epsilon_1 \Delta x + \epsilon_2 \Delta y \,,
+\end{equation*}
+where \(\epsilon_1, \epsilon_2 \to 0\) as \((\Delta x, \Delta y) \to (0,0)\).
+\end{definition}
+
+It turns out that if \(f\) is differentiable at \((a,b)\), then there is only one
+tangent plane to \(S\) at \((a,b, f(a,b)\).
 
 \end{document}
