@@ -133,7 +133,10 @@
 </ul></li>
 <li class="chapter" data-level="4.2" data-path="partial-derivatives.html"><a href="partial-derivatives.html#limits-and-continuity"><i class="fa fa-check"></i><b>4.2</b> Limits and continuity</a></li>
 <li class="chapter" data-level="4.3" data-path="partial-derivatives.html"><a href="partial-derivatives.html#partial-derivatives-1"><i class="fa fa-check"></i><b>4.3</b> Partial derivatives</a></li>
-<li class="chapter" data-level="4.4" data-path="partial-derivatives.html"><a href="partial-derivatives.html#differentiability-and-tangent-planes"><i class="fa fa-check"></i><b>4.4</b> Differentiability and tangent planes</a></li>
+<li class="chapter" data-level="4.4" data-path="partial-derivatives.html"><a href="partial-derivatives.html#differentiability"><i class="fa fa-check"></i><b>4.4</b> Differentiability</a></li>
+<li class="chapter" data-level="4.5" data-path="partial-derivatives.html"><a href="partial-derivatives.html#chain-rule"><i class="fa fa-check"></i><b>4.5</b> Chain rule</a></li>
+<li class="chapter" data-level="4.6" data-path="partial-derivatives.html"><a href="partial-derivatives.html#directional-derivative"><i class="fa fa-check"></i><b>4.6</b> Directional derivative</a></li>
+<li class="chapter" data-level="4.7" data-path="partial-derivatives.html"><a href="partial-derivatives.html#tangent-planes"><i class="fa fa-check"></i><b>4.7</b> Tangent planes</a></li>
 </ul></li>
 </ul>
 
@@ -271,12 +274,12 @@ If the functions <span class="math inline">\(f_{xy}\)</span> and <span class="ma
 \end{equation*}\]</span></p>
 </div>
 </div>
-<div id="differentiability-and-tangent-planes" class="section level2 hasAnchor" number="4.4">
-<h2><span class="header-section-number">4.4</span> Differentiability and tangent planes<a href="partial-derivatives.html#differentiability-and-tangent-planes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="differentiability" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> Differentiability<a href="partial-derivatives.html#differentiability" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Let <span class="math inline">\(S\)</span> be a surface that has equation <span class="math inline">\(z = f(x,y)\)</span>.
 Let <span class="math inline">\(C_1\)</span> and <span class="math inline">\(C_2\)</span> be two different curves on a surface <span class="math inline">\(S\)</span>
 intersect at a point <span class="math inline">\(P(x_0, y_0, z_0)\)</span>.</p>
-<p>“The” <strong>tangent plane</strong> to the surface <span class="math inline">\(S\)</span> at point <span class="math inline">\(P\)</span> is defined the be the plane that contains
+<p>Heuristically, “the” <strong>tangent plane</strong> to the surface <span class="math inline">\(S\)</span> at point <span class="math inline">\(P\)</span> is defined the be the plane that contains
 both of the tangent lines of both curves at <span class="math inline">\(P\)</span>.</p>
 <p>How do you know if there is only one tangent plane at a point?
 You actually don’t know.
@@ -291,7 +294,44 @@ expressed in the form
 where <span class="math inline">\(\epsilon_1, \epsilon_2 \to 0\)</span> as <span class="math inline">\((\Delta x, \Delta y) \to (0,0)\)</span>.</p>
 </div>
 <p>It turns out that if <span class="math inline">\(f\)</span> is differentiable at <span class="math inline">\((a,b)\)</span>, then there is only one
-tangent plane to <span class="math inline">\(S\)</span> at <span class="math inline">\((a,b, f(a,b)\)</span>.</p>
+tangent plane to <span class="math inline">\(S\)</span> at <span class="math inline">\((a,b, f(a,b))\)</span>.</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-38" class="theorem"><strong>Theorem 4.3  </strong></span>If the partial derivatives <span class="math inline">\(f_x\)</span> and <span class="math inline">\(f_y\)</span> exist near <span class="math inline">\((a,b)\)</span> and are continuous
+at <span class="math inline">\((a,b)\)</span>, then <span class="math inline">\(f\)</span> is differentiable at <span class="math inline">\((a,b)\)</span>.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-39" class="theorem"><strong>Theorem 4.4  </strong></span>If a function <span class="math inline">\(f(x,y)\)</span> is differentiable at <span class="math inline">\((a,b)\)</span> then <span class="math inline">\(f\)</span> is continuous at <span class="math inline">\((a,b)\)</span>.</p>
+</div>
+</div>
+<div id="chain-rule" class="section level2 hasAnchor" number="4.5">
+<h2><span class="header-section-number">4.5</span> Chain rule<a href="partial-derivatives.html#chain-rule" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-40" class="theorem"><strong>Theorem 4.5  </strong></span>Let <span class="math inline">\(f(x_1,\dots, x_n), g_i(y_1,\dots, y_m)\)</span> (<span class="math inline">\(i = 1,\dots, n\)</span>) be
+differentiable
+functions.
+Then,
+<span class="math display">\[z(y_1, \dots, y_m) = f(g_1(y_1, \dots, y_m), \dots, g_n(y_1, \dots, y_m))\]</span>
+is differentiable and
+<span class="math display">\[\begin{equation*}
+    \frac{\partial z}{\partial y_i} = \sum_{j=1}^n \frac{\partial f}{\partial x_j} \frac{\partial g_j}{\partial y_i} \,.
+\end{equation*}\]</span></p>
+</div>
+</div>
+<div id="directional-derivative" class="section level2 hasAnchor" number="4.6">
+<h2><span class="header-section-number">4.6</span> Directional derivative<a href="partial-derivatives.html#directional-derivative" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="tangent-planes" class="section level2 hasAnchor" number="4.7">
+<h2><span class="header-section-number">4.7</span> Tangent planes<a href="partial-derivatives.html#tangent-planes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Let’s think about tangent planes in a more systematic way, based on the definition
+of a plane learned in the first chapter.</p>
+<p>Recall the <span class="math inline">\(c\)</span>-level surface of a function <span class="math inline">\(f(x,y,z)\)</span> is the collection
+<span class="math display">\[\begin{equation*}
+    \{ (x,y,z) | f(x,y,z) = c \} \,.
+\end{equation*}\]</span></p>
+<div class="definition">
+<p><span id="def:unlabeled-div-41" class="definition"><strong>Definition 4.6  </strong></span>The tangent plane at the point <span class="math inline">\(P(x_0, y_0, z_0)\)</span> on the <span class="math inline">\(c\)</span>-level surface of a differentiable <span class="math inline">\(f\)</span>
+is the plane through <span class="math inline">\(P_0\)</span>, normal to <span class="math inline">\(\nabla f (x_0, y_0, z_0)\)</span>.</p>
+</div>
 
 </div>
 </div>
