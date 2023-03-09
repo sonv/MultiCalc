@@ -26,5 +26,127 @@
 \maketitle
 
 
+\begin{frame}
+    \frametitle{Last time}
+     
+    Let
+    $f: \mathbb{R}^n \to \R$.
+
+\begin{equation*}
+    \partial_{x_i} f(x_1, \dots, x_n) 
+    = \lim_{h\to 0} \frac{ f(x_1, \dots, x_{i-1}, x_i + h , x_{i+1}, \dots, x_n) - f(x_1, \dots, x_{i-1}, x_i  , x_{i+1}, \dots, x_n)}{h} 
+\end{equation*}
+
+\begin{equation*}
+    \partial^m_{x_{k_1}, \dots, x_{k_m}} f = \partial_{x_{k_1}} (\dots ( \partial_{x_{k_m}} f) \dots)
+\end{equation*}
+where $k_i \in \{1,\dots, n\}$.
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{ Worksheet }
+    Compute $\partial_{xy} f$ and $\partial_{yx} f$ of the function
+    \begin{equation*}
+        f(x,y) = 
+        \begin{cases}
+            \frac{xy(y^2 - x^2)}{x^2 + y^2}  & (x,y) \not= 0 \,, \\
+            0 & (x,y) = 0 \,.
+        \end{cases}
+    \end{equation*}
+\end{frame}
+
+
+\begin{frame}
+\begin{theorem}[Clairaut's Theorem]
+Suppose \(f\) is defined on a disk \(D\) that contains the point \((a,b)\).
+If the functions \(f_{xy}\) and \(f_{yx}\) are both continuous on \(D\), then
+\begin{equation*}
+    f_{xy}(a,b) = f_{yx}(a,b) \,.
+\end{equation*}
+\end{theorem}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Important notations}
+
+Let \(f:D \to \mathbb{R}\) be a function. We write the following, if exist,
+\begin{equation*}
+    \nabla f = \begin{bmatrix}
+        \partial_{x_1} f\\
+        \vdots \\
+        \partial_{x_n} f\\
+    \end{bmatrix}
+\end{equation*}
+
+\begin{equation*}
+    \Delta f = \partial_{x_1}^2 f + \dots \partial_{x_n}^2 f \,.
+\end{equation*}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Worksheet}
+    Compute directional derivative of the functions
+    \begin{enumerate}
+        \item $f(x) = |x|, x\in \mathbb{R}^n$
+        \item $$ f(x,y) = 
+            \begin{cases}
+                \frac{x^2y}{x^4 + y^2} & (x,y) \not= 0 \\
+                0 & (x,y) = 0 \,.
+            \end{cases}$$
+        \item $ f(x) = |x|^2 \sin(1/|x|)$.
+    \end{enumerate}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Differentiability}
+\begin{definition}
+Let \(f:D \to \mathbb{R}\) and \(a\in \mathbb{R}^n\).
+Let \(z = f(x)\) and \(\Delta z = f(a + \Delta x ) - f(a)\).
+Then \(f\) is \textbf{differentiable at \(a\)} if \(\Delta z\) can be
+expressed in the form
+\begin{equation*}
+    \Delta z = \sum_{i=1}^n \partial_i f(a) \Delta x_i +  \epsilon_i \Delta x_i  \,,
+\end{equation*}
+where \(\epsilon_i \to 0\) as \(\Delta x_i \to (0,0)\).
+
+\(f\) is said to be \textbf{differentiable} if it is differentiable at every point on the domain.
+\end{definition}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Chain rule}
+\begin{theorem}
+Let \(f(x_1,\dots, x_n), g_i(y_1,\dots, y_m)\) (\(i = 1,\dots, n\)) be
+differentiable
+functions.
+Then,
+\[z(y_1, \dots, y_m) = f(g_1(y_1, \dots, y_m), \dots, g_n(y_1, \dots, y_m))\]
+is differentiable and
+\begin{equation*}
+    \frac{\partial z}{\partial y_i} = \sum_{j=1}^n \frac{\partial f}{\partial x_j} \frac{\partial g_j}{\partial y_i} \,.
+\end{equation*}
+\end{theorem}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{ Directional derivative  }
+\begin{definition}
+Let \(\mathbf{u} \in \mathbb{R}^n\). The directional derivative of \(f:\mathbb{R}^n \to \mathbb{R}\) at \(a\in \mathbb{R}^n\)
+in the direction of \(\mathbf{u}\) is the following limit (if exists)
+\begin{equation*}
+    D_{\mathbf{u}} f(a) = \lim_{h \to 0} \frac{ f( a + h \mathbf{u}) - f(a)}{h}\,.
+\end{equation*}
+\end{definition}
+\end{frame}
+
+
+
+
 \end{document}
 
