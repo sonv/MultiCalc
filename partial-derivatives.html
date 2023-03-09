@@ -336,24 +336,23 @@ is differentiable and
     \frac{\partial z}{\partial y_i} = \sum_{j=1}^n \frac{\partial f}{\partial x_j} \frac{\partial g_j}{\partial y_i} \,.
 \end{equation*}\]</span></p>
 </div>
-<p>How can one compute directional derivative?</p>
-<div class="theorem">
-<p><span id="thm:unlabeled-div-41" class="theorem"><strong>Theorem 4.6  </strong></span>If <span class="math inline">\(f:\mathbb{R}^n \to \mathbb{R}\)</span> is differentiable then
-<span class="math display">\[\begin{equation*}
-    D_{\mathbf{u}} f(a) = \nabla f(a) \cdot \mathbf{u} \,.
-\end{equation*}\]</span></p>
-</div>
 </div>
 <div id="directional-derivative" class="section level2 hasAnchor" number="4.6">
 <h2><span class="header-section-number">4.6</span> Directional derivative<a href="partial-derivatives.html#directional-derivative" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="definition">
-<p><span id="def:unlabeled-div-42" class="definition"><strong>Definition 4.6  </strong></span>Let <span class="math inline">\(\mathbf{u} \in \mathbb{R}^n\)</span>. The directional derivative of <span class="math inline">\(f:\mathbb{R}^n \to \mathbb{R}\)</span> at <span class="math inline">\(a\in \mathbb{R}^n\)</span>
+<p><span id="def:unlabeled-div-41" class="definition"><strong>Definition 4.6  </strong></span>Let <span class="math inline">\(\mathbf{u} \in \mathbb{R}^n\)</span>. The directional derivative of <span class="math inline">\(f:\mathbb{R}^n \to \mathbb{R}\)</span> at <span class="math inline">\(a\in \mathbb{R}^n\)</span>
 in the direction of <span class="math inline">\(\mathbf{u}\)</span> is the following limit (if exists)
 <span class="math display">\[\begin{equation*}
     D_{\mathbf{u}} f(a) = \lim_{h \to 0} \frac{ f( a + h \mathbf{u}) - f(a)}{h}\,.
 \end{equation*}\]</span></p>
 </div>
-<p>If <span class="math inline">\(f\)</span> is differentiable at <span class="math inline">\(a\)</span>, then</p>
+<p>How can one compute directional derivative?</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-42" class="theorem"><strong>Theorem 4.6  </strong></span>If <span class="math inline">\(f:\mathbb{R}^n \to \mathbb{R}\)</span> is differentiable then
+<span class="math display">\[\begin{equation*}
+    D_{\mathbf{u}} f(a) = \nabla f(a) \cdot \mathbf{u} \,.
+\end{equation*}\]</span></p>
+</div>
 </div>
 <div id="tangent-planes" class="section level2 hasAnchor" number="4.7">
 <h2><span class="header-section-number">4.7</span> Tangent planes<a href="partial-derivatives.html#tangent-planes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
