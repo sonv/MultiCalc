@@ -44,18 +44,6 @@ where $k_i \in \{1,\dots, n\}$.
 \end{frame}
 
 
-\begin{frame}
-    \frametitle{ Worksheet }
-    Compute $\partial_{xy} f$ and $\partial_{yx} f$ of the function
-    \begin{equation*}
-        f(x,y) = 
-        \begin{cases}
-            \frac{xy(y^2 - x^2)}{x^2 + y^2}  & (x,y) \not= 0 \,, \\
-            0 & (x,y) = 0 \,.
-        \end{cases}
-    \end{equation*}
-\end{frame}
-
 
 \begin{frame}
 \begin{theorem}[Clairaut's Theorem]
@@ -96,7 +84,12 @@ Let \(f:D \to \mathbb{R}\) be a function. We write the following, if exist,
                 \frac{x^2y}{x^4 + y^2} & (x,y) \not= 0 \\
                 0 & (x,y) = 0 \,.
             \end{cases}$$
-        \item $ f(x) = |x|^2 \sin(1/|x|)$.
+        \item $$ f(x) = 
+            \begin{cases}
+                |x|^2 \sin(1/|x|) & x\not= 0\\
+                0 & x = 0 \,.
+            \end{cases}
+             $$
     \end{enumerate}
 \end{frame}
 
@@ -143,6 +136,18 @@ in the direction of \(\mathbf{u}\) is the following limit (if exists)
     D_{\mathbf{u}} f(a) = \lim_{h \to 0} \frac{ f( a + h \mathbf{u}) - f(a)}{h}\,.
 \end{equation*}
 \end{definition}
+\end{frame}
+
+\begin{frame}
+    \frametitle{ Worksheet }
+    Compute $\partial_{xy} f$ and $\partial_{yx} f$ of the function
+    \begin{equation*}
+        f(x,y) = 
+        \begin{cases}
+            \frac{xy(y^2 - x^2)}{x^2 + y^2}  & (x,y) \not= 0 \,, \\
+            0 & (x,y) = 0 \,.
+        \end{cases}
+    \end{equation*}
 \end{frame}
 
 
