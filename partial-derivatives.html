@@ -48,6 +48,7 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
@@ -67,6 +68,7 @@
       <nav role="navigation">
 
 <ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Spring 2023</a></li>
 <li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html"><i class="fa fa-check"></i>Syllabus</a>
 <ul>
 <li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#key-information"><i class="fa fa-check"></i>Key information</a></li>
@@ -214,7 +216,7 @@ However, there are certain rules that could help us.</p>
 <div class="theorem">
 <p><span id="thm:unlabeled-div-34" class="theorem"><strong>Theorem 4.1  </strong></span>Let <span class="math inline">\(L,M\)</span> and <span class="math inline">\(k\)</span> be real numbers and that
 <span class="math display">\[\begin{equation*}
-    \lim_{(x,y) \to (x_0,y_0)} f(x,y) = L \,, \qquad
+    \lim_{(x,y) \to (x_0,y_0)} f(x,y) = L \,, \qquad 
     \lim_{(x,y) \to (x_0,y_0)} g(x,y) = M \,.
 \end{equation*}\]</span>
 We then have</p>
@@ -262,15 +264,33 @@ in the case of one dimension.</p>
 given a function <span class="math inline">\(f(x_1, \dots, x_n)\)</span>, its partial derivative with respect
 to the <span class="math inline">\(i\)</span>th variable <span class="math inline">\(x_i\)</span> is
 <span class="math display">\[\begin{equation*}
-    f_{x_i}(x_1, \dots, x_n)
+    f_{x_i}(x_1, \dots, x_n) 
     = \lim_{h\to 0} \frac{ f(x_1, \dots, x_{i-1}, x_i + h , x_{i+1}, \dots, x_n) - f(x_1, \dots, x_{i-1}, x_i  , x_{i+1}, \dots, x_n)}{h} \,.
 \end{equation*}\]</span></p>
-<p>From here, one can define higher partial derivatives.</p>
+<p>From here, one can define higher partial derivatives such as the following</p>
+<p><span class="math display">\[\begin{equation*}
+    \partial^3_{x_1 x_2 x_2}  f\,.
+\end{equation*}\]</span></p>
+<p>Note that the power over the symbol <span class="math inline">\(\partial\)</span> represents the order of derivatives.</p>
 <div class="theorem">
 <p><span id="thm:unlabeled-div-36" class="theorem"><strong>Theorem 4.2  (Clairaut's Theorem) </strong></span>Suppose <span class="math inline">\(f\)</span> is defined on a disk <span class="math inline">\(D\)</span> that contains the point <span class="math inline">\((a,b)\)</span>.
 If the functions <span class="math inline">\(f_{xy}\)</span> and <span class="math inline">\(f_{yx}\)</span> are both continuous on <span class="math inline">\(D\)</span>, then
 <span class="math display">\[\begin{equation*}
     f_{xy}(a,b) = f_{yx}(a,b) \,.
+\end{equation*}\]</span></p>
+</div>
+<div id="some-important-notations" class="section level4 unnumbered hasAnchor" number="">
+<h4>Some important notations<a href="partial-derivatives.html#some-important-notations" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Let <span class="math inline">\(f:D \to \mathbb{R}\)</span> be a function. We write the following, if exist,
+<span class="math display">\[\begin{equation*}
+    \nabla f = \begin{bmatrix}
+        \partial_{x_1} f\\
+        \vdots \\
+        \partial_{x_n} f\\
+    \end{bmatrix}
+\end{equation*}\]</span></p>
+<p><span class="math display">\[\begin{equation*}
+    \Delta f = \partial_{x_1}^2 f + \dots \partial_{x_n}^2 f \,.
 \end{equation*}\]</span></p>
 </div>
 </div>
@@ -285,22 +305,22 @@ both of the tangent lines of both curves at <span class="math inline">\(P\)</spa
 You actually don’t know.
 That’s why the following definition exists.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-37" class="definition"><strong>Definition 4.5  (Differentiability) </strong></span>Let <span class="math inline">\(z = f(x,y)\)</span> and <span class="math inline">\(\Delta z = f(a + \Delta x, b + \Delta y ) - f(a,b)\)</span>.
-Then <span class="math inline">\(f\)</span> is differentiable at <span class="math inline">\((a,b)\)</span> if <span class="math inline">\(\Delta z\)</span> can be
+<p><span id="def:unlabeled-div-37" class="definition"><strong>Definition 4.5  (Differentiability) </strong></span>Let <span class="math inline">\(f:D \to \mathbb{R}\)</span> and <span class="math inline">\(a\in \mathbb{R}^n\)</span>.
+Let <span class="math inline">\(z = f(x)\)</span> and <span class="math inline">\(\Delta z = f(a + \Delta x ) - f(a)\)</span>.
+Then <span class="math inline">\(f\)</span> is <strong>differentiable at <span class="math inline">\(a\)</span></strong> if <span class="math inline">\(\Delta z\)</span> can be
 expressed in the form
 <span class="math display">\[\begin{equation*}
-    \Delta z = \partial_x f(a,b) \Delta x + \partial_y f(a,b) \Delta y + \epsilon_1 \Delta x + \epsilon_2 \Delta y \,,
+    \Delta z = \sum_{i=1}^n \partial_i f(a) \Delta x_i +  \epsilon_i \Delta x_i  \,,
 \end{equation*}\]</span>
-where <span class="math inline">\(\epsilon_1, \epsilon_2 \to 0\)</span> as <span class="math inline">\((\Delta x, \Delta y) \to (0,0)\)</span>.</p>
-</div>
-<p>It turns out that if <span class="math inline">\(f\)</span> is differentiable at <span class="math inline">\((a,b)\)</span>, then there is only one
-tangent plane to <span class="math inline">\(S\)</span> at <span class="math inline">\((a,b, f(a,b))\)</span>.</p>
-<div class="theorem">
-<p><span id="thm:unlabeled-div-38" class="theorem"><strong>Theorem 4.3  </strong></span>If the partial derivatives <span class="math inline">\(f_x\)</span> and <span class="math inline">\(f_y\)</span> exist near <span class="math inline">\((a,b)\)</span> and are continuous
-at <span class="math inline">\((a,b)\)</span>, then <span class="math inline">\(f\)</span> is differentiable at <span class="math inline">\((a,b)\)</span>.</p>
+where <span class="math inline">\(\epsilon_i \to 0\)</span> as <span class="math inline">\(\Delta x_i \to (0,0)\)</span>.</p>
+<p><span class="math inline">\(f\)</span> is said to be <strong>differentiable</strong> if it is differentiable at every point on the domain.</p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-39" class="theorem"><strong>Theorem 4.4  </strong></span>If a function <span class="math inline">\(f(x,y)\)</span> is differentiable at <span class="math inline">\((a,b)\)</span> then <span class="math inline">\(f\)</span> is continuous at <span class="math inline">\((a,b)\)</span>.</p>
+<p><span id="thm:unlabeled-div-38" class="theorem"><strong>Theorem 4.3  </strong></span>If the partial derivatives <span class="math inline">\(\partial_i f\)</span> (<span class="math inline">\(i= 1, \dots, n\)</span>) exist near <span class="math inline">\(a\in \mathbb{R}^n\)</span> and are continuous
+at <span class="math inline">\(a\)</span>, then <span class="math inline">\(f\)</span> is differentiable at <span class="math inline">\(a\)</span>.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-39" class="theorem"><strong>Theorem 4.4  </strong></span>If a function <span class="math inline">\(f(x)\)</span> is differentiable at <span class="math inline">\(a\)</span> then <span class="math inline">\(f\)</span> is continuous at <span class="math inline">\(a\)</span>.</p>
 </div>
 </div>
 <div id="chain-rule" class="section level2 hasAnchor" number="4.5">
@@ -316,9 +336,24 @@ is differentiable and
     \frac{\partial z}{\partial y_i} = \sum_{j=1}^n \frac{\partial f}{\partial x_j} \frac{\partial g_j}{\partial y_i} \,.
 \end{equation*}\]</span></p>
 </div>
+<p>How can one compute directional derivative?</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-41" class="theorem"><strong>Theorem 4.6  </strong></span>If <span class="math inline">\(f:\mathbb{R}^n \to \mathbb{R}\)</span> is differentiable then
+<span class="math display">\[\begin{equation*}
+    D_{\mathbf{u}} f(a) = \nabla f(a) \cdot u \,.
+\end{equation*}\]</span></p>
+</div>
 </div>
 <div id="directional-derivative" class="section level2 hasAnchor" number="4.6">
 <h2><span class="header-section-number">4.6</span> Directional derivative<a href="partial-derivatives.html#directional-derivative" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="definition">
+<p><span id="def:unlabeled-div-42" class="definition"><strong>Definition 4.6  </strong></span>Let <span class="math inline">\(\mathbf{u} \in \mathbb{R}^n\)</span>. The directional derivative of <span class="math inline">\(f:\mathbb{R}^n \to \mathbb{R}\)</span> at <span class="math inline">\(a\in \mathbb{R}^n\)</span>
+in the direction of <span class="math inline">\(\mathbf{u}\)</span> is the following limit (if exists)
+<span class="math display">\[\begin{equation*}
+    D_{\mathbf{u}} f(a) = \lim_{h \to 0} \frac{ f( a + h \mathbf{u}) - f(a)}{h}\,.
+\end{equation*}\]</span></p>
+</div>
+<p>If <span class="math inline">\(f\)</span> is differentiable at <span class="math inline">\(a\)</span>, then</p>
 </div>
 <div id="tangent-planes" class="section level2 hasAnchor" number="4.7">
 <h2><span class="header-section-number">4.7</span> Tangent planes<a href="partial-derivatives.html#tangent-planes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -329,7 +364,7 @@ of a plane learned in the first chapter.</p>
     \{ (x,y,z) | f(x,y,z) = c \} \,.
 \end{equation*}\]</span></p>
 <div class="definition">
-<p><span id="def:unlabeled-div-41" class="definition"><strong>Definition 4.6  </strong></span>The tangent plane at the point <span class="math inline">\(P(x_0, y_0, z_0)\)</span> on the <span class="math inline">\(c\)</span>-level surface of a differentiable <span class="math inline">\(f\)</span>
+<p><span id="def:unlabeled-div-43" class="definition"><strong>Definition 4.7  </strong></span>The tangent plane at the point <span class="math inline">\(P(x_0, y_0, z_0)\)</span> on the <span class="math inline">\(c\)</span>-level surface of a differentiable <span class="math inline">\(f\)</span>
 is the plane through <span class="math inline">\(P_0\)</span>, normal to <span class="math inline">\(\nabla f (x_0, y_0, z_0)\)</span>.</p>
 </div>
 

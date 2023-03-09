@@ -4,20 +4,17 @@
 %
 \documentclass[
 ]{article}
-\usepackage{amsmath,amssymb}
-\usepackage{iftex}
-\ifPDFTeX
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
 \else % if luatex or xetex
-  \usepackage{unicode-math} % this also loads fontspec
+  \usepackage{unicode-math}
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
-\fi
-\usepackage{lmodern}
-\ifPDFTeX\else
-  % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -36,9 +33,16 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={MATH 104: Multivariable Calculus (brief notes)},
+  pdfauthor={Truong-Son Van},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
 \usepackage[margin=1in]{geometry}
-\usepackage{longtable,booktabs,array}
-\usepackage{calc} % for calculating minipage widths
+\usepackage{longtable,booktabs}
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
 \makeatletter
@@ -64,17 +68,6 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
-\ifLuaTeX
-  \usepackage{selnolig}  % disable illegal ligatures
-\fi
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\urlstyle{same}
-\hypersetup{
-  pdftitle={MATH 104: Multivariable Calculus (brief notes)},
-  pdfauthor={Truong-Son Van},
-  hidelinks,
-  pdfcreator={LaTeX via pandoc}}
 
 \title{MATH 104: Multivariable Calculus (brief notes)}
 \author{Truong-Son Van}
@@ -818,7 +811,13 @@ to the \(i\)th variable \(x_i\) is
     = \lim_{h\to 0} \frac{ f(x_1, \dots, x_{i-1}, x_i + h , x_{i+1}, \dots, x_n) - f(x_1, \dots, x_{i-1}, x_i  , x_{i+1}, \dots, x_n)}{h} \,.
 \end{equation*}
 
-From here, one can define higher partial derivatives.
+From here, one can define higher partial derivatives such as the following
+
+\begin{equation*}
+    \partial^3_{x_1 x_2 x_2}  f\,.
+\end{equation*}
+
+Note that the power over the symbol \(\partial\) represents the order of derivatives.
 
 \begin{theorem}[Clairaut's Theorem]
 Suppose \(f\) is defined on a disk \(D\) that contains the point \((a,b)\).
@@ -827,6 +826,23 @@ If the functions \(f_{xy}\) and \(f_{yx}\) are both continuous on \(D\), then
     f_{xy}(a,b) = f_{yx}(a,b) \,.
 \end{equation*}
 \end{theorem}
+
+\hypertarget{some-important-notations}{%
+\paragraph*{Some important notations}\label{some-important-notations}}
+\addcontentsline{toc}{paragraph}{Some important notations}
+
+Let \(f:D \to \mathbb{R}\) be a function. We write the following, if exist,
+\begin{equation*}
+    \nabla f = \begin{bmatrix}
+        \partial_{x_1} f\\
+        \vdots \\
+        \partial_{x_n} f\\
+    \end{bmatrix}
+\end{equation*}
+
+\begin{equation*}
+    \Delta f = \partial_{x_1}^2 f + \dots \partial_{x_n}^2 f \,.
+\end{equation*}
 
 \hypertarget{differentiability}{%
 \subsection{Differentiability}\label{differentiability}}
@@ -843,25 +859,25 @@ You actually don't know.
 That's why the following definition exists.
 
 \begin{definition}[Differentiability]
-Let \(z = f(x,y)\) and \(\Delta z = f(a + \Delta x, b + \Delta y ) - f(a,b)\).
-Then \(f\) is differentiable at \((a,b)\) if \(\Delta z\) can be
+Let \(f:D \to \mathbb{R}\) and \(a\in \mathbb{R}^n\).
+Let \(z = f(x)\) and \(\Delta z = f(a + \Delta x ) - f(a)\).
+Then \(f\) is \textbf{differentiable at \(a\)} if \(\Delta z\) can be
 expressed in the form
 \begin{equation*}
-    \Delta z = \partial_x f(a,b) \Delta x + \partial_y f(a,b) \Delta y + \epsilon_1 \Delta x + \epsilon_2 \Delta y \,,
+    \Delta z = \sum_{i=1}^n \partial_i f(a) \Delta x_i +  \epsilon_i \Delta x_i  \,,
 \end{equation*}
-where \(\epsilon_1, \epsilon_2 \to 0\) as \((\Delta x, \Delta y) \to (0,0)\).
+where \(\epsilon_i \to 0\) as \(\Delta x_i \to (0,0)\).
+
+\(f\) is said to be \textbf{differentiable} if it is differentiable at every point on the domain.
 \end{definition}
 
-It turns out that if \(f\) is differentiable at \((a,b)\), then there is only one
-tangent plane to \(S\) at \((a,b, f(a,b))\).
-
 \begin{theorem}
-If the partial derivatives \(f_x\) and \(f_y\) exist near \((a,b)\) and are continuous
-at \((a,b)\), then \(f\) is differentiable at \((a,b)\).
+If the partial derivatives \(\partial_i f\) (\(i= 1, \dots, n\)) exist near \(a\in \mathbb{R}^n\) and are continuous
+at \(a\), then \(f\) is differentiable at \(a\).
 \end{theorem}
 
 \begin{theorem}
-If a function \(f(x,y)\) is differentiable at \((a,b)\) then \(f\) is continuous at \((a,b)\).
+If a function \(f(x)\) is differentiable at \(a\) then \(f\) is continuous at \(a\).
 \end{theorem}
 
 \hypertarget{chain-rule}{%
@@ -879,8 +895,27 @@ is differentiable and
 \end{equation*}
 \end{theorem}
 
+How can one compute directional derivative?
+
+\begin{theorem}
+If \(f:\mathbb{R}^n \to \mathbb{R}\) is differentiable then
+\begin{equation*}
+    D_{\mathbf{u}} f(a) = \nabla f(a) \cdot u \,.
+\end{equation*}
+\end{theorem}
+
 \hypertarget{directional-derivative}{%
 \subsection{Directional derivative}\label{directional-derivative}}
+
+\begin{definition}
+Let \(\mathbf{u} \in \mathbb{R}^n\). The directional derivative of \(f:\mathbb{R}^n \to \mathbb{R}\) at \(a\in \mathbb{R}^n\)
+in the direction of \(\mathbf{u}\) is the following limit (if exists)
+\begin{equation*}
+    D_{\mathbf{u}} f(a) = \lim_{h \to 0} \frac{ f( a + h \mathbf{u}) - f(a)}{h}\,.
+\end{equation*}
+\end{definition}
+
+If \(f\) is differentiable at \(a\), then
 
 \hypertarget{tangent-planes}{%
 \subsection{Tangent planes}\label{tangent-planes}}
