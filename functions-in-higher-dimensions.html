@@ -48,7 +48,6 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
@@ -68,7 +67,6 @@
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Spring 2023</a></li>
 <li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html"><i class="fa fa-check"></i>Syllabus</a>
 <ul>
 <li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#key-information"><i class="fa fa-check"></i>Key information</a></li>
@@ -140,6 +138,7 @@
 <li class="chapter" data-level="4.6" data-path="partial-derivatives.html"><a href="partial-derivatives.html#directional-derivative"><i class="fa fa-check"></i><b>4.6</b> Directional derivative</a></li>
 <li class="chapter" data-level="4.7" data-path="partial-derivatives.html"><a href="partial-derivatives.html#tangent-planes"><i class="fa fa-check"></i><b>4.7</b> Tangent planes</a></li>
 </ul></li>
+<li class="chapter" data-level="5" data-path="optimization.html"><a href="optimization.html"><i class="fa fa-check"></i><b>5</b> Optimization</a></li>
 </ul>
 
       </nav>
@@ -209,11 +208,11 @@ Then, <span class="math inline">\(\mathbf{r}\)</span> is said to be continuous a
 \end{equation*}\]</span>
 where
 <span class="math display">\[\begin{equation*}
-    \lim_{t\to t_0} \mathbf{r}(t) = \langle \lim_{t\to t_0}r_1(t) , \dots , \lim_{t\to t_0} r_n(t) \rangle \,. 
+    \lim_{t\to t_0} \mathbf{r}(t) = \langle \lim_{t\to t_0}r_1(t) , \dots , \lim_{t\to t_0} r_n(t) \rangle \,.
 \end{equation*}\]</span>
 Furthermore, we can define the derivative of <span class="math inline">\(\mathbf{r}\)</span>
 <span class="math display">\[\begin{equation*}
-    \frac{d}{dt} \mathbf{r}(t) = \mathbf{r}&#39;(t) = \lim_{h\to 0} \frac{\mathbf{r}(t+h) - \mathbf{r}(t)}{h} 
+    \frac{d}{dt} \mathbf{r}(t) = \mathbf{r}&#39;(t) = \lim_{h\to 0} \frac{\mathbf{r}(t+h) - \mathbf{r}(t)}{h}
 \end{equation*}\]</span>
 if this limit exists.</p>
 </div>
@@ -265,7 +264,7 @@ at any time <span class="math inline">\(t\)</span>, one uses the <strong>arc len
     \ell(t) = \int_a^t \left| \mathbf{r}&#39;(u) \right| \, du \,.
 \end{equation*}\]</span></p>
 </div>
-<div id="re-parametrize-with-respect-to-arc-length" class="section level4 unnumbered hasAnchor" number="">
+<div id="re-parametrize-with-respect-to-arc-length" class="section level4 unnumbered hasAnchor">
 <h4>Re-parametrize with respect to arc length<a href="functions-in-higher-dimensions.html#re-parametrize-with-respect-to-arc-length" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The nice thing about <span class="math inline">\(\ell(t)\)</span> is that it is a strictly increasing function with respect to <span class="math inline">\(t\)</span>,
 given that <span class="math inline">\(\mathbf{r}&#39;\)</span> is non-zero for all <span class="math inline">\(t\)</span>.

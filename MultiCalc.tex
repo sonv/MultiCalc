@@ -4,17 +4,20 @@
 %
 \documentclass[
 ]{article}
-\usepackage{lmodern}
-\usepackage{amssymb,amsmath}
-\usepackage{ifxetex,ifluatex}
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
 \else % if luatex or xetex
-  \usepackage{unicode-math}
+  \usepackage{unicode-math} % this also loads fontspec
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -33,16 +36,9 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
-\hypersetup{
-  pdftitle={MATH 104: Multivariable Calculus (brief notes)},
-  pdfauthor={Truong-Son Van},
-  hidelinks,
-  pdfcreator={LaTeX via pandoc}}
-\urlstyle{same} % disable monospaced font for URLs
 \usepackage[margin=1in]{geometry}
-\usepackage{longtable,booktabs}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
 \makeatletter
@@ -68,6 +64,17 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={MATH 104: Multivariable Calculus (brief notes)},
+  pdfauthor={Truong-Son Van},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
 
 \title{MATH 104: Multivariable Calculus (brief notes)}
 \author{Truong-Son Van}
@@ -866,10 +873,25 @@ expressed in the form
 \begin{equation*}
     \Delta z = \sum_{i=1}^n \partial_i f(a) \Delta x_i +  \epsilon_i \Delta x_i  \,,
 \end{equation*}
-where \(\epsilon_i \to 0\) as \(\Delta x_i \to (0,0)\).
+where \(\epsilon_i \to 0\) as \(\Delta x_i \to (0,0)\) and
+\(\Delta x_i = x_i - a_i\).
 
 \(f\) is said to be \textbf{differentiable} if it is differentiable at every point on the domain.
 \end{definition}
+
+The graph of a differentiable function \(f\) whose
+domain is two dimensional is called a \textbf{smooth surface}.
+
+Let \(\Delta x = (\Delta x_1, \dots, \Delta x_n)\).
+Another reformulation of the definition of differentiability is that \(f\) is
+differentiable if
+\begin{equation*}
+\lim_{|\Delta x| \to 0}
+    \frac{\Delta z - \nabla f \cdot \Delta x }{| \Delta x|}  = 0 \,.
+\end{equation*}
+It would be a good exercise to see why this is equivalent with the definition above.
+
+For some good intuition, please go to \url{https://mathinsight.org/differentiability_multivariable_definition}.
 
 \begin{theorem}
 If the partial derivatives \(\partial_i f\) (\(i= 1, \dots, n\)) exist near \(a\in \mathbb{R}^n\) and are continuous
@@ -930,5 +952,79 @@ Recall the \(c\)-level surface of a function \(f(x,y,z)\) is the collection
 The tangent plane at the point \(P(x_0, y_0, z_0)\) on the \(c\)-level surface of a differentiable \(f\)
 is the plane through \(P_0\), normal to \(\nabla f (x_0, y_0, z_0)\).
 \end{definition}
+
+\newpage
+
+\hypertarget{optimization}{%
+\section{Optimization}\label{optimization}}
+
+Read Stewart Chapter 14, Thomas Chapter 14,
+
+We will study multivariable scalar functions
+\[ f: D \to \mathbb{R}\,,\]
+where \(D\subseteq \mathbb{R}^n\), \(n\geq 2\).
+
+\begin{definition}
+A function \(f:D \to \mathbb{R}\) has a \textbf{local maximum} at \(\mathbf{x_0}\) if
+\(f(\mathbf{x_0}) \geq f(\mathbf{x})\) for \(\mathbf{x} \in B_\delta(\mathbf{x_0})\) for small enough \(\delta\).
+\(f\) has a \textbf{global maximum} at \(\mathbf{x_0}\) if
+\(f(\mathbf{x_0}) \geq f(\mathbf{x})\) for \(\mathbf{x} \in D\).
+\(f\) has a \textbf{local (global) minimum} at \(\mathbf{x_0}\) if
+\(-f\) has a local (global) maximum at \(\mathbf{x_0}\)
+\end{definition}
+
+\begin{theorem}[First derivative test]
+Let \(f:D \to \mathbb{R}\) be a function.
+If \(\mathbf{x_0}\) is a local minimum and \(f\) has partial derivatives at \(\mathbf{x_0}\).
+Then
+\begin{equation*}
+    \partial_{x_i} f(\mathbf{x}_0) = 0 \,.
+\end{equation*}
+\end{theorem}
+
+The converse is not true, as having \(\nabla f(\mathbf{x}_0) = \mathbf{0}\) does not mean
+that \(f\) has a local minimum at \(\mathbf{x}_0\).
+
+\begin{exercise}
+Think of a function that the converse to the above theorem is not true.
+\end{exercise}
+
+This leads to the following notion.
+
+\begin{definition}
+\(\mathbf{x}_0\) is said to be a \textbf{critical point} of \(f:D\to \mathbb{R}\) if
+\begin{equation*}
+    \nabla f(\mathbf{x}_0) = 0
+\end{equation*}
+or one of the partial derivatives \(\partial_{x_i} f(\mathbf{x}_0)\) fails to exist.
+\end{definition}
+
+\textbf{Please pay attention about the ``fail to exist'' condition.}
+
+\begin{theorem}[Second derivative test for functions of 2 variables]
+
+Suppose the second partial derivatives of \(f\) are continuous near \((a,b)\)
+and suppose that \((a,b)\) is a critical point of \(f\).
+Let
+\begin{equation*}
+    D = f_{xx}(a,b) f_{yy}(a,b) - f_{xy}(a,b)^2\,.
+\end{equation*}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  If \(D>0\) and \(f_{xx}(a,b) >0\), then \(f(a,b)\) is a local minimum.
+\item
+  If \(D>0\) and \(f_{xx}(a,b) <0\), then \(f(a,b)\) is a local maximum.
+\item
+  If \(D<0\), then \(f(a,b)\) is neither a local maximum nor local minimum.
+\end{enumerate}
+
+\end{theorem}
+
+\begin{theorem}[Extreme value theorem]
+If \(f\) is continuous on a \emph{closed} and \emph{bounded} set \(D\). Then,
+\(f\) attains an absolute minimum and an absolute maximum in \(D\).
+\end{theorem}
 
 \end{document}
