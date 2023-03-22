@@ -138,7 +138,14 @@
 <li class="chapter" data-level="4.6" data-path="partial-derivatives.html"><a href="partial-derivatives.html#directional-derivative"><i class="fa fa-check"></i><b>4.6</b> Directional derivative</a></li>
 <li class="chapter" data-level="4.7" data-path="partial-derivatives.html"><a href="partial-derivatives.html#tangent-planes"><i class="fa fa-check"></i><b>4.7</b> Tangent planes</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="optimization.html"><a href="optimization.html"><i class="fa fa-check"></i><b>5</b> Optimization</a></li>
+<li class="chapter" data-level="5" data-path="optimization.html"><a href="optimization.html"><i class="fa fa-check"></i><b>5</b> Optimization</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="optimization.html"><a href="optimization.html#first-and-second-derivative-tests"><i class="fa fa-check"></i><b>5.1</b> First and second derivative tests</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="optimization.html"><a href="optimization.html#algorithm-to-find-absolute-maxima-and-minima-on-closed-bounded-regions"><i class="fa fa-check"></i><b>5.1.1</b> Algorithm to find absolute maxima and minima on closed bounded regions</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="optimization.html"><a href="optimization.html#constrained-optimization"><i class="fa fa-check"></i><b>5.2</b> Constrained optimization</a></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -158,6 +165,8 @@
             <section class="normal" id="section-">
 <div id="optimization" class="section level1 hasAnchor" number="5">
 <h1><span class="header-section-number">5</span> Optimization<a href="optimization.html#optimization" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="first-and-second-derivative-tests" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> First and second derivative tests<a href="optimization.html#first-and-second-derivative-tests" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Read Stewart Chapter 14, Thomas Chapter 14,</p>
 <p>We will study multivariable scalar functions
 <span class="math display">\[ f: D \to \mathbb{R}\,,\]</span>
@@ -203,13 +212,50 @@ Let
 <li><p>If <span class="math inline">\(D&gt;0\)</span> and <span class="math inline">\(f_{xx}(a,b) &gt;0\)</span>, then <span class="math inline">\(f(a,b)\)</span> is a local minimum.</p></li>
 <li><p>If <span class="math inline">\(D&gt;0\)</span> and <span class="math inline">\(f_{xx}(a,b) &lt;0\)</span>, then <span class="math inline">\(f(a,b)\)</span> is a local maximum.</p></li>
 <li><p>If <span class="math inline">\(D&lt;0\)</span>, then <span class="math inline">\(f(a,b)\)</span> is neither a local maximum nor local minimum.</p></li>
+<li><p>If <span class="math inline">\(D=0\)</span>, then we cannot conclude.</p></li>
 </ol>
 </div>
 <div class="theorem">
 <p><span id="thm:unlabeled-div-49" class="theorem"><strong>Theorem 5.3  (Extreme value theorem) </strong></span>If <span class="math inline">\(f\)</span> is continuous on a <em>closed</em> and <em>bounded</em> set <span class="math inline">\(D\)</span>. Then,
 <span class="math inline">\(f\)</span> attains an absolute minimum and an absolute maximum in <span class="math inline">\(D\)</span>.</p>
 </div>
+<div id="algorithm-to-find-absolute-maxima-and-minima-on-closed-bounded-regions" class="section level3 hasAnchor" number="5.1.1">
+<h3><span class="header-section-number">5.1.1</span> Algorithm to find absolute maxima and minima on closed bounded regions<a href="optimization.html#algorithm-to-find-absolute-maxima-and-minima-on-closed-bounded-regions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><p>Find the values of <span class="math inline">\(f\)</span> at the critical points of <span class="math inline">\(f\)</span> in <span class="math inline">\(D\)</span>.</p></li>
+<li><p>Find the extreme values of <span class="math inline">\(f\)</span> on the boundary of <span class="math inline">\(D\)</span>.</p></li>
+<li><p>The largest of the values from steps 1 and 2 is the absolute maximum value;
+the smallest of these values is the absolute minimum value.</p></li>
+</ol>
+</div>
+</div>
+<div id="constrained-optimization" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Constrained optimization<a href="optimization.html#constrained-optimization" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Constrained optimization takes various forms, depending on the assumptions.
+We will deal with the most straight forward form.
+The problem we will study is the following:</p>
+<p>Maximize/minimize a function <span class="math inline">\(f:D\to \mathbb{R}\)</span>, subject to a constraint (side condition)
+of the form
+<span class="math inline">\(g(\mathbf{x}) = k\)</span>, for some constant <span class="math inline">\(k\in \mathbb{R}\)</span>.</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-50" class="theorem"><strong>Theorem 5.4  (Method of Lagrange Multiplier) </strong></span>Suppose the maximum/minimum values of <span class="math inline">\(f\)</span> exist and <span class="math inline">\(\nabla g(\mathbf{x}) \not=0\)</span> where <span class="math inline">\(g(\mathbf{x}) = k\)</span>.
+To find the maximum and minimum values of <span class="math inline">\(f\)</span> subject to constraint
+<span class="math inline">\(g(\mathbf{x}) = k\)</span>, we do the following:</p>
+<ol style="list-style-type: decimal">
+<li><p>Find all values of <span class="math inline">\(\mathbf{x}\)</span> and <span class="math inline">\(\lambda \in \mathbb{R}\)</span> such that
+<span class="math display">\[\begin{equation*}
+\nabla f(\mathbf{x}) =\lambda \nabla g(\mathbf{x})\,,
+\end{equation*}\]</span>
+and
+<span class="math display">\[\begin{equation*}
+g(\mathbf{x}) = k \,.
+\end{equation*}\]</span></p></li>
+<li><p>Evaluate <span class="math inline">\(f\)</span> at all the points <span class="math inline">\(\mathbf{x}\)</span> that result from step 1. The largest of
+these values is the maximum of <span class="math inline">\(f\)</span>; the smallest is the minimum value of <span class="math inline">\(f\)</span>.</p></li>
+</ol>
+</div>
 
+</div>
 </div>
             </section>
 
