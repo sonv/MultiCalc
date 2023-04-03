@@ -1081,4 +1081,42 @@ To find the maximum and minimum values of \(f\) subject to constraint
 
 \end{theorem}
 
+\hypertarget{multiple-integrals}{%
+\section{Multiple integrals}\label{multiple-integrals}}
+
+\textbf{Notations:}
+
+Rectangle \(R= [a,b]\times [c,d]\).
+
+\begin{definition}
+
+Let \(f\) be a function on a rectangle \(R\).
+A double Riemann sum for \(f\) over \(R\) is a sum of the following form
+\begin{equation*}
+ \sum_{i=1}^m \sum_{j=1}^n f(x_{ij}^*, y_{ij}^*) \Delta A \,,
+\end{equation*}
+where
+
+\begin{itemize}
+\item
+  \(\Delta A = \Delta x\times \Delta y\),
+\item
+  \(\Delta x = (b-a)/m\), \(\Delta y = (d-c)/n\),
+\item
+  \((x_{ij}^*,y_{ij}^*) \in R_{ij}\),
+\item
+  \(R_{ij} = [a + (i-1)\Delta x, a+ i\Delta x]\times [b + (j-1)\Delta y, b+ j\Delta y]\).
+\end{itemize}
+
+\end{definition}
+
+\begin{definition}
+The double integral of \(f\) over a rectangle \(R\) is
+\begin{equation*}
+    \iint_{R} f(x,y) \, dA = \lim_{m,n\to \infty} \sum_{i=1}^m \sum_{j=1}^n f(x_{ij}^*, y_{ij}^*) \Delta A \,.
+\end{equation*}
+\end{definition}
+
+Similar process can be generalized to \(n\)-fold integral over a \(n\)-dimensional cube.
+
 \end{document}
