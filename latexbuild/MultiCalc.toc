@@ -15,28 +15,3 @@
 \contentsline {section}{\numberline {3}Functions in higher dimensions}{7}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Functions of several variables}{7}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Vector functions}{7}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Limit, continuity and differentiation}{7}{subsubsection.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2}Integrals}{8}{subsubsection.3.2.2}%
-\contentsline {paragraph}{\numberline {3.2.2.1}Indefinite integral}{8}{paragraph.3.2.2.1}%
-\contentsline {paragraph}{\numberline {3.2.2.2}Arc Length and curvature}{8}{paragraph.3.2.2.2}%
-\contentsline {paragraph}{Re-parametrize with respect to arc length}{8}{section*.7}%
-\contentsline {subsubsection}{\numberline {3.2.3}Space curve in \(\mathbb {R}^3\) and motion in space}{9}{subsubsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.3}Activity: on osculating circle and curvature}{9}{subsection.3.3}%
-\contentsline {section}{\numberline {4}Partial derivatives}{10}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Multivariable scalar function}{10}{subsection.4.1}%
-\contentsline {subsubsection}{\numberline {4.1.1}Graphs}{10}{subsubsection.4.1.1}%
-\contentsline {subsubsection}{\numberline {4.1.2}Level}{10}{subsubsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.2}Limits and continuity}{10}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Partial derivatives}{11}{subsection.4.3}%
-\contentsline {paragraph}{Some important notations}{12}{section*.8}%
-\contentsline {subsection}{\numberline {4.4}Differentiability}{12}{subsection.4.4}%
-\contentsline {subsection}{\numberline {4.5}Chain rule}{13}{subsection.4.5}%
-\contentsline {subsection}{\numberline {4.6}Directional derivative}{13}{subsection.4.6}%
-\contentsline {subsection}{\numberline {4.7}Tangent planes}{13}{subsection.4.7}%
-\contentsline {section}{\numberline {5}Optimization}{14}{section.5}%
-\contentsline {subsection}{\numberline {5.1}First and second derivative tests}{14}{subsection.5.1}%
-\contentsline {subsubsection}{\numberline {5.1.1}Algorithm to find absolute maxima and minima on closed bounded regions}{14}{subsubsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.2}Constrained optimization}{15}{subsection.5.2}%
-\contentsline {section}{\numberline {6}Multiple integrals}{16}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Basic definition}{16}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Iterated integrals}{16}{subsection.6.2}%

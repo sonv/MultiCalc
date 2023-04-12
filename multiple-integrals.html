@@ -148,8 +148,12 @@
 </ul></li>
 <li class="chapter" data-level="6" data-path="multiple-integrals.html"><a href="multiple-integrals.html"><i class="fa fa-check"></i><b>6</b> Multiple integrals</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="multiple-integrals.html"><a href="multiple-integrals.html#basic-definition"><i class="fa fa-check"></i><b>6.1</b> Basic definition</a></li>
+<li class="chapter" data-level="6.1" data-path="multiple-integrals.html"><a href="multiple-integrals.html#basic-definition"><i class="fa fa-check"></i><b>6.1</b> Basic definition</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="multiple-integrals.html"><a href="multiple-integrals.html#some-properties-of-integrals"><i class="fa fa-check"></i><b>6.1.1</b> Some properties of integrals</a></li>
+</ul></li>
 <li class="chapter" data-level="6.2" data-path="multiple-integrals.html"><a href="multiple-integrals.html#iterated-integrals"><i class="fa fa-check"></i><b>6.2</b> Iterated integrals</a></li>
+<li class="chapter" data-level="6.3" data-path="multiple-integrals.html"><a href="multiple-integrals.html#change-of-coordinates"><i class="fa fa-check"></i><b>6.3</b> Change of coordinates</a></li>
 </ul></li>
 </ul>
 
@@ -177,7 +181,7 @@
 <h2><span class="header-section-number">6.1</span> Basic definition<a href="multiple-integrals.html#basic-definition" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="definition">
 <p><span id="def:unlabeled-div-51" class="definition"><strong>Definition 6.1  </strong></span>Let <span class="math inline">\(f\)</span> be a function on a rectangle <span class="math inline">\(R\)</span>.
-A double Riemann sum for <span class="math inline">\(f\)</span> over <span class="math inline">\(R\)</span> is a sum of the following form
+An n-fold Riemann sum for <span class="math inline">\(f\)</span> over <span class="math inline">\(R\)</span> is a sum of the following form
 <span class="math display">\[\begin{equation*}
 \sum_{i_1=1}^{m_1}\dots \sum_{i_n=1}^{m_n} f(\xi_{i_1\dots i_n}) \Delta A \,,
 \end{equation*}\]</span>
@@ -192,14 +196,27 @@ where</p>
 <div class="definition">
 <p><span id="def:unlabeled-div-52" class="definition"><strong>Definition 6.2  </strong></span>The double integral of <span class="math inline">\(f\)</span> over a rectangle <span class="math inline">\(R \subseteq \mathbb{R}^2\)</span> is
 <span class="math display">\[\begin{equation*}
-    \iint_{R} f(x,y) \, dA = \lim_{m,n\to \infty} \sum_{i=1}^m \sum_{j=1}^n f(\xi_{ij}) \Delta A \,.
+    \iint_{R} f(x,y) \, dA = \lim_{m,n\to \infty} \sum_{i=1}^m \sum_{j=1}^n f(\xi_{ij}) \Delta A
 \end{equation*}\]</span>
-The triple integral of <span class="math inline">\(f\)</span> over a rectangle <span class="math inline">\(R \subseteq \mathbb{R}^3\)</span> is
+if the limit exists.</p>
+<p>The triple integral of <span class="math inline">\(f\)</span> over a rectangle <span class="math inline">\(R \subseteq \mathbb{R}^3\)</span> is
 <span class="math display">\[\begin{equation*}
-    \iiint_{R} f(x,y) \, dA = \lim_{m,n,l\to \infty} \sum_{i=1}^m \sum_{j=1}^n \sum_{k=1}^l f(\xi_{ijk}) \Delta A \,.
-\end{equation*}\]</span></p>
+    \iiint_{R} f(x,y) \, dA = \lim_{m,n,l\to \infty} \sum_{i=1}^m \sum_{j=1}^n \sum_{k=1}^l f(\xi_{ijk}) \Delta A
+\end{equation*}\]</span>
+if the limit exists.</p>
 </div>
-<p>Similar process can be generalized to <span class="math inline">\(n\)</span>-fold integral over a <span class="math inline">\(n\)</span>-dimensional cube.</p>
+<div id="some-properties-of-integrals" class="section level3 hasAnchor" number="6.1.1">
+<h3><span class="header-section-number">6.1.1</span> Some properties of integrals<a href="multiple-integrals.html#some-properties-of-integrals" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><p>Let <span class="math inline">\(U, V\)</span> be disjoint domains, then
+<span class="math display">\[\begin{equation*}
+\iint_{U \cup V} f \, dA = \iint_U f \, dA + \iint_V f\, dA \,.
+\end{equation*}\]</span></p></li>
+<li><p><span class="math display">\[\begin{equation*}
+\iint_U (f + g) \, dA = \iint_U f \, dA + \iint_V f \, dA \,.
+\end{equation*}\]</span></p></li>
+</ol>
+</div>
 </div>
 <div id="iterated-integrals" class="section level2 hasAnchor" number="6.2">
 <h2><span class="header-section-number">6.2</span> Iterated integrals<a href="multiple-integrals.html#iterated-integrals" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -230,7 +247,7 @@ Is it true that
 <div class="theorem">
 <p><span id="thm:unlabeled-div-53" class="theorem"><strong>Theorem 6.1  (Special case of Fubini) </strong></span>If <span class="math inline">\(f\)</span> is continuous on the rectangle <span class="math inline">\(R\)</span>, then
 <span class="math display">\[\begin{equation*}
-    \iint_R f(x,y) \, dx dy = \int_a^b \int_c^d f(x,y) \, dy dx = \int_c^d \int_a^b f(x,y) \, dx dy \,.
+    \iint_R f(x,y) \, dA = \int_a^b \int_c^d f(x,y) \, dy dx = \int_c^d \int_a^b f(x,y) \, dx dy \,.
 \end{equation*}\]</span></p>
 </div>
 <div class="example">
@@ -240,6 +257,38 @@ Is it true that
 \end{equation*}\]</span>
 <span class="math display">\[\begin{equation*}
     \int_0^1\int_0^1 f(x,y) \,dy dx = \frac{\pi}{4} = - \int_0^1\int_0^1 f(x,y) \, dx dy \,.
+\end{equation*}\]</span></p>
+</div>
+<p>Everything we discuss here is true for three-variable functions.</p>
+</div>
+<div id="change-of-coordinates" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Change of coordinates<a href="multiple-integrals.html#change-of-coordinates" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A coordinate change transformation is a function <span class="math inline">\(\varphi\)</span>, which
+is bijective and differentiable for which <span class="math inline">\(D\varphi\)</span> is
+invertible at all points in the domain.
+Here,
+<span class="math display">\[\begin{equation*}
+    D\varphi =
+    \begin{pmatrix}
+        \partial_1 \varphi_1 &amp; \partial_2 \varphi_1 \\
+        \partial_1 \varphi_2 &amp; \partial_2 \varphi_2
+    \end{pmatrix} \,.
+\end{equation*}\]</span></p>
+<p>We will need to re-call the notion of invertible matrix here.
+For an <span class="math inline">\(n\times n\)</span> matrix <span class="math inline">\(A\)</span>, it is invertible iff <span class="math inline">\(\det A \not= 0\)</span>,.</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-55" class="theorem"><strong>Theorem 6.2  </strong></span>Let <span class="math inline">\(f\)</span> be a function of <span class="math inline">\((x,y)\)</span> defined on the domain <span class="math inline">\(D\)</span>.
+Let
+<span class="math display">\[\begin{equation*}
+    \begin{pmatrix}
+        x \\ y
+    \end{pmatrix}
+     = \varphi(u,v)
+\end{equation*}\]</span>
+for some coordinate change function <span class="math inline">\(\varphi: D \to S\)</span>.
+If <span class="math inline">\(f\)</span> is continuous and <span class="math inline">\(\varphi\)</span> is differentiable, then
+<span class="math display">\[\begin{equation*}
+    \int_S f \, dA = \int_D f\circ \varphi |\det D \varphi| \, dA
 \end{equation*}\]</span></p>
 </div>
 

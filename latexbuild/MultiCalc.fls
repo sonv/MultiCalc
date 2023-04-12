@@ -1,4 +1,4 @@
-PWD /Users/sonvan/Work/MultiCalc
+PWD /Users/sonvan/Work/Teaching/Fulbright/MATH104/_book
 INPUT /usr/local/texlive/2022/texmf.cnf
 INPUT /usr/local/texlive/2022/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt
@@ -858,11 +858,11 @@ INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/lm/rm-lmbx12.tfm
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT latexbuild/MultiCalc.aux
-INPUT /usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc
+INPUT /usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmbx10.pfb
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmbx12.pfb
@@ -870,7 +870,6 @@ INPUT /usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmbx7.pfb
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmex10.pfb
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi10.pfb
-INPUT /usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi5.pfb
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi7.pfb
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr10.pfb
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr12.pfb
