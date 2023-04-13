@@ -53,6 +53,43 @@
 
 
 \begin{frame}
+    \frametitle{Change of coordinate}
+A coordinate transformation is a function \(\varphi\), which
+is bijective and differentiable for which \(D\varphi\) is
+invertible at all points in the domain.
+Here,
+\begin{equation*}
+    D\varphi = 
+    \begin{pmatrix}
+        \partial_1 \varphi_1 & \partial_2 \varphi_1 \\
+        \partial_1 \varphi_2 & \partial_2 \varphi_2 
+    \end{pmatrix} \,.
+\end{equation*}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Worksheet}
+    Find the image of the following transformations.
+    Determine whether they are coordinate transformation or not?
+    \begin{enumerate}
+        \item (Ex. 15.9.1) 
+    \begin{equation*}
+        x = u^2 - v^2 \,, \qquad y = 2uv \,.
+    \end{equation*}
+    \begin{equation*}
+        S =  \left\{ (u,v) | 0 \leq u,v \leq 1   \right\}
+    \end{equation*}
+    \item 
+        \begin{equation*}
+            x = u + v \,, \qquad y = u -v \,.
+        \end{equation*}
+    \begin{equation*}
+        S =  \left\{ (u,v) | 0 \leq u,v \leq 1   \right\}
+    \end{equation*}
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}
     \frametitle{Change of coordinates}
     Let $f$ be a function of  $(x,y)$ defined on the domain $D$. 
     Let 
@@ -80,9 +117,27 @@
     \end{equation*}
 \end{frame}
 
+
 \begin{frame}
     \frametitle{Worksheet}
+    Evaluate the following integral
+    \begin{enumerate}
+        \item 
+            \begin{equation*}
+                \iint_R \frac{x - 2y}{3x - y} \, dA \,,
+            \end{equation*}
+            where $R$ is the parallelogram enclosed by the lines
+            $x-2y = 0, x- 2y = 4, 3x-y = 1, 3x - y = 8$.
+
+        \item 
+            \begin{equation*}
+                \iint_R \sin(9x^2 + 4y^2) \, dA
+            \end{equation*}
+            where $R$ is the region in the first quadrant bounded
+            by the ellipse $9x^2 + 4y^2 = 1$.
+    \end{enumerate}
 \end{frame}
+
 
 
 
