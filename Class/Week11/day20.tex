@@ -1,0 +1,51 @@
+\documentclass[aspectratio=169]{beamer}
+\usetheme{Copenhagen}
+%% Remove draft for real article, put twocolumn for two columns
+\usetheme{metropolis}
+\usepackage{multicol}
+\usepackage[style=british]{csquotes}
+
+\def\signed #1{{\leavevmode\unskip\nobreak\hfil\penalty50\hskip1em
+  \hbox{}\nobreak\hfill #1%
+  \parfillskip=0pt \finalhyphendemerits=0 \endgraf}}
+
+\newsavebox\mybox
+\newenvironment{aquote}[1]
+  {\savebox\mybox{#1}\begin{quote}\openautoquote\hspace*{-.7ex}}
+  {\unskip\closeautoquote\vspace*{1mm}\signed{\usebox\mybox}\end{quote}}
+
+\usepackage[utf8]{inputenc}
+\newtheorem*{question}{Question}
+
+\newcommand{\vectorproj}[2][]{\mathrm{proj}_{\vect{#1}}\vect{#2}}
+\newcommand{\vectorcomp}[2][]{\mathrm{comp}_{\vect{#1}}\vect{#2}}
+\newcommand{\vect}{\mathbf}
+\newcommand{\R}{\mathbb{R}}
+%% commentary bubble
+\newcommand{\SV}[2][]{\sidenote[colback=green!10]{\textbf{SV\xspace #1:} #2}}
+
+\title{ Multivariable Calculus \\ Day  20 \\ Vector Calculus: Line integrals}
+\date{Spring 2023}
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}
+    \frametitle{ Warning}
+    Don't be confused with arc length!!!
+\end{frame}
+
+\begin{frame}
+    \frametitle{Line integrals}
+    \begin{definition}
+        Let $D$ be a domain on $\R^n$.
+        A vector field on $\R^n$ is a function $\vect{F}: D \to \R^n$
+        that assign each point $\vect{x}\in D$ to a vector $\vect{F}(\vect{x}) \in \R^n$.
+    \end{definition}
+    We only think about vector fields on $\R^2$ and $\R^3$.
+\end{frame}
+
+
+\end{document}
+
