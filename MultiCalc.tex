@@ -1226,6 +1226,9 @@ If \(f\) is continuous and \(\varphi\) is differentiable, then
 \hypertarget{applications-of-change-of-coordinates}{%
 \subsubsection{Applications of change of coordinates}\label{applications-of-change-of-coordinates}}
 
+\hypertarget{polar-coordinate}{%
+\paragraph{Polar coordinate}\label{polar-coordinate}}
+
 In \(\mathbb{R}^2\),
 when the region of integration is a section of a disk centered at \(0\).
 Let
@@ -1240,6 +1243,45 @@ Let
         r\sin\theta 
     \end{pmatrix} \,,
 \end{equation*}
-where \(a \leq b\) and \(\alpha \leq \theta \leq \beta\).
+where \(a \leq r \leq b\) and \(\alpha \leq \theta \leq \beta\).
+
+\hypertarget{cylindrical-coordinate}{%
+\paragraph{Cylindrical coordinate}\label{cylindrical-coordinate}}
+
+In \(\mathbb{R}^3\), when the region of integration is part of a cylinder.
+Let
+\begin{equation*}
+    \begin{pmatrix}
+        x \\ y \\z
+    \end{pmatrix}
+    =
+    \varphi(r,\phi,\theta) = 
+    \begin{pmatrix}
+        r\cos\theta\\
+        r\sin\theta\\
+        z
+    \end{pmatrix} \,,
+\end{equation*}
+where \(a \leq r \leq b\), \(\alpha \leq \theta \leq \beta\).
+
+\hypertarget{spherical-coordinate}{%
+\paragraph{Spherical coordinate}\label{spherical-coordinate}}
+
+In \(\mathbb{R}^3\), when the region of integration is a section of a ball centered at \(0\).
+Let
+\begin{equation*}
+    \begin{pmatrix}
+        x \\ y \\z
+    \end{pmatrix}
+    =
+    \varphi(\rho,\phi,\theta) = 
+    \begin{pmatrix}
+        \rho\sin\phi\cos\theta\\
+        \rho\sin\phi\sin\theta\\
+        \rho \cos\phi
+    \end{pmatrix} \,,
+\end{equation*}
+where \(a \leq \rho \leq b\), \(\alpha \leq \theta \leq \beta\), and
+\(c \leq \phi \leq d\).
 
 \end{document}

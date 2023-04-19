@@ -314,7 +314,7 @@ Let
         r\sin\theta 
     \end{pmatrix} \,,
 \end{equation*}\]</span>
-where <span class="math inline">\(a \leq b\)</span> and <span class="math inline">\(\alpha \leq \theta \leq \beta\)</span>.</p>
+where <span class="math inline">\(a \leq r \leq b\)</span> and <span class="math inline">\(\alpha \leq \theta \leq \beta\)</span>.</p>
 </div>
 <div id="cylindrical-coordinate" class="section level4 hasAnchor" number="6.3.1.2">
 <h4><span class="header-section-number">6.3.1.2</span> Cylindrical coordinate<a href="multiple-integrals.html#cylindrical-coordinate" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -328,11 +328,11 @@ Let
     \varphi(r,\phi,\theta) = 
     \begin{pmatrix}
         r\cos\theta\\
-        r\cos\theta\\
+        r\sin\theta\\
         z
     \end{pmatrix} \,,
 \end{equation*}\]</span>
-where $ a r b$, <span class="math inline">\(\alpha \leq \theta \leq \beta\)</span>.</p>
+where <span class="math inline">\(a \leq r \leq b\)</span>, <span class="math inline">\(\alpha \leq \theta \leq \beta\)</span>.</p>
 </div>
 <div id="spherical-coordinate" class="section level4 hasAnchor" number="6.3.1.3">
 <h4><span class="header-section-number">6.3.1.3</span> Spherical coordinate<a href="multiple-integrals.html#spherical-coordinate" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -343,14 +343,14 @@ Let
         x \\ y \\z
     \end{pmatrix}
     =
-    \varphi(r,\phi,\theta) = 
+    \varphi(\rho,\phi,\theta) = 
     \begin{pmatrix}
-        r\sin\phi\cos\theta\\
-        r\sin\phi\cos\theta\\
-        r \cos\phi
+        \rho\sin\phi\cos\theta\\
+        \rho\sin\phi\sin\theta\\
+        \rho \cos\phi
     \end{pmatrix} \,,
 \end{equation*}\]</span>
-where $ a r b$, <span class="math inline">\(\alpha \leq \theta \leq \beta\)</span>, and
+where <span class="math inline">\(a \leq \rho \leq b\)</span>, <span class="math inline">\(\alpha \leq \theta \leq \beta\)</span>, and
 <span class="math inline">\(c \leq \phi \leq d\)</span>.</p>
 
 </div>
