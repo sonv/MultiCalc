@@ -30,7 +30,7 @@
   
   
 <link rel="prev" href="optimization.html"/>
-
+<link rel="next" href="vector-calculus.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -48,7 +48,6 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
@@ -68,7 +67,6 @@
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Spring 2023</a></li>
 <li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html"><i class="fa fa-check"></i>Syllabus</a>
 <ul>
 <li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#key-information"><i class="fa fa-check"></i>Key information</a></li>
@@ -160,6 +158,14 @@
 <li class="chapter" data-level="6.3.1" data-path="multiple-integrals.html"><a href="multiple-integrals.html#applications-of-change-of-coordinates"><i class="fa fa-check"></i><b>6.3.1</b> Applications of change of coordinates</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="7" data-path="vector-calculus.html"><a href="vector-calculus.html"><i class="fa fa-check"></i><b>7</b> Vector Calculus</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="vector-calculus.html"><a href="vector-calculus.html#vector-fields"><i class="fa fa-check"></i><b>7.1</b> Vector fields</a></li>
+<li class="chapter" data-level="7.2" data-path="vector-calculus.html"><a href="vector-calculus.html#line-integrals"><i class="fa fa-check"></i><b>7.2</b> Line integrals</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="vector-calculus.html"><a href="vector-calculus.html#independence-of-path"><i class="fa fa-check"></i><b>7.2.1</b> Independence of path</a></li>
+</ul></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -188,7 +194,7 @@
 <p><span id="def:unlabeled-div-51" class="definition"><strong>Definition 6.1  </strong></span>Let <span class="math inline">\(f\)</span> be a function on a rectangle <span class="math inline">\(R\)</span>.
 An n-fold Riemann sum for <span class="math inline">\(f\)</span> over <span class="math inline">\(R\)</span> is a sum of the following form
 <span class="math display">\[\begin{equation*}
- \sum_{i_1=1}^{m_1}\dots \sum_{i_n=1}^{m_n} f(\xi_{i_1\dots i_n}) \Delta A \,,
+\sum_{i_1=1}^{m_1}\dots \sum_{i_n=1}^{m_n} f(\xi_{i_1\dots i_n}) \Delta A \,,
 \end{equation*}\]</span>
 where</p>
 <ul>
@@ -201,12 +207,12 @@ where</p>
 <div class="definition">
 <p><span id="def:unlabeled-div-52" class="definition"><strong>Definition 6.2  </strong></span>The double integral of <span class="math inline">\(f\)</span> over a rectangle <span class="math inline">\(R \subseteq \mathbb{R}^2\)</span> is
 <span class="math display">\[\begin{equation*}
-    \iint_{R} f(x,y) \, dA = \lim_{m,n\to \infty} \sum_{i=1}^m \sum_{j=1}^n f(\xi_{ij}) \Delta A 
+    \iint_{R} f(x,y) \, dA = \lim_{m,n\to \infty} \sum_{i=1}^m \sum_{j=1}^n f(\xi_{ij}) \Delta A
 \end{equation*}\]</span>
 if the limit exists.</p>
 <p>The triple integral of <span class="math inline">\(f\)</span> over a rectangle <span class="math inline">\(R \subseteq \mathbb{R}^3\)</span> is
 <span class="math display">\[\begin{equation*}
-    \iiint_{R} f(x,y) \, dA = \lim_{m,n,l\to \infty} \sum_{i=1}^m \sum_{j=1}^n \sum_{k=1}^l f(\xi_{ijk}) \Delta A 
+    \iiint_{R} f(x,y) \, dA = \lim_{m,n,l\to \infty} \sum_{i=1}^m \sum_{j=1}^n \sum_{k=1}^l f(\xi_{ijk}) \Delta A
 \end{equation*}\]</span>
 if the limit exists.</p>
 </div>
@@ -215,10 +221,10 @@ if the limit exists.</p>
 <ol style="list-style-type: decimal">
 <li><p>Let <span class="math inline">\(U, V\)</span> be disjoint domains, then
 <span class="math display">\[\begin{equation*}
-\iint_{U \cup V} f \, dA = \iint_U f \, dA + \iint_V f\, dA \,. 
+\iint_{U \cup V} f \, dA = \iint_U f \, dA + \iint_V f\, dA \,.
 \end{equation*}\]</span></p></li>
 <li><p><span class="math display">\[\begin{equation*}
- \iint_U (f + g) \, dA = \iint_U f \, dA + \iint_V f \, dA \,.
+\iint_U (f + g) \, dA = \iint_U f \, dA + \iint_V f \, dA \,.
 \end{equation*}\]</span></p></li>
 </ol>
 </div>
@@ -236,7 +242,7 @@ where
 \end{equation*}\]</span>
 Typically, we write the above as
 <span class="math display">\[\begin{equation*}
-   \int_a^b \int_c^d f(x,y) \, dy dx \,. 
+   \int_a^b \int_c^d f(x,y) \, dy dx \,.
 \end{equation*}\]</span>
 This means that we integrate in <span class="math inline">\(y\)</span> before in <span class="math inline">\(x\)</span>– always integrate the inner part first.</p>
 <p>Similarly, we can define an iterated integral in a different order
@@ -273,10 +279,10 @@ is bijective and differentiable for which <span class="math inline">\(D\varphi\)
 invertible at all points in the domain.
 Here,
 <span class="math display">\[\begin{equation*}
-    D\varphi = 
+    D\varphi =
     \begin{pmatrix}
         \partial_1 \varphi_1 &amp; \partial_2 \varphi_1 \\
-        \partial_1 \varphi_2 &amp; \partial_2 \varphi_2 
+        \partial_1 \varphi_2 &amp; \partial_2 \varphi_2
     \end{pmatrix} \,.
 \end{equation*}\]</span></p>
 <p>We will need to re-call the notion of invertible matrix here.
@@ -308,10 +314,10 @@ Let
         x \\ y
     \end{pmatrix}
     =
-    \varphi(r,\theta) = 
+    \varphi(r,\theta) =
     \begin{pmatrix}
         r\cos\theta \\
-        r\sin\theta 
+        r\sin\theta
     \end{pmatrix} \,,
 \end{equation*}\]</span>
 where <span class="math inline">\(a \leq r \leq b\)</span> and <span class="math inline">\(\alpha \leq \theta \leq \beta\)</span>.</p>
@@ -325,7 +331,7 @@ Let
         x \\ y \\z
     \end{pmatrix}
     =
-    \varphi(r,\phi,\theta) = 
+    \varphi(r,\phi,\theta) =
     \begin{pmatrix}
         r\cos\theta\\
         r\sin\theta\\
@@ -343,7 +349,7 @@ Let
         x \\ y \\z
     \end{pmatrix}
     =
-    \varphi(\rho,\phi,\theta) = 
+    \varphi(\rho,\phi,\theta) =
     \begin{pmatrix}
         \rho\sin\phi\cos\theta\\
         \rho\sin\phi\sin\theta\\
@@ -353,6 +359,7 @@ Let
 where <span class="math inline">\(a \leq \rho \leq b\)</span>, <span class="math inline">\(\alpha \leq \theta \leq \beta\)</span>, and
 <span class="math inline">\(c \leq \phi \leq d\)</span>.</p>
 
+<div style="page-break-after: always;"></div>
 </div>
 </div>
 </div>
@@ -362,8 +369,8 @@ where <span class="math inline">\(a \leq \rho \leq b\)</span>, <span class="math
           </div>
         </div>
       </div>
-<a href="optimization.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="optimization.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="vector-calculus.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

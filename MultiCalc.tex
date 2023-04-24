@@ -4,17 +4,20 @@
 %
 \documentclass[
 ]{article}
-\usepackage{lmodern}
-\usepackage{amssymb,amsmath}
-\usepackage{ifxetex,ifluatex}
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
 \else % if luatex or xetex
-  \usepackage{unicode-math}
+  \usepackage{unicode-math} % this also loads fontspec
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -33,16 +36,9 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
-\hypersetup{
-  pdftitle={MATH 104: Multivariable Calculus (brief notes)},
-  pdfauthor={Truong-Son Van},
-  hidelinks,
-  pdfcreator={LaTeX via pandoc}}
-\urlstyle{same} % disable monospaced font for URLs
 \usepackage[margin=1in]{geometry}
-\usepackage{longtable,booktabs}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
 \makeatletter
@@ -68,6 +64,17 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={MATH 104: Multivariable Calculus (brief notes)},
+  pdfauthor={Truong-Son Van},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
 
 \title{MATH 104: Multivariable Calculus (brief notes)}
 \author{Truong-Son Van}
@@ -1283,5 +1290,241 @@ Let
 \end{equation*}
 where \(a \leq \rho \leq b\), \(\alpha \leq \theta \leq \beta\), and
 \(c \leq \phi \leq d\).
+
+\newpage
+
+\hypertarget{vector-calculus}{%
+\section{Vector Calculus}\label{vector-calculus}}
+
+Read Chapter 16 in Stewart.
+
+\hypertarget{vector-fields}{%
+\subsection{Vector fields}\label{vector-fields}}
+
+\begin{definition}
+Let \(D\) be a domain on \(\mathbb{R}^n\).
+A vector field on \(\mathbb{R}^n\) is a function \(\mathbf{F}: D \to \mathbb{R}^n\)
+that assign each point \(\mathbf{x}\in D\) to a vector \(\mathbf{F}(\mathbf{x}) \in \mathbb{R}^n\).
+\end{definition}
+
+In \(\mathbb{R}^2\), one typically write the vector fields in terms of \textbf{component functions} \(P, Q\)
+\[\mathbf{F}(x,y) = P(x,y) \mathbf{i} + Q(x,y) \mathbf{j}\,.\]
+
+In \(\mathbb{R}^3\), one typically write the vector fields in terms of \textbf{component functions} \(P, Q, R\)
+\[\mathbf{F}(x,y,z) = P(x,y) \mathbf{i} + Q(x,y) \mathbf{j} + R(x,y,z) \mathbf{k}\,.\]
+
+\begin{example}
+Newton's Law of Gravitation
+\begin{equation*}
+    \mathbf{F}(\mathbf{x}) = - \frac{m M G}{| \mathbf{x}|^3 } \mathbf{x} \,,
+\end{equation*}
+where \(\mathbf{x}\) is the position in \(\mathbb{R}^3\).
+\end{example}
+
+\begin{example}
+Coulomb's Law for the electric force exerted by an electric charge \(Q\)
+at the origin on another charge \(q\) at a point \(\mathbf{x}\in \mathbb{R}^3\).
+\begin{equation*}
+    \mathbf{F}(\mathbf{x}) = \frac{ \epsilon q Q}{|\mathbf{x}|^3} \mathbf{x} \,.
+\end{equation*}
+\end{example}
+
+\hypertarget{line-integrals}{%
+\subsection{Line integrals}\label{line-integrals}}
+
+Let's focus on \(\mathbb{R}^2\).
+We now perform a Riemann-sum-like action.
+
+\begin{definition}
+Let \(C\) be a curve.
+The \textbf{line integral of $f$ along $C$} is defined as
+\begin{equation*}
+    \int_C f(x,y) \, ds = \lim_{n\to \infty} \sum_{i=1}^n f(x_i^*, y_i^*) \Delta s_i \,,
+\end{equation*}
+where \(\Delta s_i\) is the length of a subarc of \(C\).
+\end{definition}
+
+\begin{proposition}
+Suppose \(C\) is smooth and is parametrized by \(\mathbf{r}(t), a\leq t \leq b\). Then
+\begin{equation*}
+    \int_C f(x,y) \, ds = \int_a^b f(\mathbf{r}(t)) |\mathbf{r}'(t)| \, dt \,.
+\end{equation*}
+\end{proposition}
+
+Note: reverse the direction of traversing the curve \(C\) will result
+in a change of sign of the final solution.
+
+\begin{equation*}
+    \int_{-C} f(x,y) \, ds = - \int_C f(x,y) \, ds \,.
+\end{equation*}
+
+We also use the following notations
+
+\begin{align*}
+\int_C f(x,y) dx := \int_a^b f(x(t), y(t) ) \, x'(t) \, dt \,, \\
+\int_C f(x,y) dy := \int_a^b f(x(t), y(t) ) \, y'(t) \, dt \,, \\
+\end{align*}
+
+We can abbreviate the above by
+\begin{equation*}
+\int_C P(x,y) dx +
+\int_C Q(x,y) dy 
+= \int_C P(x,y) \, dx + Q(x,y) \, dy \,.
+\end{equation*}
+
+Now we define line integrals of vector fields.
+
+\begin{definition}
+Let \(\mathbf{F}\) be a continuous vector field defined
+on a curve \(C\).
+Then the \textbf{line integral of \(\mathbf{F}\) along \(C\)} is defined as
+\begin{equation*}
+    \int_C \mathbf{F} \cdot d \mathbf{r} 
+    = \int_C \mathbf{F}\cdot \mathbf{T} \, ds \,,
+\end{equation*}
+where \(\mathbf{T}\) is the unit tangent vector.
+\end{definition}
+
+\begin{proposition}
+Suppose \(C\) is smooth and
+parametrized by \(\mathbf{r}(t), a \leq t \leq b\).
+Then
+\begin{equation*}
+    \int_C \mathbf{F} \cdot d \mathbf{r} 
+    = \int_a^b \mathbf{F}(\mathbf{r}(t)) \cdot \mathbf{r}'(t) \, dt
+    = \int_C P \, dx + Q \, dy \,.
+\end{equation*}
+\end{proposition}
+
+\begin{theorem}[Fundamental Theorem for line integrals]
+Let \(C\) be a smooth curve given by the parametrization \(\mathbf{r}(t)\),
+\(a \leq t \leq b\).
+Let \(f\) be a differentiable function of two or three
+variables whose gradient vector \(\nabla f\) is continuous on \(C\).
+Then,
+\begin{equation*}
+    \int_C \nabla f \cdot d\mathbf{r} = f(\mathbf{r}(b)) - f(\mathbf{r}(a)) \,.
+\end{equation*}
+\end{theorem}
+
+\begin{definition}
+A \textbf{closed curve} is a curve that starts and ends at the same point.
+A \textbf{simple closed curve} is a closed curve that never crosses itself.
+\end{definition}
+
+Sometimes, if \(C\) is a closed curve, we signify it by the following notation
+\begin{equation*}
+    \oint_C \nabla f \cdot d\mathbf{r} \,.
+\end{equation*}
+
+\begin{corollary}
+If \(C\) is a closed curve and \(f:\mathbb{R}^n \to \mathbb{R}\) is a smooth function,
+then
+\begin{equation*}
+    \oint_C \nabla f \cdot d\mathbf{r}  = 0 \,.
+\end{equation*}
+\end{corollary}
+
+\begin{definition}
+A vector field \(\mathbf{F}\) is called a \textbf{conservative vector field}
+if it is the gradient of some scalar function, that is there exists
+a function \(f\) such that
+\begin{equation*}
+    \nabla f = \mathbf{F} \,.
+\end{equation*}
+\end{definition}
+
+Therefore, if \(\mathbf{F}\) is a conservative vector field, then
+\begin{equation*}
+    \oint_C \mathbf{F} \cdot d\mathbf{r} = 0 \,.
+\end{equation*}
+
+\hypertarget{independence-of-path}{%
+\subsubsection{Independence of path}\label{independence-of-path}}
+
+Suppose \(C_1\) and \(C_2\) are two piecewise smooth curves that have the same initial point \(A\)
+and end point \(B\).
+Then,
+\begin{equation*}
+    \int_{C_1} \mathbf{F}\cdot d\mathbf{r} 
+    =
+    \int_{C_2} \mathbf{F} \cdot d\mathbf{r} 
+\end{equation*}
+whenever \(\mathbf{F}\) is conservative (Why?).
+The question is when is the converse true?
+
+The following example is an example when the converse is not always true.
+
+\begin{example}
+Evaluate
+\begin{equation*}
+    \int_{C_i} y^2 \, dx + x\, dy \,, \qquad i = 1,2
+\end{equation*}
+where \(C_1\) is the line segment from \((-5,-3) \to (0,2)\) and
+\(C_2\) is the arc of the parabola \(x = 4-y^2\) from \((-5,-3) \to (0,2)\).
+\end{example}
+
+To further the discussion, we need a few definitions.
+
+\begin{definition}
+Let \(\mathbf{F}\) be a continuous vector field with domain \(D\), we say that the
+line integral
+\begin{equation*}
+    \int_C \mathbf{F} \cdot d\mathbf{r} 
+\end{equation*}
+is \textbf{independent of path} if
+\begin{equation*}
+    \int_{C_1} \mathbf{F}\cdot d\mathbf{r} 
+    =
+    \int_{C_2} \mathbf{F} \cdot d\mathbf{r} 
+\end{equation*}
+\end{definition}
+
+\begin{theorem}
+\(\int_C \mathbf{F}\cdot d\mathbf{r}\) is independent of path in \(D\) if and only if
+\(\int_C \mathbf{F} \cdot d\mathbf{r} = 0\) for every closed path \(C\) in \(D\).
+\end{theorem}
+
+\begin{definition}
+A domain \(D\) is said to be \textbf{open} if around each point, we can draw an open ball around it.
+A domain \(D\) is said to be \textbf{connected} if for any two points, there is a path that connect them
+together.
+A domain \(D\) is said to be \textbf{simply connected} if is connected and there's no hole in it.
+\end{definition}
+
+\begin{theorem}
+Suppose \(\mathbf{F}\) is a vector field that is continuous on an open
+connected region \(D\).
+If \(\int_C \mathbf{F} \cdot d \mathbf{r}\) is independent of path in \(D\),
+then \(\mathbf{F}\) is a conservative vector field on \(D\).
+\end{theorem}
+
+\begin{proof}
+todo
+\end{proof}
+
+The above theorem gives a way to determine if a vector field is conservative or not, from
+the point of view of path independence.
+However, it is often difficult to check the path independence property as one has to
+integrate over ALL possible curves, and there are a lot of them\ldots{}
+
+Another way is to take inspiration from Clairaut's theorem.
+The question is to determine whether \(\mathbf{F}\) is conservative, given the mixed partial
+derivatives of \(P\) and \(Q\) are the same, i.e.,
+\begin{equation*}
+    \frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}\,.
+\end{equation*}
+(Compare this with Clairaut's)
+
+\begin{theorem}
+Let \(\mathbf{F} = P\mathbf{i} + Q\mathbf{j}\) be a vector field on an open simply connected
+region \(D\). Suppose that
+\(P\) and \(Q\) have continuous first-order partial derivatives and
+\begin{equation*}
+    \frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}
+\end{equation*}
+through out \(D\).
+Then \(\mathbf{F}\) is conservative.
+\end{theorem}
 
 \end{document}
