@@ -1351,25 +1351,11 @@ Suppose \(C\) is smooth and is parametrized by \(\mathbf{r}(t), a\leq t \leq b\)
 \end{equation*}
 \end{proposition}
 
-Note: reverse the direction of traversing the curve \(C\) will result
+Note: when integrating with respect to arc length like this, reverse the direction of traversing the curve \(C\) will NOT result
 in a change of sign of the final solution.
 
 \begin{equation*}
-    \int_{-C} f(x,y) \, ds = - \int_C f(x,y) \, ds \,.
-\end{equation*}
-
-We also use the following notations
-
-\begin{align*}
-\int_C f(x,y) dx := \int_a^b f(x(t), y(t) ) \, x'(t) \, dt \,, \\
-\int_C f(x,y) dy := \int_a^b f(x(t), y(t) ) \, y'(t) \, dt \,, \\
-\end{align*}
-
-We can abbreviate the above by
-\begin{equation*}
-\int_C P(x,y) dx +
-\int_C Q(x,y) dy 
-= \int_C P(x,y) \, dx + Q(x,y) \, dy \,.
+    \int_{-C} f(x,y) \, ds =  \int_C f(x,y) \, ds \,.
 \end{equation*}
 
 Now we define line integrals of vector fields.
@@ -1392,9 +1378,38 @@ Then
 \begin{equation*}
     \int_C \mathbf{F} \cdot d \mathbf{r} 
     = \int_a^b \mathbf{F}(\mathbf{r}(t)) \cdot \mathbf{r}'(t) \, dt
-    = \int_C P \, dx + Q \, dy \,.
 \end{equation*}
 \end{proposition}
+
+We also use the following notations
+
+\begin{align*}
+\int_C f(x,y) dx := \int_a^b f(x(t), y(t) ) \, x'(t) \, dt \,, \\
+\int_C f(x,y) dy := \int_a^b f(x(t), y(t) ) \, y'(t) \, dt \,, \\
+\end{align*}
+
+We can abbreviate the above by
+\begin{equation*}
+\int_C P(x,y) dx +
+\int_C Q(x,y) dy 
+= \int_C P(x,y) \, dx + Q(x,y) \, dy \,.
+\end{equation*}
+
+So,
+\begin{equation*}
+    \int_C \mathbf{F} \cdot d \mathbf{r} 
+    = \int_C P \, dx + Q \, dy \,.
+\end{equation*}
+
+Note: as oppose to integrating the arc length, reversing the order of the above integrals
+will change the sign of the integral.
+This is because the arc length is always positive, while \(\Delta x\) and \(\Delta y\) could be either positive
+or negative.
+
+\begin{equation*}
+\int_{-C} P(x,y) \, dx + Q(x,y) \, dy 
+= -\int_C P(x,y) \, dx + Q(x,y) \, dy \,.
+\end{equation*}
 
 \begin{theorem}[Fundamental Theorem for line integrals]
 Let \(C\) be a smooth curve given by the parametrization \(\mathbf{r}(t)\),
