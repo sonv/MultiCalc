@@ -34,7 +34,15 @@
 
 
 \begin{frame}
-    \frametitle{Recap}
+    \frametitle{Recap: Worksheet}
+    Work done by a force field along a path is 
+    \begin{equation*}
+        W = \int_C  \vect{F} \cdot d\vect{r} \,.
+    \end{equation*}
+    A force field is given $\vect{F}(x,y) = x^2 \vect{i} - xy \vect{j}$.
+    Suppose we want to move a particle along the quarter circle
+    $\vect{r}(t) = \cos t \vect{i} + \sin t \vect{j}, 0 \leq t \leq \pi/2$.
+    Compute the work done.
 \end{frame}
 
 
@@ -56,6 +64,14 @@
 
 \begin{frame}
     \frametitle{Worksheet}
+    \begin{enumerate}
+        \item Find the work done by the gravitational field in $\R^3$
+            \begin{equation*}
+                \vect{F}(\vect{x}) = - \frac{-mMG}{|\vect{x}|^3} \vect{x}
+            \end{equation*}
+            in moving a particle with mass $m$ from
+            $(3,4,12) \to (2,2,0)$ along a straight line.
+    \end{enumerate}
 \end{frame}
 
 \begin{frame}
@@ -89,20 +105,34 @@ a function \(f\) such that
 \end{definition}
 \end{frame}
 
-\section{Independence of path}
 \begin{frame}
     \frametitle{Worksheet}
-    \begin{enumerate}
-        \item True or False? 
+         True or False? 
 If \(\mathbf{F}\) is a conservative vector field, then
 \begin{equation*}
     \oint_C \mathbf{F} \cdot d\mathbf{r} = 0 \,.
 \end{equation*}
-    \end{enumerate}
-
-    \item 
 
 \end{frame}
+
+\section{Independence of path}
+
+\begin{frame}
+    \frametitle{Worksheet}
+    Evaluate
+    \begin{equation*}
+        \int_{C} y^2 \, dx + x\, dy \,, \qquad i = 1,2
+    \end{equation*}
+    \begin{enumerate}
+        \item where \(C\) is the line segment from \((-5,-3) \to (0,2)\) 
+        \item where \(C\) is the arc of the parabola \(x = 4-y^2\) from \((-5,-3) \to (0,2)\).
+        \item repeat the above two steps with 
+            \begin{equation*}
+                P = x\,, \qquad Q = y \,.
+            \end{equation*}
+    \end{enumerate}
+\end{frame}
+
 
 \begin{frame}
 \begin{definition}
@@ -119,6 +149,7 @@ is \textbf{independent of path} if
 \end{equation*}
 \end{definition}
 \end{frame}
+
 
 \begin{frame}
     \frametitle{Independence of path and conservative vector fields}
