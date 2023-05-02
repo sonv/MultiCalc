@@ -48,7 +48,6 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
@@ -68,7 +67,6 @@
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Spring 2023</a></li>
 <li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html"><i class="fa fa-check"></i>Syllabus</a>
 <ul>
 <li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#key-information"><i class="fa fa-check"></i>Key information</a></li>
@@ -167,6 +165,10 @@
 <ul>
 <li class="chapter" data-level="7.2.1" data-path="vector-calculus.html"><a href="vector-calculus.html#independence-of-path"><i class="fa fa-check"></i><b>7.2.1</b> Independence of path</a></li>
 </ul></li>
+<li class="chapter" data-level="7.3" data-path="vector-calculus.html"><a href="vector-calculus.html#greens-theorem"><i class="fa fa-check"></i><b>7.3</b> Green’s Theorem</a></li>
+<li class="chapter" data-level="7.4" data-path="vector-calculus.html"><a href="vector-calculus.html#curl-and-divergence"><i class="fa fa-check"></i><b>7.4</b> Curl and Divergence</a></li>
+<li class="chapter" data-level="7.5" data-path="vector-calculus.html"><a href="vector-calculus.html#surface-integrals"><i class="fa fa-check"></i><b>7.5</b> Surface integrals</a></li>
+<li class="chapter" data-level="7.6" data-path="vector-calculus.html"><a href="vector-calculus.html#stokes-and-divergence-theorem"><i class="fa fa-check"></i><b>7.6</b> Stokes’ and Divergence Theorem</a></li>
 </ul></li>
 </ul>
 
@@ -220,7 +222,7 @@ at the origin on another charge <span class="math inline">\(q\)</span> at a poin
 We now perform a Riemann-sum-like action.</p>
 <div class="definition">
 <p><span id="def:unlabeled-div-59" class="definition"><strong>Definition 7.2  </strong></span>Let <span class="math inline">\(C\)</span> be a curve.
-The  is defined as
+The is defined as
 <span class="math display">\[\begin{equation*}
     \int_C f(x,y) \, ds = \lim_{n\to \infty} \sum_{i=1}^n f(x_i^*, y_i^*) \Delta s_i \,,
 \end{equation*}\]</span>
@@ -243,7 +245,7 @@ in a change of sign of the final solution.</p>
 on a curve <span class="math inline">\(C\)</span>.
 Then the <strong>line integral of <span class="math inline">\(\mathbf{F}\)</span> along <span class="math inline">\(C\)</span></strong> is defined as
 <span class="math display">\[\begin{equation*}
-    \int_C \mathbf{F} \cdot d \mathbf{r} 
+    \int_C \mathbf{F} \cdot d \mathbf{r}
     = \int_C \mathbf{F}\cdot \mathbf{T} \, ds \,,
 \end{equation*}\]</span>
 where <span class="math inline">\(\mathbf{T}\)</span> is the unit tangent vector.</p>
@@ -253,7 +255,7 @@ where <span class="math inline">\(\mathbf{T}\)</span> is the unit tangent vector
 parametrized by <span class="math inline">\(\mathbf{r}(t), a \leq t \leq b\)</span>.
 Then
 <span class="math display">\[\begin{equation*}
-    \int_C \mathbf{F} \cdot d \mathbf{r} 
+    \int_C \mathbf{F} \cdot d \mathbf{r}
     = \int_a^b \mathbf{F}(\mathbf{r}(t)) \cdot \mathbf{r}&#39;(t) \, dt
 \end{equation*}\]</span></p>
 </div>
@@ -265,12 +267,12 @@ Then
 <p>We can abbreviate the above by
 <span class="math display">\[\begin{equation*}
 \int_C P(x,y) dx +
-\int_C Q(x,y) dy 
+\int_C Q(x,y) dy
 = \int_C P(x,y) \, dx + Q(x,y) \, dy \,.
 \end{equation*}\]</span></p>
 <p>So,
 <span class="math display">\[\begin{equation*}
-    \int_C \mathbf{F} \cdot d \mathbf{r} 
+    \int_C \mathbf{F} \cdot d \mathbf{r}
     = \int_C P \, dx + Q \, dy \,.
 \end{equation*}\]</span></p>
 <p>Note: as oppose to integrating the arc length, reversing the order of the above integrals
@@ -278,7 +280,7 @@ will change the sign of the integral.
 This is because the arc length is always positive, while <span class="math inline">\(\Delta x\)</span> and <span class="math inline">\(\Delta y\)</span> could be either positive
 or negative.</p>
 <p><span class="math display">\[\begin{equation*}
-\int_{-C} P(x,y) \, dx + Q(x,y) \, dy 
+\int_{-C} P(x,y) \, dx + Q(x,y) \, dy
 = -\int_C P(x,y) \, dx + Q(x,y) \, dy \,.
 \end{equation*}\]</span></p>
 <div class="theorem">
@@ -324,9 +326,9 @@ a function <span class="math inline">\(f\)</span> such that
 and end point <span class="math inline">\(B\)</span>.
 Then,
 <span class="math display">\[\begin{equation*}
-    \int_{C_1} \mathbf{F}\cdot d\mathbf{r} 
+    \int_{C_1} \mathbf{F}\cdot d\mathbf{r}
     =
-    \int_{C_2} \mathbf{F} \cdot d\mathbf{r} 
+    \int_{C_2} \mathbf{F} \cdot d\mathbf{r}
 \end{equation*}\]</span>
 whenever <span class="math inline">\(\mathbf{F}\)</span> is conservative (Why?).
 The question is when is the converse true?</p>
@@ -344,13 +346,13 @@ where <span class="math inline">\(C_1\)</span> is the line segment from <span cl
 <p><span id="def:unlabeled-div-68" class="definition"><strong>Definition 7.6  </strong></span>Let <span class="math inline">\(\mathbf{F}\)</span> be a continuous vector field with domain <span class="math inline">\(D\)</span>, we say that the
 line integral
 <span class="math display">\[\begin{equation*}
-    \int_C \mathbf{F} \cdot d\mathbf{r} 
+    \int_C \mathbf{F} \cdot d\mathbf{r}
 \end{equation*}\]</span>
 is <strong>independent of path</strong> if
 <span class="math display">\[\begin{equation*}
-    \int_{C_1} \mathbf{F}\cdot d\mathbf{r} 
+    \int_{C_1} \mathbf{F}\cdot d\mathbf{r}
     =
-    \int_{C_2} \mathbf{F} \cdot d\mathbf{r} 
+    \int_{C_2} \mathbf{F} \cdot d\mathbf{r}
 \end{equation*}\]</span></p>
 </div>
 <div class="theorem">
@@ -393,8 +395,78 @@ region <span class="math inline">\(D\)</span>. Suppose that
 through out <span class="math inline">\(D\)</span>.
 Then <span class="math inline">\(\mathbf{F}\)</span> is conservative.</p>
 </div>
-
+<div class="remark">
+<p><span id="unlabeled-div-74" class="remark"><em>Remark</em>. </span>The connectedness of <span class="math inline">\(D\)</span> is crucial (why?).</p>
 </div>
+</div>
+</div>
+<div id="greens-theorem" class="section level2 hasAnchor" number="7.3">
+<h2><span class="header-section-number">7.3</span> Green’s Theorem<a href="vector-calculus.html#greens-theorem" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-75" class="theorem"><strong>Theorem 7.5  (Green's Theorem) </strong></span>Let <span class="math inline">\(D\)</span> be an open bounded simply connected domain in <span class="math inline">\(\mathbb{R}^2\)</span>,
+<span class="math inline">\(\Gamma\)</span> be the boundary of <span class="math inline">\(D\)</span>,
+and <span class="math inline">\(\mathbf{F} = P\mathbf{i} + Q \mathbf{j}\)</span> be a vector field.
+If <span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span> have continuous partial derivatives on an open region
+that contains <span class="math inline">\(D\)</span>, then
+<span class="math display">\[\begin{equation*}
+    \int_\Gamma \mathbf{F} \cdot d \ell  = \iint_D \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) \, dA \,.
+\end{equation*}\]</span></p>
+</div>
+</div>
+<div id="curl-and-divergence" class="section level2 hasAnchor" number="7.4">
+<h2><span class="header-section-number">7.4</span> Curl and Divergence<a href="vector-calculus.html#curl-and-divergence" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="definition">
+<p><span id="def:unlabeled-div-76" class="definition"><strong>Definition 7.8  </strong></span>Let <span class="math inline">\(\mathbf{F}\)</span> be a vector field in <span class="math inline">\(\mathbb{R}^3\)</span>.
+If all partial derivatives of <span class="math inline">\(P,Q,R\)</span> exist, then we define
+<span class="math display">\[\begin{equation*}
+    \mathrm{curl}\,\mathbf{F} =  \left( \frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z} \right) \mathbf{i}
+                       + \left( \frac{\partial P}{\partial z} - \frac{\partial R}{\partial x}  \right)  \mathbf{j}
+                         + \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}  \right) \mathbf{k} \,.
+\end{equation*}\]</span></p>
+</div>
+<p>A different notation for <span class="math inline">\(\mathrm{curl} \, \mathbf{F}\)</span> is
+<span class="math display">\[\begin{equation*}
+    \nabla \times \mathbf{F} \,.
+\end{equation*}\]</span></p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-77" class="theorem"><strong>Theorem 7.6  </strong></span>If <span class="math inline">\(f\)</span> is a function of 3 variables that has continuous second partial derivatives, then
+<span class="math display">\[\begin{equation*}
+    \nabla \times ( \nabla f) = 0 \,.
+\end{equation*}\]</span></p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-78" class="theorem"><strong>Theorem 7.7  </strong></span>Suppose <span class="math inline">\(\mathbf{F}\)</span> is a vector field on and simply connected domain <span class="math inline">\(D\)</span> so that <span class="math inline">\(P,Q,R\)</span>
+all have continuous partial derivatives.
+<span class="math inline">\(F\)</span> is a conservative vector field if and only if
+<span class="math inline">\(\nabla \times \mathbf{F} = 0\)</span>.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-79" class="definition"><strong>Definition 7.9  </strong></span>Let <span class="math inline">\(\mathbf{F}\)</span> be a vector field in <span class="math inline">\(\mathbb{R}^3\)</span>.
+If all partial derivatives of <span class="math inline">\(P,Q,R\)</span> exist, then we define
+<span class="math display">\[\begin{equation*}
+    \mathrm{div}\,\mathbf{F} =  
+    \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z} \,.
+\end{equation*}\]</span></p>
+</div>
+<p>A different notation for <span class="math inline">\(\mathrm{div} \, \mathbf{F}\)</span> is
+<span class="math display">\[\begin{equation*}
+    \nabla \cdot \mathbf{F} \,.
+\end{equation*}\]</span></p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-80" class="theorem"><strong>Theorem 7.8  </strong></span>Suppose <span class="math inline">\(\mathbf{F}\)</span> is a vector field on a domain <span class="math inline">\(D\)</span> and <span class="math inline">\(P,Q,R\)</span> have continuous
+second-order partial derivatives.
+Then,
+<span class="math display">\[\begin{equation*}
+    \nabla \cdot (\nabla \times \mathbf{F}) = 0 \,.
+\end{equation*}\]</span></p>
+</div>
+</div>
+<div id="surface-integrals" class="section level2 hasAnchor" number="7.5">
+<h2><span class="header-section-number">7.5</span> Surface integrals<a href="vector-calculus.html#surface-integrals" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="stokes-and-divergence-theorem" class="section level2 hasAnchor" number="7.6">
+<h2><span class="header-section-number">7.6</span> Stokes’ and Divergence Theorem<a href="vector-calculus.html#stokes-and-divergence-theorem" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+
 </div>
 </div>
             </section>

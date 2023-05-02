@@ -4,17 +4,20 @@
 %
 \documentclass[
 ]{article}
-\usepackage{lmodern}
-\usepackage{amssymb,amsmath}
-\usepackage{ifxetex,ifluatex}
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
 \else % if luatex or xetex
-  \usepackage{unicode-math}
+  \usepackage{unicode-math} % this also loads fontspec
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -33,16 +36,9 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
-\hypersetup{
-  pdftitle={MATH 104: Multivariable Calculus (brief notes)},
-  pdfauthor={Truong-Son Van},
-  hidelinks,
-  pdfcreator={LaTeX via pandoc}}
-\urlstyle{same} % disable monospaced font for URLs
 \usepackage[margin=1in]{geometry}
-\usepackage{longtable,booktabs}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
 \makeatletter
@@ -68,6 +64,17 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={MATH 104: Multivariable Calculus (brief notes)},
+  pdfauthor={Truong-Son Van},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
 
 \title{MATH 104: Multivariable Calculus (brief notes)}
 \author{Truong-Son Van}
@@ -1534,5 +1541,84 @@ region \(D\). Suppose that
 through out \(D\).
 Then \(\mathbf{F}\) is conservative.
 \end{theorem}
+
+\begin{remark}
+The connectedness of \(D\) is crucial (why?).
+\end{remark}
+
+\hypertarget{greens-theorem}{%
+\subsection{Green's Theorem}\label{greens-theorem}}
+
+\begin{theorem}[Green's Theorem]
+Let \(D\) be an open bounded simply connected domain in \(\mathbb{R}^2\),
+\(\Gamma\) be the boundary of \(D\),
+and \(\mathbf{F} = P\mathbf{i} + Q \mathbf{j}\) be a vector field.
+If \(P\) and \(Q\) have continuous partial derivatives on an open region
+that contains \(D\), then
+\begin{equation*}
+    \int_\Gamma \mathbf{F} \cdot d \ell  = \iint_D \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) \, dA \,.
+\end{equation*}
+\end{theorem}
+
+\hypertarget{curl-and-divergence}{%
+\subsection{Curl and Divergence}\label{curl-and-divergence}}
+
+\begin{definition}
+Let \(\mathbf{F}\) be a vector field in \(\mathbb{R}^3\).
+If all partial derivatives of \(P,Q,R\) exist, then we define
+\begin{equation*}
+    \mathrm{curl}\,\mathbf{F} =  \left( \frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z} \right) \mathbf{i}
+                       + \left( \frac{\partial P}{\partial z} - \frac{\partial R}{\partial x}  \right)  \mathbf{j}
+                         + \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}  \right) \mathbf{k} \,.
+\end{equation*}
+\end{definition}
+
+A different notation for \(\mathrm{curl} \, \mathbf{F}\) is
+\begin{equation*}
+    \nabla \times \mathbf{F} \,.
+\end{equation*}
+
+\begin{theorem}
+If \(f\) is a function of 3 variables that has continuous second partial derivatives, then
+\begin{equation*}
+    \nabla \times ( \nabla f) = 0 \,.
+\end{equation*}
+\end{theorem}
+
+\begin{theorem}
+Suppose \(\mathbf{F}\) is a vector field on and simply connected domain \(D\) so that \(P,Q,R\)
+all have continuous partial derivatives.
+\(F\) is a conservative vector field if and only if
+\(\nabla \times \mathbf{F} = 0\).
+\end{theorem}
+
+\begin{definition}
+Let \(\mathbf{F}\) be a vector field in \(\mathbb{R}^3\).
+If all partial derivatives of \(P,Q,R\) exist, then we define
+\begin{equation*}
+    \mathrm{div}\,\mathbf{F} =  
+    \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z} \,.
+\end{equation*}
+\end{definition}
+
+A different notation for \(\mathrm{div} \, \mathbf{F}\) is
+\begin{equation*}
+    \nabla \cdot \mathbf{F} \,.
+\end{equation*}
+
+\begin{theorem}
+Suppose \(\mathbf{F}\) is a vector field on a domain \(D\) and \(P,Q,R\) have continuous
+second-order partial derivatives.
+Then,
+\begin{equation*}
+    \nabla \cdot (\nabla \times \mathbf{F}) = 0 \,.
+\end{equation*}
+\end{theorem}
+
+\hypertarget{surface-integrals}{%
+\subsection{Surface integrals}\label{surface-integrals}}
+
+\hypertarget{stokes-and-divergence-theorem}{%
+\subsection{Stokes' and Divergence Theorem}\label{stokes-and-divergence-theorem}}
 
 \end{document}
