@@ -48,6 +48,7 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
@@ -67,6 +68,7 @@
       <nav role="navigation">
 
 <ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Spring 2023</a></li>
 <li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html"><i class="fa fa-check"></i>Syllabus</a>
 <ul>
 <li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#key-information"><i class="fa fa-check"></i>Key information</a></li>
@@ -167,7 +169,13 @@
 </ul></li>
 <li class="chapter" data-level="7.3" data-path="vector-calculus.html"><a href="vector-calculus.html#greens-theorem"><i class="fa fa-check"></i><b>7.3</b> Green’s Theorem</a></li>
 <li class="chapter" data-level="7.4" data-path="vector-calculus.html"><a href="vector-calculus.html#curl-and-divergence"><i class="fa fa-check"></i><b>7.4</b> Curl and Divergence</a></li>
-<li class="chapter" data-level="7.5" data-path="vector-calculus.html"><a href="vector-calculus.html#surface-integrals"><i class="fa fa-check"></i><b>7.5</b> Surface integrals</a></li>
+<li class="chapter" data-level="7.5" data-path="vector-calculus.html"><a href="vector-calculus.html#surface-integrals"><i class="fa fa-check"></i><b>7.5</b> Surface integrals</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="vector-calculus.html"><a href="vector-calculus.html#parametric-surfaces"><i class="fa fa-check"></i><b>7.5.1</b> Parametric surfaces</a></li>
+<li class="chapter" data-level="7.5.2" data-path="vector-calculus.html"><a href="vector-calculus.html#surface-integral"><i class="fa fa-check"></i><b>7.5.2</b> Surface integral</a></li>
+<li class="chapter" data-level="7.5.3" data-path="vector-calculus.html"><a href="vector-calculus.html#orientation-of-the-surface"><i class="fa fa-check"></i><b>7.5.3</b> Orientation of the surface</a></li>
+<li class="chapter" data-level="7.5.4" data-path="vector-calculus.html"><a href="vector-calculus.html#surface-integral-of-vector-fields"><i class="fa fa-check"></i><b>7.5.4</b> Surface integral of vector fields</a></li>
+</ul></li>
 <li class="chapter" data-level="7.6" data-path="vector-calculus.html"><a href="vector-calculus.html#stokes-and-divergence-theorem"><i class="fa fa-check"></i><b>7.6</b> Stokes’ and Divergence Theorem</a></li>
 </ul></li>
 </ul>
@@ -222,7 +230,7 @@ at the origin on another charge <span class="math inline">\(q\)</span> at a poin
 We now perform a Riemann-sum-like action.</p>
 <div class="definition">
 <p><span id="def:unlabeled-div-59" class="definition"><strong>Definition 7.2  </strong></span>Let <span class="math inline">\(C\)</span> be a curve.
-The is defined as
+The  is defined as
 <span class="math display">\[\begin{equation*}
     \int_C f(x,y) \, ds = \lim_{n\to \infty} \sum_{i=1}^n f(x_i^*, y_i^*) \Delta s_i \,,
 \end{equation*}\]</span>
@@ -245,7 +253,7 @@ in a change of sign of the final solution.</p>
 on a curve <span class="math inline">\(C\)</span>.
 Then the <strong>line integral of <span class="math inline">\(\mathbf{F}\)</span> along <span class="math inline">\(C\)</span></strong> is defined as
 <span class="math display">\[\begin{equation*}
-    \int_C \mathbf{F} \cdot d \mathbf{r}
+    \int_C \mathbf{F} \cdot d \mathbf{r} 
     = \int_C \mathbf{F}\cdot \mathbf{T} \, ds \,,
 \end{equation*}\]</span>
 where <span class="math inline">\(\mathbf{T}\)</span> is the unit tangent vector.</p>
@@ -255,7 +263,7 @@ where <span class="math inline">\(\mathbf{T}\)</span> is the unit tangent vector
 parametrized by <span class="math inline">\(\mathbf{r}(t), a \leq t \leq b\)</span>.
 Then
 <span class="math display">\[\begin{equation*}
-    \int_C \mathbf{F} \cdot d \mathbf{r}
+    \int_C \mathbf{F} \cdot d \mathbf{r} 
     = \int_a^b \mathbf{F}(\mathbf{r}(t)) \cdot \mathbf{r}&#39;(t) \, dt
 \end{equation*}\]</span></p>
 </div>
@@ -267,12 +275,12 @@ Then
 <p>We can abbreviate the above by
 <span class="math display">\[\begin{equation*}
 \int_C P(x,y) dx +
-\int_C Q(x,y) dy
+\int_C Q(x,y) dy 
 = \int_C P(x,y) \, dx + Q(x,y) \, dy \,.
 \end{equation*}\]</span></p>
 <p>So,
 <span class="math display">\[\begin{equation*}
-    \int_C \mathbf{F} \cdot d \mathbf{r}
+    \int_C \mathbf{F} \cdot d \mathbf{r} 
     = \int_C P \, dx + Q \, dy \,.
 \end{equation*}\]</span></p>
 <p>Note: as oppose to integrating the arc length, reversing the order of the above integrals
@@ -280,7 +288,7 @@ will change the sign of the integral.
 This is because the arc length is always positive, while <span class="math inline">\(\Delta x\)</span> and <span class="math inline">\(\Delta y\)</span> could be either positive
 or negative.</p>
 <p><span class="math display">\[\begin{equation*}
-\int_{-C} P(x,y) \, dx + Q(x,y) \, dy
+\int_{-C} P(x,y) \, dx + Q(x,y) \, dy 
 = -\int_C P(x,y) \, dx + Q(x,y) \, dy \,.
 \end{equation*}\]</span></p>
 <div class="theorem">
@@ -326,9 +334,9 @@ a function <span class="math inline">\(f\)</span> such that
 and end point <span class="math inline">\(B\)</span>.
 Then,
 <span class="math display">\[\begin{equation*}
-    \int_{C_1} \mathbf{F}\cdot d\mathbf{r}
+    \int_{C_1} \mathbf{F}\cdot d\mathbf{r} 
     =
-    \int_{C_2} \mathbf{F} \cdot d\mathbf{r}
+    \int_{C_2} \mathbf{F} \cdot d\mathbf{r} 
 \end{equation*}\]</span>
 whenever <span class="math inline">\(\mathbf{F}\)</span> is conservative (Why?).
 The question is when is the converse true?</p>
@@ -346,13 +354,13 @@ where <span class="math inline">\(C_1\)</span> is the line segment from <span cl
 <p><span id="def:unlabeled-div-68" class="definition"><strong>Definition 7.6  </strong></span>Let <span class="math inline">\(\mathbf{F}\)</span> be a continuous vector field with domain <span class="math inline">\(D\)</span>, we say that the
 line integral
 <span class="math display">\[\begin{equation*}
-    \int_C \mathbf{F} \cdot d\mathbf{r}
+    \int_C \mathbf{F} \cdot d\mathbf{r} 
 \end{equation*}\]</span>
 is <strong>independent of path</strong> if
 <span class="math display">\[\begin{equation*}
-    \int_{C_1} \mathbf{F}\cdot d\mathbf{r}
+    \int_{C_1} \mathbf{F}\cdot d\mathbf{r} 
     =
-    \int_{C_2} \mathbf{F} \cdot d\mathbf{r}
+    \int_{C_2} \mathbf{F} \cdot d\mathbf{r} 
 \end{equation*}\]</span></p>
 </div>
 <div class="theorem">
@@ -463,9 +471,95 @@ Then,
 </div>
 <div id="surface-integrals" class="section level2 hasAnchor" number="7.5">
 <h2><span class="header-section-number">7.5</span> Surface integrals<a href="vector-calculus.html#surface-integrals" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="parametric-surfaces" class="section level3 hasAnchor" number="7.5.1">
+<h3><span class="header-section-number">7.5.1</span> Parametric surfaces<a href="vector-calculus.html#parametric-surfaces" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Similar to the way we parametrize a curve by a one-variable vector function
+<span class="math inline">\(\mathbf{r}(t)\)</span>, we can parametrize a surface by a two-variable vector function
+<span class="math inline">\(\mathbf{r}(u,v)\)</span>.</p>
+<p>We will only deal with surfaces in <span class="math inline">\(\mathbb{R}^3\)</span> in this section. So, the parametrization
+of a surface <span class="math inline">\(S\)</span>
+should be
+<span class="math display">\[\begin{equation*}
+\mathbf{r}: D\subseteq \mathbb{R}^2 \to \mathbb{R}^3 \,.
+\end{equation*}\]</span>
+We often write
+<span class="math display">\[\begin{equation*}
+    \mathbf{r}(u,v) = x(u,v) \mathbf{i} + y(u,v) \mathbf{j} + z(u,v) \mathbf{k} \,.
+\end{equation*}\]</span></p>
+<p>From this parametrization,
+we get to talk about the tangent plane of <span class="math inline">\(S\)</span> at the point <span class="math inline">\(\mathbf{r}(u,v)\)</span>,
+which is the plane that contains two tangent vectors
+<span class="math display">\[\begin{equation*}
+    \mathbf{r}_u (u,v) = \frac{\partial x}{\partial u} \mathbf{i} +  \frac{\partial y}{\partial u} \mathbf{j} 
+                            + \frac{\partial z}{\partial u} \mathbf{k} \,,
+\end{equation*}\]</span>
+and
+<span class="math display">\[\begin{equation*}
+    \mathbf{r}_v (u,v) = \frac{\partial x}{\partial v} \mathbf{i} +  \frac{\partial y}{\partial v} \mathbf{j} 
+                            + \frac{\partial z}{\partial v} \mathbf{k} \,.
+\end{equation*}\]</span></p>
+</div>
+<div id="surface-integral" class="section level3 hasAnchor" number="7.5.2">
+<h3><span class="header-section-number">7.5.2</span> Surface integral<a href="vector-calculus.html#surface-integral" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="definition">
+<p><span id="def:unlabeled-div-81" class="definition"><strong>Definition 7.10  </strong></span>Let <span class="math inline">\(S\)</span> be a surface with parametrization.
+The surface integral of <span class="math inline">\(f\)</span> over the surface <span class="math inline">\(S\)</span> is
+<span class="math display">\[\begin{equation*}
+    \iint_S f(x,y,z) \, dS = \lim_{m,n\to \infty} \sum_{i=1}^m \sum_{j=1}^n f(P_{ij}^*) \Delta S_{ij} \,.
+\end{equation*}\]</span></p>
+</div>
+<p>Similarly to the line integral,
+one can show that
+<span class="math display">\[\begin{equation*}
+   \iint_S f(x,y,z) \, dS  = \iint_D f(\mathbf{r}(u,v)) | \mathbf{r_u}\times \mathbf{r_v} | \, dA \,. 
+\end{equation*}\]</span></p>
+</div>
+<div id="orientation-of-the-surface" class="section level3 hasAnchor" number="7.5.3">
+<h3><span class="header-section-number">7.5.3</span> Orientation of the surface<a href="vector-calculus.html#orientation-of-the-surface" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Given a surface <span class="math inline">\(S\)</span>, we define the orientation of it as following</p>
+<ol style="list-style-type: decimal">
+<li><p>If <span class="math inline">\(S\)</span> has a boundary, then the <strong>positive orientation</strong> of the surface is that
+when one walks along the boundary of the surface with the head points in that direction, the surface is on the left.</p></li>
+<li><p>If <span class="math inline">\(S\)</span> does not have a boundary, then the <strong>positive orientation</strong> is the direction of the outward normal vector.</p></li>
+</ol>
+</div>
+<div id="surface-integral-of-vector-fields" class="section level3 hasAnchor" number="7.5.4">
+<h3><span class="header-section-number">7.5.4</span> Surface integral of vector fields<a href="vector-calculus.html#surface-integral-of-vector-fields" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="definition">
+<p><span id="def:unlabeled-div-82" class="definition"><strong>Definition 7.11  </strong></span>If <span class="math inline">\(\mathbf{F}\)</span> is a continuous vector field on an oriented surface <span class="math inline">\(S\)</span> (parametrized by <span class="math inline">\(\mathbf{r}(u,v)\)</span>)
+with unit normal vector <span class="math inline">\(\mathbf{n}\)</span>, then the <strong>surface integral of <span class="math inline">\(\mathbf{F}\)</span> over
+<span class="math inline">\(S\)</span></strong> is
+<span class="math display">\[\begin{equation*}
+    \iint_S \mathbf{F}\cdot \, d\mathbf{S} = \iint_S \mathbf{F}\cdot \mathbf{n} \, dS 
+    = \iint_S \mathbf{F}\cdot (\mathbf{r}_u\times \mathbf{r}_v) \, dA \,.
+\end{equation*}\]</span>
+The integral is called the <strong>flux of <span class="math inline">\(\mathbf{F}\)</span></strong> across <span class="math inline">\(S\)</span>.</p>
+</div>
+</div>
 </div>
 <div id="stokes-and-divergence-theorem" class="section level2 hasAnchor" number="7.6">
 <h2><span class="header-section-number">7.6</span> Stokes’ and Divergence Theorem<a href="vector-calculus.html#stokes-and-divergence-theorem" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-83" class="theorem"><strong>Theorem 7.9  (Stokes' Theorem) </strong></span>Let <span class="math inline">\(S\)</span> be an oriented smooth surface that is bounded by a simple closed
+smooth boundary curve <span class="math inline">\(\partial S\)</span> with positive orientation.
+Let <span class="math inline">\(\mathbf{F}\)</span> be a vector field whose components have continuous partial
+derivatives on an open region in <span class="math inline">\(\mathbb{R}^3\)</span> that contains <span class="math inline">\(S\)</span>.
+Then
+<span class="math display">\[\begin{equation*}
+    \int_{\partial S} \mathbf{F} \cdot \, d\mathbf{r} = \iint_S \nabla \times \mathbf{F} \cdot d\mathbf{S} \,.
+\end{equation*}\]</span></p>
+</div>
+<p>The boundary of an area is a curve.
+Similarly, the boundary of a solid is a surface.</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-84" class="theorem"><strong>Theorem 7.10  (Divergence Theorem) </strong></span>Let <span class="math inline">\(E\)</span> be a simple solid region and let surface <span class="math inline">\(\partial E\)</span> be the boundary of <span class="math inline">\(E\)</span>,
+given with positive (outward) orientation.
+Let <span class="math inline">\(\mathbf{F}\)</span> be a vector field whose components have continuous partial derivatives.
+Then,
+<span class="math display">\[\begin{equation*}
+    \iint_{\partial E} \mathbf{F} \cdot d\mathbf{S} = \iiint_E \mathrm{div} \mathbf{F} \, dV \,.
+\end{equation*}\]</span></p>
+</div>
 
 </div>
 </div>
