@@ -48,7 +48,6 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
@@ -68,7 +67,6 @@
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Spring 2023</a></li>
 <li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html"><i class="fa fa-check"></i>Syllabus</a>
 <ul>
 <li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#key-information"><i class="fa fa-check"></i>Key information</a></li>
@@ -230,7 +228,7 @@ at the origin on another charge <span class="math inline">\(q\)</span> at a poin
 We now perform a Riemann-sum-like action.</p>
 <div class="definition">
 <p><span id="def:unlabeled-div-59" class="definition"><strong>Definition 7.2  </strong></span>Let <span class="math inline">\(C\)</span> be a curve.
-The  is defined as
+The is defined as
 <span class="math display">\[\begin{equation*}
     \int_C f(x,y) \, ds = \lim_{n\to \infty} \sum_{i=1}^n f(x_i^*, y_i^*) \Delta s_i \,,
 \end{equation*}\]</span>
@@ -253,7 +251,7 @@ in a change of sign of the final solution.</p>
 on a curve <span class="math inline">\(C\)</span>.
 Then the <strong>line integral of <span class="math inline">\(\mathbf{F}\)</span> along <span class="math inline">\(C\)</span></strong> is defined as
 <span class="math display">\[\begin{equation*}
-    \int_C \mathbf{F} \cdot d \mathbf{r} 
+    \int_C \mathbf{F} \cdot d \mathbf{r}
     = \int_C \mathbf{F}\cdot \mathbf{T} \, ds \,,
 \end{equation*}\]</span>
 where <span class="math inline">\(\mathbf{T}\)</span> is the unit tangent vector.</p>
@@ -263,7 +261,7 @@ where <span class="math inline">\(\mathbf{T}\)</span> is the unit tangent vector
 parametrized by <span class="math inline">\(\mathbf{r}(t), a \leq t \leq b\)</span>.
 Then
 <span class="math display">\[\begin{equation*}
-    \int_C \mathbf{F} \cdot d \mathbf{r} 
+    \int_C \mathbf{F} \cdot d \mathbf{r}
     = \int_a^b \mathbf{F}(\mathbf{r}(t)) \cdot \mathbf{r}&#39;(t) \, dt
 \end{equation*}\]</span></p>
 </div>
@@ -275,12 +273,12 @@ Then
 <p>We can abbreviate the above by
 <span class="math display">\[\begin{equation*}
 \int_C P(x,y) dx +
-\int_C Q(x,y) dy 
+\int_C Q(x,y) dy
 = \int_C P(x,y) \, dx + Q(x,y) \, dy \,.
 \end{equation*}\]</span></p>
 <p>So,
 <span class="math display">\[\begin{equation*}
-    \int_C \mathbf{F} \cdot d \mathbf{r} 
+    \int_C \mathbf{F} \cdot d \mathbf{r}
     = \int_C P \, dx + Q \, dy \,.
 \end{equation*}\]</span></p>
 <p>Note: as oppose to integrating the arc length, reversing the order of the above integrals
@@ -288,7 +286,7 @@ will change the sign of the integral.
 This is because the arc length is always positive, while <span class="math inline">\(\Delta x\)</span> and <span class="math inline">\(\Delta y\)</span> could be either positive
 or negative.</p>
 <p><span class="math display">\[\begin{equation*}
-\int_{-C} P(x,y) \, dx + Q(x,y) \, dy 
+\int_{-C} P(x,y) \, dx + Q(x,y) \, dy
 = -\int_C P(x,y) \, dx + Q(x,y) \, dy \,.
 \end{equation*}\]</span></p>
 <div class="theorem">
@@ -334,9 +332,9 @@ a function <span class="math inline">\(f\)</span> such that
 and end point <span class="math inline">\(B\)</span>.
 Then,
 <span class="math display">\[\begin{equation*}
-    \int_{C_1} \mathbf{F}\cdot d\mathbf{r} 
+    \int_{C_1} \mathbf{F}\cdot d\mathbf{r}
     =
-    \int_{C_2} \mathbf{F} \cdot d\mathbf{r} 
+    \int_{C_2} \mathbf{F} \cdot d\mathbf{r}
 \end{equation*}\]</span>
 whenever <span class="math inline">\(\mathbf{F}\)</span> is conservative (Why?).
 The question is when is the converse true?</p>
@@ -344,24 +342,25 @@ The question is when is the converse true?</p>
 <div class="example">
 <p><span id="exm:unlabeled-div-67" class="example"><strong>Example 7.3  </strong></span>Evaluate
 <span class="math display">\[\begin{equation*}
-    \int_{C_i} y^2 \, dx + x\, dy \,, \qquad i = 1,2
+    \int_{C_i}  x^2 \, dy \,, \qquad i = 1,2
 \end{equation*}\]</span>
-where <span class="math inline">\(C_1\)</span> is the line segment from <span class="math inline">\((-5,-3) \to (0,2)\)</span> and
-<span class="math inline">\(C_2\)</span> is the arc of the parabola <span class="math inline">\(x = 4-y^2\)</span> from <span class="math inline">\((-5,-3) \to (0,2)\)</span>.</p>
+where <span class="math inline">\(C_1\)</span> is the line segments from <span class="math inline">\((-1,-1) \to (-1,1) \to (1,1)\)</span> and
+<span class="math inline">\(C_2\)</span> is the line segments from <span class="math inline">\((-1,-1) \to (1,-1) \to (1,1)\)</span>.</p>
 </div>
 <p>To further the discussion, we need a few definitions.</p>
 <div class="definition">
 <p><span id="def:unlabeled-div-68" class="definition"><strong>Definition 7.6  </strong></span>Let <span class="math inline">\(\mathbf{F}\)</span> be a continuous vector field with domain <span class="math inline">\(D\)</span>, we say that the
 line integral
 <span class="math display">\[\begin{equation*}
-    \int_C \mathbf{F} \cdot d\mathbf{r} 
+    \int_C \mathbf{F} \cdot d\mathbf{r}
 \end{equation*}\]</span>
 is <strong>independent of path</strong> if
 <span class="math display">\[\begin{equation*}
-    \int_{C_1} \mathbf{F}\cdot d\mathbf{r} 
+    \int_{C_1} \mathbf{F}\cdot d\mathbf{r}
     =
-    \int_{C_2} \mathbf{F} \cdot d\mathbf{r} 
-\end{equation*}\]</span></p>
+    \int_{C_2} \mathbf{F} \cdot d\mathbf{r}
+\end{equation*}\]</span>
+for all paths that have the same starting and ending points.</p>
 </div>
 <div class="theorem">
 <p><span id="thm:unlabeled-div-69" class="theorem"><strong>Theorem 7.2  </strong></span><span class="math inline">\(\int_C \mathbf{F}\cdot d\mathbf{r}\)</span> is independent of path in <span class="math inline">\(D\)</span> if and only if
@@ -490,12 +489,12 @@ We often write
 we get to talk about the tangent plane of <span class="math inline">\(S\)</span> at the point <span class="math inline">\(\mathbf{r}(u,v)\)</span>,
 which is the plane that contains two tangent vectors
 <span class="math display">\[\begin{equation*}
-    \mathbf{r}_u (u,v) = \frac{\partial x}{\partial u} \mathbf{i} +  \frac{\partial y}{\partial u} \mathbf{j} 
+    \mathbf{r}_u (u,v) = \frac{\partial x}{\partial u} \mathbf{i} +  \frac{\partial y}{\partial u} \mathbf{j}
                             + \frac{\partial z}{\partial u} \mathbf{k} \,,
 \end{equation*}\]</span>
 and
 <span class="math display">\[\begin{equation*}
-    \mathbf{r}_v (u,v) = \frac{\partial x}{\partial v} \mathbf{i} +  \frac{\partial y}{\partial v} \mathbf{j} 
+    \mathbf{r}_v (u,v) = \frac{\partial x}{\partial v} \mathbf{i} +  \frac{\partial y}{\partial v} \mathbf{j}
                             + \frac{\partial z}{\partial v} \mathbf{k} \,.
 \end{equation*}\]</span></p>
 </div>
@@ -511,7 +510,7 @@ The surface integral of <span class="math inline">\(f\)</span> over the surface 
 <p>Similarly to the line integral,
 one can show that
 <span class="math display">\[\begin{equation*}
-   \iint_S f(x,y,z) \, dS  = \iint_D f(\mathbf{r}(u,v)) | \mathbf{r_u}\times \mathbf{r_v} | \, dA \,. 
+   \iint_S f(x,y,z) \, dS  = \iint_D f(\mathbf{r}(u,v)) | \mathbf{r_u}\times \mathbf{r_v} | \, dA \,.
 \end{equation*}\]</span></p>
 </div>
 <div id="orientation-of-the-surface" class="section level3 hasAnchor" number="7.5.3">
@@ -530,7 +529,7 @@ when one walks along the boundary of the surface with the head points in that di
 with unit normal vector <span class="math inline">\(\mathbf{n}\)</span>, then the <strong>surface integral of <span class="math inline">\(\mathbf{F}\)</span> over
 <span class="math inline">\(S\)</span></strong> is
 <span class="math display">\[\begin{equation*}
-    \iint_S \mathbf{F}\cdot \, d\mathbf{S} = \iint_S \mathbf{F}\cdot \mathbf{n} \, dS 
+    \iint_S \mathbf{F}\cdot \, d\mathbf{S} = \iint_S \mathbf{F}\cdot \mathbf{n} \, dS
     = \iint_S \mathbf{F}\cdot (\mathbf{r}_u\times \mathbf{r}_v) \, dA \,.
 \end{equation*}\]</span>
 The integral is called the <strong>flux of <span class="math inline">\(\mathbf{F}\)</span></strong> across <span class="math inline">\(S\)</span>.</p>
