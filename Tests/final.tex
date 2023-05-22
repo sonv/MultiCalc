@@ -5,6 +5,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[style=alphabetic, backend=biber]{biblatex}
 \addbibresource{bibliography.bib}
+\newcommand{\vect}{\mathbf}
 
 %% commentary bubble
 \newcommand{\SV}[2][]{\sidenote[colback=green!10]{\textbf{SV\xspace #1:} #2}}
@@ -51,9 +52,7 @@ Total \_\_\_\_\_\_\_\_/100
         \item What does it mean for $f$ to have a directional derivative
             in the direction of $\textbf{u}$? What's a notation for this notion?
         \item Write directional derivative of function $f$ in the direction $\textbf{u}$ in terms of partial derivative/gradient of $f$.
-        \item What is the dimension of $\grad f$? 
-            What about $D_{\textbf{u}}f$? 
-            What about $\lap f$?
+        \item Let $f:\R^2 \to \R$ be a function and $C$ be a smooth curve in $\R^2$ parametrized by $\vect{r}:[a,b]\to \R^2$. Write down the formula to compute the line integral of $f$ over $C$.
     \end{enumerate}
 \end{problem}
 
@@ -61,20 +60,22 @@ Total \_\_\_\_\_\_\_\_/100
 \newpage
 \begin{problem}
     \begin{enumerate}[a.]
-        \item State Green's theorem.
-        \item An example that was introduced in class but we didn't have 
-            time to cover in details. Hopefully you've done that at home.
-            If you have, the following will be easy enough.
-            Show that $f_{xy}(0,0) \not= f_{yx}(0,0)$ for the following function
+        \item Consider the vector field
             \begin{equation*}
-                f(x,y) = 
-                \begin{dcases}
-                    \frac{xy(x^2 - y^2)}{x^2 + y^2} \,, & (x,y) \not= (0,0) \\
-                    0 \,, & (x,y) = (0,0) \,.
-                \end{dcases}
+                \vect{F}(x,y) = x^2 \vect{j} \,.
             \end{equation*}
-        \item Why doesn't the above function follow Clairaut's theorem?
+            Is the integral $\int_C \vect{F} \cdot d\vect{r}$ independent of path?
+
+        \item 
+            Compare
+            the path integrals of $\vect{F}$ on two paths $A\to B \to C$ and $A\to D \to C$,
+            where the paths are from the figure below.
+            \begin{figure}[!h]
+            \includegraphics[width=1.5\textwidth]{paths.pdf}
+            \end{figure}
+    \item Are parts (a) and (b) consistent with each other? Why or why not?
     \end{enumerate}
+
 \end{problem}
 
 
