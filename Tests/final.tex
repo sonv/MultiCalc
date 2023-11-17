@@ -6,14 +6,15 @@
 \usepackage[style=alphabetic, backend=biber]{biblatex}
 \addbibresource{bibliography.bib}
 \newcommand{\vect}{\mathbf}
+\usepackage{tikz}
 
 %% commentary bubble
 \newcommand{\SV}[2][]{\sidenote[colback=green!10]{\textbf{SV\xspace #1:} #2}}
 
 %% Title 
-\title{ MATH 104: Multivariable Calculus}
+\title{ MATH 104: Multivariable Calculus Oral Exam}
 %\author[1]{Co-author}
-\author{Name: \_ \_ \_ \_ \_ \_ \_ \_ \_ \_ \_ \_ \_ \_ \_ \_ \_}
+\author{Name: Quach Thi Xuan Trang}
 %\affil[1]{Institute}
 \date{\today}
 
@@ -24,19 +25,16 @@
 \section*{Rules}
 
 \begin{itemize}
-    \item 5 questions, 90 minutes
+    \item 4 questions, 90 minutes
     \item Closed books
-    \item Show all your work. Mere numbers for solutions will not count for grades.
-    \item No sharing of calculators
 \end{itemize}
 
 \section*{Scores}
 
 \begin{enumerate}[Problem 1.]
-    \item  \_\_\_/20
-    \item  \_\_\_/20
+    \item  \_\_\_/24
+    \item  \_\_\_/16
     \item \_\_\_/20
-    \item  \_\_\_/20
     \item  \_\_\_/20
 \end{enumerate}
 Total \_\_\_\_\_\_\_\_/100
@@ -53,20 +51,19 @@ Total \_\_\_\_\_\_\_\_/100
             differentiable at $(a,b)$?
         \item Write directional derivative of function $f$ in the direction $\textbf{u}$ in terms of partial derivative/gradient of $f$.
         \item What is the meaning of $\nabla f$, the gradient of a function $f:\R^n \to \R$?
+        \item What is a parametric curve?
         \item Let $f:\R^2 \to \R$ be a function and $C$ be a smooth curve in $\R^2$ parametrized by $\vect{r}:[a,b]\to \R^2$. Write down the formula to compute the line integral of $f$ along $C$.
         \item Let $\vect{F}:\R^2 \to \R^2$ be a vector field and $C$ be a smooth curve in $\R^2$ parametrized by $\vect{r}:[a,b]\to \R^2$. Write down a formula to compute the line integral of $\vect{F}$ along $C$.
+        \item What is Green's theorem?
+        \item What is the second derivative test for optimization?
     \end{enumerate}
 \end{problem}
 
 \newpage
-\begin{problem}
+\begin{problem}[16 points]
     Compute the following
-    \begin{enumerate}[(a)] 
-        \item (10 points) $$\oint_C xy \, dy - y^2 \, dx \,,$$
-            where $C$ is the boundary of the square $[0,1]\times [0,1]$.
-        \item  (10 points)
+
             $$\int_0^1 \int_{3y}^3 e^{x^2} \, dx dy \,.$$
-    \end{enumerate}
 
 \end{problem}
 
@@ -109,21 +106,30 @@ Total \_\_\_\_\_\_\_\_/100
         \begin{equation*}
             \iint_S xy \, dA
         \end{equation*}
-        where $S$ is the disk with radius $2$ and has center at $(0,0)$.
+        where $S$ is the hollowed disk with radius between $1$ and $2$ and has center at $(0,0)$.
+
+        \begin{figure}[ht] 
+            \begin{center}
+                \begin{tikzpicture}
+  % Draw the shaded outer region (radius 2)
+  \fill[gray!30] (0,0) circle (2);
+  \fill[white] (0,0) circle (1);
+  % Draw the outer circle (radius 2)
+  \draw (0,0) circle (2);
+  % Draw the inner circle (radius 1)
+  \draw (0,0) circle (1);
+
+  % Draw the coordinate axes
+  \draw[->] (-2.5,0) -- (2.5,0) node[right] {$x$};
+  \draw[->] (0,-2.5) -- (0,2.5) node[above] {$y$};
+  
+  % Add any other decorations or labels if needed
+\end{tikzpicture}
+            \end{center}
+        \end{figure}
+        
         
 \end{enumerate}
-\end{problem}
-
-
-
-\newpage
-
-\begin{problem}
-    A rectangular box with a lid is made from $12 m^2$ of cardboard.
-    Find the maximum volume of such a box.
-
-    (Hint: set up a constraint optimization problem for the function $V(x,y,z) = xyz$ 
-    and then solve it.)
 \end{problem}
 %\bibliography{refs}
 
