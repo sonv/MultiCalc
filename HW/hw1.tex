@@ -1,0 +1,210 @@
+\documentclass[12pt]{amsart}
+\usepackage{amsaddr}
+\usepackage{marktext} 
+%% Remove draft for real article, put twocolumn for two columns
+\usepackage{svmacro}
+\usepackage[utf8]{inputenc}
+\usepackage{lineno}
+\usepackage[style=alphabetic, backend=biber]{biblatex}
+\addbibresource{bibliography.bib}
+
+%% commentary bubble
+\newcommand{\SV}[2][]{\sidenote[colback=green!10]{\textbf{SV\xspace #1:} #2}}
+
+%% Title 
+\title{ MATH 104: Homework 1}
+\author{Due date: In class -- Monday, Jan 22, 2024}
+\address{Fulbright University, Ho Chi Minh City, Vietnam}
+\email{son.van@fulbright.edu.vn}
+
+%\author{Co-author}
+%\address{  }
+%\email {  }
+%
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+The problems are taken from the Calculus Blue Guide by Rob Ghrist.
+
+\begin{problem}
+    Consider the following planes in $\R^3$, where $C$ is a constant:
+    \begin{equation*}
+        2C x - 3y + (C + 4)z = 5 
+    \end{equation*}
+    and
+    \begin{equation*}
+        (C+1) x + C y - z = 1 \,.
+    \end{equation*}
+    \begin{enumerate}
+        \item Assuming that $C = 1$ and $z = 0$, find the point
+            of intersection of these two planes.
+        \item Assuming that $C = 0$, find a vector that points
+            along the line of intersection between two planes.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    Consider the vectors
+    \begin{equation*}
+        \vec{a} = \begin{pmatrix}
+            5 \\ 3 \\ -1
+        \end{pmatrix}
+        \,, \qquad 
+        \vec{b} = \begin{pmatrix}
+            -2 \\ 1 \\ 0
+        \end{pmatrix} \,.
+    \end{equation*}
+    \begin{enumerate}
+        \item Write down an implicit equation for a plane passing through 
+            the point $(1,2,3)$ and orthogonal to $\vec{a}$.
+        \item Write down a parametrized equation of a line passing through
+            the point $(1,2,3)$ and tangent to $\vec{b}$.
+    \end{enumerate}
+\end{problem}
+
+
+\begin{problem}
+    Consider the following parametrized plane given by
+    \begin{equation*}
+        F(u,v) = \begin{pmatrix}
+            2u - v \\ u + v -3 \\ 3u + v + 1 
+        \end{pmatrix}\,.
+    \end{equation*}
+    \begin{enumerate}
+        \item Give two nonzero vectors tangent to the plane.
+        \item Find the point on this plane which intersects the z-axis.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    Consider the following vector in $\R^6$
+    $$ \vec{v} = 2 \vec{e}_1 + \vec{e}_3 - \vec{e}_4 + \vec{e}_5 - 3 \vec{e}_6 \,.$$
+    \begin{enumerate}
+        \item Compute the length of $v$.
+        \item Give an example of a vector with the same length as $\vec{v}$ 
+            but which is not parallel to $\vec{v}$.
+        \item Is there a vector with all entries positive that is parallel to $v$? 
+            If so, give an example. If not, explain why not.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    Which of the following five vectors in $\R^5$ is longest/shortest?
+    \begin{equation*}
+        \vec{u} = \begin{pmatrix}
+            1 \\ 1 \\ -5 \\ 0 \\3
+        \end{pmatrix} \,,
+        \vec{v} = \begin{pmatrix}
+            -5 \\ 2 \\ 2 \\2  \\ 0
+        \end{pmatrix} \,,
+        \vec{w} = \begin{pmatrix}
+            0 \\ 3 \\ 5 \\ 0 \\ -2 
+        \end{pmatrix} \,,
+        \vec{x} = \begin{pmatrix}
+            3 \\ 0 \\ -2 \\ 0 \\ -5
+        \end{pmatrix} \,,
+        \vec{y} = \begin{pmatrix}
+            -5 \\ 0 \\ 3 \\ 2 \\ -1
+        \end{pmatrix} \,.
+    \end{equation*}
+\end{problem}
+
+
+\begin{problem}
+    \begin{enumerate}
+        \item Write down an implicit equation of a plane which intersects
+    the x-axis at 3; the y-axis at -2; the z-axis at -5.
+        \item Give an example of a vector that is orthogonal to this plane.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    \begin{enumerate}
+        \item Write down a parametrization of a line that passes through the point 
+            $(1,3,-5)$ and $(2,4,0)$ using a parameter $s$.
+        \item Write down a parametrization of a line passes through the points $(2,4,0)$ and $(3,0,-2)$ using a parameter $t$.
+        \item Write down a parametrization of a plane that passes through
+        the points $(1,3,-5), (2,4,0), (3,0,-2)$ 
+        using parameters $s$ and $t$.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    For what values of constant $C$ are the planes given by
+    \begin{equation*}
+        3C x + 16 y + Cz = 5 \,, \qquad 12x + Cy + 4z = 17
+    \end{equation*}
+    parallel to each other?
+\end{problem}
+
+\begin{problem}
+    Consider the points $P = (2,-3,5)$ and $Q = (4,1,7)$.
+    \begin{enumerate}
+        \item What is the distance between $P$ and $Q$?
+        \item Give a parametrization of a line passing through 
+            both $P$ and $Q$.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    Consider the line parametrized via
+    \begin{equation*}
+        \gamma(s) = \begin{pmatrix}
+            2s - 1 \\ 3s + 2 \\ 4s
+        \end{pmatrix} \,.
+    \end{equation*}
+    \begin{enumerate}
+        \item Find a point where this line intersects the plane given 
+            implicitly by 
+            \begin{equation*}
+                2x - 3y + z = 10 \,.
+            \end{equation*}
+        \item Does this line intersect this plane orthogonally? Explain.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    Consider the plane given by $4x + 12y - 5z = 6$.
+    \begin{enumerate}
+        \item Give an example of a vector tangent to the plane;
+            and a vector that is orthogonal to the plane, noting which is which.
+        \item Parametrize a line that is orthogonal this plane at 
+            the point $(1,1,2)$.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    Write down parametrizations of a line between the following
+    points (using a parameter $t$ from 0 to 1):
+    \begin{enumerate}
+        \item From $(0,1)$ to $(3,0)$ in the plane.
+        \item From $(0,1,7,2,-3)$ to $(3,0,5,-4,8)$ in $\R^5$.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    Consider the following parametrized lines
+    \begin{equation*}
+        \gamma_1(t_1)  = \begin{pmatrix}
+            3 + 2t_1 \\ 5 + 3t_1 \\ 7 + 4t_1
+        \end{pmatrix} \,, \qquad
+        \gamma_2 (t_2) = \begin{pmatrix}
+            -1 + t_2 \\ -2 + 2t_2 \\ 11 - 4t_2 
+        \end{pmatrix} \,.
+    \end{equation*}
+    \begin{enumerate}
+        \item Find the point at which these two lines intersect.
+        \item Write down a parametrized plane $S(t_1, t_2)$
+            which contains both lines.
+    \end{enumerate}
+\end{problem}
+
+\printbibliography 
+%\bibliography{refs}
+%\bibliographystyle{halpha-abbrv}
+
+
+\end{document}
