@@ -1,6 +1,0 @@
----
-title: "MATH 104: Multivariable Calculus (brief notes)"
-author: "Truong-Son Van"
-site: "bookdown::bookdown_site"
---- 
-# Spring 2024 {.unlisted .unnumbered}
