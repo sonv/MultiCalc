@@ -1,0 +1,71 @@
+\documentclass[12pt]{amsart}
+\usepackage{amsaddr}
+\usepackage{marktext} 
+%% Remove draft for real article, put twocolumn for two columns
+\usepackage{svmacro}
+\usepackage[utf8]{inputenc}
+\usepackage{lineno}
+\usepackage[style=alphabetic, backend=biber]{biblatex}
+\addbibresource{bibliography.bib}
+
+%% commentary bubble
+\newcommand{\SV}[2][]{\sidenote[colback=green!10]{\textbf{SV\xspace #1:} #2}}
+
+%% Title 
+\title{ MATH 104: Worksheet 3}
+\author{}
+
+%\author{Co-author}
+%\address{  }
+%\email {  }
+%
+\date{01/17/2024}
+
+\begin{document}
+
+\maketitle
+
+\section{Concepts}
+
+\begin{enumerate}
+    \item Velocity and accelerations
+    \item Unit tangent and unit normal vectors to curves
+    \item Curvature and geometry of curves
+\end{enumerate}
+
+\section{Discussions}
+
+\begin{question}
+    If you move along a curve in 3D at a constant speed, what can you say about acceleration? Is it zero?
+\end{question}
+
+\begin{question}
+    Compute the velocity, acceleration, and arclength element of the curve with components $(\sin t, \cos 2t, t)$.
+\end{question}
+
+\begin{question}
+    Compute the length of a general helix in 3D with radius R and height C.
+    What are the asymptotics for small $R$ and $C$?
+\end{question}
+
+\begin{question}
+    Compute the arclength of the parametrized curve in 4D:
+    \begin{equation*}
+        \gamma(t) = \begin{pmatrix}
+            A \cos t\\ A\sin t \\ B \cos t  \\ B \sin t
+        \end{pmatrix}
+        \,, 0 \leq t \leq 2\pi
+    \end{equation*}
+\end{question}
+
+\begin{question}
+    It was stated that the unit tangent $\hat T$ and the unit normal $\hat N$ to a curve
+    are always orthogonal. Why?
+\end{question}
+
+\printbibliography 
+%\bibliography{refs}
+%\bibliographystyle{halpha-abbrv}
+
+
+\end{document}

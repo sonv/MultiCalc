@@ -1,0 +1,82 @@
+\documentclass[12pt]{amsart}
+\usepackage{amsaddr}
+\usepackage{marktext} 
+%% Remove draft for real article, put twocolumn for two columns
+\usepackage{svmacro}
+\usepackage[utf8]{inputenc}
+\usepackage{lineno}
+\usepackage[style=alphabetic, backend=biber]{biblatex}
+\addbibresource{bibliography.bib}
+
+%% commentary bubble
+\newcommand{\SV}[2][]{\sidenote[colback=green!10]{\textbf{SV\xspace #1:} #2}}
+
+%% Title 
+\title{ MATH 104: Worksheet 2}
+\author{}
+
+%\author{Co-author}
+%\address{  }
+%\email {  }
+%
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Concepts}
+
+\begin{enumerate}
+    \item Dot products; cross products; scalar triple products
+    \item Geometry of vectors
+\end{enumerate}
+
+\section{Discussions}
+\begin{question}
+    What is the value of $c$ so that the planes
+    $2cx - y + c^2 = 15$ and $x + 5cy - 3z = 4$ are orthogonal?
+\end{question}
+
+\begin{question}
+    What is the angle between the planes $x - 2y + 3z = 6$ and $2x + 3y -z = 11$?
+\end{question}
+
+\begin{question}
+    What is the angle between the grand diagonal of a cube in $\R^n$
+    and an incident edge?
+
+    (Hint: try $\R^2$ and $\R^3$ to have intuition first.)
+\end{question}
+
+\begin{question}
+    What is the area of the triangle in the plane with vertices at
+    $(1,3), (-2,0), (5,2)$?
+\end{question}
+
+
+\begin{question}
+    What is the volume of the parallelopiped spanned by the vectors $\hat{i}, \hat{j}$ and $\vec{v}$.
+\end{question}
+
+\begin{question}
+    What is the projected length (component) of vector $\vec{w}$ onto the vector $\vec{v}$:
+    \begin{equation*}
+        \vec{w} = \begin{pmatrix}
+            5 \\ - 6 \\ 2 \\ -7
+        \end{pmatrix}
+        \,, \quad 
+        \vec{v} =
+        \begin{pmatrix}
+            0 \\ 3 \\ 4 \\0
+        \end{pmatrix}
+        \,.
+    \end{equation*}
+\end{question}
+
+\printbibliography 
+%\bibliography{refs}
+%\bibliographystyle{halpha-abbrv}
+
+
+\end{document}
