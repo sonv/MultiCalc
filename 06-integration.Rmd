@@ -1,0 +1,193 @@
+\newpage
+# Multiple integrals 
+
+Read Stewart Chapter 15 and Thomas Chapter 15
+
+**Notations:**
+
+Rectangle $R= [a_1,b_1]\times \dots \times [a_n, b_n] \subseteq \R^n$.
+
+
+## Basic definition
+
+::: {.definition}
+Let $f$ be a  function on a rectangle $R$.
+An n-fold Riemann sum for $f$ over $R$ is a sum of the following form
+\begin{equation*}
+ \sum_{i_1=1}^{m_1}\dots \sum_{i_n=1}^{m_n} f(\xi_{i_1\dots i_n}) \Delta A \,,
+\end{equation*}
+where 
+
+- $\Delta A = \Delta x_1\times\dots  \times \Delta x_n$,
+
+- $\Delta x_i = (b_i-a_i)/m_i$, 
+
+- $\xi_{i_1\dots i_n}\in R_{i_1\dots i_n}$, 
+
+- $R_{i_1\dots i_n}= \prod [a_i + (i_1-1)\Delta x, a_i+ i_1\Delta x_i]$.
+:::
+
+::: {.definition}
+The double integral of $f$ over a rectangle $R \subseteq \R^2$ is
+\begin{equation*}
+    \iint_{R} f(x,y) \, dA = \lim_{m,n\to \infty} \sum_{i=1}^m \sum_{j=1}^n f(\xi_{ij}) \Delta A 
+\end{equation*}
+if the limit exists.
+
+The triple integral of $f$ over a rectangle $R \subseteq \R^3$ is
+\begin{equation*}
+    \iiint_{R} f(x,y) \, dA = \lim_{m,n,l\to \infty} \sum_{i=1}^m \sum_{j=1}^n \sum_{k=1}^l f(\xi_{ijk}) \Delta A 
+\end{equation*}
+if the limit exists.
+:::
+
+### Some properties of integrals
+
+1. Let $U, V$ be disjoint domains, then
+\begin{equation*}
+   \iint_{U \cup V} f \, dA = \iint_U f \, dA + \iint_V f\, dA \,. 
+\end{equation*}
+
+2. 
+\begin{equation*}
+    \iint_U (f + g) \, dA = \iint_U f \, dA + \iint_V f \, dA \,.
+\end{equation*}
+
+
+## Iterated integrals
+
+Suppose that $f$ is integrable on $R= [a,b]\times [c,d]$.
+An iterated integral of $f$ is defined as
+\begin{equation*}
+    \int_a^b A(x) \, dx \,,
+\end{equation*}
+where
+\begin{equation*}
+    A(x) = \int_c^d f(x,y) \, dy \,.
+\end{equation*}
+Typically, we write the above as
+\begin{equation*}
+   \int_a^b \int_c^d f(x,y) \, dy dx \,. 
+\end{equation*}
+This means that we integrate in $y$ before in $x$-- always integrate the inner part first.
+
+Similarly, we can define an iterated integral in  a different order
+\begin{equation*}
+    \int_c^d \int_a^b f(x,y) \, dx dy \,.
+\end{equation*}
+
+The biggest question:
+Is it true that
+\begin{equation*}
+   \int_a^b \int_c^d f(x,y) \, dy dx  =
+    \int_c^d \int_a^b f(x,y) \, dx dy \,?
+\end{equation*}
+
+::: {.theorem name="Special case of Fubini"}
+If $f$ is continuous on the rectangle $R$, then
+\begin{equation*}
+    \iint_R f(x,y) \, dA = \int_a^b \int_c^d f(x,y) \, dy dx = \int_c^d \int_a^b f(x,y) \, dx dy \,.
+\end{equation*}
+:::
+
+::: {.example}
+Let
+\begin{equation*}
+    f(x,y) =  \frac{x^2 - y^2}{(x^2 + y^2)^2} \,.
+\end{equation*}
+\begin{equation*}
+    \int_0^1\int_0^1 f(x,y) \,dy dx = \frac{\pi}{4} = - \int_0^1\int_0^1 f(x,y) \, dx dy \,.
+\end{equation*}
+:::
+
+Everything we discuss here is true for three-variable functions.
+
+
+## Change of coordinates
+
+A coordinate transformation is a function $\varphi$, which
+is bijective and differentiable for which $D\varphi$ is 
+invertible at all points in the domain.
+Here,
+\begin{equation*}
+    D\varphi = 
+    \begin{pmatrix}
+        \partial_1 \varphi_1 & \partial_2 \varphi_1 \\
+        \partial_1 \varphi_2 & \partial_2 \varphi_2 
+    \end{pmatrix} \,.
+\end{equation*}
+
+We will need to re-call the notion of invertible matrix here.
+For an $n\times n$ matrix $A$, it is invertible iff $\det A \not= 0$\,.
+
+::: {.theorem}
+Let $f$ be a function of  $(x,y)$ defined on the domain $D$. 
+Let 
+\begin{equation*}
+    \begin{pmatrix}
+        x \\ y
+    \end{pmatrix}
+     = \varphi(u,v)
+\end{equation*}
+for some coordinate change function $\varphi: D \to S$.
+If $f$ is continuous and $\varphi$ is differentiable, then
+\begin{equation*}
+    \int_S f \, dA = \int_D f\circ \varphi |\det D \varphi| \, dA
+\end{equation*}
+:::
+
+### Applications of change of coordinates
+
+#### Polar coordinate
+In $\R^2$,
+when the region of integration is a section of a disk  centered at $0$.
+Let
+\begin{equation*}
+    \begin{pmatrix}
+        x \\ y
+    \end{pmatrix}
+    =
+    \varphi(r,\theta) = 
+    \begin{pmatrix}
+        r\cos\theta \\
+        r\sin\theta 
+    \end{pmatrix} \,,
+\end{equation*}
+where $a \leq r \leq b$ and $\alpha \leq \theta \leq \beta$.
+
+
+#### Cylindrical coordinate
+In $\R^3$, when the region of integration is part of a cylinder.
+Let
+\begin{equation*}
+    \begin{pmatrix}
+        x \\ y \\z
+    \end{pmatrix}
+    =
+    \varphi(r,\phi,\theta) = 
+    \begin{pmatrix}
+        r\cos\theta\\
+        r\sin\theta\\
+        z
+    \end{pmatrix} \,,
+\end{equation*}
+where $a \leq r \leq b$, $\alpha \leq \theta \leq \beta$.
+
+#### Spherical coordinate
+
+In $\R^3$, when the region of integration is a section of a ball centered at $0$.
+Let
+\begin{equation*}
+    \begin{pmatrix}
+        x \\ y \\z
+    \end{pmatrix}
+    =
+    \varphi(\rho,\phi,\theta) = 
+    \begin{pmatrix}
+        \rho\sin\phi\cos\theta\\
+        \rho\sin\phi\sin\theta\\
+        \rho \cos\phi
+    \end{pmatrix} \,,
+\end{equation*}
+where $a \leq \rho \leq b$, $\alpha \leq \theta \leq \beta$, and 
+$c \leq \phi \leq d$.

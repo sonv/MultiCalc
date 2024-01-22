@@ -1,0 +1,416 @@
+\newpage
+# Vector Calculus
+
+Read Chapter 16 in Stewart.
+
+## Vector fields
+::: {.definition}
+Let $D$ be a domain on $\R^n$.
+A vector field on $\R^n$ is a function $\vect{F}: D \to \R^n$
+that assign each point $\vect{x}\in D$ to a vector $\vect{F}(\vect{x}) \in \R^n$.
+:::
+
+In $\R^2$, one typically write the vector fields in terms of **component functions** $P, Q$
+$$\vect{F}(x,y) = P(x,y) \vect{i} + Q(x,y) \vect{j}\,.$$
+
+In $\R^3$, one typically write the vector fields in terms of **component functions** $P, Q, R$
+$$\vect{F}(x,y,z) = P(x,y) \vect{i} + Q(x,y) \vect{j} + R(x,y,z) \vect{k}\,.$$
+
+::: {.example}
+Newton's Law of Gravitation
+\begin{equation*}
+    \vect{F}(\vect{x}) = - \frac{m M G}{| \vect{x}|^3 } \vect{x} \,,
+\end{equation*}
+where $\vect{x}$ is the position in $\R^3$.
+:::
+
+::: {.example}
+Coulomb's Law for the electric force exerted by an electric charge $Q$
+at the origin on another charge $q$ at a point $\vect{x}\in \R^3$.
+\begin{equation*}
+    \vect{F}(\vect{x}) = \frac{ \epsilon q Q}{|\vect{x}|^3} \vect{x} \,.
+\end{equation*}
+:::
+
+
+## Line integrals
+
+Let's focus on $\R^2$.
+We now perform a Riemann-sum-like action.
+
+::: {.definition}
+Let $C$ be a curve.
+The **line integral of $f$ along $C$** is defined as
+\begin{equation*}
+    \int_C f(x,y) \, ds = \lim_{n\to \infty} \sum_{i=1}^n f(x_i^*, y_i^*) \Delta s_i \,,
+\end{equation*}
+where $\Delta s_i$ is the length of a subarc of $C$.
+:::
+
+::: {.proposition}
+Suppose $C$ is smooth and is parametrized by $\vect{r}(t), a\leq t \leq b$. Then
+\begin{equation*}
+    \int_C f(x,y) \, ds = \int_a^b f(\vect{r}(t)) |\vect{r}'(t)| \, dt \,.
+\end{equation*}
+:::
+
+Note: when integrating with respect to arc length like this, reverse the direction of traversing the curve $C$ will NOT result
+in a change of sign of the final solution.
+
+\begin{equation*}
+    \int_{-C} f(x,y) \, ds =  \int_C f(x,y) \, ds \,.
+\end{equation*}
+
+
+Now we define line integrals of vector fields.
+
+::: {.definition}
+Let $\vect{F}$ be a continuous vector field defined
+on a curve $C$.
+Then the **line integral of $\vect{F}$ along $C$** is defined as
+\begin{equation*}
+    \int_C \vect{F} \cdot d \vect{r} 
+    = \int_C \vect{F}\cdot \vect{T} \, ds \,,
+\end{equation*}
+where  $\vect{T}$ is the unit tangent vector.
+:::
+
+::: {.proposition}
+Suppose $C$ is smooth and
+parametrized by $\vect{r}(t), a \leq t \leq b$.
+Then
+\begin{equation*}
+    \int_C \vect{F} \cdot d \vect{r} 
+    = \int_a^b \vect{F}(\vect{r}(t)) \cdot \vect{r}'(t) \, dt
+\end{equation*}
+:::
+
+We also use the following notations
+
+\begin{align*}
+\int_C f(x,y) dx := \int_a^b f(x(t), y(t) ) \, x'(t) \, dt \,, \\
+\int_C f(x,y) dy := \int_a^b f(x(t), y(t) ) \, y'(t) \, dt \,, \\
+\end{align*}
+
+We can abbreviate the above by
+\begin{equation*}
+\int_C P(x,y) dx +
+\int_C Q(x,y) dy 
+= \int_C P(x,y) \, dx + Q(x,y) \, dy \,.
+\end{equation*}
+
+So,
+\begin{equation*}
+    \int_C \vect{F} \cdot d \vect{r} 
+    = \int_C P \, dx + Q \, dy \,.
+\end{equation*}
+
+Note: as oppose to integrating the arc length, reversing the order of the above integrals
+will change the sign of the integral. 
+This is because the arc length is always positive, while $\Delta x$ and $\Delta y$ could be either positive
+or negative.
+
+\begin{equation*}
+\int_{-C} P(x,y) \, dx + Q(x,y) \, dy 
+= -\int_C P(x,y) \, dx + Q(x,y) \, dy \,.
+\end{equation*}
+
+::: {.theorem name="Fundamental Theorem for line integrals"}
+Let $C$ be a smooth curve given by the parametrization $\vect{r}(t)$,
+$a \leq t \leq b$.
+Let $f$ be a differentiable function of two or three
+variables whose gradient vector $\nabla f$ is continuous on $C$.
+Then,
+\begin{equation*}
+    \int_C \nabla f \cdot d\vect{r} = f(\vect{r}(b)) - f(\vect{r}(a)) \,.
+\end{equation*}
+:::
+
+::: {.definition}
+A **closed curve** is a curve that starts and ends at the same point.
+A **simple closed curve** is a closed curve that never crosses itself.
+:::
+
+Sometimes, if $C$ is a closed curve, we signify it by the following notation
+\begin{equation*}
+    \oint_C \nabla f \cdot d\vect{r} \,.
+\end{equation*}
+
+::: {.corollary}
+If $C$ is a closed curve and $f:\R^n \to \R$ is a smooth function,
+then
+\begin{equation*}
+    \oint_C \nabla f \cdot d\vect{r}  = 0 \,.
+\end{equation*}
+:::
+
+::: {.definition}
+A vector field $\vect{F}$ is called a **conservative vector field**
+if it is the gradient of some scalar function, that is there exists
+a function $f$ such that
+\begin{equation*}
+    \nabla f = \vect{F} \,.
+\end{equation*}
+:::
+
+Therefore, if $\vect{F}$ is a conservative vector field, then
+\begin{equation*}
+    \oint_C \vect{F} \cdot d\vect{r} = 0 \,.
+\end{equation*}
+
+### Independence of path
+Suppose $C_1$ and $C_2$ are two piecewise smooth curves that have the same initial point $A$ 
+and end point $B$.
+Then, 
+\begin{equation*}
+    \int_{C_1} \vect{F}\cdot d\vect{r} 
+    =
+    \int_{C_2} \vect{F} \cdot d\vect{r} 
+\end{equation*}
+whenever $\vect{F}$ is conservative (Why?).
+The question is when is the converse true?
+
+The following example is an example when the converse is not always true.
+
+::: {.example}
+Evaluate 
+\begin{equation*}
+    \int_{C_i}  x^2 \, dy \,, \qquad i = 1,2
+\end{equation*}
+where $C_1$ is the line segments from $(-1,-1) \to (-1,1) \to (1,1)$ and 
+$C_2$ is the line segments from $(-1,-1) \to (1,-1) \to (1,1)$.
+:::
+
+To further the discussion, we need a few definitions.
+
+::: {.definition}
+Let $\vect{F}$ be a continuous vector field with domain $D$, we say that the
+line integral 
+\begin{equation*}
+    \int_C \vect{F} \cdot d\vect{r} 
+\end{equation*}
+is **independent of path** if 
+\begin{equation*}
+    \int_{C_1} \vect{F}\cdot d\vect{r} 
+    =
+    \int_{C_2} \vect{F} \cdot d\vect{r} 
+\end{equation*}
+for all paths that have the same starting and ending points.
+:::
+
+::: {.theorem}
+$\int_C \vect{F}\cdot d\vect{r}$ is independent of path in $D$ if and only if
+$\oint_\Gamma \vect{F} \cdot d\vect{r} = 0$ for every closed path $\Gamma$ in $D$.
+:::
+
+
+::: {.definition}
+A domain $D$ is said to be **open** if around each point, we can draw an open ball around it.
+A domain $D$ is said to be **connected** if for any two points, there is a path that connect them
+together.
+A domain $D$ is said to be **simply connected** if is connected and there's no hole in it.
+:::
+
+::: {.theorem}
+Suppose $\vect{F}$ is a vector field that is continuous on an open
+connected region $D$.
+If $\int_C \vect{F} \cdot d \vect{r}$ is independent of path in $D$,
+then $\vect{F}$ is a conservative vector field on $D$.
+:::
+
+::: {.proof}
+todo
+:::
+
+The above theorem gives a way to determine if a vector field is conservative or not, from 
+the point of view of path independence.
+However, it is often difficult to check the path independence property as one has to
+integrate over ALL possible curves, and there are a lot of them...
+
+Another way is to take inspiration from  Clairaut's theorem.
+The question is to determine whether $\vect{F}$ is conservative, given the mixed partial 
+derivatives of $P$ and $Q$ are the same, i.e.,
+\begin{equation*}
+    \frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}\,.
+\end{equation*}
+(Compare this with Clairaut's)
+
+::: {.theorem}
+Let $\vect{F} = P\vect{i} + Q\vect{j}$ be a  vector field on an open simply connected
+region $D$. Suppose that 
+$P$ and $Q$ have continuous first-order partial derivatives and
+\begin{equation*}
+    \frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}
+\end{equation*}
+through out $D$.
+Then $\vect{F}$ is conservative.
+:::
+
+::: {.remark}
+The connectedness of $D$ is crucial (why?).
+:::
+
+
+## Green's Theorem
+
+::: {.theorem name="Green's Theorem"}
+Let $D$ be an open bounded simply connected domain in $\R^2$,
+$\Gamma$ be the boundary of $D$,
+and $\vect{F} = P\vect{i} + Q \vect{j}$ be a vector field.
+If $P$ and $Q$ have continuous partial derivatives on an open region
+that contains $D$, then
+\begin{equation*}
+    \int_\Gamma \vect{F} \cdot d \ell  = \iint_D \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) \, dA \,.
+\end{equation*}
+:::
+
+## Curl and Divergence
+::: {.definition}
+Let $\vect{F}$ be a vector field in $\R^3$.
+If all partial derivatives of $P,Q,R$ exist, then we define
+\begin{equation*}
+    \mathrm{curl}\,\vect{F} =  \left( \frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z} \right) \vect{i}
+                       + \left( \frac{\partial P}{\partial z} - \frac{\partial R}{\partial x}  \right)  \vect{j}
+                         + \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}  \right) \vect{k} \,.
+\end{equation*}
+:::
+
+A different notation for $\mathrm{curl} \, \vect{F}$ is
+\begin{equation*}
+    \nabla \times \vect{F} \,.
+\end{equation*}
+
+::: {.theorem}
+If $f$ is a function of 3 variables that has continuous second partial derivatives, then
+\begin{equation*}
+    \nabla \times ( \nabla f) = 0 \,.
+\end{equation*}
+:::
+
+::: {.theorem}
+Suppose $\vect{F}$ is a vector field on and simply connected domain $D$ so that $P,Q,R$
+all have continuous partial derivatives.
+$F$ is a conservative vector field if and only if
+$\nabla \times \vect{F} = 0$.
+:::
+
+
+::: {.definition}
+Let $\vect{F}$ be a vector field in $\R^3$.
+If all partial derivatives of $P,Q,R$ exist, then we define
+\begin{equation*}
+    \mathrm{div}\,\vect{F} =  
+    \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z} \,.
+\end{equation*}
+:::
+
+A different notation  for $\mathrm{div} \, \vect{F}$ is
+\begin{equation*}
+    \nabla \cdot \vect{F} \,.
+\end{equation*}
+
+::: {.theorem}
+Suppose $\vect{F}$ is a vector field on a domain $D$ and $P,Q,R$ have continuous 
+second-order partial derivatives.
+Then,
+\begin{equation*}
+    \nabla \cdot (\nabla \times \vect{F}) = 0 \,.
+\end{equation*}
+:::
+
+## Surface integrals
+
+### Parametric surfaces
+
+Similar to the way we parametrize a curve by a one-variable vector function
+$\vect{r}(t)$, we can parametrize a surface by a two-variable vector function
+$\vect{r}(u,v)$.
+
+We will only deal with surfaces in $\R^3$ in this section. So, the parametrization 
+of a surface $S$ 
+should be
+\begin{equation*}
+\vect{r}: D\subseteq \R^2 \to \R^3 \,.
+\end{equation*}
+We often write
+\begin{equation*}
+    \vect{r}(u,v) = x(u,v) \vect{i} + y(u,v) \vect{j} + z(u,v) \vect{k} \,.
+\end{equation*}
+
+From this parametrization, 
+we get to talk about the tangent plane  of $S$ at the point $\vect{r}(u,v)$,
+which is the plane that contains two tangent vectors
+\begin{equation*}
+    \vect{r}_u (u,v) = \frac{\partial x}{\partial u} \vect{i} +  \frac{\partial y}{\partial u} \vect{j} 
+                            + \frac{\partial z}{\partial u} \vect{k} \,,
+\end{equation*}
+and
+\begin{equation*}
+    \vect{r}_v (u,v) = \frac{\partial x}{\partial v} \vect{i} +  \frac{\partial y}{\partial v} \vect{j} 
+                            + \frac{\partial z}{\partial v} \vect{k} \,.
+\end{equation*}
+
+### Surface integral
+
+::: {.definition}
+Let $S$ be a surface with parametrization.
+The surface integral of $f$ over the surface $S$ is
+\begin{equation*}
+    \iint_S f(x,y,z) \, dS = \lim_{m,n\to \infty} \sum_{i=1}^m \sum_{j=1}^n f(P_{ij}^*) \Delta S_{ij} \,.
+\end{equation*}
+:::
+Similarly to the line integral,
+one can show that
+\begin{equation*}
+   \iint_S f(x,y,z) \, dS  = \iint_D f(\vect{r}(u,v)) | \vect{r_u}\times \vect{r_v} | \, dA \,. 
+\end{equation*}
+
+### Orientation of the surface
+
+Given a surface  $S$, we define the orientation of it as following
+
+1. If $S$ has a boundary, then the **positive orientation** of the surface is that
+   when one walks along the boundary of the surface with the head points in that direction, the surface is on the left.
+
+2. If $S$ does not have a boundary, then the **positive orientation** is the direction of the outward normal vector.
+
+### Surface integral of vector fields
+
+::: {.definition}
+If $\vect{F}$ is a continuous vector field on an oriented surface $S$ (parametrized by $\vect{r}(u,v)$) 
+with unit normal vector $\vect{n}$, then the **surface integral of $\vect{F}$ over 
+$S$** is
+\begin{equation*}
+    \iint_S \vect{F}\cdot \, d\vect{S} = \iint_S \vect{F}\cdot \vect{n} \, dS 
+    = \iint_S \vect{F}\cdot (\vect{r}_u\times \vect{r}_v) \, dA \,.
+\end{equation*}
+The integral is called the **flux of $\vect{F}$** across $S$.
+:::
+
+
+## Stokes' and Divergence Theorem
+
+::: {.theorem name="Stokes' Theorem"}
+Let $S$ be an oriented smooth surface that is bounded by a simple closed
+smooth boundary curve $\partial S$ with positive orientation.
+Let $\vect{F}$ be a vector field whose components have continuous partial
+derivatives on an open region in $\R^3$ that contains $S$.
+Then
+\begin{equation*}
+    \int_{\partial S} \vect{F} \cdot \, d\vect{r} = \iint_S \nabla \times \vect{F} \cdot d\vect{S} \,.
+\end{equation*}
+:::
+
+The boundary of an area is a curve.
+Similarly, the boundary of a solid is a surface.
+
+
+::: {.theorem name="Divergence Theorem"}
+Let $E$ be a simple solid region and let surface $\partial E$ be the boundary of $E$,
+given with positive (outward) orientation.
+Let $\vect{F}$ be a vector field whose components have continuous partial derivatives.
+Then,
+\begin{equation*}
+    \iint_{\partial E} \vect{F} \cdot d\vect{S} = \iiint_E \mathrm{div} \vect{F} \, dV \,.
+\end{equation*}
+:::

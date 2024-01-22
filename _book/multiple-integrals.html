@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>6 Multiple integrals | MATH 104: Multivariable Calculus (brief notes)</title>
+  <meta name="description" content="6 Multiple integrals | MATH 104: Multivariable Calculus (brief notes)" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="6 Multiple integrals | MATH 104: Multivariable Calculus (brief notes)" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="6 Multiple integrals | MATH 104: Multivariable Calculus (brief notes)" />
+  
+  
+  
+
+<meta name="author" content="Truong-Son Van" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="optimization.html"/>
+<link rel="next" href="vector-calculus.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html"><i class="fa fa-check"></i>Syllabus</a>
+<ul>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#key-information"><i class="fa fa-check"></i>Key information</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#textbooks-and-references"><i class="fa fa-check"></i>Textbooks and references</a>
+<ul>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#course-description"><i class="fa fa-check"></i>Course description</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#learning-objectives"><i class="fa fa-check"></i>Learning objectives</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#assessment"><i class="fa fa-check"></i>Assessment</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#core-content"><i class="fa fa-check"></i>Core content</a>
+<ul>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#project-grading-rubric"><i class="fa fa-check"></i>Project grading rubric</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#late-assignments"><i class="fa fa-check"></i>Late assignments</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#time-expectations"><i class="fa fa-check"></i>Time expectations</a>
+<ul>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#collaboration-plagiarism"><i class="fa fa-check"></i>Collaboration &amp; Plagiarism</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#learning-support"><i class="fa fa-check"></i>Learning Support</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#wellbeing"><i class="fa fa-check"></i>Wellbeing</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#tentative-course-schedule"><i class="fa fa-check"></i>Tentative Course Schedule</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="vectors.html"><a href="vectors.html"><i class="fa fa-check"></i><b>1</b> Vectors</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="vectors.html"><a href="vectors.html#basics"><i class="fa fa-check"></i><b>1.1</b> Basics</a></li>
+<li class="chapter" data-level="" data-path="vectors.html"><a href="vectors.html#rules-to-manipulate-vectors"><i class="fa fa-check"></i>Rules to manipulate vectors</a></li>
+<li class="chapter" data-level="" data-path="vectors.html"><a href="vectors.html#properties-of-vector-operations"><i class="fa fa-check"></i>Properties of vector operations</a></li>
+<li class="chapter" data-level="1.2" data-path="vectors.html"><a href="vectors.html#products"><i class="fa fa-check"></i><b>1.2</b> Products</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="vectors.html"><a href="vectors.html#dot-product"><i class="fa fa-check"></i><b>1.2.1</b> Dot product</a></li>
+<li class="chapter" data-level="" data-path="vectors.html"><a href="vectors.html#properties-of-dot-product"><i class="fa fa-check"></i>Properties of dot product</a></li>
+<li class="chapter" data-level="" data-path="vectors.html"><a href="vectors.html#projection"><i class="fa fa-check"></i>Projection</a></li>
+<li class="chapter" data-level="1.2.2" data-path="vectors.html"><a href="vectors.html#d-special-cross-product"><i class="fa fa-check"></i><b>1.2.2</b> 3D special: Cross product</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="some-basic-equations-in-mathbbr3.html"><a href="some-basic-equations-in-mathbbr3.html"><i class="fa fa-check"></i><b>2</b> Some basic equations in <span class="math inline">\(\mathbb{R}^3\)</span></a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="some-basic-equations-in-mathbbr3.html"><a href="some-basic-equations-in-mathbbr3.html#equations-for-lines"><i class="fa fa-check"></i><b>2.1</b> Equations for lines</a></li>
+<li class="chapter" data-level="2.2" data-path="some-basic-equations-in-mathbbr3.html"><a href="some-basic-equations-in-mathbbr3.html#equations-for-planes"><i class="fa fa-check"></i><b>2.2</b> Equations for planes</a></li>
+<li class="chapter" data-level="2.3" data-path="some-basic-equations-in-mathbbr3.html"><a href="some-basic-equations-in-mathbbr3.html#cylinders"><i class="fa fa-check"></i><b>2.3</b> Cylinders</a></li>
+<li class="chapter" data-level="2.4" data-path="some-basic-equations-in-mathbbr3.html"><a href="some-basic-equations-in-mathbbr3.html#quadric-surfaces"><i class="fa fa-check"></i><b>2.4</b> Quadric surfaces</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="functions-in-higher-dimensions.html"><a href="functions-in-higher-dimensions.html"><i class="fa fa-check"></i><b>3</b> Functions in higher dimensions</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="functions-in-higher-dimensions.html"><a href="functions-in-higher-dimensions.html#functions-of-several-variables"><i class="fa fa-check"></i><b>3.1</b> Functions of several variables</a></li>
+<li class="chapter" data-level="3.2" data-path="functions-in-higher-dimensions.html"><a href="functions-in-higher-dimensions.html#vector-functions"><i class="fa fa-check"></i><b>3.2</b> Vector functions</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="functions-in-higher-dimensions.html"><a href="functions-in-higher-dimensions.html#limit-continuity-and-differentiation"><i class="fa fa-check"></i><b>3.2.1</b> Limit, continuity and differentiation</a></li>
+<li class="chapter" data-level="3.2.2" data-path="functions-in-higher-dimensions.html"><a href="functions-in-higher-dimensions.html#integrals"><i class="fa fa-check"></i><b>3.2.2</b> Integrals</a></li>
+<li class="chapter" data-level="3.2.3" data-path="functions-in-higher-dimensions.html"><a href="functions-in-higher-dimensions.html#space-curve-in-mathbbr3-and-motion-in-space"><i class="fa fa-check"></i><b>3.2.3</b> Space curve in <span class="math inline">\(\mathbb{R}^3\)</span> and motion in space</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="functions-in-higher-dimensions.html"><a href="functions-in-higher-dimensions.html#activity-on-osculating-circle-and-curvature"><i class="fa fa-check"></i><b>3.3</b> Activity: on osculating circle and curvature</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="partial-derivatives.html"><a href="partial-derivatives.html"><i class="fa fa-check"></i><b>4</b> Partial derivatives</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="partial-derivatives.html"><a href="partial-derivatives.html#multivariable-scalar-function"><i class="fa fa-check"></i><b>4.1</b> Multivariable scalar function</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="partial-derivatives.html"><a href="partial-derivatives.html#graphs"><i class="fa fa-check"></i><b>4.1.1</b> Graphs</a></li>
+<li class="chapter" data-level="4.1.2" data-path="partial-derivatives.html"><a href="partial-derivatives.html#level"><i class="fa fa-check"></i><b>4.1.2</b> Level</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="partial-derivatives.html"><a href="partial-derivatives.html#limits-and-continuity"><i class="fa fa-check"></i><b>4.2</b> Limits and continuity</a></li>
+<li class="chapter" data-level="4.3" data-path="partial-derivatives.html"><a href="partial-derivatives.html#partial-derivatives-1"><i class="fa fa-check"></i><b>4.3</b> Partial derivatives</a></li>
+<li class="chapter" data-level="4.4" data-path="partial-derivatives.html"><a href="partial-derivatives.html#differentiability"><i class="fa fa-check"></i><b>4.4</b> Differentiability</a></li>
+<li class="chapter" data-level="4.5" data-path="partial-derivatives.html"><a href="partial-derivatives.html#chain-rule"><i class="fa fa-check"></i><b>4.5</b> Chain rule</a></li>
+<li class="chapter" data-level="4.6" data-path="partial-derivatives.html"><a href="partial-derivatives.html#directional-derivative"><i class="fa fa-check"></i><b>4.6</b> Directional derivative</a></li>
+<li class="chapter" data-level="4.7" data-path="partial-derivatives.html"><a href="partial-derivatives.html#tangent-planes"><i class="fa fa-check"></i><b>4.7</b> Tangent planes</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="optimization.html"><a href="optimization.html"><i class="fa fa-check"></i><b>5</b> Optimization</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="optimization.html"><a href="optimization.html#first-and-second-derivative-tests"><i class="fa fa-check"></i><b>5.1</b> First and second derivative tests</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="optimization.html"><a href="optimization.html#algorithm-to-find-absolute-maxima-and-minima-on-closed-bounded-regions"><i class="fa fa-check"></i><b>5.1.1</b> Algorithm to find absolute maxima and minima on closed bounded regions</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="optimization.html"><a href="optimization.html#constrained-optimization"><i class="fa fa-check"></i><b>5.2</b> Constrained optimization</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="multiple-integrals.html"><a href="multiple-integrals.html"><i class="fa fa-check"></i><b>6</b> Multiple integrals</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="multiple-integrals.html"><a href="multiple-integrals.html#basic-definition"><i class="fa fa-check"></i><b>6.1</b> Basic definition</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="multiple-integrals.html"><a href="multiple-integrals.html#some-properties-of-integrals"><i class="fa fa-check"></i><b>6.1.1</b> Some properties of integrals</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="multiple-integrals.html"><a href="multiple-integrals.html#iterated-integrals"><i class="fa fa-check"></i><b>6.2</b> Iterated integrals</a></li>
+<li class="chapter" data-level="6.3" data-path="multiple-integrals.html"><a href="multiple-integrals.html#change-of-coordinates"><i class="fa fa-check"></i><b>6.3</b> Change of coordinates</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="multiple-integrals.html"><a href="multiple-integrals.html#applications-of-change-of-coordinates"><i class="fa fa-check"></i><b>6.3.1</b> Applications of change of coordinates</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="vector-calculus.html"><a href="vector-calculus.html"><i class="fa fa-check"></i><b>7</b> Vector Calculus</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="vector-calculus.html"><a href="vector-calculus.html#vector-fields"><i class="fa fa-check"></i><b>7.1</b> Vector fields</a></li>
+<li class="chapter" data-level="7.2" data-path="vector-calculus.html"><a href="vector-calculus.html#line-integrals"><i class="fa fa-check"></i><b>7.2</b> Line integrals</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="vector-calculus.html"><a href="vector-calculus.html#independence-of-path"><i class="fa fa-check"></i><b>7.2.1</b> Independence of path</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="vector-calculus.html"><a href="vector-calculus.html#greens-theorem"><i class="fa fa-check"></i><b>7.3</b> Green’s Theorem</a></li>
+<li class="chapter" data-level="7.4" data-path="vector-calculus.html"><a href="vector-calculus.html#curl-and-divergence"><i class="fa fa-check"></i><b>7.4</b> Curl and Divergence</a></li>
+<li class="chapter" data-level="7.5" data-path="vector-calculus.html"><a href="vector-calculus.html#surface-integrals"><i class="fa fa-check"></i><b>7.5</b> Surface integrals</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="vector-calculus.html"><a href="vector-calculus.html#parametric-surfaces"><i class="fa fa-check"></i><b>7.5.1</b> Parametric surfaces</a></li>
+<li class="chapter" data-level="7.5.2" data-path="vector-calculus.html"><a href="vector-calculus.html#surface-integral"><i class="fa fa-check"></i><b>7.5.2</b> Surface integral</a></li>
+<li class="chapter" data-level="7.5.3" data-path="vector-calculus.html"><a href="vector-calculus.html#orientation-of-the-surface"><i class="fa fa-check"></i><b>7.5.3</b> Orientation of the surface</a></li>
+<li class="chapter" data-level="7.5.4" data-path="vector-calculus.html"><a href="vector-calculus.html#surface-integral-of-vector-fields"><i class="fa fa-check"></i><b>7.5.4</b> Surface integral of vector fields</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="vector-calculus.html"><a href="vector-calculus.html#stokes-and-divergence-theorem"><i class="fa fa-check"></i><b>7.6</b> Stokes’ and Divergence Theorem</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">MATH 104: Multivariable Calculus (brief notes)</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="multiple-integrals" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">6</span> Multiple integrals<a href="multiple-integrals.html#multiple-integrals" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Read Stewart Chapter 15 and Thomas Chapter 15</p>
+<p><strong>Notations:</strong></p>
+<p>Rectangle <span class="math inline">\(R= [a_1,b_1]\times \dots \times [a_n, b_n] \subseteq \mathbb{R}^n\)</span>.</p>
+<div id="basic-definition" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Basic definition<a href="multiple-integrals.html#basic-definition" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="definition">
+<p><span id="def:unlabeled-div-51" class="definition"><strong>Definition 6.1  </strong></span>Let <span class="math inline">\(f\)</span> be a function on a rectangle <span class="math inline">\(R\)</span>.
+An n-fold Riemann sum for <span class="math inline">\(f\)</span> over <span class="math inline">\(R\)</span> is a sum of the following form
+<span class="math display">\[\begin{equation*}
+\sum_{i_1=1}^{m_1}\dots \sum_{i_n=1}^{m_n} f(\xi_{i_1\dots i_n}) \Delta A \,,
+\end{equation*}\]</span>
+where</p>
+<ul>
+<li><p><span class="math inline">\(\Delta A = \Delta x_1\times\dots \times \Delta x_n\)</span>,</p></li>
+<li><p><span class="math inline">\(\Delta x_i = (b_i-a_i)/m_i\)</span>,</p></li>
+<li><p><span class="math inline">\(\xi_{i_1\dots i_n}\in R_{i_1\dots i_n}\)</span>,</p></li>
+<li><p><span class="math inline">\(R_{i_1\dots i_n}= \prod [a_i + (i_1-1)\Delta x, a_i+ i_1\Delta x_i]\)</span>.</p></li>
+</ul>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-52" class="definition"><strong>Definition 6.2  </strong></span>The double integral of <span class="math inline">\(f\)</span> over a rectangle <span class="math inline">\(R \subseteq \mathbb{R}^2\)</span> is
+<span class="math display">\[\begin{equation*}
+    \iint_{R} f(x,y) \, dA = \lim_{m,n\to \infty} \sum_{i=1}^m \sum_{j=1}^n f(\xi_{ij}) \Delta A
+\end{equation*}\]</span>
+if the limit exists.</p>
+<p>The triple integral of <span class="math inline">\(f\)</span> over a rectangle <span class="math inline">\(R \subseteq \mathbb{R}^3\)</span> is
+<span class="math display">\[\begin{equation*}
+    \iiint_{R} f(x,y) \, dA = \lim_{m,n,l\to \infty} \sum_{i=1}^m \sum_{j=1}^n \sum_{k=1}^l f(\xi_{ijk}) \Delta A
+\end{equation*}\]</span>
+if the limit exists.</p>
+</div>
+<div id="some-properties-of-integrals" class="section level3 hasAnchor" number="6.1.1">
+<h3><span class="header-section-number">6.1.1</span> Some properties of integrals<a href="multiple-integrals.html#some-properties-of-integrals" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><p>Let <span class="math inline">\(U, V\)</span> be disjoint domains, then
+<span class="math display">\[\begin{equation*}
+\iint_{U \cup V} f \, dA = \iint_U f \, dA + \iint_V f\, dA \,.
+\end{equation*}\]</span></p></li>
+<li><p><span class="math display">\[\begin{equation*}
+\iint_U (f + g) \, dA = \iint_U f \, dA + \iint_V f \, dA \,.
+\end{equation*}\]</span></p></li>
+</ol>
+</div>
+</div>
+<div id="iterated-integrals" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Iterated integrals<a href="multiple-integrals.html#iterated-integrals" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Suppose that <span class="math inline">\(f\)</span> is integrable on <span class="math inline">\(R= [a,b]\times [c,d]\)</span>.
+An iterated integral of <span class="math inline">\(f\)</span> is defined as
+<span class="math display">\[\begin{equation*}
+    \int_a^b A(x) \, dx \,,
+\end{equation*}\]</span>
+where
+<span class="math display">\[\begin{equation*}
+    A(x) = \int_c^d f(x,y) \, dy \,.
+\end{equation*}\]</span>
+Typically, we write the above as
+<span class="math display">\[\begin{equation*}
+   \int_a^b \int_c^d f(x,y) \, dy dx \,.
+\end{equation*}\]</span>
+This means that we integrate in <span class="math inline">\(y\)</span> before in <span class="math inline">\(x\)</span>– always integrate the inner part first.</p>
+<p>Similarly, we can define an iterated integral in a different order
+<span class="math display">\[\begin{equation*}
+    \int_c^d \int_a^b f(x,y) \, dx dy \,.
+\end{equation*}\]</span></p>
+<p>The biggest question:
+Is it true that
+<span class="math display">\[\begin{equation*}
+   \int_a^b \int_c^d f(x,y) \, dy dx  =
+    \int_c^d \int_a^b f(x,y) \, dx dy \,?
+\end{equation*}\]</span></p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-53" class="theorem"><strong>Theorem 6.1  (Special case of Fubini) </strong></span>If <span class="math inline">\(f\)</span> is continuous on the rectangle <span class="math inline">\(R\)</span>, then
+<span class="math display">\[\begin{equation*}
+    \iint_R f(x,y) \, dA = \int_a^b \int_c^d f(x,y) \, dy dx = \int_c^d \int_a^b f(x,y) \, dx dy \,.
+\end{equation*}\]</span></p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-54" class="example"><strong>Example 6.1  </strong></span>Let
+<span class="math display">\[\begin{equation*}
+    f(x,y) =  \frac{x^2 - y^2}{(x^2 + y^2)^2} \,.
+\end{equation*}\]</span>
+<span class="math display">\[\begin{equation*}
+    \int_0^1\int_0^1 f(x,y) \,dy dx = \frac{\pi}{4} = - \int_0^1\int_0^1 f(x,y) \, dx dy \,.
+\end{equation*}\]</span></p>
+</div>
+<p>Everything we discuss here is true for three-variable functions.</p>
+</div>
+<div id="change-of-coordinates" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Change of coordinates<a href="multiple-integrals.html#change-of-coordinates" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A coordinate transformation is a function <span class="math inline">\(\varphi\)</span>, which
+is bijective and differentiable for which <span class="math inline">\(D\varphi\)</span> is
+invertible at all points in the domain.
+Here,
+<span class="math display">\[\begin{equation*}
+    D\varphi =
+    \begin{pmatrix}
+        \partial_1 \varphi_1 &amp; \partial_2 \varphi_1 \\
+        \partial_1 \varphi_2 &amp; \partial_2 \varphi_2
+    \end{pmatrix} \,.
+\end{equation*}\]</span></p>
+<p>We will need to re-call the notion of invertible matrix here.
+For an <span class="math inline">\(n\times n\)</span> matrix <span class="math inline">\(A\)</span>, it is invertible iff <span class="math inline">\(\det A \not= 0\)</span>,.</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-55" class="theorem"><strong>Theorem 6.2  </strong></span>Let <span class="math inline">\(f\)</span> be a function of <span class="math inline">\((x,y)\)</span> defined on the domain <span class="math inline">\(D\)</span>.
+Let
+<span class="math display">\[\begin{equation*}
+    \begin{pmatrix}
+        x \\ y
+    \end{pmatrix}
+     = \varphi(u,v)
+\end{equation*}\]</span>
+for some coordinate change function <span class="math inline">\(\varphi: D \to S\)</span>.
+If <span class="math inline">\(f\)</span> is continuous and <span class="math inline">\(\varphi\)</span> is differentiable, then
+<span class="math display">\[\begin{equation*}
+    \int_S f \, dA = \int_D f\circ \varphi |\det D \varphi| \, dA
+\end{equation*}\]</span></p>
+</div>
+<div id="applications-of-change-of-coordinates" class="section level3 hasAnchor" number="6.3.1">
+<h3><span class="header-section-number">6.3.1</span> Applications of change of coordinates<a href="multiple-integrals.html#applications-of-change-of-coordinates" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="polar-coordinate" class="section level4 hasAnchor" number="6.3.1.1">
+<h4><span class="header-section-number">6.3.1.1</span> Polar coordinate<a href="multiple-integrals.html#polar-coordinate" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>In <span class="math inline">\(\mathbb{R}^2\)</span>,
+when the region of integration is a section of a disk centered at <span class="math inline">\(0\)</span>.
+Let
+<span class="math display">\[\begin{equation*}
+    \begin{pmatrix}
+        x \\ y
+    \end{pmatrix}
+    =
+    \varphi(r,\theta) =
+    \begin{pmatrix}
+        r\cos\theta \\
+        r\sin\theta
+    \end{pmatrix} \,,
+\end{equation*}\]</span>
+where <span class="math inline">\(a \leq r \leq b\)</span> and <span class="math inline">\(\alpha \leq \theta \leq \beta\)</span>.</p>
+</div>
+<div id="cylindrical-coordinate" class="section level4 hasAnchor" number="6.3.1.2">
+<h4><span class="header-section-number">6.3.1.2</span> Cylindrical coordinate<a href="multiple-integrals.html#cylindrical-coordinate" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>In <span class="math inline">\(\mathbb{R}^3\)</span>, when the region of integration is part of a cylinder.
+Let
+<span class="math display">\[\begin{equation*}
+    \begin{pmatrix}
+        x \\ y \\z
+    \end{pmatrix}
+    =
+    \varphi(r,\phi,\theta) =
+    \begin{pmatrix}
+        r\cos\theta\\
+        r\sin\theta\\
+        z
+    \end{pmatrix} \,,
+\end{equation*}\]</span>
+where <span class="math inline">\(a \leq r \leq b\)</span>, <span class="math inline">\(\alpha \leq \theta \leq \beta\)</span>.</p>
+</div>
+<div id="spherical-coordinate" class="section level4 hasAnchor" number="6.3.1.3">
+<h4><span class="header-section-number">6.3.1.3</span> Spherical coordinate<a href="multiple-integrals.html#spherical-coordinate" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>In <span class="math inline">\(\mathbb{R}^3\)</span>, when the region of integration is a section of a ball centered at <span class="math inline">\(0\)</span>.
+Let
+<span class="math display">\[\begin{equation*}
+    \begin{pmatrix}
+        x \\ y \\z
+    \end{pmatrix}
+    =
+    \varphi(\rho,\phi,\theta) =
+    \begin{pmatrix}
+        \rho\sin\phi\cos\theta\\
+        \rho\sin\phi\sin\theta\\
+        \rho \cos\phi
+    \end{pmatrix} \,,
+\end{equation*}\]</span>
+where <span class="math inline">\(a \leq \rho \leq b\)</span>, <span class="math inline">\(\alpha \leq \theta \leq \beta\)</span>, and
+<span class="math inline">\(c \leq \phi \leq d\)</span>.</p>
+
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="optimization.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="vector-calculus.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

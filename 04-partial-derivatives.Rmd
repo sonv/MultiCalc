@@ -1,0 +1,282 @@
+\newpage
+# Partial derivatives
+
+Read Stewart Chapter 14, Thomas Chapter 14, 
+
+We will study multivariable scalar functions
+$$ f: D \to \R \,,$$
+where $D\subseteq \R^n$, $n\geq 2$.
+
+## Multivariable scalar function
+
+The following definition is from Thomas's book.
+
+::: {.definition}
+Suppose $D$ is a set of $n$-tuples of real numbers $(x_1, x_2, \ldots, x_n)$. 
+A real-valued/scalar function $f$ on $D$ is a rule that assigns a unique (single) real 
+number 
+$$w = f(x_1, x_2, \ldots, x_n)$$ 
+to each element in $D$. 
+The set $D$ is the function's domain. The set of $w$-values taken on by $f$ is 
+the function's range. The symbol $w$ is the dependent variable of $f$, and $f$ 
+is said to be a function of the $n$ independent variables $x_1$ to $x_n$. 
+We also call the $x_j$'s the function's input variables and call $w$ the function's output variable.
+:::
+
+
+As prototypes, we only focus on $n=2$ and $n=3$.
+
+### Graphs
+
+::: {.definition}
+The graph of function $f:D \to \R$ is the set of all points
+$(\vect{x}, f(\vect{x}))$, where $\vect{x}\in D$.
+Here $D\subseteq \R^n$.
+:::
+
+For 2D, the graph of $f$ is also called the **surface** $z = f(x_1,x_2)$.
+
+We cannot visualize the graph of a 3D function since it will be a four dimensional object.
+
+### Level
+
+::: {.definition}
+In 2D, the **$c$-level curves** of a function $f$ of two variables are curves with equations
+$f(x,y) = c$, where $c$ is a constant.
+
+In 3D, the **$c$-level surface** of a function $f$ of three variables are surfaces 
+with equations $f(x,y,z) = c$, where $c$ is a constant.
+:::
+
+
+## Limits and continuity
+
+The following definition is from Stewart.
+
+::: {.definition}
+Let $f$ be a function of two variables whose domain $D$ includes points arbitrarily close to $(a,b)$. Then we say that the limit of $f(x,y)$ as $(x,y)$ approaches $(a,b)$ is $L$ and we write
+
+$$\lim_{(x,y)\to(a,b)} f(x,y) = L$$
+
+if for every number $\epsilon > 0$ there is a corresponding number $\delta > 0$ such that
+$|f(x,y) - L| < \epsilon$
+if $(x,y) \in D$ and $0 < \sqrt{(x-a)^2 + (y-b)^2} < \delta$.
+:::
+
+Finding if a function has limit as a point in higher dimension is not as simple as
+the case for 1 dimension.
+
+Determining whether a multivariable function has a limit sometimes is an art
+and it requires a lot of experiences and practice.
+However, there are certain rules that could help us.
+
+::: {.theorem}
+Let $L,M$ and $k$ be real numbers and that 
+\begin{equation*}
+    \lim_{(x,y) \to (x_0,y_0)} f(x,y) = L \,, \qquad 
+    \lim_{(x,y) \to (x_0,y_0)} g(x,y) = M \,.
+\end{equation*}
+We then have
+
+1. $\displaystyle \lim_{(x,y) \to (x_0,y_0)} (f(x,y) + g(x,y)) = L + M$,
+
+2. $\displaystyle  \lim_{(x,y) \to (x_0,y_0)} (k f(x,y)) = kL$,
+
+3. $\displaystyle \lim_{(x,y) \to (x_0,y_0)} (f(x,y) g(x,y)) = LM$,
+
+4. $\displaystyle \lim_{(x,y) \to (x_0,y_0)} \frac{f(x,y)}{g(x,y)} = \frac{L}{M}$ if $M \not= 0$,
+
+5. $\displaystyle \lim_{(x,y) \to (x_0,y_0)} {f(x,y)^p} = L^p$ for $p>0$,
+:::
+
+
+**Strategy to find out that a two-variable function does NOT have a limit.**
+
+If $\lim_{(x,y) \to (a,b)} f(x,y) = L_1$ as $(x,y) \to (a,b)$ along a path $C_1$, 
+and $\lim_{(x,y) \to (a,b)} f(x,y) = L_2$ as $(x,y) \to (a,b)$ along a path $C_2$, 
+where $L_1 \neq L_2$, then $\lim_{(x,y) \to (a,b)} f(x,y)$ does not exist.
+
+::: {.example}
+$\lim_{(x,y)\to (0,0)} \frac{x^2 - y^2}{x^2 + y^2}$ does not exist.
+
+$\lim_{(x,y)\to (0,0)} \frac{xy}{x^2 + y^2}$ does not exist.
+
+$\lim_{(x,y)\to (0,0)} \frac{xy^2}{x^4 + y^4}$ does not exist.
+
+$\lim_{(x,y)\to (0,0)} \frac{3x^2y}{x^2 + y^2} = 0$.
+:::
+
+
+## Partial derivatives
+
+Given a function $f(x,y)$. The partial derivative of $f$ with respect to $x$ and $(a,b)$,
+denoted by $f_x(a,b)$, is defined to be
+\begin{equation*}
+    f_x(a,b) = \lim_{h\to 0} \frac{ f(a+h,b) - f(a,b)}{h} \,.
+\end{equation*}
+Likewise, the partial derivative of $f$ with respect to $y$ and $(a,b)$,
+denoted by $f_y(a,b)$, is defined to be
+\begin{equation*}
+    f_y(a,b) = \lim_{h\to 0} \frac{ f(a,b+h) - f(a,b)}{h} \,.
+\end{equation*}
+
+Instead of thinking about derivative with respect to $x,y$, we could think
+about derivative with respect to the first and second direction.
+This way of thinking is a bit better when one thinks about higher dimension.
+
+**Notations.** If $z = f(x,y)$, we write
+\begin{equation*}
+    f_x(x,y) = f_x = \partial_x f =  \frac{\partial f}{\partial x} = \frac{\partial}{\partial x} f(x,y) = f_1 = D_1 f = D_x f \,.
+\end{equation*}
+
+When you take partial derivatives, just treat other variables as constants and proceed as
+in the case of one dimension.
+
+More generally,
+given a function $f(x_1, \dots, x_n)$, its partial derivative with respect
+to the $i$th variable $x_i$ is
+\begin{equation*}
+    f_{x_i}(x_1, \dots, x_n) 
+    = \lim_{h\to 0} \frac{ f(x_1, \dots, x_{i-1}, x_i + h , x_{i+1}, \dots, x_n) - f(x_1, \dots, x_{i-1}, x_i  , x_{i+1}, \dots, x_n)}{h} \,.
+\end{equation*}
+
+From here, one can define higher partial derivatives such as the following
+
+\begin{equation*}
+    \partial^3_{x_1 x_2 x_2}  f\,.
+\end{equation*}
+
+Note that the power over the  symbol $\partial$ represents the order of derivatives.
+
+
+::: {.theorem name="Clairaut's Theorem"}
+Suppose $f$ is defined on a disk $D$ that contains the point $(a,b)$. 
+If the functions $f_{xy}$ and $f_{yx}$ are both continuous on $D$, then
+\begin{equation*}
+    f_{xy}(a,b) = f_{yx}(a,b) \,.
+\end{equation*}
+:::
+
+
+#### Some important notations {-}
+Let $f:D \to \R$ be a function. We write the following, if exist,
+\begin{equation*}
+    \nabla f = \begin{bmatrix}
+        \partial_{x_1} f\\
+        \vdots \\
+        \partial_{x_n} f\\
+    \end{bmatrix}
+\end{equation*}
+
+\begin{equation*}
+    \Delta f = \partial_{x_1}^2 f + \dots \partial_{x_n}^2 f \,.
+\end{equation*}
+
+
+## Differentiability 
+
+Let $S$ be a surface that has equation $z = f(x,y)$.
+Let $C_1$ and $C_2$ be two different curves on a surface $S$ 
+intersect at a point $P(x_0, y_0, z_0)$.
+
+Heuristically, "the" **tangent plane** to the surface $S$ at point $P$ is defined the be the plane that contains
+both of the tangent lines of both curves at $P$.
+
+How do you know if there is only one tangent plane at a point?
+You actually don't know.
+That's why the following definition exists.
+
+
+::: {.definition name="Differentiability"}
+Let $f:D \to \R$ and $a\in \R^n$.
+Let $z = f(x)$ and $\Delta z = f(a + \Delta x ) - f(a)$.
+Then $f$ is **differentiable at $a$** if $\Delta z$ can be
+expressed in the form
+\begin{equation*}
+    \Delta z = \sum_{i=1}^n \partial_i f(a) \Delta x_i +  \epsilon_i \Delta x_i  \,,
+\end{equation*}
+where $\epsilon_i \to 0$ as $\Delta x_i \to (0,0)$ and 
+ $\Delta x_i = x_i - a_i$.
+
+$f$ is said to be **differentiable** if it is differentiable at every point on the domain. 
+:::
+
+The graph of a differentiable function $f$ whose
+domain is two dimensional is called a **smooth surface**.
+
+Let $\Delta x = (\Delta x_1, \dots, \Delta x_n)$.
+Another reformulation of the definition of differentiability is that $f$ is
+differentiable if
+\begin{equation*}
+\lim_{|\Delta x| \to 0}
+    \frac{\Delta z - \nabla f \cdot \Delta x }{| \Delta x|}  = 0 \,.
+\end{equation*}
+It would be a good exercise to see why this is equivalent with the definition above.
+
+For some good intuition, please go to https://mathinsight.org/differentiability_multivariable_definition.
+
+
+::: {.theorem}
+If the partial derivatives $\partial_i f$  ($i= 1, \dots, n$) exist near $a\in \R^n$ and are continuous
+at $a$, then $f$ is differentiable at $a$.
+:::
+
+::: {.theorem}
+If a function $f(x)$ is differentiable at $a$ then $f$ is continuous at $a$.
+:::
+
+
+
+
+
+
+
+## Chain rule
+
+::: {.theorem}
+Let $f(x_1,\dots, x_n), g_i(y_1,\dots, y_m)$ ($i = 1,\dots, n$) be 
+differentiable
+functions. 
+Then,
+$$z(y_1, \dots, y_m) = f(g_1(y_1, \dots, y_m), \dots, g_n(y_1, \dots, y_m))$$ 
+is differentiable and
+\begin{equation*}
+    \frac{\partial z}{\partial y_i} = \sum_{j=1}^n \frac{\partial f}{\partial x_j} \frac{\partial g_j}{\partial y_i} \,.
+\end{equation*}
+:::
+
+
+## Directional derivative
+
+::: {.definition}
+Let $\vect{u} \in \R^n$. The directional derivative of $f:\R^n \to \R$ at $a\in \R^n$
+in the direction of $\vect{u}$ is the following limit (if exists)
+\begin{equation*}
+    D_{\vect{u}} f(a) = \lim_{h \to 0} \frac{ f( a + h \vect{u}) - f(a)}{h}\,.
+\end{equation*}
+:::
+
+
+How can one compute directional derivative?
+
+::: {.theorem}
+If $f:\R^n \to \R$ is differentiable then 
+\begin{equation*}
+    D_{\vect{u}} f(a) = \nabla f(a) \cdot \vect{u} \,.
+\end{equation*}
+:::
+
+
+## Tangent planes
+Let's think about tangent planes in a more systematic way, based on the definition
+of a plane learned in the first chapter.
+
+Recall the $c$-level surface of a function $f(x,y,z)$ is the collection
+\begin{equation*}
+    \{ (x,y,z) | f(x,y,z) = c \} \,.
+\end{equation*}
+
+::: {.definition}
+The tangent plane at the point $P(x_0, y_0, z_0)$ on the $c$-level surface of a differentiable $f$ 
+is the plane through $P_0$, normal to $\nabla f (x_0, y_0, z_0)$.
+:::

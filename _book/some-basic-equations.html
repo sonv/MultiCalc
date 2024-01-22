@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 Some basic equations | MATH 104: Multivariable Calculus (brief notes)</title>
+  <meta name="description" content="2 Some basic equations | MATH 104: Multivariable Calculus (brief notes)" />
+  <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 Some basic equations | MATH 104: Multivariable Calculus (brief notes)" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 Some basic equations | MATH 104: Multivariable Calculus (brief notes)" />
+  
+  
+  
+
+<meta name="author" content="Truong-Son Van" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="vectors.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Spring 2023</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html"><i class="fa fa-check"></i>Syllabus</a>
+<ul>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#key-information"><i class="fa fa-check"></i>Key information</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#textbooks-and-references"><i class="fa fa-check"></i>Textbooks and references</a>
+<ul>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#course-description"><i class="fa fa-check"></i>Course description</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#learning-objectives"><i class="fa fa-check"></i>Learning objectives</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#assessment"><i class="fa fa-check"></i>Assessment</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#core-content"><i class="fa fa-check"></i>Core content</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#late-assignments"><i class="fa fa-check"></i>Late assignments</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#time-expectations"><i class="fa fa-check"></i>Time expectations</a>
+<ul>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#collaboration-plagiarism"><i class="fa fa-check"></i>Collaboration &amp; Plagiarism</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#learning-support"><i class="fa fa-check"></i>Learning Support</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#wellbeing"><i class="fa fa-check"></i>Wellbeing</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#tentative-course-schedule"><i class="fa fa-check"></i>Tentative Course Schedule</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="vectors.html"><a href="vectors.html"><i class="fa fa-check"></i><b>1</b> Vectors</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="vectors.html"><a href="vectors.html#basics"><i class="fa fa-check"></i><b>1.1</b> Basics</a></li>
+<li class="chapter" data-level="" data-path="vectors.html"><a href="vectors.html#rules-to-manipulate-vectors"><i class="fa fa-check"></i>Rules to manipulate vectors</a></li>
+<li class="chapter" data-level="" data-path="vectors.html"><a href="vectors.html#properties-of-vector-operations"><i class="fa fa-check"></i>Properties of vector operations</a></li>
+<li class="chapter" data-level="1.2" data-path="vectors.html"><a href="vectors.html#products"><i class="fa fa-check"></i><b>1.2</b> Products</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="vectors.html"><a href="vectors.html#dot-product"><i class="fa fa-check"></i><b>1.2.1</b> Dot product</a></li>
+<li class="chapter" data-level="" data-path="vectors.html"><a href="vectors.html#properties-of-dot-product"><i class="fa fa-check"></i>Properties of dot product</a></li>
+<li class="chapter" data-level="" data-path="vectors.html"><a href="vectors.html#projection"><i class="fa fa-check"></i>Projection</a></li>
+<li class="chapter" data-level="1.2.2" data-path="vectors.html"><a href="vectors.html#d-special-cross-product"><i class="fa fa-check"></i><b>1.2.2</b> 3D special: Cross product</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="some-basic-equations.html"><a href="some-basic-equations.html"><i class="fa fa-check"></i><b>2</b> Some basic equations</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="some-basic-equations.html"><a href="some-basic-equations.html#equations-for-lines"><i class="fa fa-check"></i><b>2.1</b> Equations for lines</a></li>
+<li class="chapter" data-level="2.2" data-path="some-basic-equations.html"><a href="some-basic-equations.html#equations-for-planes"><i class="fa fa-check"></i><b>2.2</b> Equations for planes</a></li>
+<li class="chapter" data-level="2.3" data-path="some-basic-equations.html"><a href="some-basic-equations.html#cylinders"><i class="fa fa-check"></i><b>2.3</b> Cylinders</a></li>
+<li class="chapter" data-level="2.4" data-path="some-basic-equations.html"><a href="some-basic-equations.html#quadric-surfaces"><i class="fa fa-check"></i><b>2.4</b> Quadric surfaces</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">MATH 104: Multivariable Calculus (brief notes)</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="some-basic-equations" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">2</span> Some basic equations<a href="some-basic-equations.html#some-basic-equations" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Just to build some toy examples for the future, we will play with some basic
+equations in higher dimensions.</p>
+<div id="equations-for-lines" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Equations for lines<a href="some-basic-equations.html#equations-for-lines" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A line is a collection of points that is parallel to a vector and goes through a
+specific point.
+To capture this idea, we have the following representation for a line
+<span class="math display">\[\begin{equation*}
+    L = \{\mathbf{r}(t) \,|  \mathbf{r}(t) = \mathbf{r}_0 + t \mathbf{v}, t\in \mathbb{R}\}  \,,
+\end{equation*}\]</span>
+where <span class="math inline">\(\mathbf{r}_0\)</span> is the initial position and <span class="math inline">\(\mathbf{v}\)</span> is the direction.
+The equation for <span class="math inline">\(\mathbf{r}(t)\)</span> is called a .</p>
+<p>Let <span class="math inline">\(\mathbf{v} = \langle v_1, v_2, v_3 \rangle\)</span> and <span class="math inline">\(\mathbf{r}_0 = ( x_0, y_0, z_0 )\)</span>.
+The  of <span class="math inline">\(L\)</span> is the following system of equations</p>
+<p><span class="math display">\[\begin{gather*}
+    x = x_0 + v_1 t\,, \\
+    y = y_0 + v_2 t\,, \\
+    z = z_0 + v_3 t \,. 
+\end{gather*}\]</span></p>
+<p>This leads to the  of <span class="math inline">\(L\)</span></p>
+<p><span class="math display">\[\begin{equation*}
+    \frac{x - x_0}{v_1} = \frac{y - y_0}{v_2} = \frac{z - z_0}{v_3} \,.
+\end{equation*}\]</span></p>
+</div>
+<div id="equations-for-planes" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Equations for planes<a href="some-basic-equations.html#equations-for-planes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A plane is a collection of points that is perpendicular to one specific direction
+represented by a some vector called a .
+Note that due to scaling, there are more than one normal vector.
+To capture this idea, we have the following representation of a plane</p>
+<p><span class="math display">\[\begin{equation*}
+    P = \{ \mathbf{r} \, | \, \mathbf{n} \cdot (\mathbf{r}- \mathbf{r}_0 ) = 0 \} \,.
+\end{equation*}\]</span></p>
+<p>This is called a .</p>
+<p>Multiplying things out, we have the  with
+normal vector <span class="math inline">\(\mathbf{n} = \langle n_1, n_2, n_3 \rangle\)</span> through a point <span class="math inline">\(P_0(x_0, y_0, z_0)\)</span>
+<span class="math display">\[\begin{equation*}
+    n_1(r_1- x_0) + n_2 (r_2 - y_0) + n_3(r_3 - z_0) = 0 \,.
+\end{equation*}\]</span></p>
+</div>
+<div id="cylinders" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Cylinders<a href="some-basic-equations.html#cylinders" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="definition">
+<p><span id="def:unlabeled-div-13" class="definition"><strong>Definition 2.1  </strong></span>A cylinder is a surface that consists of all lines (called ) that
+are parallel to a given line.</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-14" class="example"><strong>Example 2.1  </strong></span></p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(z = x^2\)</span></li>
+<li><span class="math inline">\(x^2 + y^2 = 1\)</span></li>
+</ol>
+</div>
+</div>
+<div id="quadric-surfaces" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Quadric surfaces<a href="some-basic-equations.html#quadric-surfaces" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="vectors.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

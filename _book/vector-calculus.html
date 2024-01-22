@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>7 Vector Calculus | MATH 104: Multivariable Calculus (brief notes)</title>
+  <meta name="description" content="7 Vector Calculus | MATH 104: Multivariable Calculus (brief notes)" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="7 Vector Calculus | MATH 104: Multivariable Calculus (brief notes)" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="7 Vector Calculus | MATH 104: Multivariable Calculus (brief notes)" />
+  
+  
+  
+
+<meta name="author" content="Truong-Son Van" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="multiple-integrals.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html"><i class="fa fa-check"></i>Syllabus</a>
+<ul>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#key-information"><i class="fa fa-check"></i>Key information</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#textbooks-and-references"><i class="fa fa-check"></i>Textbooks and references</a>
+<ul>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#course-description"><i class="fa fa-check"></i>Course description</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#learning-objectives"><i class="fa fa-check"></i>Learning objectives</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#assessment"><i class="fa fa-check"></i>Assessment</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#core-content"><i class="fa fa-check"></i>Core content</a>
+<ul>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#project-grading-rubric"><i class="fa fa-check"></i>Project grading rubric</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#late-assignments"><i class="fa fa-check"></i>Late assignments</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#time-expectations"><i class="fa fa-check"></i>Time expectations</a>
+<ul>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#collaboration-plagiarism"><i class="fa fa-check"></i>Collaboration &amp; Plagiarism</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#learning-support"><i class="fa fa-check"></i>Learning Support</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#wellbeing"><i class="fa fa-check"></i>Wellbeing</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#tentative-course-schedule"><i class="fa fa-check"></i>Tentative Course Schedule</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="vectors.html"><a href="vectors.html"><i class="fa fa-check"></i><b>1</b> Vectors</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="vectors.html"><a href="vectors.html#basics"><i class="fa fa-check"></i><b>1.1</b> Basics</a></li>
+<li class="chapter" data-level="" data-path="vectors.html"><a href="vectors.html#rules-to-manipulate-vectors"><i class="fa fa-check"></i>Rules to manipulate vectors</a></li>
+<li class="chapter" data-level="" data-path="vectors.html"><a href="vectors.html#properties-of-vector-operations"><i class="fa fa-check"></i>Properties of vector operations</a></li>
+<li class="chapter" data-level="1.2" data-path="vectors.html"><a href="vectors.html#products"><i class="fa fa-check"></i><b>1.2</b> Products</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="vectors.html"><a href="vectors.html#dot-product"><i class="fa fa-check"></i><b>1.2.1</b> Dot product</a></li>
+<li class="chapter" data-level="" data-path="vectors.html"><a href="vectors.html#properties-of-dot-product"><i class="fa fa-check"></i>Properties of dot product</a></li>
+<li class="chapter" data-level="" data-path="vectors.html"><a href="vectors.html#projection"><i class="fa fa-check"></i>Projection</a></li>
+<li class="chapter" data-level="1.2.2" data-path="vectors.html"><a href="vectors.html#d-special-cross-product"><i class="fa fa-check"></i><b>1.2.2</b> 3D special: Cross product</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="some-basic-equations-in-mathbbr3.html"><a href="some-basic-equations-in-mathbbr3.html"><i class="fa fa-check"></i><b>2</b> Some basic equations in <span class="math inline">\(\mathbb{R}^3\)</span></a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="some-basic-equations-in-mathbbr3.html"><a href="some-basic-equations-in-mathbbr3.html#equations-for-lines"><i class="fa fa-check"></i><b>2.1</b> Equations for lines</a></li>
+<li class="chapter" data-level="2.2" data-path="some-basic-equations-in-mathbbr3.html"><a href="some-basic-equations-in-mathbbr3.html#equations-for-planes"><i class="fa fa-check"></i><b>2.2</b> Equations for planes</a></li>
+<li class="chapter" data-level="2.3" data-path="some-basic-equations-in-mathbbr3.html"><a href="some-basic-equations-in-mathbbr3.html#cylinders"><i class="fa fa-check"></i><b>2.3</b> Cylinders</a></li>
+<li class="chapter" data-level="2.4" data-path="some-basic-equations-in-mathbbr3.html"><a href="some-basic-equations-in-mathbbr3.html#quadric-surfaces"><i class="fa fa-check"></i><b>2.4</b> Quadric surfaces</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="functions-in-higher-dimensions.html"><a href="functions-in-higher-dimensions.html"><i class="fa fa-check"></i><b>3</b> Functions in higher dimensions</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="functions-in-higher-dimensions.html"><a href="functions-in-higher-dimensions.html#functions-of-several-variables"><i class="fa fa-check"></i><b>3.1</b> Functions of several variables</a></li>
+<li class="chapter" data-level="3.2" data-path="functions-in-higher-dimensions.html"><a href="functions-in-higher-dimensions.html#vector-functions"><i class="fa fa-check"></i><b>3.2</b> Vector functions</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="functions-in-higher-dimensions.html"><a href="functions-in-higher-dimensions.html#limit-continuity-and-differentiation"><i class="fa fa-check"></i><b>3.2.1</b> Limit, continuity and differentiation</a></li>
+<li class="chapter" data-level="3.2.2" data-path="functions-in-higher-dimensions.html"><a href="functions-in-higher-dimensions.html#integrals"><i class="fa fa-check"></i><b>3.2.2</b> Integrals</a></li>
+<li class="chapter" data-level="3.2.3" data-path="functions-in-higher-dimensions.html"><a href="functions-in-higher-dimensions.html#space-curve-in-mathbbr3-and-motion-in-space"><i class="fa fa-check"></i><b>3.2.3</b> Space curve in <span class="math inline">\(\mathbb{R}^3\)</span> and motion in space</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="functions-in-higher-dimensions.html"><a href="functions-in-higher-dimensions.html#activity-on-osculating-circle-and-curvature"><i class="fa fa-check"></i><b>3.3</b> Activity: on osculating circle and curvature</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="partial-derivatives.html"><a href="partial-derivatives.html"><i class="fa fa-check"></i><b>4</b> Partial derivatives</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="partial-derivatives.html"><a href="partial-derivatives.html#multivariable-scalar-function"><i class="fa fa-check"></i><b>4.1</b> Multivariable scalar function</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="partial-derivatives.html"><a href="partial-derivatives.html#graphs"><i class="fa fa-check"></i><b>4.1.1</b> Graphs</a></li>
+<li class="chapter" data-level="4.1.2" data-path="partial-derivatives.html"><a href="partial-derivatives.html#level"><i class="fa fa-check"></i><b>4.1.2</b> Level</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="partial-derivatives.html"><a href="partial-derivatives.html#limits-and-continuity"><i class="fa fa-check"></i><b>4.2</b> Limits and continuity</a></li>
+<li class="chapter" data-level="4.3" data-path="partial-derivatives.html"><a href="partial-derivatives.html#partial-derivatives-1"><i class="fa fa-check"></i><b>4.3</b> Partial derivatives</a></li>
+<li class="chapter" data-level="4.4" data-path="partial-derivatives.html"><a href="partial-derivatives.html#differentiability"><i class="fa fa-check"></i><b>4.4</b> Differentiability</a></li>
+<li class="chapter" data-level="4.5" data-path="partial-derivatives.html"><a href="partial-derivatives.html#chain-rule"><i class="fa fa-check"></i><b>4.5</b> Chain rule</a></li>
+<li class="chapter" data-level="4.6" data-path="partial-derivatives.html"><a href="partial-derivatives.html#directional-derivative"><i class="fa fa-check"></i><b>4.6</b> Directional derivative</a></li>
+<li class="chapter" data-level="4.7" data-path="partial-derivatives.html"><a href="partial-derivatives.html#tangent-planes"><i class="fa fa-check"></i><b>4.7</b> Tangent planes</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="optimization.html"><a href="optimization.html"><i class="fa fa-check"></i><b>5</b> Optimization</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="optimization.html"><a href="optimization.html#first-and-second-derivative-tests"><i class="fa fa-check"></i><b>5.1</b> First and second derivative tests</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="optimization.html"><a href="optimization.html#algorithm-to-find-absolute-maxima-and-minima-on-closed-bounded-regions"><i class="fa fa-check"></i><b>5.1.1</b> Algorithm to find absolute maxima and minima on closed bounded regions</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="optimization.html"><a href="optimization.html#constrained-optimization"><i class="fa fa-check"></i><b>5.2</b> Constrained optimization</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="multiple-integrals.html"><a href="multiple-integrals.html"><i class="fa fa-check"></i><b>6</b> Multiple integrals</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="multiple-integrals.html"><a href="multiple-integrals.html#basic-definition"><i class="fa fa-check"></i><b>6.1</b> Basic definition</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="multiple-integrals.html"><a href="multiple-integrals.html#some-properties-of-integrals"><i class="fa fa-check"></i><b>6.1.1</b> Some properties of integrals</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="multiple-integrals.html"><a href="multiple-integrals.html#iterated-integrals"><i class="fa fa-check"></i><b>6.2</b> Iterated integrals</a></li>
+<li class="chapter" data-level="6.3" data-path="multiple-integrals.html"><a href="multiple-integrals.html#change-of-coordinates"><i class="fa fa-check"></i><b>6.3</b> Change of coordinates</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="multiple-integrals.html"><a href="multiple-integrals.html#applications-of-change-of-coordinates"><i class="fa fa-check"></i><b>6.3.1</b> Applications of change of coordinates</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="vector-calculus.html"><a href="vector-calculus.html"><i class="fa fa-check"></i><b>7</b> Vector Calculus</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="vector-calculus.html"><a href="vector-calculus.html#vector-fields"><i class="fa fa-check"></i><b>7.1</b> Vector fields</a></li>
+<li class="chapter" data-level="7.2" data-path="vector-calculus.html"><a href="vector-calculus.html#line-integrals"><i class="fa fa-check"></i><b>7.2</b> Line integrals</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="vector-calculus.html"><a href="vector-calculus.html#independence-of-path"><i class="fa fa-check"></i><b>7.2.1</b> Independence of path</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="vector-calculus.html"><a href="vector-calculus.html#greens-theorem"><i class="fa fa-check"></i><b>7.3</b> Green’s Theorem</a></li>
+<li class="chapter" data-level="7.4" data-path="vector-calculus.html"><a href="vector-calculus.html#curl-and-divergence"><i class="fa fa-check"></i><b>7.4</b> Curl and Divergence</a></li>
+<li class="chapter" data-level="7.5" data-path="vector-calculus.html"><a href="vector-calculus.html#surface-integrals"><i class="fa fa-check"></i><b>7.5</b> Surface integrals</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="vector-calculus.html"><a href="vector-calculus.html#parametric-surfaces"><i class="fa fa-check"></i><b>7.5.1</b> Parametric surfaces</a></li>
+<li class="chapter" data-level="7.5.2" data-path="vector-calculus.html"><a href="vector-calculus.html#surface-integral"><i class="fa fa-check"></i><b>7.5.2</b> Surface integral</a></li>
+<li class="chapter" data-level="7.5.3" data-path="vector-calculus.html"><a href="vector-calculus.html#orientation-of-the-surface"><i class="fa fa-check"></i><b>7.5.3</b> Orientation of the surface</a></li>
+<li class="chapter" data-level="7.5.4" data-path="vector-calculus.html"><a href="vector-calculus.html#surface-integral-of-vector-fields"><i class="fa fa-check"></i><b>7.5.4</b> Surface integral of vector fields</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="vector-calculus.html"><a href="vector-calculus.html#stokes-and-divergence-theorem"><i class="fa fa-check"></i><b>7.6</b> Stokes’ and Divergence Theorem</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">MATH 104: Multivariable Calculus (brief notes)</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="vector-calculus" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">7</span> Vector Calculus<a href="vector-calculus.html#vector-calculus" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Read Chapter 16 in Stewart.</p>
+<div id="vector-fields" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> Vector fields<a href="vector-calculus.html#vector-fields" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="definition">
+<p><span id="def:unlabeled-div-56" class="definition"><strong>Definition 7.1  </strong></span>Let <span class="math inline">\(D\)</span> be a domain on <span class="math inline">\(\mathbb{R}^n\)</span>.
+A vector field on <span class="math inline">\(\mathbb{R}^n\)</span> is a function <span class="math inline">\(\mathbf{F}: D \to \mathbb{R}^n\)</span>
+that assign each point <span class="math inline">\(\mathbf{x}\in D\)</span> to a vector <span class="math inline">\(\mathbf{F}(\mathbf{x}) \in \mathbb{R}^n\)</span>.</p>
+</div>
+<p>In <span class="math inline">\(\mathbb{R}^2\)</span>, one typically write the vector fields in terms of <strong>component functions</strong> <span class="math inline">\(P, Q\)</span>
+<span class="math display">\[\mathbf{F}(x,y) = P(x,y) \mathbf{i} + Q(x,y) \mathbf{j}\,.\]</span></p>
+<p>In <span class="math inline">\(\mathbb{R}^3\)</span>, one typically write the vector fields in terms of <strong>component functions</strong> <span class="math inline">\(P, Q, R\)</span>
+<span class="math display">\[\mathbf{F}(x,y,z) = P(x,y) \mathbf{i} + Q(x,y) \mathbf{j} + R(x,y,z) \mathbf{k}\,.\]</span></p>
+<div class="example">
+<p><span id="exm:unlabeled-div-57" class="example"><strong>Example 7.1  </strong></span>Newton’s Law of Gravitation
+<span class="math display">\[\begin{equation*}
+    \mathbf{F}(\mathbf{x}) = - \frac{m M G}{| \mathbf{x}|^3 } \mathbf{x} \,,
+\end{equation*}\]</span>
+where <span class="math inline">\(\mathbf{x}\)</span> is the position in <span class="math inline">\(\mathbb{R}^3\)</span>.</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-58" class="example"><strong>Example 7.2  </strong></span>Coulomb’s Law for the electric force exerted by an electric charge <span class="math inline">\(Q\)</span>
+at the origin on another charge <span class="math inline">\(q\)</span> at a point <span class="math inline">\(\mathbf{x}\in \mathbb{R}^3\)</span>.
+<span class="math display">\[\begin{equation*}
+    \mathbf{F}(\mathbf{x}) = \frac{ \epsilon q Q}{|\mathbf{x}|^3} \mathbf{x} \,.
+\end{equation*}\]</span></p>
+</div>
+</div>
+<div id="line-integrals" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> Line integrals<a href="vector-calculus.html#line-integrals" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Let’s focus on <span class="math inline">\(\mathbb{R}^2\)</span>.
+We now perform a Riemann-sum-like action.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-59" class="definition"><strong>Definition 7.2  </strong></span>Let <span class="math inline">\(C\)</span> be a curve.
+The <strong>line integral of <span class="math inline">\(f\)</span> along <span class="math inline">\(C\)</span></strong> is defined as
+<span class="math display">\[\begin{equation*}
+    \int_C f(x,y) \, ds = \lim_{n\to \infty} \sum_{i=1}^n f(x_i^*, y_i^*) \Delta s_i \,,
+\end{equation*}\]</span>
+where <span class="math inline">\(\Delta s_i\)</span> is the length of a subarc of <span class="math inline">\(C\)</span>.</p>
+</div>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-60" class="proposition"><strong>Proposition 7.1  </strong></span>Suppose <span class="math inline">\(C\)</span> is smooth and is parametrized by <span class="math inline">\(\mathbf{r}(t), a\leq t \leq b\)</span>. Then
+<span class="math display">\[\begin{equation*}
+    \int_C f(x,y) \, ds = \int_a^b f(\mathbf{r}(t)) |\mathbf{r}&#39;(t)| \, dt \,.
+\end{equation*}\]</span></p>
+</div>
+<p>Note: when integrating with respect to arc length like this, reverse the direction of traversing the curve <span class="math inline">\(C\)</span> will NOT result
+in a change of sign of the final solution.</p>
+<p><span class="math display">\[\begin{equation*}
+    \int_{-C} f(x,y) \, ds =  \int_C f(x,y) \, ds \,.
+\end{equation*}\]</span></p>
+<p>Now we define line integrals of vector fields.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-61" class="definition"><strong>Definition 7.3  </strong></span>Let <span class="math inline">\(\mathbf{F}\)</span> be a continuous vector field defined
+on a curve <span class="math inline">\(C\)</span>.
+Then the <strong>line integral of <span class="math inline">\(\mathbf{F}\)</span> along <span class="math inline">\(C\)</span></strong> is defined as
+<span class="math display">\[\begin{equation*}
+    \int_C \mathbf{F} \cdot d \mathbf{r}
+    = \int_C \mathbf{F}\cdot \mathbf{T} \, ds \,,
+\end{equation*}\]</span>
+where <span class="math inline">\(\mathbf{T}\)</span> is the unit tangent vector.</p>
+</div>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-62" class="proposition"><strong>Proposition 7.2  </strong></span>Suppose <span class="math inline">\(C\)</span> is smooth and
+parametrized by <span class="math inline">\(\mathbf{r}(t), a \leq t \leq b\)</span>.
+Then
+<span class="math display">\[\begin{equation*}
+    \int_C \mathbf{F} \cdot d \mathbf{r}
+    = \int_a^b \mathbf{F}(\mathbf{r}(t)) \cdot \mathbf{r}&#39;(t) \, dt
+\end{equation*}\]</span></p>
+</div>
+<p>We also use the following notations</p>
+<p><span class="math display">\[\begin{align*}
+\int_C f(x,y) dx := \int_a^b f(x(t), y(t) ) \, x&#39;(t) \, dt \,, \\
+\int_C f(x,y) dy := \int_a^b f(x(t), y(t) ) \, y&#39;(t) \, dt \,, \\
+\end{align*}\]</span></p>
+<p>We can abbreviate the above by
+<span class="math display">\[\begin{equation*}
+\int_C P(x,y) dx +
+\int_C Q(x,y) dy
+= \int_C P(x,y) \, dx + Q(x,y) \, dy \,.
+\end{equation*}\]</span></p>
+<p>So,
+<span class="math display">\[\begin{equation*}
+    \int_C \mathbf{F} \cdot d \mathbf{r}
+    = \int_C P \, dx + Q \, dy \,.
+\end{equation*}\]</span></p>
+<p>Note: as oppose to integrating the arc length, reversing the order of the above integrals
+will change the sign of the integral.
+This is because the arc length is always positive, while <span class="math inline">\(\Delta x\)</span> and <span class="math inline">\(\Delta y\)</span> could be either positive
+or negative.</p>
+<p><span class="math display">\[\begin{equation*}
+\int_{-C} P(x,y) \, dx + Q(x,y) \, dy
+= -\int_C P(x,y) \, dx + Q(x,y) \, dy \,.
+\end{equation*}\]</span></p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-63" class="theorem"><strong>Theorem 7.1  (Fundamental Theorem for line integrals) </strong></span>Let <span class="math inline">\(C\)</span> be a smooth curve given by the parametrization <span class="math inline">\(\mathbf{r}(t)\)</span>,
+<span class="math inline">\(a \leq t \leq b\)</span>.
+Let <span class="math inline">\(f\)</span> be a differentiable function of two or three
+variables whose gradient vector <span class="math inline">\(\nabla f\)</span> is continuous on <span class="math inline">\(C\)</span>.
+Then,
+<span class="math display">\[\begin{equation*}
+    \int_C \nabla f \cdot d\mathbf{r} = f(\mathbf{r}(b)) - f(\mathbf{r}(a)) \,.
+\end{equation*}\]</span></p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-64" class="definition"><strong>Definition 7.4  </strong></span>A <strong>closed curve</strong> is a curve that starts and ends at the same point.
+A <strong>simple closed curve</strong> is a closed curve that never crosses itself.</p>
+</div>
+<p>Sometimes, if <span class="math inline">\(C\)</span> is a closed curve, we signify it by the following notation
+<span class="math display">\[\begin{equation*}
+    \oint_C \nabla f \cdot d\mathbf{r} \,.
+\end{equation*}\]</span></p>
+<div class="corollary">
+<p><span id="cor:unlabeled-div-65" class="corollary"><strong>Corollary 7.1  </strong></span>If <span class="math inline">\(C\)</span> is a closed curve and <span class="math inline">\(f:\mathbb{R}^n \to \mathbb{R}\)</span> is a smooth function,
+then
+<span class="math display">\[\begin{equation*}
+    \oint_C \nabla f \cdot d\mathbf{r}  = 0 \,.
+\end{equation*}\]</span></p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-66" class="definition"><strong>Definition 7.5  </strong></span>A vector field <span class="math inline">\(\mathbf{F}\)</span> is called a <strong>conservative vector field</strong>
+if it is the gradient of some scalar function, that is there exists
+a function <span class="math inline">\(f\)</span> such that
+<span class="math display">\[\begin{equation*}
+    \nabla f = \mathbf{F} \,.
+\end{equation*}\]</span></p>
+</div>
+<p>Therefore, if <span class="math inline">\(\mathbf{F}\)</span> is a conservative vector field, then
+<span class="math display">\[\begin{equation*}
+    \oint_C \mathbf{F} \cdot d\mathbf{r} = 0 \,.
+\end{equation*}\]</span></p>
+<div id="independence-of-path" class="section level3 hasAnchor" number="7.2.1">
+<h3><span class="header-section-number">7.2.1</span> Independence of path<a href="vector-calculus.html#independence-of-path" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Suppose <span class="math inline">\(C_1\)</span> and <span class="math inline">\(C_2\)</span> are two piecewise smooth curves that have the same initial point <span class="math inline">\(A\)</span>
+and end point <span class="math inline">\(B\)</span>.
+Then,
+<span class="math display">\[\begin{equation*}
+    \int_{C_1} \mathbf{F}\cdot d\mathbf{r}
+    =
+    \int_{C_2} \mathbf{F} \cdot d\mathbf{r}
+\end{equation*}\]</span>
+whenever <span class="math inline">\(\mathbf{F}\)</span> is conservative (Why?).
+The question is when is the converse true?</p>
+<p>The following example is an example when the converse is not always true.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-67" class="example"><strong>Example 7.3  </strong></span>Evaluate
+<span class="math display">\[\begin{equation*}
+    \int_{C_i}  x^2 \, dy \,, \qquad i = 1,2
+\end{equation*}\]</span>
+where <span class="math inline">\(C_1\)</span> is the line segments from <span class="math inline">\((-1,-1) \to (-1,1) \to (1,1)\)</span> and
+<span class="math inline">\(C_2\)</span> is the line segments from <span class="math inline">\((-1,-1) \to (1,-1) \to (1,1)\)</span>.</p>
+</div>
+<p>To further the discussion, we need a few definitions.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-68" class="definition"><strong>Definition 7.6  </strong></span>Let <span class="math inline">\(\mathbf{F}\)</span> be a continuous vector field with domain <span class="math inline">\(D\)</span>, we say that the
+line integral
+<span class="math display">\[\begin{equation*}
+    \int_C \mathbf{F} \cdot d\mathbf{r}
+\end{equation*}\]</span>
+is <strong>independent of path</strong> if
+<span class="math display">\[\begin{equation*}
+    \int_{C_1} \mathbf{F}\cdot d\mathbf{r}
+    =
+    \int_{C_2} \mathbf{F} \cdot d\mathbf{r}
+\end{equation*}\]</span>
+for all paths that have the same starting and ending points.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-69" class="theorem"><strong>Theorem 7.2  </strong></span><span class="math inline">\(\int_C \mathbf{F}\cdot d\mathbf{r}\)</span> is independent of path in <span class="math inline">\(D\)</span> if and only if
+<span class="math inline">\(\oint_\Gamma \mathbf{F} \cdot d\mathbf{r} = 0\)</span> for every closed path <span class="math inline">\(\Gamma\)</span> in <span class="math inline">\(D\)</span>.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-70" class="definition"><strong>Definition 7.7  </strong></span>A domain <span class="math inline">\(D\)</span> is said to be <strong>open</strong> if around each point, we can draw an open ball around it.
+A domain <span class="math inline">\(D\)</span> is said to be <strong>connected</strong> if for any two points, there is a path that connect them
+together.
+A domain <span class="math inline">\(D\)</span> is said to be <strong>simply connected</strong> if is connected and there’s no hole in it.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-71" class="theorem"><strong>Theorem 7.3  </strong></span>Suppose <span class="math inline">\(\mathbf{F}\)</span> is a vector field that is continuous on an open
+connected region <span class="math inline">\(D\)</span>.
+If <span class="math inline">\(\int_C \mathbf{F} \cdot d \mathbf{r}\)</span> is independent of path in <span class="math inline">\(D\)</span>,
+then <span class="math inline">\(\mathbf{F}\)</span> is a conservative vector field on <span class="math inline">\(D\)</span>.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-72" class="proof"><em>Proof</em>. </span>todo</p>
+</div>
+<p>The above theorem gives a way to determine if a vector field is conservative or not, from
+the point of view of path independence.
+However, it is often difficult to check the path independence property as one has to
+integrate over ALL possible curves, and there are a lot of them…</p>
+<p>Another way is to take inspiration from Clairaut’s theorem.
+The question is to determine whether <span class="math inline">\(\mathbf{F}\)</span> is conservative, given the mixed partial
+derivatives of <span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span> are the same, i.e.,
+<span class="math display">\[\begin{equation*}
+    \frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}\,.
+\end{equation*}\]</span>
+(Compare this with Clairaut’s)</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-73" class="theorem"><strong>Theorem 7.4  </strong></span>Let <span class="math inline">\(\mathbf{F} = P\mathbf{i} + Q\mathbf{j}\)</span> be a vector field on an open simply connected
+region <span class="math inline">\(D\)</span>. Suppose that
+<span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span> have continuous first-order partial derivatives and
+<span class="math display">\[\begin{equation*}
+    \frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}
+\end{equation*}\]</span>
+through out <span class="math inline">\(D\)</span>.
+Then <span class="math inline">\(\mathbf{F}\)</span> is conservative.</p>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-74" class="remark"><em>Remark</em>. </span>The connectedness of <span class="math inline">\(D\)</span> is crucial (why?).</p>
+</div>
+</div>
+</div>
+<div id="greens-theorem" class="section level2 hasAnchor" number="7.3">
+<h2><span class="header-section-number">7.3</span> Green’s Theorem<a href="vector-calculus.html#greens-theorem" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-75" class="theorem"><strong>Theorem 7.5  (Green's Theorem) </strong></span>Let <span class="math inline">\(D\)</span> be an open bounded simply connected domain in <span class="math inline">\(\mathbb{R}^2\)</span>,
+<span class="math inline">\(\Gamma\)</span> be the boundary of <span class="math inline">\(D\)</span>,
+and <span class="math inline">\(\mathbf{F} = P\mathbf{i} + Q \mathbf{j}\)</span> be a vector field.
+If <span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span> have continuous partial derivatives on an open region
+that contains <span class="math inline">\(D\)</span>, then
+<span class="math display">\[\begin{equation*}
+    \int_\Gamma \mathbf{F} \cdot d \ell  = \iint_D \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) \, dA \,.
+\end{equation*}\]</span></p>
+</div>
+</div>
+<div id="curl-and-divergence" class="section level2 hasAnchor" number="7.4">
+<h2><span class="header-section-number">7.4</span> Curl and Divergence<a href="vector-calculus.html#curl-and-divergence" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="definition">
+<p><span id="def:unlabeled-div-76" class="definition"><strong>Definition 7.8  </strong></span>Let <span class="math inline">\(\mathbf{F}\)</span> be a vector field in <span class="math inline">\(\mathbb{R}^3\)</span>.
+If all partial derivatives of <span class="math inline">\(P,Q,R\)</span> exist, then we define
+<span class="math display">\[\begin{equation*}
+    \mathrm{curl}\,\mathbf{F} =  \left( \frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z} \right) \mathbf{i}
+                       + \left( \frac{\partial P}{\partial z} - \frac{\partial R}{\partial x}  \right)  \mathbf{j}
+                         + \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}  \right) \mathbf{k} \,.
+\end{equation*}\]</span></p>
+</div>
+<p>A different notation for <span class="math inline">\(\mathrm{curl} \, \mathbf{F}\)</span> is
+<span class="math display">\[\begin{equation*}
+    \nabla \times \mathbf{F} \,.
+\end{equation*}\]</span></p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-77" class="theorem"><strong>Theorem 7.6  </strong></span>If <span class="math inline">\(f\)</span> is a function of 3 variables that has continuous second partial derivatives, then
+<span class="math display">\[\begin{equation*}
+    \nabla \times ( \nabla f) = 0 \,.
+\end{equation*}\]</span></p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-78" class="theorem"><strong>Theorem 7.7  </strong></span>Suppose <span class="math inline">\(\mathbf{F}\)</span> is a vector field on and simply connected domain <span class="math inline">\(D\)</span> so that <span class="math inline">\(P,Q,R\)</span>
+all have continuous partial derivatives.
+<span class="math inline">\(F\)</span> is a conservative vector field if and only if
+<span class="math inline">\(\nabla \times \mathbf{F} = 0\)</span>.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-79" class="definition"><strong>Definition 7.9  </strong></span>Let <span class="math inline">\(\mathbf{F}\)</span> be a vector field in <span class="math inline">\(\mathbb{R}^3\)</span>.
+If all partial derivatives of <span class="math inline">\(P,Q,R\)</span> exist, then we define
+<span class="math display">\[\begin{equation*}
+    \mathrm{div}\,\mathbf{F} =  
+    \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z} \,.
+\end{equation*}\]</span></p>
+</div>
+<p>A different notation for <span class="math inline">\(\mathrm{div} \, \mathbf{F}\)</span> is
+<span class="math display">\[\begin{equation*}
+    \nabla \cdot \mathbf{F} \,.
+\end{equation*}\]</span></p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-80" class="theorem"><strong>Theorem 7.8  </strong></span>Suppose <span class="math inline">\(\mathbf{F}\)</span> is a vector field on a domain <span class="math inline">\(D\)</span> and <span class="math inline">\(P,Q,R\)</span> have continuous
+second-order partial derivatives.
+Then,
+<span class="math display">\[\begin{equation*}
+    \nabla \cdot (\nabla \times \mathbf{F}) = 0 \,.
+\end{equation*}\]</span></p>
+</div>
+</div>
+<div id="surface-integrals" class="section level2 hasAnchor" number="7.5">
+<h2><span class="header-section-number">7.5</span> Surface integrals<a href="vector-calculus.html#surface-integrals" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="parametric-surfaces" class="section level3 hasAnchor" number="7.5.1">
+<h3><span class="header-section-number">7.5.1</span> Parametric surfaces<a href="vector-calculus.html#parametric-surfaces" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Similar to the way we parametrize a curve by a one-variable vector function
+<span class="math inline">\(\mathbf{r}(t)\)</span>, we can parametrize a surface by a two-variable vector function
+<span class="math inline">\(\mathbf{r}(u,v)\)</span>.</p>
+<p>We will only deal with surfaces in <span class="math inline">\(\mathbb{R}^3\)</span> in this section. So, the parametrization
+of a surface <span class="math inline">\(S\)</span>
+should be
+<span class="math display">\[\begin{equation*}
+\mathbf{r}: D\subseteq \mathbb{R}^2 \to \mathbb{R}^3 \,.
+\end{equation*}\]</span>
+We often write
+<span class="math display">\[\begin{equation*}
+    \mathbf{r}(u,v) = x(u,v) \mathbf{i} + y(u,v) \mathbf{j} + z(u,v) \mathbf{k} \,.
+\end{equation*}\]</span></p>
+<p>From this parametrization,
+we get to talk about the tangent plane of <span class="math inline">\(S\)</span> at the point <span class="math inline">\(\mathbf{r}(u,v)\)</span>,
+which is the plane that contains two tangent vectors
+<span class="math display">\[\begin{equation*}
+    \mathbf{r}_u (u,v) = \frac{\partial x}{\partial u} \mathbf{i} +  \frac{\partial y}{\partial u} \mathbf{j}
+                            + \frac{\partial z}{\partial u} \mathbf{k} \,,
+\end{equation*}\]</span>
+and
+<span class="math display">\[\begin{equation*}
+    \mathbf{r}_v (u,v) = \frac{\partial x}{\partial v} \mathbf{i} +  \frac{\partial y}{\partial v} \mathbf{j}
+                            + \frac{\partial z}{\partial v} \mathbf{k} \,.
+\end{equation*}\]</span></p>
+</div>
+<div id="surface-integral" class="section level3 hasAnchor" number="7.5.2">
+<h3><span class="header-section-number">7.5.2</span> Surface integral<a href="vector-calculus.html#surface-integral" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="definition">
+<p><span id="def:unlabeled-div-81" class="definition"><strong>Definition 7.10  </strong></span>Let <span class="math inline">\(S\)</span> be a surface with parametrization.
+The surface integral of <span class="math inline">\(f\)</span> over the surface <span class="math inline">\(S\)</span> is
+<span class="math display">\[\begin{equation*}
+    \iint_S f(x,y,z) \, dS = \lim_{m,n\to \infty} \sum_{i=1}^m \sum_{j=1}^n f(P_{ij}^*) \Delta S_{ij} \,.
+\end{equation*}\]</span></p>
+</div>
+<p>Similarly to the line integral,
+one can show that
+<span class="math display">\[\begin{equation*}
+   \iint_S f(x,y,z) \, dS  = \iint_D f(\mathbf{r}(u,v)) | \mathbf{r_u}\times \mathbf{r_v} | \, dA \,.
+\end{equation*}\]</span></p>
+</div>
+<div id="orientation-of-the-surface" class="section level3 hasAnchor" number="7.5.3">
+<h3><span class="header-section-number">7.5.3</span> Orientation of the surface<a href="vector-calculus.html#orientation-of-the-surface" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Given a surface <span class="math inline">\(S\)</span>, we define the orientation of it as following</p>
+<ol style="list-style-type: decimal">
+<li><p>If <span class="math inline">\(S\)</span> has a boundary, then the <strong>positive orientation</strong> of the surface is that
+when one walks along the boundary of the surface with the head points in that direction, the surface is on the left.</p></li>
+<li><p>If <span class="math inline">\(S\)</span> does not have a boundary, then the <strong>positive orientation</strong> is the direction of the outward normal vector.</p></li>
+</ol>
+</div>
+<div id="surface-integral-of-vector-fields" class="section level3 hasAnchor" number="7.5.4">
+<h3><span class="header-section-number">7.5.4</span> Surface integral of vector fields<a href="vector-calculus.html#surface-integral-of-vector-fields" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="definition">
+<p><span id="def:unlabeled-div-82" class="definition"><strong>Definition 7.11  </strong></span>If <span class="math inline">\(\mathbf{F}\)</span> is a continuous vector field on an oriented surface <span class="math inline">\(S\)</span> (parametrized by <span class="math inline">\(\mathbf{r}(u,v)\)</span>)
+with unit normal vector <span class="math inline">\(\mathbf{n}\)</span>, then the <strong>surface integral of <span class="math inline">\(\mathbf{F}\)</span> over
+<span class="math inline">\(S\)</span></strong> is
+<span class="math display">\[\begin{equation*}
+    \iint_S \mathbf{F}\cdot \, d\mathbf{S} = \iint_S \mathbf{F}\cdot \mathbf{n} \, dS
+    = \iint_S \mathbf{F}\cdot (\mathbf{r}_u\times \mathbf{r}_v) \, dA \,.
+\end{equation*}\]</span>
+The integral is called the <strong>flux of <span class="math inline">\(\mathbf{F}\)</span></strong> across <span class="math inline">\(S\)</span>.</p>
+</div>
+</div>
+</div>
+<div id="stokes-and-divergence-theorem" class="section level2 hasAnchor" number="7.6">
+<h2><span class="header-section-number">7.6</span> Stokes’ and Divergence Theorem<a href="vector-calculus.html#stokes-and-divergence-theorem" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-83" class="theorem"><strong>Theorem 7.9  (Stokes' Theorem) </strong></span>Let <span class="math inline">\(S\)</span> be an oriented smooth surface that is bounded by a simple closed
+smooth boundary curve <span class="math inline">\(\partial S\)</span> with positive orientation.
+Let <span class="math inline">\(\mathbf{F}\)</span> be a vector field whose components have continuous partial
+derivatives on an open region in <span class="math inline">\(\mathbb{R}^3\)</span> that contains <span class="math inline">\(S\)</span>.
+Then
+<span class="math display">\[\begin{equation*}
+    \int_{\partial S} \mathbf{F} \cdot \, d\mathbf{r} = \iint_S \nabla \times \mathbf{F} \cdot d\mathbf{S} \,.
+\end{equation*}\]</span></p>
+</div>
+<p>The boundary of an area is a curve.
+Similarly, the boundary of a solid is a surface.</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-84" class="theorem"><strong>Theorem 7.10  (Divergence Theorem) </strong></span>Let <span class="math inline">\(E\)</span> be a simple solid region and let surface <span class="math inline">\(\partial E\)</span> be the boundary of <span class="math inline">\(E\)</span>,
+given with positive (outward) orientation.
+Let <span class="math inline">\(\mathbf{F}\)</span> be a vector field whose components have continuous partial derivatives.
+Then,
+<span class="math display">\[\begin{equation*}
+    \iint_{\partial E} \mathbf{F} \cdot d\mathbf{S} = \iiint_E \mathrm{div} \mathbf{F} \, dV \,.
+\end{equation*}\]</span></p>
+</div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="multiple-integrals.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
