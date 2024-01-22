@@ -115,7 +115,7 @@
 \newcommand{\vect}{\mathbf}
 \newcommand{\R}{\mathbb{R}}
 
-\chapter{Vectors}\label{vectors}
+\chapter{Vectors \& Matrices}\label{vectors-matrices}
 
 \section{Basics}\label{basics}
 
@@ -322,6 +322,25 @@ Let \(\theta\) be the angle between \(\mathbf{a}\) and \(\mathbf{b}\). Then,
 \begin{theorem}
 The vector \(\mathbf{a}\times \mathbf{b}\) is orthogonal to both \(\mathbf{a}\) and \(\mathbf{b}\).
 \end{theorem}
+
+\section{Matrices}\label{matrices}
+
+A matrix is an 2 dimensional array with rows and columns.
+
+\[ A = \begin{pmatrix} A_{11} & \dots & A_{1n}\\ \vdots & & \vdots \\ A_{n1} & \dots & A_{nn}  \end{pmatrix}\]
+
+Another way to write out matrix \(A\) is
+\[ A = (A_{ij})\]
+where the first index \(i\) represents the row and the second index \(j\) represents the column.
+
+\subsection{Operations on matrices}\label{operations-on-matrices}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Addition: \(((A + B)_{ij}) = (A_{ij} + B_{ij})\)
+\end{enumerate}
 
 \newpage
 
