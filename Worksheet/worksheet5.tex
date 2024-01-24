@@ -1,0 +1,89 @@
+\documentclass[12pt]{amsart}
+\usepackage{amsaddr}
+\usepackage{marktext} 
+%% Remove draft for real article, put twocolumn for two columns
+\usepackage{svmacro}
+\usepackage[utf8]{inputenc}
+\usepackage{lineno}
+\usepackage[style=alphabetic, backend=biber]{biblatex}
+\addbibresource{bibliography.bib}
+
+%% commentary bubble
+\newcommand{\SV}[2][]{\sidenote[colback=green!10]{\textbf{SV\xspace #1:} #2}}
+
+%% Title 
+\title{ MATH 104: Worksheet 4}
+\author{}
+
+%\author{Co-author}
+%\address{  }
+%\email {  }
+%
+\date{01/22/2024}
+
+\begin{document}
+
+\maketitle
+
+\section{Concepts}
+
+\begin{enumerate}
+    \item Row-reduction 
+    \item Inverse
+    \item Linear transformation
+\end{enumerate}
+
+\section{Discussions}
+
+\begin{question}
+    Parametrize the intersection of the planes
+    $$ 3x + y -z = 4$$
+    and
+    $$x - 2y + z = 1. $$
+    Set this up as a row-reduction problem to obtain the answer.
+\end{question}
+
+\begin{question}
+    Compute the inverse of the following $3\times 3$ matrix by row reduction.
+    \begin{equation*}
+        \begin{pmatrix}
+            1 & 0 & 2 \\
+            3 & 1 & 0 \\
+            0 & -1 & -2
+        \end{pmatrix}
+    \end{equation*}
+    Your result should be
+    \begin{equation*}
+        \frac{1}{8} 
+        \begin{pmatrix}
+            2 & 2 & 2 \\
+            -6 & 2 & -6 \\
+            3 & -1 & -1
+        \end{pmatrix} \,.
+    \end{equation*}
+\end{question}
+
+\begin{question}
+    \begin{enumerate}
+        \item Why is it that
+            \begin{equation*}
+                (AB)^{-1} = B^{-1} A^{-1} \,?
+            \end{equation*} 
+        \item Why is it that
+            \begin{equation*}
+                (AB)^T = B^T A^T \,?
+            \end{equation*}
+    \end{enumerate}
+\end{question}
+
+\begin{question}
+    Explain why this is a rotation matrix
+    \begin{equation*}
+        \begin{pmatrix}
+            \cos \theta &  - \sin \theta \\
+             \sin \theta & \cos \theta
+        \end{pmatrix} \,.
+    \end{equation*}
+\end{question}
+
+\end{document}
