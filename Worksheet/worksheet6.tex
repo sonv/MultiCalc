@@ -1,0 +1,93 @@
+\documentclass[12pt]{amsart}
+\usepackage{amsaddr}
+\usepackage{marktext} 
+%% Remove draft for real article, put twocolumn for two columns
+\usepackage{svmacro}
+\usepackage[utf8]{inputenc}
+\usepackage{lineno}
+\usepackage[style=alphabetic, backend=biber]{biblatex}
+\addbibresource{bibliography.bib}
+
+%% commentary bubble
+\newcommand{\SV}[2][]{\sidenote[colback=green!10]{\textbf{SV\xspace #1:} #2}}
+
+%% Title 
+\title{ MATH 104: Worksheet 6}
+\author{}
+
+%\author{Co-author}
+%\address{  }
+%\email {  }
+%
+\date{01/28/2024}
+
+\begin{document}
+
+\maketitle
+
+\section{Concepts}
+
+\begin{enumerate}
+    \item Multivariable functions
+    \item Partial derivatives
+    \item Derivative as matrix of partial derivatives
+\end{enumerate}
+
+\section{Discussions}
+
+\begin{question}
+    Let 
+$$ F(x,y,z) = \frac{x^2\sqrt{y^3}}{z^4}.$$
+Compute
+$$ \frac{\partial F}{\partial x}\,, \quad \frac{\partial F}{\partial y} \,, \quad \frac{\partial F}{\partial z}$$
+\end{question}
+
+\begin{question}
+    Recall that the equation for a paraboloid is
+    $$ z = x^2 + y^2. $$
+    This can be parametrized by the following equation $G: \R^2 \to \R^3$,
+    $$ G(s,t) = \begin{pmatrix}
+        s \\ t \\ s^2 + t^2 
+    \end{pmatrix} \,.$$
+    Compute the derivative of this parametrization.
+\end{question}
+
+\begin{question}
+    The Cobb-Douglas model is a classic model in economics.
+    It says production, $P$, is a function of materials, $M$, and labor $L$ 
+    via the following relationship
+    \begin{equation*}
+        P = \kappa M^\alpha L^\beta
+    \end{equation*}
+    where $\kappa >0$, $0<\alpha, \beta <1$ and $\alpha + \beta = 1$.
+    If the investment in labor is increased and the investment in materials
+    is decreased at an equal rate, what is the impact on production?
+\end{question}
+
+\begin{question}
+    Consider a function $f$ such that, at a particular point $a$,
+    \begin{equation*}
+        [Df]_a\begin{pmatrix}
+            1 \\ -1
+        \end{pmatrix}
+        = \begin{pmatrix}
+            3 \\ -2
+        \end{pmatrix}.
+    \end{equation*}
+    \begin{enumerate}
+        \item How many inputs does $f$ have?
+        \item What happens if inputs change at rates $\vec{h} = \langle -2, 2 \rangle$?
+        \item What if $\vec{h} = \langle 3, 3 \rangle$? Can you do this?
+        \item Can you do the previous problem if you know 
+            $$[Df]_a \begin{pmatrix}
+                1 \\2 
+            \end{pmatrix}
+            = 
+            \begin{pmatrix}
+                4 \\ -4
+            \end{pmatrix}?
+            $$
+    \end{enumerate}
+\end{question}
+
+\end{document}
