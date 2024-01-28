@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2 Some basic equations in \(\mathbb{R}^3\) | MATH 104: Multivariable Calculus (brief notes)</title>
-  <meta name="description" content="2 Some basic equations in \(\mathbb{R}^3\) | MATH 104: Multivariable Calculus (brief notes)" />
+  <title>Disclaimer | MATH 104: Multivariable Calculus (brief notes)</title>
+  <meta name="description" content="Disclaimer | MATH 104: Multivariable Calculus (brief notes)" />
   <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2 Some basic equations in \(\mathbb{R}^3\) | MATH 104: Multivariable Calculus (brief notes)" />
+  <meta property="og:title" content="Disclaimer | MATH 104: Multivariable Calculus (brief notes)" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2 Some basic equations in \(\mathbb{R}^3\) | MATH 104: Multivariable Calculus (brief notes)" />
+  <meta name="twitter:title" content="Disclaimer | MATH 104: Multivariable Calculus (brief notes)" />
   
   
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="vectors-matrices.html"/>
-<link rel="next" href="functions-in-higher-dimensions.html"/>
+<link rel="prev" href="index.html"/>
+<link rel="next" href="syllabus.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -166,108 +166,20 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="some-basic-equations-in-mathbbr3" class="section level1 hasAnchor" number="2">
-<h1><span class="header-section-number">2</span> Some basic equations in <span class="math inline">\(\mathbb{R}^3\)</span><a href="some-basic-equations-in-mathbbr3.html#some-basic-equations-in-mathbbr3" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Just to build some toy examples for the future, we will play with some basic
-equations in three dimensions.</p>
-<div id="equations-for-lines" class="section level2 hasAnchor" number="2.1">
-<h2><span class="header-section-number">2.1</span> Equations for lines<a href="some-basic-equations-in-mathbbr3.html#equations-for-lines" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>A line is a collection of points that is parallel to a vector and goes through a
-specific point.
-To capture this idea, we have the following representation for a line
-<span class="math display">\[\begin{equation*}
-    L = \{\mathbf{r}(t) \,|  \mathbf{r}(t) = \mathbf{r}_0 + t \mathbf{v}, t\in \mathbb{R}\}  \,,
-\end{equation*}\]</span>
-where <span class="math inline">\({r}_0\)</span> is the initial position and <span class="math inline">\(\mathbf{v}\)</span> is the direction.
-The equation for <span class="math inline">\(\mathbf{r}(t)\)</span> is called a <strong>vector equation for a line <span class="math inline">\(L\)</span></strong>.</p>
-<p>Let <span class="math inline">\(\mathbf{v} = \langle v_1, v_2, v_3 \rangle\)</span> and <span class="math inline">\(\mathbf{r}_0 = ( x_0, y_0, z_0 )\)</span>.
-The <strong>parametric equations</strong> of <span class="math inline">\(L\)</span> is the following system of equations</p>
-<p><span class="math display">\[\begin{gather*}
-    x = x_0 + v_1 t\,, \\
-    y = y_0 + v_2 t\,, \\
-    z = z_0 + v_3 t \,.
-\end{gather*}\]</span></p>
-<p>This leads to the <strong>symmetric equations</strong> of <span class="math inline">\(L\)</span></p>
-<p><span class="math display">\[\begin{equation*}
-    \frac{x - x_0}{v_1} = \frac{y - y_0}{v_2} = \frac{z - z_0}{v_3} \,.
-\end{equation*}\]</span></p>
-<div class="definition">
-<p><span id="def:unlabeled-div-13" class="definition"><strong>Definition 2.1  </strong></span>Two lines are parallel if their directional vectors are parallel (scalar multiple of each other).</p>
-<p>Two lines that are not parallel and don’t intersect each other are said to be skew.</p>
-</div>
-</div>
-<div id="equations-for-planes" class="section level2 hasAnchor" number="2.2">
-<h2><span class="header-section-number">2.2</span> Equations for planes<a href="some-basic-equations-in-mathbbr3.html#equations-for-planes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>A plane is a collection of points that is perpendicular to one specific direction
-represented by a some vector called a <strong>normal vector</strong>.
-Note that due to scaling, there are more than one normal vector.
-To capture this idea, we have the following representation of a plane</p>
-<p><span class="math display">\[\begin{equation*}
-    P = \{ \mathbf{r} \, | \, \mathbf{n} \cdot (\mathbf{r}- \mathbf{r}_0 ) = 0 \} \,.
-\end{equation*}\]</span></p>
-<p>This is called a <strong>vector equation for the plane <span class="math inline">\(P\)</span></strong>.</p>
-<p>Multiplying things out, we have the <strong>scalar equation of the plane <span class="math inline">\(P\)</span></strong> with
-normal vector <span class="math inline">\(\mathbf{n} = \langle n_1, n_2, n_3 \rangle\)</span> through a point <span class="math inline">\(P_0(x_0, y_0, z_0)\)</span>
-<span class="math display">\[\begin{equation*}
-    n_1(r_1- x_0) + n_2 (r_2 - y_0) + n_3(r_3 - z_0) = 0 \,.
-\end{equation*}\]</span></p>
-<p>The equation of the form
-<span class="math display">\[\begin{equation*}
-    ax + by + cz + d = 0
-\end{equation*}\]</span>
-is called a <strong>linear equation</strong>.</p>
-<div class="definition">
-<p><span id="def:unlabeled-div-14" class="definition"><strong>Definition 2.2  </strong></span>Two planes are said to be parallel if their normal vectors are parallel.
-If two planes are not parallel, they intersect in a straight line and
-the angle between the two planes is defined to be the angle between the
-two normal vectors.</p>
-</div>
-</div>
-<div id="cylinders" class="section level2 hasAnchor" number="2.3">
-<h2><span class="header-section-number">2.3</span> Cylinders<a href="some-basic-equations-in-mathbbr3.html#cylinders" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="definition">
-<p><span id="def:unlabeled-div-15" class="definition"><strong>Definition 2.3  </strong></span>A cylinder is a surface that consists of all lines (called <strong>rulings</strong>) that
-are parallel to a given line.</p>
-</div>
-<div class="example">
-<p><span id="exm:unlabeled-div-16" class="example"><strong>Example 2.1  </strong></span></p>
-<ol style="list-style-type: decimal">
-<li><span class="math inline">\(z = x^2\)</span></li>
-<li><span class="math inline">\(x^2 + y^2 = 1\)</span></li>
-</ol>
-</div>
-</div>
-<div id="quadric-surfaces" class="section level2 hasAnchor" number="2.4">
-<h2><span class="header-section-number">2.4</span> Quadric surfaces<a href="some-basic-equations-in-mathbbr3.html#quadric-surfaces" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="definition">
-<p><span id="def:unlabeled-div-17" class="definition"><strong>Definition 2.4  </strong></span>A quadric surface is the graph of a second-degree equation in three variables
-<span class="math inline">\(x,y\)</span> and <span class="math inline">\(z\)</span>.
-The equation that represents these surfaces is
-<span class="math display">\[Ax^2 + By^2 + Cz^2 + Dz = E\,.\]</span></p>
-</div>
-<div class="example">
-<p><span id="exm:unlabeled-div-18" class="example"><strong>Example 2.2  </strong></span></p>
-<ol style="list-style-type: decimal">
-<li><p>Ellipsoid
-<span class="math display">\[\frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2} = 1\,. \]</span></p></li>
-<li><p>Hyperbolic paraboloid
-<span class="math display">\[\frac{y^2}{b^2} - \frac{x^2}{a^2} = \frac{z}{c} \,.\]</span></p></li>
-<li><p>Elliptical cone
-<span class="math display">\[\frac{x^2}{a^2} + \frac{y^2}{b^2} = \frac{z^2}{c^2} \,.\]</span></p></li>
-</ol>
-<p>Read the books for more surfaces and pictures.</p>
-</div>
+<div id="disclaimer" class="section level1 unnumbered hasAnchor">
+<h1>Disclaimer<a href="disclaimer.html#disclaimer" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>This is class notes for Mathematical Statistics at Fublbright University Vietnam.
+I claim no originality in this work as it is mostly taken from the reference books.
+However, all errors and typos are solely mine.</p>
 
-<div style="page-break-after: always;"></div>
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="vectors-matrices.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="functions-in-higher-dimensions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="syllabus.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
