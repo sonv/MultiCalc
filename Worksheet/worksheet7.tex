@@ -1,0 +1,99 @@
+\documentclass[12pt]{amsart}
+\usepackage{amsaddr}
+\usepackage{marktext} 
+%% Remove draft for real article, put twocolumn for two columns
+\usepackage{svmacro}
+\usepackage[utf8]{inputenc}
+\usepackage{lineno}
+\usepackage[style=alphabetic, backend=biber]{biblatex}
+\addbibresource{bibliography.bib}
+
+%% commentary bubble
+\newcommand{\SV}[2][]{\sidenote[colback=green!10]{\textbf{SV\xspace #1:} #2}}
+
+%% Title 
+\title{ MATH 104: Worksheet 7}
+\author{}
+
+%\author{Co-author}
+%\address{  }
+%\email {  }
+%
+\date{01/31/2024}
+
+\begin{document}
+
+
+\maketitle
+
+\section{Concepts}
+
+\begin{enumerate}
+    \item Multivariable functions
+    \item Partial derivatives
+    \item Derivative as matrix of partial derivatives
+    \item Derivative as transformation
+\end{enumerate}
+
+\section{Discussions}
+
+\begin{question}
+    Consider a function $f$ such that, at a particular point $a$,
+    \begin{equation*}
+        [Df]_a\begin{pmatrix}
+            1 \\ -1
+        \end{pmatrix}
+        = \begin{pmatrix}
+            3 \\ -2
+        \end{pmatrix}.
+    \end{equation*}
+    \begin{enumerate}
+        \item How many inputs does $f$ have?
+        \item What happens if inputs change at rates $\vec{h} = \langle -2, 2 \rangle$?
+        \item What if $\vec{h} = \langle 3, 3 \rangle$? Can you do this?
+        \item Can you do the previous problem if you know 
+            $$[Df]_a \begin{pmatrix}
+                1 \\2 
+            \end{pmatrix}
+            = 
+            \begin{pmatrix}
+                4 \\ -4
+            \end{pmatrix}?
+            $$
+    \end{enumerate}
+\end{question}
+
+\begin{question}
+    Explain the velocity vector of a parametrized curve $\gamma(t)$ in terms of the definition 
+    of a derivative.
+\end{question}
+
+\begin{question}
+    Consider the following 
+    \begin{equation*}
+        f
+        \begin{pmatrix}
+            u \\ v \\ w
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+            u^2 v^{-3} w \\ 2u - 5w \\ uv - vw
+        \end{pmatrix} \,.
+    \end{equation*}
+    \begin{enumerate}
+        \item Compute the derivative $[Df]$.
+        \item Evaluate this derivative at the point where $u = 1, v = -1, w = 2$.
+        \item If, at this point,all the inputs are decreasing at the same rate, which output is increasing the most?
+    \end{enumerate}
+\end{question}
+
+\begin{question}
+    From Calculus, we know that if $f:\R \to \R$ and $g: \R \to \R$, then
+    \begin{equation*}
+        (g\circ f)'(x) = g'(f(a)) f'(a) \,. 
+    \end{equation*}
+    Now, if we have $f: \R^n \to \R^m$ and $g: \R^m \to \R^l$, what is your guess of
+    $[D (g\circ f)]_a$?
+\end{question}
+
+\end{document}
