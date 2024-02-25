@@ -1,0 +1,67 @@
+\documentclass[12pt]{amsart}
+\usepackage{amsaddr}
+\usepackage{marktext} 
+%% Remove draft for real article, put twocolumn for two columns
+\usepackage{svmacro}
+\usepackage[utf8]{inputenc}
+\usepackage{lineno}
+\usepackage[style=alphabetic, backend=biber]{biblatex}
+\addbibresource{bibliography.bib}
+
+%% commentary bubble
+\newcommand{\SV}[2][]{\sidenote[colback=green!10]{\textbf{SV\xspace #1:} #2}}
+
+%% Title 
+\title{ MATH 104: Homework 3}
+\author{Due date: In class -- Monday, March 4, 2024}
+\address{Fulbright University, Ho Chi Minh City, Vietnam}
+
+%\author{Co-author}
+%\address{  }
+%\email {  }
+%
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{problem}
+    Consider the following function
+    \begin{equation*}
+        f(u,v,w) = \begin{pmatrix}
+            u^2 v^{-3} w \\ 2u - 5w \\ uv - vw
+        \end{pmatrix} \,.
+    \end{equation*}
+    \begin{enumerate}
+        \item Compute the derivative $[Df]$
+        \item Evaluate this derivative at the point $(1, -1, 2)$.
+        \item What is the most sensitive output?
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    Consider the following square matrix, depending on variables $x$ and $y$
+    \begin{equation*}
+        A = 
+        \begin{pmatrix}
+            x & 1 & 7x \\
+            0 & 2 & y \\
+            0 & x & 3y
+        \end{pmatrix} \,.
+    \end{equation*}
+    \begin{enumerate}
+        \item Compute and simplify the determinant $\det(A)$.
+        \item Define $\mathrm{sum}(A)$ to be the sum of all nine entries of the
+            matrix $A$. Compute and simplify $\mathrm{sum}(A)$.
+        \item Define 
+            $$ f(x,y) = \begin{pmatrix}
+                \det(A) \\
+                \mathrm{sum}(A)
+            \end{pmatrix}\,.$$
+            Compute $[Df]$.
+    \end{enumerate}
+
+\end{problem}
+
+\end{document}
