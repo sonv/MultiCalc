@@ -61,7 +61,63 @@
             \end{pmatrix}\,.$$
             Compute $[Df]$.
     \end{enumerate}
+\end{problem}
 
+\begin{problem}
+Consider the parametrized surface in 3D given by
+\begin{equation*}
+    F(s,t) =
+    \begin{pmatrix}
+        s^3 - 2t^2 + 7 \\
+        (s-1)(t-2) \\
+        s^2 - t^2
+    \end{pmatrix}
+\end{equation*}
+\begin{enumerate}
+    \item Compute the derivative of $F$.
+    \item Evaluate the derivative of $F$ at $s = 1$ and $t = 2$.
+    \item Assume that you start at the point on the surface in which $s = 1$ and $t = 2$. 
+        Is it possible to increase both $s$ and $t$ at non-zero rates
+        so that both $y$- and $z$- components on the surface change at rate zero?
+        If so, at what rates should these inputs be increased?
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+    Consider the following functions
+    \begin{equation*}
+        f(a,b,c) = 
+        \begin{pmatrix}
+            \ln (ab) \\
+            abc \\
+            b^2 + 5c
+        \end{pmatrix} \,,
+    \end{equation*}
+
+    \begin{equation*}
+            g(x,y,z) = 
+            \begin{pmatrix}
+                x^2 + y^2 z \\
+                2x - y + 3z \\
+                3x - 4y
+            \end{pmatrix}
+    \end{equation*}
+    \begin{enumerate}
+        \item Compute the derivative $[Dg]$.
+        \item Compute the derivative $[Df]$.
+        \item Use the chain rule to evaluate $[D ( f\circ g)]_a$, where $a = (1, 0 , 0)$.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+Let $f: \R^n \to \R, g: \R^m \to \R^n$ be 
+differentiable functions. 
+Show, using the Chain Rule for multivariable functions, that if
+$$z(y_1, \dots, y_m) = (f\circ g)(y_1, \dots, y_m)$$ 
+then
+\begin{equation*}
+    \frac{\partial z}{\partial y_i} = \sum_{j=1}^n \frac{\partial f}{\partial x_j} \frac{\partial g_j}{\partial y_i} \,.
+\end{equation*}
 \end{problem}
 
 \end{document}
