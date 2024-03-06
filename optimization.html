@@ -30,7 +30,7 @@
   
   
 <link rel="prev" href="partial-derivatives.html"/>
-<link rel="next" href="multiple-integrals.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -59,6 +59,7 @@
   div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 </style>
 
+<link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
 
 <body>
@@ -71,19 +72,23 @@
       <nav role="navigation">
 
 <ul class="summary">
+<li><a>Multivariable Calculus</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="disclaimer.html"><a href="disclaimer.html"><i class="fa fa-check"></i>Disclaimer</a></li>
 <li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html"><i class="fa fa-check"></i>Syllabus</a>
 <ul>
 <li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#key-information"><i class="fa fa-check"></i>Key information</a></li>
-<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#textbooks-and-references"><i class="fa fa-check"></i>Textbooks and references</a>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#how-this-course-will-function"><i class="fa fa-check"></i>HOW THIS COURSE WILL FUNCTION</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#materials-and-references"><i class="fa fa-check"></i>Materials and references</a>
 <ul>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#required-materials"><i class="fa fa-check"></i>Required materials</a></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#additional-references"><i class="fa fa-check"></i>Additional References</a></li>
 <li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#course-description"><i class="fa fa-check"></i>Course description</a></li>
 <li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#learning-objectives"><i class="fa fa-check"></i>Learning objectives</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#assessment"><i class="fa fa-check"></i>Assessment</a></li>
-<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#core-content"><i class="fa fa-check"></i>Core content</a>
-<ul>
-<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#project-grading-rubric"><i class="fa fa-check"></i>Project grading rubric</a></li>
-</ul></li>
+<li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#core-content"><i class="fa fa-check"></i>Core content</a></li>
 <li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#late-assignments"><i class="fa fa-check"></i>Late assignments</a></li>
 <li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#time-expectations"><i class="fa fa-check"></i>Time expectations</a>
 <ul>
@@ -93,17 +98,23 @@
 <li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#wellbeing"><i class="fa fa-check"></i>Wellbeing</a></li>
 <li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html#tentative-course-schedule"><i class="fa fa-check"></i>Tentative Course Schedule</a></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="vectors.html"><a href="vectors.html"><i class="fa fa-check"></i><b>1</b> Vectors</a>
+<li class="chapter" data-level="1" data-path="vectors-matrices.html"><a href="vectors-matrices.html"><i class="fa fa-check"></i><b>1</b> Vectors &amp; Matrices</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="vectors.html"><a href="vectors.html#basics"><i class="fa fa-check"></i><b>1.1</b> Basics</a></li>
-<li class="chapter" data-level="" data-path="vectors.html"><a href="vectors.html#rules-to-manipulate-vectors"><i class="fa fa-check"></i>Rules to manipulate vectors</a></li>
-<li class="chapter" data-level="" data-path="vectors.html"><a href="vectors.html#properties-of-vector-operations"><i class="fa fa-check"></i>Properties of vector operations</a></li>
-<li class="chapter" data-level="1.2" data-path="vectors.html"><a href="vectors.html#products"><i class="fa fa-check"></i><b>1.2</b> Products</a>
+<li class="chapter" data-level="1.1" data-path="vectors-matrices.html"><a href="vectors-matrices.html#basics"><i class="fa fa-check"></i><b>1.1</b> Basics</a></li>
+<li class="chapter" data-level="" data-path="vectors-matrices.html"><a href="vectors-matrices.html#rules-to-manipulate-vectors"><i class="fa fa-check"></i>Rules to manipulate vectors</a></li>
+<li class="chapter" data-level="" data-path="vectors-matrices.html"><a href="vectors-matrices.html#properties-of-vector-operations"><i class="fa fa-check"></i>Properties of vector operations</a></li>
+<li class="chapter" data-level="1.2" data-path="vectors-matrices.html"><a href="vectors-matrices.html#products"><i class="fa fa-check"></i><b>1.2</b> Products</a>
 <ul>
-<li class="chapter" data-level="1.2.1" data-path="vectors.html"><a href="vectors.html#dot-product"><i class="fa fa-check"></i><b>1.2.1</b> Dot product</a></li>
-<li class="chapter" data-level="" data-path="vectors.html"><a href="vectors.html#properties-of-dot-product"><i class="fa fa-check"></i>Properties of dot product</a></li>
-<li class="chapter" data-level="" data-path="vectors.html"><a href="vectors.html#projection"><i class="fa fa-check"></i>Projection</a></li>
-<li class="chapter" data-level="1.2.2" data-path="vectors.html"><a href="vectors.html#d-special-cross-product"><i class="fa fa-check"></i><b>1.2.2</b> 3D special: Cross product</a></li>
+<li class="chapter" data-level="1.2.1" data-path="vectors-matrices.html"><a href="vectors-matrices.html#dot-product"><i class="fa fa-check"></i><b>1.2.1</b> Dot product</a></li>
+<li class="chapter" data-level="" data-path="vectors-matrices.html"><a href="vectors-matrices.html#properties-of-dot-product"><i class="fa fa-check"></i>Properties of dot product</a></li>
+<li class="chapter" data-level="" data-path="vectors-matrices.html"><a href="vectors-matrices.html#projection"><i class="fa fa-check"></i>Projection</a></li>
+<li class="chapter" data-level="1.2.2" data-path="vectors-matrices.html"><a href="vectors-matrices.html#d-special-cross-product"><i class="fa fa-check"></i><b>1.2.2</b> 3D special: Cross product</a></li>
+<li class="chapter" data-level="1.2.3" data-path="vectors-matrices.html"><a href="vectors-matrices.html#distance-from-a-point"><i class="fa fa-check"></i><b>1.2.3</b> Distance from a point</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="vectors-matrices.html"><a href="vectors-matrices.html#matrices"><i class="fa fa-check"></i><b>1.3</b> Matrices</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="vectors-matrices.html"><a href="vectors-matrices.html#operations-on-matrices"><i class="fa fa-check"></i><b>1.3.1</b> Operations on matrices</a></li>
+<li class="chapter" data-level="1.3.2" data-path="vectors-matrices.html"><a href="vectors-matrices.html#linear-transformation"><i class="fa fa-check"></i><b>1.3.2</b> Linear transformation</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="some-basic-equations-in-mathbbr3.html"><a href="some-basic-equations-in-mathbbr3.html"><i class="fa fa-check"></i><b>2</b> Some basic equations in <span class="math inline">\(\mathbb{R}^3\)</span></a>
@@ -126,17 +137,12 @@
 </ul></li>
 <li class="chapter" data-level="4" data-path="partial-derivatives.html"><a href="partial-derivatives.html"><i class="fa fa-check"></i><b>4</b> Partial derivatives</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="partial-derivatives.html"><a href="partial-derivatives.html#multivariable-scalar-function"><i class="fa fa-check"></i><b>4.1</b> Multivariable scalar function</a>
-<ul>
-<li class="chapter" data-level="4.1.1" data-path="partial-derivatives.html"><a href="partial-derivatives.html#graphs"><i class="fa fa-check"></i><b>4.1.1</b> Graphs</a></li>
-<li class="chapter" data-level="4.1.2" data-path="partial-derivatives.html"><a href="partial-derivatives.html#level"><i class="fa fa-check"></i><b>4.1.2</b> Level</a></li>
-</ul></li>
-<li class="chapter" data-level="4.2" data-path="partial-derivatives.html"><a href="partial-derivatives.html#limits-and-continuity"><i class="fa fa-check"></i><b>4.2</b> Limits and continuity</a></li>
-<li class="chapter" data-level="4.3" data-path="partial-derivatives.html"><a href="partial-derivatives.html#partial-derivatives-1"><i class="fa fa-check"></i><b>4.3</b> Partial derivatives</a></li>
-<li class="chapter" data-level="4.4" data-path="partial-derivatives.html"><a href="partial-derivatives.html#differentiability"><i class="fa fa-check"></i><b>4.4</b> Differentiability</a></li>
-<li class="chapter" data-level="4.5" data-path="partial-derivatives.html"><a href="partial-derivatives.html#chain-rule"><i class="fa fa-check"></i><b>4.5</b> Chain rule</a></li>
-<li class="chapter" data-level="4.6" data-path="partial-derivatives.html"><a href="partial-derivatives.html#directional-derivative"><i class="fa fa-check"></i><b>4.6</b> Directional derivative</a></li>
-<li class="chapter" data-level="4.7" data-path="partial-derivatives.html"><a href="partial-derivatives.html#tangent-planes"><i class="fa fa-check"></i><b>4.7</b> Tangent planes</a></li>
+<li class="chapter" data-level="4.1" data-path="partial-derivatives.html"><a href="partial-derivatives.html#limits-and-continuity"><i class="fa fa-check"></i><b>4.1</b> Limits and continuity</a></li>
+<li class="chapter" data-level="4.2" data-path="partial-derivatives.html"><a href="partial-derivatives.html#partial-derivatives-1"><i class="fa fa-check"></i><b>4.2</b> Partial derivatives</a></li>
+<li class="chapter" data-level="4.3" data-path="partial-derivatives.html"><a href="partial-derivatives.html#differentiability"><i class="fa fa-check"></i><b>4.3</b> Differentiability</a></li>
+<li class="chapter" data-level="4.4" data-path="partial-derivatives.html"><a href="partial-derivatives.html#chain-rule"><i class="fa fa-check"></i><b>4.4</b> Chain rule</a></li>
+<li class="chapter" data-level="4.5" data-path="partial-derivatives.html"><a href="partial-derivatives.html#directional-derivative"><i class="fa fa-check"></i><b>4.5</b> Directional derivative</a></li>
+<li class="chapter" data-level="4.6" data-path="partial-derivatives.html"><a href="partial-derivatives.html#tangent-planes"><i class="fa fa-check"></i><b>4.6</b> Tangent planes</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="optimization.html"><a href="optimization.html"><i class="fa fa-check"></i><b>5</b> Optimization</a>
 <ul>
@@ -145,36 +151,6 @@
 <li class="chapter" data-level="5.1.1" data-path="optimization.html"><a href="optimization.html#algorithm-to-find-absolute-maxima-and-minima-on-closed-bounded-regions"><i class="fa fa-check"></i><b>5.1.1</b> Algorithm to find absolute maxima and minima on closed bounded regions</a></li>
 </ul></li>
 <li class="chapter" data-level="5.2" data-path="optimization.html"><a href="optimization.html#constrained-optimization"><i class="fa fa-check"></i><b>5.2</b> Constrained optimization</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="multiple-integrals.html"><a href="multiple-integrals.html"><i class="fa fa-check"></i><b>6</b> Multiple integrals</a>
-<ul>
-<li class="chapter" data-level="6.1" data-path="multiple-integrals.html"><a href="multiple-integrals.html#basic-definition"><i class="fa fa-check"></i><b>6.1</b> Basic definition</a>
-<ul>
-<li class="chapter" data-level="6.1.1" data-path="multiple-integrals.html"><a href="multiple-integrals.html#some-properties-of-integrals"><i class="fa fa-check"></i><b>6.1.1</b> Some properties of integrals</a></li>
-</ul></li>
-<li class="chapter" data-level="6.2" data-path="multiple-integrals.html"><a href="multiple-integrals.html#iterated-integrals"><i class="fa fa-check"></i><b>6.2</b> Iterated integrals</a></li>
-<li class="chapter" data-level="6.3" data-path="multiple-integrals.html"><a href="multiple-integrals.html#change-of-coordinates"><i class="fa fa-check"></i><b>6.3</b> Change of coordinates</a>
-<ul>
-<li class="chapter" data-level="6.3.1" data-path="multiple-integrals.html"><a href="multiple-integrals.html#applications-of-change-of-coordinates"><i class="fa fa-check"></i><b>6.3.1</b> Applications of change of coordinates</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="7" data-path="vector-calculus.html"><a href="vector-calculus.html"><i class="fa fa-check"></i><b>7</b> Vector Calculus</a>
-<ul>
-<li class="chapter" data-level="7.1" data-path="vector-calculus.html"><a href="vector-calculus.html#vector-fields"><i class="fa fa-check"></i><b>7.1</b> Vector fields</a></li>
-<li class="chapter" data-level="7.2" data-path="vector-calculus.html"><a href="vector-calculus.html#line-integrals"><i class="fa fa-check"></i><b>7.2</b> Line integrals</a>
-<ul>
-<li class="chapter" data-level="7.2.1" data-path="vector-calculus.html"><a href="vector-calculus.html#independence-of-path"><i class="fa fa-check"></i><b>7.2.1</b> Independence of path</a></li>
-</ul></li>
-<li class="chapter" data-level="7.3" data-path="vector-calculus.html"><a href="vector-calculus.html#greens-theorem"><i class="fa fa-check"></i><b>7.3</b> Green’s Theorem</a></li>
-<li class="chapter" data-level="7.4" data-path="vector-calculus.html"><a href="vector-calculus.html#curl-and-divergence"><i class="fa fa-check"></i><b>7.4</b> Curl and Divergence</a></li>
-<li class="chapter" data-level="7.5" data-path="vector-calculus.html"><a href="vector-calculus.html#surface-integrals"><i class="fa fa-check"></i><b>7.5</b> Surface integrals</a>
-<ul>
-<li class="chapter" data-level="7.5.1" data-path="vector-calculus.html"><a href="vector-calculus.html#parametric-surfaces"><i class="fa fa-check"></i><b>7.5.1</b> Parametric surfaces</a></li>
-<li class="chapter" data-level="7.5.2" data-path="vector-calculus.html"><a href="vector-calculus.html#surface-integral"><i class="fa fa-check"></i><b>7.5.2</b> Surface integral</a></li>
-<li class="chapter" data-level="7.5.3" data-path="vector-calculus.html"><a href="vector-calculus.html#orientation-of-the-surface"><i class="fa fa-check"></i><b>7.5.3</b> Orientation of the surface</a></li>
-<li class="chapter" data-level="7.5.4" data-path="vector-calculus.html"><a href="vector-calculus.html#surface-integral-of-vector-fields"><i class="fa fa-check"></i><b>7.5.4</b> Surface integral of vector fields</a></li>
-</ul></li>
-<li class="chapter" data-level="7.6" data-path="vector-calculus.html"><a href="vector-calculus.html#stokes-and-divergence-theorem"><i class="fa fa-check"></i><b>7.6</b> Stokes’ and Divergence Theorem</a></li>
 </ul></li>
 </ul>
 
@@ -202,7 +178,7 @@
 <span class="math display">\[ f: D \to \mathbb{R}\,,\]</span>
 where <span class="math inline">\(D\subseteq \mathbb{R}^n\)</span>, <span class="math inline">\(n\geq 2\)</span>.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-44" class="definition"><strong>Definition 5.1  </strong></span>A function <span class="math inline">\(f:D \to \mathbb{R}\)</span> has a <strong>local maximum</strong> at <span class="math inline">\(\mathbf{x_0}\)</span> if
+<p><span id="def:unlabeled-div-41" class="definition"><strong>Definition 5.1  </strong></span>A function <span class="math inline">\(f:D \to \mathbb{R}\)</span> has a <strong>local maximum</strong> at <span class="math inline">\(\mathbf{x_0}\)</span> if
 <span class="math inline">\(f(\mathbf{x_0}) \geq f(\mathbf{x})\)</span> for <span class="math inline">\(\mathbf{x} \in B_\delta(\mathbf{x_0})\)</span> for small enough <span class="math inline">\(\delta\)</span>.
 <span class="math inline">\(f\)</span> has a <strong>global maximum</strong> at <span class="math inline">\(\mathbf{x_0}\)</span> if
 <span class="math inline">\(f(\mathbf{x_0}) \geq f(\mathbf{x})\)</span> for <span class="math inline">\(\mathbf{x} \in D\)</span>.
@@ -210,7 +186,7 @@ where <span class="math inline">\(D\subseteq \mathbb{R}^n\)</span>, <span class=
 <span class="math inline">\(-f\)</span> has a local (global) maximum at <span class="math inline">\(\mathbf{x_0}\)</span></p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-45" class="theorem"><strong>Theorem 5.1  (First derivative test) </strong></span>Let <span class="math inline">\(f:D \to \mathbb{R}\)</span> be a function.
+<p><span id="thm:unlabeled-div-42" class="theorem"><strong>Theorem 5.1  (First derivative test) </strong></span>Let <span class="math inline">\(f:D \to \mathbb{R}\)</span> be a function.
 If <span class="math inline">\(\mathbf{x_0}\)</span> is a local minimum and <span class="math inline">\(f\)</span> has partial derivatives at <span class="math inline">\(\mathbf{x_0}\)</span>.
 Then
 <span class="math display">\[\begin{equation*}
@@ -220,11 +196,11 @@ Then
 <p>The converse is not true, as having <span class="math inline">\(\nabla f(\mathbf{x}_0) = \mathbf{0}\)</span> does not mean
 that <span class="math inline">\(f\)</span> has a local minimum at <span class="math inline">\(\mathbf{x}_0\)</span>.</p>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-46" class="exercise"><strong>Exercise 5.1  </strong></span>Think of a function that the converse to the above theorem is not true.</p>
+<p><span id="exr:unlabeled-div-43" class="exercise"><strong>Exercise 5.1  </strong></span>Think of a function that the converse to the above theorem is not true.</p>
 </div>
 <p>This leads to the following notion.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-47" class="definition"><strong>Definition 5.2  </strong></span><span class="math inline">\(\mathbf{x}_0\)</span> is said to be a <strong>critical point</strong> of <span class="math inline">\(f:D\to \mathbb{R}\)</span> if
+<p><span id="def:unlabeled-div-44" class="definition"><strong>Definition 5.2  </strong></span><span class="math inline">\(\mathbf{x}_0\)</span> is said to be a <strong>critical point</strong> of <span class="math inline">\(f:D\to \mathbb{R}\)</span> if
 <span class="math display">\[\begin{equation*}
     \nabla f(\mathbf{x}_0) = 0
 \end{equation*}\]</span>
@@ -232,7 +208,7 @@ or one of the partial derivatives <span class="math inline">\(\partial_{x_i} f(\
 </div>
 <p><strong>Please pay attention about the “fail to exist” condition.</strong></p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-48" class="theorem"><strong>Theorem 5.2  (Second derivative test for functions of 2 variables) </strong></span>Suppose the second partial derivatives of <span class="math inline">\(f\)</span> are continuous near <span class="math inline">\((a,b)\)</span>
+<p><span id="thm:unlabeled-div-45" class="theorem"><strong>Theorem 5.2  (Second derivative test for functions of 2 variables) </strong></span>Suppose the second partial derivatives of <span class="math inline">\(f\)</span> are continuous near <span class="math inline">\((a,b)\)</span>
 and suppose that <span class="math inline">\((a,b)\)</span> is a critical point of <span class="math inline">\(f\)</span>.
 Let
 <span class="math display">\[\begin{equation*}
@@ -246,7 +222,7 @@ Let
 </ol>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-49" class="theorem"><strong>Theorem 5.3  (Extreme value theorem) </strong></span>If <span class="math inline">\(f\)</span> is continuous on a <em>closed</em> and <em>bounded</em> set <span class="math inline">\(D\)</span>. Then,
+<p><span id="thm:unlabeled-div-46" class="theorem"><strong>Theorem 5.3  (Extreme value theorem) </strong></span>If <span class="math inline">\(f\)</span> is continuous on a <em>closed</em> and <em>bounded</em> set <span class="math inline">\(D\)</span>. Then,
 <span class="math inline">\(f\)</span> attains an absolute minimum and an absolute maximum in <span class="math inline">\(D\)</span>.</p>
 </div>
 <div id="algorithm-to-find-absolute-maxima-and-minima-on-closed-bounded-regions" class="section level3 hasAnchor" number="5.1.1">
@@ -268,7 +244,7 @@ The problem we will study is the following:</p>
 of the form
 <span class="math inline">\(g(\mathbf{x}) = k\)</span>, for some constant <span class="math inline">\(k\in \mathbb{R}\)</span>.</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-50" class="theorem"><strong>Theorem 5.4  (Method of Lagrange Multiplier) </strong></span>Suppose the maximum/minimum values of <span class="math inline">\(f\)</span> exist and <span class="math inline">\(\nabla g(\mathbf{x}) \not=0\)</span> where <span class="math inline">\(g(\mathbf{x}) = k\)</span>.
+<p><span id="thm:unlabeled-div-47" class="theorem"><strong>Theorem 5.4  (Method of Lagrange Multiplier) </strong></span>Suppose the maximum/minimum values of <span class="math inline">\(f\)</span> exist and <span class="math inline">\(\nabla g(\mathbf{x}) \not=0\)</span> where <span class="math inline">\(g(\mathbf{x}) = k\)</span>.
 To find the maximum and minimum values of <span class="math inline">\(f\)</span> subject to constraint
 <span class="math inline">\(g(\mathbf{x}) = k\)</span>, we do the following:</p>
 <ol style="list-style-type: decimal">
@@ -285,7 +261,6 @@ these values is the maximum of <span class="math inline">\(f\)</span>; the small
 </ol>
 </div>
 
-<div style="page-break-after: always;"></div>
 </div>
 </div>
             </section>
@@ -293,8 +268,8 @@ these values is the maximum of <span class="math inline">\(f\)</span>; the small
           </div>
         </div>
       </div>
-<a href="partial-derivatives.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="multiple-integrals.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="partial-derivatives.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -336,13 +311,13 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": ["MultiCalc.pdf"],
 "search": {
 "engine": "fuse",
 "options": null
 },
 "toc": {
-"collapse": "subsection"
+"collapse": "section"
 }
 });
 });
