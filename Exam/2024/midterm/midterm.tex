@@ -1,0 +1,150 @@
+\documentclass[12pt]{amsart}
+\usepackage{amsaddr}
+\usepackage{marktext} 
+%% Remove draft for real article, put twocolumn for two columns
+\usepackage{svmacro}
+\usepackage[utf8]{inputenc}
+\usepackage{lineno}
+\usepackage[style=alphabetic, backend=biber]{biblatex}
+\addbibresource{bibliography.bib}
+\usepackage{enumitem}
+
+%% commentary bubble
+\newcommand{\SV}[2][]{\sidenote[colback=green!10]{\textbf{SV\xspace #1:} #2}}
+
+%% Title 
+\title{ MATH 104: Multivariable Calculus }
+\author{Midterm \\ Name:\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
+
+%\author{Co-author}
+%\address{  }
+%\email {  }
+%
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+There are five questions. Make sure you justify all your work for complete credit.
+
+\section*{Rules}
+
+\begin{itemize}[leftmargin=*]
+    \item You have 80  minutes to complete your work..
+    \item Closed books.
+    \item No use of internet, textbooks, computer algebra systems, calculators. 
+    \item No collaboration.
+    \item 1 person per bathroom break. When you go to the bathroom, turn in your cellphone and exam until return.
+\end{itemize}
+
+
+Scores:
+\begin{enumerate}
+    \item \_\_\_\_
+    \item \_\_\_\_
+    \item \_\_\_\_
+    \item \_\_\_\_
+    \item \_\_\_\_
+    \item[Total]: \_\_\_\_
+\end{enumerate}
+
+\newpage
+
+\section*{Questions}
+\begin{problem}[20 points, 5 points each]
+    \begin{enumerate}
+        \item Where does the line 
+    \begin{equation*}
+        x(t) = 2t-1 \,; y(t) = 3t + 2 \,; z(t) = 4t
+    \end{equation*}
+    intersect the plane given by $4x + 3y - z = 3$?
+    \vspace{7cm}
+
+\item What is the surface that the following function a parametrization of?
+        Give a reason.
+    \begin{equation*}
+        G(\varphi, \theta) = \begin{bmatrix}
+            R \cos \theta \sin \varphi \\
+            R \sin \theta \sin \varphi \\
+            R \cos \varphi
+        \end{bmatrix}
+    \end{equation*}
+
+    \vspace{7cm}
+
+    \newpage
+\item 
+    In $\R^4$, what is the intersection of the $(x_1, x_2)$ and $(x_3, x_4)$ plane?
+
+    \vspace{10cm}
+
+\item 
+    What is the value of $c$ so that the planes
+    $2cx - y + c^2 = 15$ and $x + 5cy - 3z = 4$ are orthogonal?
+    \end{enumerate}
+\end{problem}
+
+\newpage
+
+\begin{problem}[20 points, 5 points each]
+    Consider the following functions
+    \begin{equation*}
+        f(u,v,w) = \begin{pmatrix}
+            u^2 v^{-3} w \\ 2u - 5w \\ uv - vw
+        \end{pmatrix} \,,
+    \end{equation*}
+    and
+    \begin{equation*}
+        g(a,b,c) = 
+        \begin{pmatrix}
+            \ln (ab) \\
+            abc \\
+            b^2 + 5c
+        \end{pmatrix} \,,
+    \end{equation*}
+    \begin{enumerate}
+        \item Compute the derivative of $f$ at the point $(1, -1, 2)$.
+        \item What is the most sensitive output of $f$ at the point $(1, -1, 2)$?
+        \item Compute $[Dg]_{(a,b,c)}$.
+        \item Compute the derivative of $g\circ f$ at the point $(1, -1, 2)$.
+    \end{enumerate}
+\end{problem}
+
+\newpage
+
+\begin{problem}[20 points]
+    \begin{enumerate}
+        \item Find an equation of the tangent plane to the surface $z= x \sin(x+y)$ at the point $(-1,1,0)$.
+            \vspace{8cm}
+        \item Find the linear approximation at $(0,0)$ of
+            $e^x \cos(xy)$.
+    \end{enumerate}
+\end{problem}
+ \newpage
+
+
+\begin{problem}[20 points]
+    Given the curve  $\gamma(t) = (\sin t, \cos 3t, t^2)$.
+    \begin{enumerate}
+        \item Compute the velocity, acceleration of $\gamma$ at time $t=1$.
+        \item What is the arclength of $\gamma$ from $t=1$ to $t=2$?
+    \end{enumerate}
+\end{problem}
+
+\newpage
+
+\begin{problem}[20 points]
+    A manufacturer has modeled its yearly production function $P$ (the value of its entire production, in millions of dollars) as a Cobb-Douglas function
+$$
+P(L, K)=1.47 L^{0.65} K^{0.35}
+$$
+where $L$ is the number of labor hours (in thousands) and $K$ is the invested capital (in millions of dollars). Suppose that when $L=30$ and $K=8$, the labor force is decreasing at a rate of 2000 labor hours per year and capital is increasing at a rate of $\$ 500,000$ per year. Find the rate of change of production.
+\end{problem}
+
+\printbibliography 
+%\bibliography{refs}
+%\bibliographystyle{halpha-abbrv}
+
+
+\end{document}
