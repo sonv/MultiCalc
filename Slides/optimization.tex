@@ -141,7 +141,7 @@
 \begin{frame}
     \frametitle{Basics}
 \begin{definition}
-A function \(f:D \to \mathbb{R}\) has a \textbf{local maximum} at \(\mathbf{x_0}\) if
+A function \(f:\R^n \to \mathbb{R}\) has a \textbf{local maximum} at \(\mathbf{x_0}\) if
 \(f(\mathbf{x_0}) \geq f(\mathbf{x})\) for \(\mathbf{x} \in B_\delta(\mathbf{x_0})\) for small enough \(\delta\).
 \(f\) has a \textbf{global maximum} at \(\mathbf{x_0}\) if
 \(f(\mathbf{x_0}) \geq f(\mathbf{x})\) for \(\mathbf{x} \in D\).
@@ -155,7 +155,7 @@ A function \(f:D \to \mathbb{R}\) has a \textbf{local maximum} at \(\mathbf{x_0}
 \begin{frame}
     \frametitle{A necessary condition}
 \begin{theorem}[First derivative test]
-Let \(f:D \to \mathbb{R}\) be a function.
+Let \(f:\R^n \to \mathbb{R}\) be a function.
 If \(\mathbf{x_0}\) is a local minimum and \(f\) has partial derivatives at \(\mathbf{x_0}\).
 Then
 \begin{equation*}
@@ -164,6 +164,27 @@ Then
 \end{theorem}
 \end{frame}
 
+\begin{frame}
+    \begin{definition}
+        $x_0$ is said to be a critical point of $f: \R^n \to \R$ if
+        $$[D f]_{x_0} = 0$$
+    \end{definition}
+    or one of the partial derivatives $\partial_{x_i} f(x_0)$ fails to exist.
+\end{frame}
+
+\begin{frame}
+    \frametitle{Second derivative test for 2D}
+    Suppose the second derivatives of $f:\R^2 \to \R$ are continuous near $a$ and
+    suppose $a$ is a critical point. Let
+    $$ D = \partial_{x_1}^2 f(a)\partial_{x_2}^2 f(a) - (\partial_{x_1 x_2}^2 f (a))^2. $$
+    \begin{enumerate}
+        \item If $D>0$ and $\partial_{x_1}^2 f(a) > 0$ then $f(a)$ is a local minimum.
+        \item If $D>0$ and $\partial_{x_1}^2 f(a) < 0$ then $f(a)$ is a local maximum.
+        \item If $D<0$, then $f(a)$ is neither a local minimum nor local maximum.
+        \item If $D = 0$, then we cannot conclude.
+    \end{enumerate}
+    $D$ is called the discriminant of the function $f$ at $a$.
+\end{frame}
 
 \end{document}
 
