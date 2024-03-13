@@ -1,0 +1,66 @@
+\documentclass[12pt]{amsart}
+\usepackage{amsaddr}
+\usepackage{marktext} 
+%% Remove draft for real article, put twocolumn for two columns
+\usepackage{svmacro}
+\usepackage[utf8]{inputenc}
+\usepackage{lineno}
+\usepackage[style=alphabetic, backend=biber]{biblatex}
+\addbibresource{bibliography.bib}
+
+%% commentary bubble
+\newcommand{\SV}[2][]{\sidenote[colback=green!10]{\textbf{SV\xspace #1:} #2}}
+
+%% Title 
+\title{ MATH 104: Worksheet 10}
+\author{}
+
+%\author{Co-author}
+%\address{  }
+%\email {  }
+%
+\date{03/04/2024}
+
+\begin{document}
+
+
+\maketitle
+
+
+\section{Concepts}
+
+\begin{enumerate}
+    \item Optimization
+    \item Necessary condition
+    \item Second derivative test for 2D
+\end{enumerate}
+
+\section{Discussions}
+
+\begin{problem}
+    \begin{enumerate}
+        \item Find critical points of the following functions:
+        \begin{enumerate}
+            \item $f(x,y) = | x | + | y |$.
+            \item $f(x,y) = x^2 + y^2 - qxy$ where $q\in \R$ is a given constant.
+            \item $xy + \frac{2}{x} + \frac{4}{y}$
+        \end{enumerate}
+        \item Are the critical points you found above minima,maxima or neither.
+    \end{enumerate}
+\end{problem}
+
+
+\begin{problem}
+    A rectangular box without a lid is to be made from \(12 \, \text{m}^2\) of cardboard. 
+    Find the maximum volume of such a box.
+\end{problem}
+
+\begin{problem}
+    A model for the yield $Y$ of an agricultural crop as a function of the nitrogen level $N$ and phosphorus level $P$ in the soil (measured in appropriate units) is
+$$
+Y(N, P)=k N P e^{-N-P}
+$$
+where $k$ is a positive constant. What levels of nitrogen and phosphorus result in the best yield?
+\end{problem}
+
+\end{document}
