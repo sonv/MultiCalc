@@ -1,0 +1,75 @@
+\documentclass[12pt]{amsart}
+\usepackage{amsaddr}
+\usepackage{marktext} 
+%% Remove draft for real article, put twocolumn for two columns
+\usepackage{svmacro}
+\usepackage[utf8]{inputenc}
+\usepackage{lineno}
+\usepackage[style=alphabetic, backend=biber]{biblatex}
+\addbibresource{bibliography.bib}
+
+%% commentary bubble
+\newcommand{\SV}[2][]{\sidenote[colback=green!10]{\textbf{SV\xspace #1:} #2}}
+
+%% Title 
+\title{ MATH 104: Worksheet 11}
+\author{}
+
+%\author{Co-author}
+%\address{  }
+%\email {  }
+%
+\date{04/01/2024}
+
+\begin{document}
+
+
+\maketitle
+
+
+\section{Concepts}
+
+\begin{enumerate}
+    \item Optimization practice
+    \item Zero-sum  game theory
+\end{enumerate}
+
+\section{Discussions}
+
+
+\begin{problem}
+         Find the points on the sphere $x^2 + y^2 + z^2 =4$
+            that are closest to and farthest from the point 
+            $(1,1,1)$.
+\end{problem}
+
+\begin{problem}
+        Problem 15 from \url{https://activecalculus.org/multi/S-10-8-Lagrange-Multipliers.html}.
+\end{problem}
+
+
+\begin{problem}
+    Compute the Nash equilibrium for the 2-player game, where, the convention is for player 
+    A to receive from player B the amount of the corresponding entry of the matrix
+    \begin{equation*}
+        P = 
+        \begin{pmatrix}
+            -1 & 2 \\ 3 & -2
+        \end{pmatrix}
+    \end{equation*}
+\end{problem}
+
+\begin{problem}
+    This is called the Mendelsohn game.
+    Each player choosses 1,2, or 3 simultaneously.
+    If they get the same number, no one gets anything.
+    If $A$ is higher than $B$ by 1, $A$ loses 1 point.
+    If $A$ is higher than $B$ by 2, $A$ wins 2 points.
+
+    \begin{enumerate}
+        \item Write down the payoff matrix for $A$.
+        \item What is the Nash equilibrium?
+    \end{enumerate}
+\end{problem}
+
+\end{document}

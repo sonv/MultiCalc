@@ -1,0 +1,68 @@
+\documentclass[12pt]{amsart}
+\usepackage{amsaddr}
+\usepackage{marktext} 
+%% Remove draft for real article, put twocolumn for two columns
+\usepackage{svmacro}
+\usepackage[utf8]{inputenc}
+\usepackage{lineno}
+\usepackage[style=alphabetic, backend=biber]{biblatex}
+\addbibresource{bibliography.bib}
+
+%% commentary bubble
+\newcommand{\SV}[2][]{\sidenote[colback=green!10]{\textbf{SV\xspace #1:} #2}}
+
+%% Title 
+\title{ MATH 104: Homework 5}
+\author{Due date: In class -- Monday, April 8, 2024}
+\address{Fulbright University, Ho Chi Minh City, Vietnam}
+
+%\author{Co-author}
+%\address{  }
+%\email {  }
+%
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{problem}
+ Consider the function $f(x, y)=x^4 y^2-x y^3-8 x+8 y+13$.
+\begin{enumerate}
+    \item  Show that $f$ has a critical point at $x=1, y=2$.
+    \item Compute the Hessian $H$.
+    \item Classify the critical point at $(1,2)$.
+\end{enumerate}
+
+\end{problem}
+
+\begin{problem}
+ Find and classify the two critical points of the function
+$$
+f(u, v)=u^3-v^3+u v-7 .
+$$
+\end{problem}
+
+\begin{problem}
+ Consider the function $f(x, y)=y^2-2 y+x^2-x y-4 x-2$
+ \begin{enumerate}
+     \item Compute the first and second derivatives of $f$.
+     \item Determine the global maximum and minimum of $f$ over the domain in the plane where $x \geq 0$.
+ \end{enumerate}
+\end{problem}
+
+
+\begin{problem}[From the worksheet]
+    This is called the Mendelsohn game.
+    Each player choosses 1,2, or 3 simultaneously.
+    If they get the same number, no one gets anything.
+    If $A$ is higher than $B$ by 1, $A$ loses 1 point.
+    If $A$ is higher than $B$ by 2, $A$ wins 2 points.
+
+    \begin{enumerate}
+        \item Write down the payoff matrix for $A$.
+        \item What is the Nash equilibrium?
+    \end{enumerate}
+\end{problem}
+
+\end{document}
