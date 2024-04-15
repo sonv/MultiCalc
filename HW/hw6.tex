@@ -1,0 +1,57 @@
+\documentclass[12pt]{amsart}
+\usepackage{amsaddr}
+\usepackage{marktext} 
+%% Remove draft for real article, put twocolumn for two columns
+\usepackage{svmacro}
+\usepackage[utf8]{inputenc}
+\usepackage{lineno}
+\usepackage[style=alphabetic, backend=biber]{biblatex}
+\addbibresource{bibliography.bib}
+
+%% commentary bubble
+\newcommand{\SV}[2][]{\sidenote[colback=green!10]{\textbf{SV\xspace #1:} #2}}
+
+%% Title 
+\title{ MATH 104: Homework 6}
+\author{Due date: In class -- Monday, April 15, 2024}
+\address{Fulbright University, Ho Chi Minh City, Vietnam}
+
+%\author{Co-author}
+%\address{  }
+%\email {  }
+%
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+Read Stewart's Chapter 14.8 if you need to have more examples.
+
+\begin{problem}
+ Each of these extreme value problems has a solution with both a maximum value and a minimum value. Use Lagrange multipliers to find the extreme values of the function subject to the given constraint.
+ \begin{enumerate}
+     \item  $f(x, y)=x^2-y^2 ; \quad x^2+y^2=1$
+     \item  $f(x, y)=3 x+y ; \quad x^2+y^2=10$
+     \item $f(x, y)=x y ; 4 x^2+y^2=8$
+     \item  $f(x, y)=x e^y ; \quad x^2+y^2=2$
+ \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    Find the extreme values of $f$ subject to both constraints.
+    \begin{enumerate}
+        \item  $f(x, y, z)=x+y+z ; \quad x^2+z^2=2, \quad x+y=1$
+        \item  $f(x, y, z)=z ; \quad x^2+y^2=z^2, \quad x+y+z=24$
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    21-23 Find the extreme values of $f$ on the region described by the inequality.
+    \begin{enumerate}
+        \item  $f(x, y)=x^2+y^2+4 x-4 y, \quad x^2+y^2 \leqslant 9$
+        \item  $f(x, y)=2 x^2+3 y^2-4 x-5, \quad x^2+y^2 \leqslant 16$
+    \end{enumerate}
+\end{problem}
+
+\end{document}

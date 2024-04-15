@@ -1,0 +1,67 @@
+
+\documentclass[aspectratio=169]{beamer}
+\usetheme{Copenhagen}
+%% Remove draft for real article, put twocolumn for two columns
+\usetheme{metropolis}
+\usepackage{multicol}
+\usepackage[style=british]{csquotes}
+
+\def\signed #1{{\leavevmode\unskip\nobreak\hfil\penalty50\hskip1em
+  \hbox{}\nobreak\hfill #1%
+  \parfillskip=0pt \finalhyphendemerits=0 \endgraf}}
+
+\newsavebox\mybox
+\newenvironment{aquote}[1]
+  {\savebox\mybox{#1}\begin{quote}\openautoquote\hspace*{-.7ex}}
+  {\unskip\closeautoquote\vspace*{1mm}\signed{\usebox\mybox}\end{quote}}
+
+\usepackage[utf8]{inputenc}
+\newtheorem*{question}{Question}
+
+\newcommand{\vectorproj}[2][]{\mathrm{proj}_{\vect{#1}}\vect{#2}}
+\newcommand{\vectorcomp}[2][]{\mathrm{comp}_{\vect{#1}}\vect{#2}}
+\newcommand{\vect}{\mathbf}
+\newcommand{\R}{\mathbb{R}}
+%% commentary bubble
+\newcommand{\SV}[2][]{\sidenote[colback=green!10]{\textbf{SV\xspace #1:} #2}}
+
+\title{ Multivariable Calculus \\ Integration }
+\date{Spring 2024}
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}
+    \frametitle{Double integral over rectangle $R$}
+    \begin{definition}
+        The double integral of $f$ over the rectangle $R$ is
+        \[
+        \iint_R f(x, y) \, dA = 
+        \lim_{\substack{m\to\infty\\ n\to \infty}} 
+        \sum_{i=1}^n \sum_{j=1}^m f(x^*_i, y^*_j)\cdot \mathrm{Area}(R_{ij})
+        \]
+if this limit exists.
+Here, $(x^*_i, y^*_j)$ is a point inside $R_{ij} = [x_{i-1},x_i]\times [y_{j-1}, y_j]$.
+    \end{definition}
+\end{frame}
+
+
+
+\begin{frame}
+    Let $f (x,y) = x^2 y$.
+    Set up a Riemann sum for this function with $3\times 4$ sub-regions inside the domain
+    $[2,6]\times [1,4]$, $(x^*_i, y^*_j)$ is the upper right corner of each box. 
+\end{frame}
+\begin{frame}
+    \frametitle{Fubini Theorem}
+    Let $R = [a,b]\times [c,d]$. 
+    If $f:\R^2 \to \R$ is continuous on $R$, then
+    $$ \iint_R f(x,y) dA = \int_a^b \left[ \int_c^d f(x,y) \, dy \right] dx =
+     \int_c^d \left[ \int_a^b f(x,y) \, dx \right] dy.$$
+\end{frame}
+
+
+
+
+\end{document}

@@ -1,0 +1,70 @@
+\documentclass[12pt]{amsart}
+\usepackage{amsaddr}
+\usepackage{marktext} 
+%% Remove draft for real article, put twocolumn for two columns
+\usepackage{svmacro}
+\usepackage[utf8]{inputenc}
+\usepackage{lineno}
+\usepackage[style=alphabetic, backend=biber]{biblatex}
+\addbibresource{bibliography.bib}
+
+%% commentary bubble
+\newcommand{\SV}[2][]{\sidenote[colback=green!10]{\textbf{SV\xspace #1:} #2}}
+
+%% Title 
+\title{ MATH 104: Worksheet 14}
+\author{}
+
+%\author{Co-author}
+%\address{  }
+%\email {  }
+%
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Concepts}
+
+\begin{enumerate}
+    \item Iterated integrals
+    \item Double integrals in general regions
+\end{enumerate}
+
+\section{Discussions}
+
+\begin{problem}
+    Open Active Calculus Section 11.2 \url{https://activecalculus.org/multi/S-11-2-Iterated-Integrals.html}.
+
+    Do Activities 11.2.2, 11.2.3.
+\end{problem}
+
+\begin{problem}
+    Consider the function $f: [0,1]^2 \to \R$ given by
+    \begin{equation*}
+        f(x,y) = 
+        \begin{cases}
+            y^{-2} \,, & 0 < x < y <1 \\
+            -x^{-2} \,, & 0 < y < x <1 \\
+            0 & \mathrm{otherwise} \,.
+        \end{cases}
+    \end{equation*}
+
+    \begin{enumerate}
+        \item Compute
+            \begin{enumerate}
+                \item $\int_0^1 \left[  \int_0^1 f(x,y) \, dx \right]  dy$
+                \item $\int_0^1 \left[  \int_0^1 f(x,y) \, dy \right]  dx$
+            \end{enumerate}
+        \item What do you see?
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    Open Active Calculus Section 11.3 \url{https://activecalculus.org/multi/S-11-3-Double-Integrals-General.html}.
+
+    Do Activities 11.3.1-11.3.4.
+\end{problem}
+
+\end{document}
