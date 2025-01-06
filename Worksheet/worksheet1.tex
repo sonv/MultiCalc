@@ -28,87 +28,55 @@
 \section{Concepts}
 
 \begin{enumerate}
-    \item Lines \& planes in 2D \& 3D
-    \item Curves \& surfaces in 2D \& 3D
-    \item Implicit and parametric representations
+	\item Surfaces
+	\item Vectors
 \end{enumerate}
 
 \section{Discussions}
 
-\begin{question}
-    What happens if you take the equation of a line in 2D, say $2x - 3y =7$
-    and interpret it in 3D?
-\end{question}
+\begin{definition}[Surface in 3D]
+	And equation with three variables $f(x,y,z) = 0$ represents a surface in $\R^3$.
+\end{definition}
 
 \begin{question}
-    \begin{enumerate}
-        \item What does each of
-    \begin{equation*}
-        3x + y - z = 4 
-    \end{equation*}
-    and
-    \begin{equation*}
-         x - 2y + z = 1 
-    \end{equation*}
-    represent? 
-
-    \item If taking both of the above equation together, what do they represent?
-    Is there another way to represent this object?
-    \end{enumerate}
+	What are the surfaces that the following equations represent in $\R^3$?
+	\begin{enumerate}
+		\item $(x-1)^2 + (y-1)^2 + (z-2)^2 = 9$
+		      \vspace{5cm}
+		\item $(x-1)^2 + \frac{1}{4} (y -3)^2 = 4$, $1 \leq z \leq 2$
+		      \vspace{5cm}
+		\item $3x + 3y - 5z = 0$
+		      \vspace{5cm}
+	\end{enumerate}
 \end{question}
+
+\begin{definition}
+	A point $x \in \R^3$ is a tuple
+	\begin{equation*}
+		x = ( x_1, x_2, x_3 ) \,.
+	\end{equation*}
+	A vector $\vec{x} \in \R^3$ is a tuple
+	\begin{equation*}
+		\vec{v} = \langle v_1, v_2, v_3 \rangle \,.
+	\end{equation*}
+	A vector represents a quantity that has a length and a direction (starting and ending points are not important).
+\end{definition}
 
 \begin{question}
-    Where does the line 
-    \begin{equation*}
-        x(t) = 2t-1 \,; y(t) = 3t + 2 \,; z(t) = 4t
-    \end{equation*}
-    intersect the plane given by $4x + 3y - z = 3$?
-
-    What happens if it's not a plane but a more general surface?
+	What is the length of
+	\begin{enumerate}
+		\item $\langle 1,2,3 \rangle$?
+		      \vspace{5cm}
+		\item $\vec{v} + \vec{w}$ where $\vec{v} = \langle  1,2,3 \rangle$ and $\vec{w} = \langle 2,3,1  \rangle$ ?
+		      \vspace{5cm}
+		\item $\vec{w} = 10 \vec{v}$ where $\vec{v} = \langle  1,2,3 \rangle$?
+		      \vspace{5cm}
+	\end{enumerate}
 \end{question}
 
-\begin{question}
-    \begin{enumerate}
-        \item Given two lines in 2D, what is there intersection? 
-        \item What could it be?
-        \item What about intersection two lines in 3D?
-        \item What about intersection of a line and a plane in 3D?
-        \item What about intersection of two planes in 3D?
-    \end{enumerate}
-\end{question}
 
-\begin{question}
-    In $\R^4$, what is the intersection of the $(x_1, x_2)$ and $(x_3, x_4)$ plane?
-\end{question}
 
-\begin{question}
-    Compute a parametrization of the line in $\R^4$ that passes through $(1,2,3,4)$ and the origin.
-\end{question}
-
-\begin{question}
-    A parametrization of a sphere of radius $R$ with center at the origin is
-    \begin{equation*}
-        G(\varphi, \theta) = \begin{bmatrix}
-            R \cos \theta \sin \varphi \\
-            R \sin \theta \sin \varphi \\
-            R \cos \varphi
-        \end{bmatrix}
-    \end{equation*}
-    How do you know that this describe a sphere?
-\end{question}
-
-\begin{question}[Exploration, not important for this course but VERY interesting and deep!]
-    Answer the following
-    \begin{enumerate}
-        \item What is the volume of a unit cube in $\R^n$?
-        \item Look up Wikipedia to answer the question,
-    what is the volume of the ball of radius 1 in $\R^n$?
-    What happens when $n\to \infty$?
-    \end{enumerate}
-
-\end{question}
-
-\printbibliography 
+\printbibliography
 %\bibliography{refs}
 %\bibliographystyle{halpha-abbrv}
 
