@@ -4,20 +4,17 @@
 %
 \documentclass[
 ]{book}
-\usepackage{amsmath,amssymb}
-\usepackage{iftex}
-\ifPDFTeX
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
 \else % if luatex or xetex
-  \usepackage{unicode-math} % this also loads fontspec
+  \usepackage{unicode-math}
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
-\fi
-\usepackage{lmodern}
-\ifPDFTeX\else
-  % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -36,9 +33,16 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={MATH 104: Multivariable Calculus (brief notes)},
+  pdfauthor={Truong-Son Van},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
 \usepackage[margin=1in]{geometry}
-\usepackage{longtable,booktabs,array}
-\usepackage{calc} % for calculating minipage widths
+\usepackage{longtable,booktabs}
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
 \makeatletter
@@ -64,19 +68,8 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
-\ifLuaTeX
-  \usepackage{selnolig}  % disable illegal ligatures
-\fi
 \usepackage[]{natbib}
 \bibliographystyle{plainnat}
-\usepackage{bookmark}
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\urlstyle{same}
-\hypersetup{
-  pdftitle={MATH 104: Multivariable Calculus (brief notes)},
-  pdfauthor={Truong-Son Van},
-  hidelinks,
-  pdfcreator={LaTeX via pandoc}}
 
 \title{MATH 104: Multivariable Calculus (brief notes)}
 \author{Truong-Son Van}
@@ -106,9 +99,11 @@
 \setcounter{tocdepth}{2}
 \tableofcontents
 }
-\chapter*{Spring 2024}\label{spring-2024}
+\hypertarget{spring-2025}{%
+\chapter*{Spring 2025}\label{spring-2025}}
 
-\chapter*{Disclaimer}\label{disclaimer}
+\hypertarget{disclaimer}{%
+\chapter*{Disclaimer}\label{disclaimer}}
 
 
 This is class notes for Multivariable Calculus at Fublbright University Vietnam.
@@ -122,9 +117,11 @@ However, all errors and typos are solely mine.
 \newcommand{\vect}{\mathbf}
 \newcommand{\R}{\mathbb{R}}
 
-\chapter{Vectors \& Matrices}\label{vectors-matrices}
+\hypertarget{vectors-matrices}{%
+\chapter{Vectors \& Matrices}\label{vectors-matrices}}
 
-\section{Basics}\label{basics}
+\hypertarget{basics}{%
+\section{Basics}\label{basics}}
 
 \textbf{Reading: Stewart Chapter 12, Thomas Calculus Chapter 12,
 Active Calculus Chapter 9}
@@ -200,7 +197,8 @@ Turn a vector \(\textbf{v} \in \mathbb{R}^n\) into a unit vector with the same
 direction.
 \end{exercise}
 
-\section*{Rules to manipulate vectors}\label{rules-to-manipulate-vectors}
+\hypertarget{rules-to-manipulate-vectors}{%
+\section*{Rules to manipulate vectors}\label{rules-to-manipulate-vectors}}
 
 
 Let \(\textbf{a}, \textbf{b} \in \mathbb{R}^n\) and \(c,d \in \mathbb{R}\). Then,
@@ -231,16 +229,19 @@ In 3D,
     \mathbf{e_3} = \mathbf{k} \,.
 \end{equation*}
 
-\section*{Properties of vector operations}\label{properties-of-vector-operations}
+\hypertarget{properties-of-vector-operations}{%
+\section*{Properties of vector operations}\label{properties-of-vector-operations}}
 
 
 Read the book
 
 (Make sure you understand the geometric intepretation)
 
-\section{Products}\label{products}
+\hypertarget{products}{%
+\section{Products}\label{products}}
 
-\subsection{Dot product}\label{dot-product}
+\hypertarget{dot-product}{%
+\subsection{Dot product}\label{dot-product}}
 
 \begin{itemize}
 \item
@@ -261,7 +262,8 @@ scalar
 \end{equation*}
 \end{definition}
 
-\subsection*{Properties of dot product}\label{properties-of-dot-product}
+\hypertarget{properties-of-dot-product}{%
+\subsection*{Properties of dot product}\label{properties-of-dot-product}}
 
 
 Let \(\textbf{u}, \textbf{v}, \textbf{w} \in \mathbb{R}^n\). Then,
@@ -288,7 +290,8 @@ Two vectors \(\textbf{u}\) and \(\textbf{v}\) are orthogonal to each other
 if \(\textbf{u} \cdot \textbf{v} = 0\).
 \end{corollary}
 
-\subsection*{Projection}\label{projection}
+\hypertarget{projection}{%
+\subsection*{Projection}\label{projection}}
 
 
 Let \(\textbf{u}, \textbf{v}\in \mathbb{R}^n\). The component of \(\textbf{u}\)
@@ -303,7 +306,8 @@ and the projection of \(\mathbf{u}\) onto \(\mathbf{v}\) is the vector
     = \frac{\mathbf{u}\cdot \mathbf{v}}{\mathbf{v} \cdot\mathbf{v}} \mathbf{v} \,.
 \end{equation*}
 
-\subsection{3D special: Cross product}\label{d-special-cross-product}
+\hypertarget{d-special-cross-product}{%
+\subsection{3D special: Cross product}\label{d-special-cross-product}}
 
 This concept is very specific to \(\mathbb{R}^3\).
 It will not make sense in other dimensions.
@@ -327,7 +331,8 @@ Let \(\theta\) be the angle between \(\mathbf{a}\) and \(\mathbf{b}\). Then,
 The vector \(\mathbf{a}\times \mathbf{b}\) is orthogonal to both \(\mathbf{a}\) and \(\mathbf{b}\).
 \end{theorem}
 
-\subsection{Distance from a point}\label{distance-from-a-point}
+\hypertarget{distance-from-a-point}{%
+\subsection{Distance from a point}\label{distance-from-a-point}}
 
 We can use the cross and dot products to measure the distance of one point to either a
 plane or a line.
@@ -336,7 +341,8 @@ Let \(P \in \mathbb{R}^n\) and \(\vec{r}(t) = R_0 + t \vec{v}\) be a line.
 Then the distance from \(P\) to \(\vec{r}(t)\) is
 \[ Dist = \frac{| \vec{R_0 P} \times \vec{v}|}{| \vec{v} |}\]
 
-\section{Matrices}\label{matrices}
+\hypertarget{matrices}{%
+\section{Matrices}\label{matrices}}
 
 A matrix is an 2 dimensional array with rows and columns.
 
@@ -346,7 +352,8 @@ Another way to write out matrix \(A\) is
 \[ A = (A_{ij})\]
 where the first index \(i\) represents the row and the second index \(j\) represents the column.
 
-\subsection{Operations on matrices}\label{operations-on-matrices}
+\hypertarget{operations-on-matrices}{%
+\subsection{Operations on matrices}\label{operations-on-matrices}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -365,7 +372,8 @@ where the first index \(i\) represents the row and the second index \(j\) repres
   \[ [AB]_{ij}  =  \sum_{k} A_{ik} B_{kj} .\]
 \end{enumerate}
 
-\subsection{Linear transformation}\label{linear-transformation}
+\hypertarget{linear-transformation}{%
+\subsection{Linear transformation}\label{linear-transformation}}
 
 A linear transformation is a function \(f: \mathbb{R}^n \to \mathbb{R}^m\) such that
 \[ f(a \vec{u} + b \vec{v} ) = a f(\vec{u}) + b f(\vec{v}) \]
@@ -376,12 +384,14 @@ can be represented as a \(m\times n\) matrix.
 
 \newpage
 
-\chapter{\texorpdfstring{Some basic equations in \(\mathbb{R}^3\)}{Some basic equations in \textbackslash mathbb\{R\}\^{}3}}\label{some-basic-equations-in-mathbbr3}
+\hypertarget{some-basic-equations-in-mathbbr3}{%
+\chapter{\texorpdfstring{Some basic equations in \(\mathbb{R}^3\)}{Some basic equations in \textbackslash mathbb\{R\}\^{}3}}\label{some-basic-equations-in-mathbbr3}}
 
 Just to build some toy examples for the future, we will play with some basic
 equations in three dimensions.
 
-\section{Equations for lines}\label{equations-for-lines}
+\hypertarget{equations-for-lines}{%
+\section{Equations for lines}\label{equations-for-lines}}
 
 A line is a collection of points that is parallel to a vector and goes through a
 specific point.
@@ -413,7 +423,8 @@ Two lines are parallel if their directional vectors are parallel (scalar multipl
 Two lines that are not parallel and don't intersect each other are said to be skew.
 \end{definition}
 
-\section{Equations for planes}\label{equations-for-planes}
+\hypertarget{equations-for-planes}{%
+\section{Equations for planes}\label{equations-for-planes}}
 
 A plane is a collection of points that is perpendicular to one specific direction
 represented by a some vector called a \textbf{normal vector}.
@@ -445,7 +456,8 @@ the angle between the two planes is defined to be the angle between the
 two normal vectors.
 \end{definition}
 
-\section{Cylinders}\label{cylinders}
+\hypertarget{cylinders}{%
+\section{Cylinders}\label{cylinders}}
 
 \begin{definition}
 A cylinder is a surface that consists of all lines (called \textbf{rulings}) that
@@ -466,7 +478,8 @@ are parallel to a given line.
 
 \end{example}
 
-\section{Quadric surfaces}\label{quadric-surfaces}
+\hypertarget{quadric-surfaces}{%
+\section{Quadric surfaces}\label{quadric-surfaces}}
 
 \begin{definition}
 A quadric surface is the graph of a second-degree equation in three variables
@@ -497,11 +510,13 @@ Read the books for more surfaces and pictures.
 
 \newpage
 
-\chapter{Functions in higher dimensions}\label{functions-in-higher-dimensions}
+\hypertarget{functions-in-higher-dimensions}{%
+\chapter{Functions in higher dimensions}\label{functions-in-higher-dimensions}}
 
 \textbf{Reading: Stewart Chapter 12, 13, Thomas Calculus Chapter 12, 13, Active Calculus Chapter 9}
 
-\section{Functions of several variables}\label{functions-of-several-variables}
+\hypertarget{functions-of-several-variables}{%
+\section{Functions of several variables}\label{functions-of-several-variables}}
 
 \begin{definition}
 A function of several variables is a function
@@ -526,15 +541,17 @@ The following are some examples of multivariable functions
 
 \end{example}
 
-\section{Vector functions}\label{vector-functions}
+\hypertarget{vector-functions}{%
+\section{Vector functions}\label{vector-functions}}
 
-\subsection{Limit, continuity and differentiation}\label{limit-continuity-and-differentiation}
+\hypertarget{limit-continuity-and-differentiation}{%
+\subsection{Limit, continuity and differentiation}\label{limit-continuity-and-differentiation}}
 
 The expression in the vector equation for a line is an example of a function that maps from \(\mathbb{R}\) to \(\mathbb{R}^n\).
 There's no one who would stop us from considering more general kinds of function.
 
 \begin{definition}
-A \textbf{vector function} (\textbf{vector-valued function}) is a function that has the codomain that belongs to \(\mathbb{R}^n\) where \(n\geq 2\). In other words, \(f: D  \to \mathbb{R}^n\).
+A \textbf{vector function} (\textbf{vector-valued function}) is a function that has the codomain that belongs to \(\mathbb{R}^n\) where \(n\geq 2\). In other words, \(f: D \to \mathbb{R}^n\).
 \end{definition}
 
 \begin{example}
@@ -615,18 +632,21 @@ Typical differentiation rules apply.
 
 \end{theorem}
 
-\subsection{Integrals}\label{integrals}
+\hypertarget{integrals}{%
+\subsection{Integrals}\label{integrals}}
 
 There are different ways to play with integrals for vector functions,
 each has its own interpretation and physical applications.
 
-\subsubsection{Indefinite integral}\label{indefinite-integral}
+\hypertarget{indefinite-integral}{%
+\subsubsection{Indefinite integral}\label{indefinite-integral}}
 
 \begin{equation*}
     \int_a^b \mathbf{r}(t) \, dt = \left\langle \int_a^b r_1(t) \, dt, \int_a^b r_2(t) \, dt, \int_a^b r_3(t) \, dt \right\rangle
 \end{equation*}
 
-\subsubsection{Arc Length and curvature}\label{arc-length-and-curvature}
+\hypertarget{arc-length-and-curvature}{%
+\subsubsection{Arc Length and curvature}\label{arc-length-and-curvature}}
 
 \begin{definition}
 The length the curve \(\mathbf{r}:[a,b] \to \mathbb{R}^n\) is defined to be
@@ -642,7 +662,8 @@ at any time \(t\), one uses the \textbf{arc length function}
     \ell(t) = \int_a^t \left| \mathbf{r}'(u) \right| \, du \,.
 \end{equation*}
 
-\subsubsection*{Re-parametrize with respect to arc length}\label{re-parametrize-with-respect-to-arc-length}
+\hypertarget{re-parametrize-with-respect-to-arc-length}{%
+\subsubsection*{Re-parametrize with respect to arc length}\label{re-parametrize-with-respect-to-arc-length}}
 
 
 The nice thing about \(\ell(t)\) is that it is a strictly increasing function with respect to \(t\),
@@ -684,12 +705,14 @@ We have that
 \end{equation*}
 \end{theorem}
 
-\subsection{\texorpdfstring{Space curve in \(\mathbb{R}^3\) and motion in space}{Space curve in \textbackslash mathbb\{R\}\^{}3 and motion in space}}\label{space-curve-in-mathbbr3-and-motion-in-space}
+\hypertarget{space-curve-in-mathbbr3-and-motion-in-space}{%
+\subsection{\texorpdfstring{Space curve in \(\mathbb{R}^3\) and motion in space}{Space curve in \textbackslash mathbb\{R\}\^{}3 and motion in space}}\label{space-curve-in-mathbbr3-and-motion-in-space}}
 
 Read the book. This part is not required but it is so beautiful, you may want to read it
 as an exercise at home (to test how much you understand what we've been discussing so far).
 
-\section{Activity: on osculating circle and curvature}\label{activity-on-osculating-circle-and-curvature}
+\hypertarget{activity-on-osculating-circle-and-curvature}{%
+\section{Activity: on osculating circle and curvature}\label{activity-on-osculating-circle-and-curvature}}
 
 For those who are interested in the geometrical meaning of the curvature without having
 to accept from the book that the curvature is the inverse of the radius of the osculating circle,
@@ -697,9 +720,11 @@ please take a look at \url{https://github.com/sonv/MultiCalc/blob/main/Writing/l
 
 \newpage
 
-\chapter{Partial derivatives}\label{partial-derivatives}
+\hypertarget{partial-derivatives}{%
+\chapter{Partial derivatives}\label{partial-derivatives}}
 
-\section{Limits and continuity}\label{limits-and-continuity}
+\hypertarget{limits-and-continuity}{%
+\section{Limits and continuity}\label{limits-and-continuity}}
 
 The following definition is from Stewart.
 
@@ -734,7 +759,7 @@ We then have
 \item
   \(\displaystyle \lim_{x \to a} (f(x) + g(x)) = L + M\),
 \item
-  \(\displaystyle  \lim_{x \to a} (k f(x)) = kL\),
+  \(\displaystyle \lim_{x \to a} (k f(x)) = kL\),
 \item
   \(\displaystyle \lim_{x \to a} (f(x) g(x)) = LM\),
 \item
@@ -761,7 +786,8 @@ where \(L_1 \neq L_2\), then \(\lim_{(x,y) \to (a,b)} f(x,y)\) does not exist.
 \(\lim_{(x,y)\to (0,0)} \frac{3x^2y}{x^2 + y^2} = 0\).
 \end{example}
 
-\section{Partial derivatives}\label{partial-derivatives-1}
+\hypertarget{partial-derivatives-1}{%
+\section{Partial derivatives}\label{partial-derivatives-1}}
 
 given a function \(f:\mathbb{R}^n \to \mathbb{R}^m\), the partial derivative with respect to the \(j\)th variable \(x_j\)
 of the \(i\)th output at \(a \in \mathbb{R}^n\) is
@@ -785,7 +811,8 @@ From here, one can define higher partial derivatives such as the following
 
 Note that the power over the symbol \(\partial\) represents the order of derivatives.
 
-\subsubsection*{Some important notations}\label{some-important-notations}
+\hypertarget{some-important-notations}{%
+\subsubsection*{Some important notations}\label{some-important-notations}}
 
 
 Let \(f:D \to \mathbb{R}\) be a function. We write the following, if exist,
@@ -801,7 +828,8 @@ Let \(f:D \to \mathbb{R}\) be a function. We write the following, if exist,
     \Delta f = \partial_{x_1}^2 f + \dots \partial_{x_n}^2 f \,.
 \end{equation*}
 
-\section{Differentiability}\label{differentiability}
+\hypertarget{differentiability}{%
+\section{Differentiability}\label{differentiability}}
 
 \begin{definition}[Differentiability]
 Let \(f:\mathbb{R}^n \to \mathbb{R}^m\).
@@ -828,7 +856,8 @@ Let \(f:\mathbb{R}^n \to \mathbb{R}^m\).
 If \(f\) is differentiable at \(a\) then \(f\) is continuous at \(a\).
 \end{theorem}
 
-\section{Chain rule}\label{chain-rule}
+\hypertarget{chain-rule}{%
+\section{Chain rule}\label{chain-rule}}
 
 \begin{theorem}
 Let \(f: \mathbb{R}^n \to \mathbb{R}^l, g: \mathbb{R}^m \to \mathbb{R}^n\) be
@@ -850,7 +879,8 @@ is differentiable and
 \end{equation*}
 \end{theorem}
 
-\section{Directional derivative}\label{directional-derivative}
+\hypertarget{directional-derivative}{%
+\section{Directional derivative}\label{directional-derivative}}
 
 \begin{definition}
 Let \(\mathbf{u} \in \mathbb{R}^n\). The directional derivative of \(f:\mathbb{R}^n \to \mathbb{R}\) at \(a\in \mathbb{R}^n\)
@@ -869,7 +899,8 @@ If \(f:\mathbb{R}^n \to \mathbb{R}\) is differentiable then
 \end{equation*}
 \end{theorem}
 
-\section{Tangent planes}\label{tangent-planes}
+\hypertarget{tangent-planes}{%
+\section{Tangent planes}\label{tangent-planes}}
 
 Let's think about tangent planes in a more systematic way, based on the definition
 of a plane learned in the first chapter.
@@ -886,9 +917,11 @@ is the plane through \(P_0\), normal to \(\nabla f (x_0, y_0, z_0)\).
 
 \newpage
 
-\chapter{Optimization}\label{optimization}
+\hypertarget{optimization}{%
+\chapter{Optimization}\label{optimization}}
 
-\section{First and second derivative tests}\label{first-and-second-derivative-tests}
+\hypertarget{first-and-second-derivative-tests}{%
+\section{First and second derivative tests}\label{first-and-second-derivative-tests}}
 
 Read Stewart Chapter 14, Thomas Chapter 14,
 
@@ -961,7 +994,8 @@ If \(f\) is continuous on a \emph{closed} and \emph{bounded} set \(D\). Then,
 \(f\) attains an absolute minimum and an absolute maximum in \(D\).
 \end{theorem}
 
-\subsection{Algorithm to find absolute maxima and minima on closed bounded regions}\label{algorithm-to-find-absolute-maxima-and-minima-on-closed-bounded-regions}
+\hypertarget{algorithm-to-find-absolute-maxima-and-minima-on-closed-bounded-regions}{%
+\subsection{Algorithm to find absolute maxima and minima on closed bounded regions}\label{algorithm-to-find-absolute-maxima-and-minima-on-closed-bounded-regions}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -974,7 +1008,8 @@ If \(f\) is continuous on a \emph{closed} and \emph{bounded} set \(D\). Then,
   the smallest of these values is the absolute minimum value.
 \end{enumerate}
 
-\section{Constrained optimization}\label{constrained-optimization}
+\hypertarget{constrained-optimization}{%
+\section{Constrained optimization}\label{constrained-optimization}}
 
 Constrained optimization takes various forms, depending on the assumptions.
 We will deal with the most straight forward form.
@@ -1010,7 +1045,8 @@ To find the maximum and minimum values of \(f\) subject to constraint
 
 \newpage
 
-\chapter{Multiple integrals}\label{multiple-integrals}
+\hypertarget{multiple-integrals}{%
+\chapter{Multiple integrals}\label{multiple-integrals}}
 
 Read Stewart Chapter 15 and Thomas Chapter 15
 
@@ -1018,7 +1054,8 @@ Read Stewart Chapter 15 and Thomas Chapter 15
 
 Rectangle \(R= [a_1,b_1]\times \dots \times [a_n, b_n] \subseteq \mathbb{R}^n\).
 
-\section{Basic definition}\label{basic-definition}
+\hypertarget{basic-definition}{%
+\section{Basic definition}\label{basic-definition}}
 
 \begin{definition}
 
@@ -1031,7 +1068,7 @@ where
 
 \begin{itemize}
 \item
-  \(\Delta A = \Delta x_1\times\dots  \times \Delta x_n\),
+  \(\Delta A = \Delta x_1\times\dots \times \Delta x_n\),
 \item
   \(\Delta x_i = (b_i-a_i)/m_i\),
 \item
@@ -1056,7 +1093,8 @@ The triple integral of \(f\) over a rectangle \(R \subseteq \mathbb{R}^3\) is
 if the limit exists.
 \end{definition}
 
-\subsection{Some properties of integrals}\label{some-properties-of-integrals}
+\hypertarget{some-properties-of-integrals}{%
+\subsection{Some properties of integrals}\label{some-properties-of-integrals}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1071,7 +1109,8 @@ if the limit exists.
   \end{equation*}
 \end{enumerate}
 
-\section{Iterated integrals}\label{iterated-integrals}
+\hypertarget{iterated-integrals}{%
+\section{Iterated integrals}\label{iterated-integrals}}
 
 Suppose that \(f\) is integrable on \(R= [a,b]\times [c,d]\).
 An iterated integral of \(f\) is defined as
@@ -1119,7 +1158,8 @@ Let
 
 Everything we discuss here is true for three-variable functions.
 
-\section{Change of coordinates}\label{change-of-coordinates}
+\hypertarget{change-of-coordinates}{%
+\section{Change of coordinates}\label{change-of-coordinates}}
 
 A coordinate transformation is a function \(\varphi\), which
 is bijective and differentiable for which \(D\varphi\) is
@@ -1152,9 +1192,11 @@ If \(f\) is continuous and \(\varphi\) is differentiable, then
 \end{equation*}
 \end{theorem}
 
-\subsection{Applications of change of coordinates}\label{applications-of-change-of-coordinates}
+\hypertarget{applications-of-change-of-coordinates}{%
+\subsection{Applications of change of coordinates}\label{applications-of-change-of-coordinates}}
 
-\subsubsection{Polar coordinate}\label{polar-coordinate}
+\hypertarget{polar-coordinate}{%
+\subsubsection{Polar coordinate}\label{polar-coordinate}}
 
 In \(\mathbb{R}^2\),
 when the region of integration is a section of a disk centered at \(0\).
@@ -1172,7 +1214,8 @@ Let
 \end{equation*}
 where \(a \leq r \leq b\) and \(\alpha \leq \theta \leq \beta\).
 
-\subsubsection{Cylindrical coordinate}\label{cylindrical-coordinate}
+\hypertarget{cylindrical-coordinate}{%
+\subsubsection{Cylindrical coordinate}\label{cylindrical-coordinate}}
 
 In \(\mathbb{R}^3\), when the region of integration is part of a cylinder.
 Let
@@ -1190,7 +1233,8 @@ Let
 \end{equation*}
 where \(a \leq r \leq b\), \(\alpha \leq \theta \leq \beta\).
 
-\subsubsection{Spherical coordinate}\label{spherical-coordinate}
+\hypertarget{spherical-coordinate}{%
+\subsubsection{Spherical coordinate}\label{spherical-coordinate}}
 
 In \(\mathbb{R}^3\), when the region of integration is a section of a ball centered at \(0\).
 Let
@@ -1211,11 +1255,13 @@ where \(a \leq \rho \leq b\), \(\alpha \leq \theta \leq \beta\), and
 
 \newpage
 
-\chapter{Vector Calculus}\label{vector-calculus}
+\hypertarget{vector-calculus}{%
+\chapter{Vector Calculus}\label{vector-calculus}}
 
 Read Chapter 16 in Stewart.
 
-\section{Vector fields}\label{vector-fields}
+\hypertarget{vector-fields}{%
+\section{Vector fields}\label{vector-fields}}
 
 \begin{definition}
 Let \(D\) be a domain on \(\mathbb{R}^n\).
@@ -1245,7 +1291,8 @@ at the origin on another charge \(q\) at a point \(\mathbf{x}\in \mathbb{R}^3\).
 \end{equation*}
 \end{example}
 
-\section{Line integrals}\label{line-integrals}
+\hypertarget{line-integrals}{%
+\section{Line integrals}\label{line-integrals}}
 
 Let's focus on \(\mathbb{R}^2\).
 We now perform a Riemann-sum-like action.
@@ -1369,7 +1416,8 @@ Therefore, if \(\mathbf{F}\) is a conservative vector field, then
     \oint_C \mathbf{F} \cdot d\mathbf{r} = 0 \,.
 \end{equation*}
 
-\subsection{Independence of path}\label{independence-of-path}
+\hypertarget{independence-of-path}{%
+\subsection{Independence of path}\label{independence-of-path}}
 
 Suppose \(C_1\) and \(C_2\) are two piecewise smooth curves that have the same initial point \(A\)
 and end point \(B\).
@@ -1461,7 +1509,8 @@ Then \(\mathbf{F}\) is conservative.
 The connectedness of \(D\) is crucial (why?).
 \end{remark}
 
-\section{Green's Theorem}\label{greens-theorem}
+\hypertarget{greens-theorem}{%
+\section{Green's Theorem}\label{greens-theorem}}
 
 \begin{theorem}[Green's Theorem]
 Let \(D\) be an open bounded simply connected domain in \(\mathbb{R}^2\),
@@ -1474,7 +1523,8 @@ that contains \(D\), then
 \end{equation*}
 \end{theorem}
 
-\section{Curl and Divergence}\label{curl-and-divergence}
+\hypertarget{curl-and-divergence}{%
+\section{Curl and Divergence}\label{curl-and-divergence}}
 
 \begin{definition}
 Let \(\mathbf{F}\) be a vector field in \(\mathbb{R}^3\).
@@ -1528,9 +1578,11 @@ Then,
 \end{equation*}
 \end{theorem}
 
-\section{Surface integrals}\label{surface-integrals}
+\hypertarget{surface-integrals}{%
+\section{Surface integrals}\label{surface-integrals}}
 
-\subsection{Parametric surfaces}\label{parametric-surfaces}
+\hypertarget{parametric-surfaces}{%
+\subsection{Parametric surfaces}\label{parametric-surfaces}}
 
 Similar to the way we parametrize a curve by a one-variable vector function
 \(\mathbf{r}(t)\), we can parametrize a surface by a two-variable vector function
@@ -1560,7 +1612,8 @@ and
                             + \frac{\partial z}{\partial v} \mathbf{k} \,.
 \end{equation*}
 
-\subsection{Surface integral}\label{surface-integral}
+\hypertarget{surface-integral}{%
+\subsection{Surface integral}\label{surface-integral}}
 
 \begin{definition}
 Let \(S\) be a surface with parametrization.
@@ -1576,7 +1629,8 @@ one can show that
    \iint_S f(x,y,z) \, dS  = \iint_D f(\mathbf{r}(u,v)) | \mathbf{r_u}\times \mathbf{r_v} | \, dA \,. 
 \end{equation*}
 
-\subsection{Orientation of the surface}\label{orientation-of-the-surface}
+\hypertarget{orientation-of-the-surface}{%
+\subsection{Orientation of the surface}\label{orientation-of-the-surface}}
 
 Given a surface \(S\), we define the orientation of it as following
 
@@ -1589,7 +1643,8 @@ Given a surface \(S\), we define the orientation of it as following
   If \(S\) does not have a boundary, then the \textbf{positive orientation} is the direction of the outward normal vector.
 \end{enumerate}
 
-\subsection{Surface integral of vector fields}\label{surface-integral-of-vector-fields}
+\hypertarget{surface-integral-of-vector-fields}{%
+\subsection{Surface integral of vector fields}\label{surface-integral-of-vector-fields}}
 
 \begin{definition}
 If \(\mathbf{F}\) is a continuous vector field on an oriented surface \(S\) (parametrized by \(\mathbf{r}(u,v)\))
@@ -1602,7 +1657,8 @@ with unit normal vector \(\mathbf{n}\), then the \textbf{surface integral of \(\
 The integral is called the \textbf{flux of \(\mathbf{F}\)} across \(S\).
 \end{definition}
 
-\section{Stokes' and Divergence Theorem}\label{stokes-and-divergence-theorem}
+\hypertarget{stokes-and-divergence-theorem}{%
+\section{Stokes' and Divergence Theorem}\label{stokes-and-divergence-theorem}}
 
 \begin{theorem}[Stokes' Theorem]
 Let \(S\) be an oriented smooth surface that is bounded by a simple closed
