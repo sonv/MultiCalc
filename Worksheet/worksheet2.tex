@@ -28,53 +28,138 @@
 \section{Concepts}
 
 \begin{enumerate}
-    \item Dot products; cross products; scalar triple products
-    \item Geometry of vectors
+	\item Length
+	\item Dot products
 \end{enumerate}
 
+
+\begin{definition}
+	The length of a vector $\vec{v}$ in $\R^n$ is
+	\begin{equation*}
+		\abs{ \vec{v}} = \sqrt{ v_1^2 + \dots + v_n^2 } \,.
+	\end{equation*}
+\end{definition}
+
+\begin{definition}
+	Scalar multiplication of a number $c$ and a vector $\vec{v}$ in $\R^n$ is
+	\begin{equation*}
+		c\vec{v}
+		= \langle c v_1 , \dots,  c v_n  \rangle\,.
+	\end{equation*}
+\end{definition}
+
+\begin{definition}
+	Addition between two vectors $\vec{v}$ and $\vec{w}$ in $\R^n$ is
+	\begin{equation*}
+		\vec{v} + \vec{w} = \langle v_1 + w_1 , \dots,  v_n + w_n \rangle\,.
+	\end{equation*}
+\end{definition}
+
+\begin{definition}
+	The dot product between two vectors $\vec{v}$ and $\vec{w}$ in $\R^n$ is
+	\begin{equation*}
+		\vec{v} \cdot \vec{w} = v_1 w_1 + \dots + v_n w_n \,.
+	\end{equation*}
+\end{definition}
+
+
+\begin{theorem}[Law of cosine]
+	\begin{equation*}
+		\vec{v} \cdot \vec{w} = \abs{\vec{v}} \abs{ \vec{w}} \cos\theta
+	\end{equation*}
+	where $\theta$ is the angle between the two vectors.
+\end{theorem}
+
+\begin{definition}[Projections]
+	Given 2 vectors $\vec{a}$ and $\vec{b}$ in $\R^n$.
+
+	Scalar projection of $\vec{b}$ to $\vec{a}$ is:
+	\begin{equation*}
+		\mathrm{comp}_{\vec{a}} \vec{b} = \frac{ \vec{a} \cdot \vec{b}}{\abs{\vec{a}}} \,.
+	\end{equation*}
+
+	Vector projection of $\vec{b}$ to $\vec{a}$ is:
+	\begin{equation*}
+		\mathrm{proj}_{\vec{a}} \vec{b} = \left(\frac{ \vec{a} \cdot \vec{b}}{\abs{\vec{a}}}\right) \frac{\vec{a}}{\abs{\vec{a}}} \,.
+	\end{equation*}
+\end{definition}
+
 \section{Discussions}
-\begin{question}
-    What is the value of $c$ so that the planes
-    $2cx - y + c^2 = 15$ and $x + 5cy - 3z = 4$ are orthogonal?
-\end{question}
 
 \begin{question}
-    What is the angle between the planes $x - 2y + 3z = 6$ and $2x + 3y -z = 11$?
+	Given two points $A(x_1,y_1, z_1)$ and $B(x_2, y_2, z_2)$.
+	How do you construct a vector $\vec{AB}$ with the beginning at $A$ and the end at $B$?
 \end{question}
+\vspace{5cm}
 
 \begin{question}
-    What is the angle between the grand diagonal of a cube in $\R^n$
-    and an incident edge?
+	What are the properties of vectors (Section 12.2)?
 
-    (Hint: try $\R^2$ and $\R^3$ to have intuition first.)
 \end{question}
+\vspace{5cm}
 
 \begin{question}
-    What is the area of the triangle in the plane with vertices at
-    $(1,3), (-2,0), (5,2)$?
+	Prove the law of cosine.
 \end{question}
-
+\vspace{5cm}
 
 \begin{question}
-    What is the volume of the parallelopiped spanned by the vectors $\hat{i}, \hat{j}$ and $\vec{v}$.
+	What are the properties of dot product (Section 12.3)?
+
 \end{question}
+\vspace{5cm}
 
 \begin{question}
-    What is the projected length (component) of vector $\vec{w}$ onto the vector $\vec{v}$:
-    \begin{equation*}
-        \vec{w} = \begin{pmatrix}
-            5 \\ - 6 \\ 2 \\ -7
-        \end{pmatrix}
-        \,, \quad 
-        \vec{v} =
-        \begin{pmatrix}
-            0 \\ 3 \\ 4 \\0
-        \end{pmatrix}
-        \,.
-    \end{equation*}
+	Intepret the equation of a plane going through the origin in $R^3$:
+	ax + by + cz = 0 \,.
 \end{question}
+\vspace{5cm}
 
-\printbibliography 
+\begin{question}
+	What is the value of $c$ so that the planes
+	$2cx - y + c^2 = 15$ and $x + 5cy - 3z = 4$ are orthogonal?
+\end{question}
+\vspace{5cm}
+
+\begin{question}
+	What is the angle between the planes $x - 2y + 3z = 6$ and $2x + 3y -z = 11$?
+\end{question}
+\vspace{5cm}
+%
+%\begin{question}
+%	What is the angle between the grand diagonal of a cube in $\R^n$
+%	and an incident edge?
+%
+%	(Hint: try $\R^2$ and $\R^3$ to have intuition first.)
+%\end{question}
+%
+%
+%\begin{question}
+%	What is the area of the triangle in the plane with vertices at
+%	$(1,3), (-2,0), (5,2)$?
+%\end{question}
+%
+%
+%\begin{question}
+%	What is the volume of the parallelopiped spanned by the vectors $\hat{i}, \hat{j}$ and $\vec{v}$.
+%\end{question}
+%
+%\begin{question}
+%	What is the projected length (component) of vector $\vec{w}$ onto the vector $\vec{v}$:
+%	\begin{equation*}
+%		\vec{w} = \begin{pmatrix}
+%			5 \\ - 6 \\ 2 \\ -7
+%		\end{pmatrix}
+%		\,, \quad
+%		\vec{v} =
+%		\begin{pmatrix}
+%			0 \\ 3 \\ 4 \\0
+%		\end{pmatrix}
+%		\,.
+%	\end{equation*}
+%\end{question}
+%
+\printbibliography
 %\bibliography{refs}
 %\bibliographystyle{halpha-abbrv}
 
