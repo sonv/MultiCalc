@@ -19,7 +19,7 @@
 %\address{  }
 %\email {  }
 %
-\date{01/17/2024}
+\date{01/13/2025}
 
 \begin{document}
 
@@ -27,45 +27,102 @@
 
 \section{Concepts}
 
-\begin{enumerate}
-    \item Velocity and accelerations
-    \item Unit tangent and unit normal vectors to curves
-    \item Curvature and geometry of curves
-\end{enumerate}
 
-\section{Discussions}
+\begin{theorem}[Law of cosine]
+	\begin{equation*}
+		\vec{v} \cdot \vec{w} = \abs{\vec{v}} \abs{ \vec{w}} \cos\theta
+	\end{equation*}
+	where $\theta$ is the angle between the two vectors.
+\end{theorem}
+
+\begin{definition}[Projections]
+	Given 2 vectors $\vec{a}$ and $\vec{b}$ in $\R^n$.
+
+	Scalar projection of $\vec{b}$ to $\vec{a}$ is:
+	\begin{equation*}
+		\mathrm{comp}_{\vec{a}} \vec{b} = \frac{ \vec{a} \cdot \vec{b}}{\abs{\vec{a}}} \,.
+	\end{equation*}
+
+	Vector projection of $\vec{b}$ to $\vec{a}$ is:
+	\begin{equation*}
+		\mathrm{proj}_{\vec{a}} \vec{b} = \left(\frac{ \vec{a} \cdot \vec{b}}{\abs{\vec{a}}}\right) \frac{\vec{a}}{\abs{\vec{a}}} \,.
+	\end{equation*}
+\end{definition}
+
+\begin{definition}[Cross product]
+	Let $\vec{v} = \langle v_1, v_2, v_3 \rangle$ and $\vec{w} = \langle w_1, w_2, w_3 \rangle$ be vectors in $\R^3$.
+	The cross product of $\vec{v}$ and $\vec{w}$ is defined by
+	\begin{equation*}
+		\vec{v} \times \vec{w} =
+		\mathrm{det} \begin{pmatrix}
+			\vec{i} & \vec{j} & \vec{k} \\
+			v_1     & v_2     & v_3     \\
+			w_1     & w_2     & w_3
+		\end{pmatrix} \,.
+	\end{equation*}
+\end{definition}
+
+\begin{theorem}
+	\begin{equation*}
+		\abs{ \vec{v} \times \vec{w}} = \abs{\vec{v}} \abs{\vec{w}} \abs{\sin \theta}  \,.
+	\end{equation*}
+\end{theorem}
+
+\newpage
+\section{Problems}
 
 \begin{question}
-    If you move along a curve in 3D at a constant speed, what can you say about acceleration? Is it zero?
+	What is the angle between the planes $x - 2y + 3z = 6$ and $2x + 3y -z = 11$?
 \end{question}
+\vspace{7cm}
+
+
 
 \begin{question}
-    Compute the velocity, acceleration, and arclength element of the curve with components $(\sin t, \cos 2t, t)$.
+	What is the definition for general plane that doesn't go through the origin?
 \end{question}
+\vspace{7cm}
 
 \begin{question}
-    Compute the length of a general helix in 3D with radius R and height C.
-    What are the asymptotics for small $R$ and $C$?
+	What is the projected length (component) of vector $\vec{w}$ onto the vector $\vec{v}$:
+	\begin{equation*}
+		\vec{w} = \begin{pmatrix}
+			5 \\ - 6 \\ 2 \\ -7
+		\end{pmatrix}
+		\,, \quad
+		\vec{v} =
+		\begin{pmatrix}
+			0 \\ 3 \\ 4 \\0
+		\end{pmatrix}
+		\,.
+	\end{equation*}
 \end{question}
+\vspace{7cm}
+
 
 \begin{question}
-    Compute the arclength of the parametrized curve in 4D:
-    \begin{equation*}
-        \gamma(t) = \begin{pmatrix}
-            A \cos t\\ A\sin t \\ B \cos t  \\ B \sin t
-        \end{pmatrix}
-        \,, 0 \leq t \leq 2\pi
-    \end{equation*}
+	Show
+	\begin{equation*}
+		\vec{v} \times \vec{w} = - \vec{w}\times \vec{v} \,.
+	\end{equation*}
 \end{question}
+\vspace{7cm}
 
 \begin{question}
-    It was stated that the unit tangent $\hat T$ and the unit normal $\hat N$ to a curve
-    are always orthogonal. Why?
+	What is the geometric intepretation of $\abs{\vec{v} \times \vec{w}}$?
 \end{question}
+\vspace{7cm}
 
-\printbibliography 
-%\bibliography{refs}
-%\bibliographystyle{halpha-abbrv}
+
+\newpage
+\begin{question}
+	What is the geometric intepretation of $\abs{\vec{a} \cdot (\vec{v} \times \vec{w})}$?
+\end{question}
+\vspace{7cm}
+
+
+
+
 
 
 \end{document}
