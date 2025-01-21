@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>4 Partial derivatives | MATH 104: Multivariable Calculus (brief notes)</title>
   <meta name="description" content="4 Partial derivatives | MATH 104: Multivariable Calculus (brief notes)" />
-  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
   <meta property="og:title" content="4 Partial derivatives | MATH 104: Multivariable Calculus (brief notes)" />
   <meta property="og:type" content="book" />
@@ -48,7 +48,6 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
@@ -76,7 +75,6 @@
 <li><a>Multivariable Calculus</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Spring 2025</a></li>
 <li class="chapter" data-level="" data-path="disclaimer.html"><a href="disclaimer.html"><i class="fa fa-check"></i>Disclaimer</a></li>
 <li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html"><i class="fa fa-check"></i>Syllabus</a>
 <ul>
@@ -220,13 +218,13 @@ However, there are certain rules that could help us.</p>
 <div class="theorem">
 <p><span id="thm:unlabeled-div-31" class="theorem"><strong>Theorem 4.1  </strong></span>Let <span class="math inline">\(L,M\)</span> and <span class="math inline">\(k\)</span> be real numbers and that
 <span class="math display">\[\begin{equation*}
-    \lim_{x \to a} f(x,y) = L \,, \qquad 
+    \lim_{x \to a} f(x,y) = L \,, \qquad
     \lim_{x \to a} g(x,y) = M \,.
 \end{equation*}\]</span>
 We then have</p>
 <ol style="list-style-type: decimal">
 <li><p><span class="math inline">\(\displaystyle \lim_{x \to a} (f(x) + g(x)) = L + M\)</span>,</p></li>
-<li><p><span class="math inline">\(\displaystyle \lim_{x \to a} (k f(x)) = kL\)</span>,</p></li>
+<li><p><span class="math inline">\(\displaystyle  \lim_{x \to a} (k f(x)) = kL\)</span>,</p></li>
 <li><p><span class="math inline">\(\displaystyle \lim_{x \to a} (f(x) g(x)) = LM\)</span>,</p></li>
 <li><p><span class="math inline">\(\displaystyle \lim_{x \to a} \frac{f(x)}{g(x)} = \frac{L}{M}\)</span> if <span class="math inline">\(M \not= 0\)</span>,</p></li>
 <li><p><span class="math inline">\(\displaystyle \lim_{x \to a} {f(x)^p} = L^p\)</span> for <span class="math inline">\(p&gt;0\)</span>,</p></li>
@@ -248,7 +246,7 @@ where <span class="math inline">\(L_1 \neq L_2\)</span>, then <span class="math 
 <p>given a function <span class="math inline">\(f:\mathbb{R}^n \to \mathbb{R}^m\)</span>, the partial derivative with respect to the <span class="math inline">\(j\)</span>th variable <span class="math inline">\(x_j\)</span>
 of the <span class="math inline">\(i\)</span>th output at <span class="math inline">\(a \in \mathbb{R}^n\)</span> is
 <span class="math display">\[\begin{equation*}
-    \frac{ \partial }{\partial x_j} f_{i}(a) 
+    \frac{ \partial }{\partial x_j} f_{i}(a)
     = \lim_{h\to 0} \frac{ f(a_1, \dots, a_{i-1}, a_i + h , a_{i+1}, \dots, a_n) - f(a_1, \dots, a_{i-1}, a_i  , a_{i+1}, \dots, a_n)}{h} \,.
 \end{equation*}\]</span></p>
 <p><strong>Notations.</strong>
@@ -263,7 +261,7 @@ From here, one can define higher partial derivatives such as the following</p>
     \partial^3_{1 2 3}  f_i (a) = \frac{\partial}{\partial x_1} \frac{\partial}{\partial x_2} \frac{\partial}{\partial x_3} f_i (a)\,.
 \end{equation*}\]</span></p>
 <p>Note that the power over the symbol <span class="math inline">\(\partial\)</span> represents the order of derivatives.</p>
-<div id="some-important-notations" class="section level4 unnumbered hasAnchor" number="">
+<div id="some-important-notations" class="section level4 unnumbered hasAnchor">
 <h4>Some important notations<a href="partial-derivatives.html#some-important-notations" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Let <span class="math inline">\(f:D \to \mathbb{R}\)</span> be a function. We write the following, if exist,
 <span class="math display">\[\begin{equation*}

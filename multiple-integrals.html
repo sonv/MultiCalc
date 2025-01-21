@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>6 Multiple integrals | MATH 104: Multivariable Calculus (brief notes)</title>
   <meta name="description" content="6 Multiple integrals | MATH 104: Multivariable Calculus (brief notes)" />
-  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
   <meta property="og:title" content="6 Multiple integrals | MATH 104: Multivariable Calculus (brief notes)" />
   <meta property="og:type" content="book" />
@@ -48,7 +48,6 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
@@ -76,7 +75,6 @@
 <li><a>Multivariable Calculus</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Spring 2025</a></li>
 <li class="chapter" data-level="" data-path="disclaimer.html"><a href="disclaimer.html"><i class="fa fa-check"></i>Disclaimer</a></li>
 <li class="chapter" data-level="" data-path="syllabus.html"><a href="syllabus.html"><i class="fa fa-check"></i>Syllabus</a>
 <ul>
@@ -211,11 +209,11 @@
 <p><span id="def:unlabeled-div-48" class="definition"><strong>Definition 6.1  </strong></span>Let <span class="math inline">\(f\)</span> be a function on a rectangle <span class="math inline">\(R\)</span>.
 An n-fold Riemann sum for <span class="math inline">\(f\)</span> over <span class="math inline">\(R\)</span> is a sum of the following form
 <span class="math display">\[\begin{equation*}
- \sum_{i_1=1}^{m_1}\dots \sum_{i_n=1}^{m_n} f(\xi_{i_1\dots i_n}) \Delta A \,,
+\sum_{i_1=1}^{m_1}\dots \sum_{i_n=1}^{m_n} f(\xi_{i_1\dots i_n}) \Delta A \,,
 \end{equation*}\]</span>
 where</p>
 <ul>
-<li><p><span class="math inline">\(\Delta A = \Delta x_1\times\dots \times \Delta x_n\)</span>,</p></li>
+<li><p><span class="math inline">\(\Delta A = \Delta x_1\times\dots  \times \Delta x_n\)</span>,</p></li>
 <li><p><span class="math inline">\(\Delta x_i = (b_i-a_i)/m_i\)</span>,</p></li>
 <li><p><span class="math inline">\(\xi_{i_1\dots i_n}\in R_{i_1\dots i_n}\)</span>,</p></li>
 <li><p><span class="math inline">\(R_{i_1\dots i_n}= \prod [a_i + (i_1-1)\Delta x, a_i+ i_1\Delta x_i]\)</span>.</p></li>
@@ -224,12 +222,12 @@ where</p>
 <div class="definition">
 <p><span id="def:unlabeled-div-49" class="definition"><strong>Definition 6.2  </strong></span>The double integral of <span class="math inline">\(f\)</span> over a rectangle <span class="math inline">\(R \subseteq \mathbb{R}^2\)</span> is
 <span class="math display">\[\begin{equation*}
-    \iint_{R} f(x,y) \, dA = \lim_{m,n\to \infty} \sum_{i=1}^m \sum_{j=1}^n f(\xi_{ij}) \Delta A 
+    \iint_{R} f(x,y) \, dA = \lim_{m,n\to \infty} \sum_{i=1}^m \sum_{j=1}^n f(\xi_{ij}) \Delta A
 \end{equation*}\]</span>
 if the limit exists.</p>
 <p>The triple integral of <span class="math inline">\(f\)</span> over a rectangle <span class="math inline">\(R \subseteq \mathbb{R}^3\)</span> is
 <span class="math display">\[\begin{equation*}
-    \iiint_{R} f(x,y) \, dA = \lim_{m,n,l\to \infty} \sum_{i=1}^m \sum_{j=1}^n \sum_{k=1}^l f(\xi_{ijk}) \Delta A 
+    \iiint_{R} f(x,y) \, dA = \lim_{m,n,l\to \infty} \sum_{i=1}^m \sum_{j=1}^n \sum_{k=1}^l f(\xi_{ijk}) \Delta A
 \end{equation*}\]</span>
 if the limit exists.</p>
 </div>
@@ -238,10 +236,10 @@ if the limit exists.</p>
 <ol style="list-style-type: decimal">
 <li><p>Let <span class="math inline">\(U, V\)</span> be disjoint domains, then
 <span class="math display">\[\begin{equation*}
-\iint_{U \cup V} f \, dA = \iint_U f \, dA + \iint_V f\, dA \,. 
+\iint_{U \cup V} f \, dA = \iint_U f \, dA + \iint_V f\, dA \,.
 \end{equation*}\]</span></p></li>
 <li><p><span class="math display">\[\begin{equation*}
- \iint_U (f + g) \, dA = \iint_U f \, dA + \iint_V f \, dA \,.
+\iint_U (f + g) \, dA = \iint_U f \, dA + \iint_V f \, dA \,.
 \end{equation*}\]</span></p></li>
 </ol>
 </div>
@@ -259,7 +257,7 @@ where
 \end{equation*}\]</span>
 Typically, we write the above as
 <span class="math display">\[\begin{equation*}
-   \int_a^b \int_c^d f(x,y) \, dy dx \,. 
+   \int_a^b \int_c^d f(x,y) \, dy dx \,.
 \end{equation*}\]</span>
 This means that we integrate in <span class="math inline">\(y\)</span> before in <span class="math inline">\(x\)</span>– always integrate the inner part first.</p>
 <p>Similarly, we can define an iterated integral in a different order
@@ -296,10 +294,10 @@ is bijective and differentiable for which <span class="math inline">\(D\varphi\)
 invertible at all points in the domain.
 Here,
 <span class="math display">\[\begin{equation*}
-    D\varphi = 
+    D\varphi =
     \begin{pmatrix}
         \partial_1 \varphi_1 &amp; \partial_2 \varphi_1 \\
-        \partial_1 \varphi_2 &amp; \partial_2 \varphi_2 
+        \partial_1 \varphi_2 &amp; \partial_2 \varphi_2
     \end{pmatrix} \,.
 \end{equation*}\]</span></p>
 <p>We will need to re-call the notion of invertible matrix here.
@@ -331,10 +329,10 @@ Let
         x \\ y
     \end{pmatrix}
     =
-    \varphi(r,\theta) = 
+    \varphi(r,\theta) =
     \begin{pmatrix}
         r\cos\theta \\
-        r\sin\theta 
+        r\sin\theta
     \end{pmatrix} \,,
 \end{equation*}\]</span>
 where <span class="math inline">\(a \leq r \leq b\)</span> and <span class="math inline">\(\alpha \leq \theta \leq \beta\)</span>.</p>
@@ -348,7 +346,7 @@ Let
         x \\ y \\z
     \end{pmatrix}
     =
-    \varphi(r,\phi,\theta) = 
+    \varphi(r,\phi,\theta) =
     \begin{pmatrix}
         r\cos\theta\\
         r\sin\theta\\
@@ -366,7 +364,7 @@ Let
         x \\ y \\z
     \end{pmatrix}
     =
-    \varphi(\rho,\phi,\theta) = 
+    \varphi(\rho,\phi,\theta) =
     \begin{pmatrix}
         \rho\sin\phi\cos\theta\\
         \rho\sin\phi\sin\theta\\
