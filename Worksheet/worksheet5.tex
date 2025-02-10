@@ -9,17 +9,17 @@
 \addbibresource{bibliography.bib}
 
 %% commentary bubble
-\newcommand{\SV}[2][]{\sidenote[colback=green!10]{\textbf{SV\xspace #1:} #2}}
+\newcommand{\SV}[2][]{\sidenote[colback=green!10]{\textvec{SV\xspace #1:} #2}}
 
 %% Title 
-\title{ MATH 104: Worksheet 4}
+\title{ MATH 104: Worksheet 5}
 \author{}
 
 %\author{Co-author}
 %\address{  }
 %\email {  }
 %
-\date{01/22/2024}
+\date{02/10/2025}
 
 \begin{document}
 
@@ -27,63 +27,44 @@
 
 \section{Concepts}
 
-\begin{enumerate}
-    \item Row-reduction 
-    \item Inverse
-    \item Linear transformation
-\end{enumerate}
+\begin{itemize}
+	\item Distance formulas:
+	      \begin{enumerate}
+		      \item In $\R^2$, the distance between an point $P(x_1, y_1)$ and a line $ax + by + c = 0$ is
+		            \begin{equation*}
+			            D =   \frac{\abs{ ax_1 + b y_1 + c }}{\sqrt{a^2 + b^2}} \,.
+		            \end{equation*}
+		      \item In $\R^3$, the distance between an point $P(x_1, y_1, z_1)$ and a plane $ax + by + cz + d = 0$ is
+		            \begin{equation*}
+			            D =  \frac{\abs{ ax_1 + b y_1 + cz_1 + d }}{\sqrt{a^2 + b^2 + c^2}} \,.
+		            \end{equation*}
+	      \end{enumerate}
+	      Remember, the dimension is very important! You can't have the first formula in $\R^3$
+	      because $ax + by + c = 0$ is
+	      NOT an equation for a line in $\R^3$.
 
-\section{Discussions}
+	\item Equations for Conic sections, Cylinders and Quadric Surfaces: read notes and books
+
+	\item Vector functions
+	      \begin{equation*}
+		      \vec{r}(t) = \langle f(t), g(t), h(t) \rangle = f(t) \vec{i} + g(t) \vec{j} + h(t) \vec{k} \,.
+	      \end{equation*}
+\end{itemize}
+
+\section{Questions}
 
 \begin{question}
-    Parametrize the intersection of the planes
-    $$ 3x + y -z = 4$$
-    and
-    $$x - 2y + z = 1. $$
-    Set this up as a row-reduction problem to obtain the answer.
+	Sketch the following functions:
+	\begin{enumerate}
+		\item $$ \vec{r}(t) = \langle 1 + 2t, 2 + t , t \rangle$$
+		\item $$ \vec{r}(t) = \langle t, \sin t, \cos t \rangle $$
+		\item $$ \vec{r}(t) = \langle t, t, t^2 \rangle$$
+	\end{enumerate}
 \end{question}
 
 \begin{question}
-    Compute the inverse of the following $3\times 3$ matrix by row reduction.
-    \begin{equation*}
-        \begin{pmatrix}
-            1 & 0 & 2 \\
-            3 & 1 & 0 \\
-            0 & -1 & -2
-        \end{pmatrix}
-    \end{equation*}
-    Your result should be
-    \begin{equation*}
-        \frac{1}{8} 
-        \begin{pmatrix}
-            2 & 2 & 2 \\
-            -6 & 2 & -6 \\
-            3 & -1 & -1
-        \end{pmatrix} \,.
-    \end{equation*}
+
 \end{question}
 
-\begin{question}
-    \begin{enumerate}
-        \item Why is it that
-            \begin{equation*}
-                (AB)^{-1} = B^{-1} A^{-1} \,?
-            \end{equation*} 
-        \item Why is it that
-            \begin{equation*}
-                (AB)^T = B^T A^T \,?
-            \end{equation*}
-    \end{enumerate}
-\end{question}
-
-\begin{question}
-    Explain why this is a rotation matrix
-    \begin{equation*}
-        \begin{pmatrix}
-            \cos \theta &  - \sin \theta \\
-             \sin \theta & \cos \theta
-        \end{pmatrix} \,.
-    \end{equation*}
-\end{question}
 
 \end{document}
