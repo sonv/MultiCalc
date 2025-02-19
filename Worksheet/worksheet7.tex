@@ -29,71 +29,85 @@
 \section{Concepts}
 
 \begin{enumerate}
-    \item Multivariable functions
-    \item Partial derivatives
-    \item Derivative as matrix of partial derivatives
-    \item Derivative as transformation
+	\item Arclength
+	      $$ L = \int_a^b \left| \mathbf{r}'(t) \right| \, dt \,. $$
+	\item Curvature
+	      $$ \kappa (t) = \frac{ \abs{\mathbf{T}'(t)} }{ \abs{\mathbf{r}'(t)}} $$
+	      where $\mathbf{T}(t)$ is the unit tangent vector.
 \end{enumerate}
 
 \section{Discussions}
 
 \begin{question}
-    Consider a function $f$ such that, at a particular point $a$,
-    \begin{equation*}
-        [Df]_a\begin{pmatrix}
-            1 \\ -1
-        \end{pmatrix}
-        = \begin{pmatrix}
-            3 \\ -2
-        \end{pmatrix}.
-    \end{equation*}
-    \begin{enumerate}
-        \item How many inputs does $f$ have?
-        \item What happens if inputs change at rates $\vec{h} = \langle -2, 2 \rangle$?
-        \item What if $\vec{h} = \langle 3, 3 \rangle$? Can you do this?
-        \item Can you do the previous problem if you know 
-            $$[Df]_a \begin{pmatrix}
-                1 \\2 
-            \end{pmatrix}
-            = 
-            \begin{pmatrix}
-                4 \\ -4
-            \end{pmatrix}?
-            $$
-    \end{enumerate}
+	Consider the path $\mathbf{r}(t) = \langle 14t, 7t^2 , 7\ln t \rangle $  \,.
+
+	Find the length of the curve between $(14,7,0)$ and $(70, 175, 7\ln 5)$.
+\end{question}
+\vspace{7cm}
+
+\begin{question}
+	Find the perimeter of the ellipse:
+	\begin{equation*}
+		\frac{x^2}{4} + \frac{y^2}{9} = 1 \,.
+	\end{equation*}
+\end{question}
+
+\vspace{7cm}
+
+\begin{question}
+	Find the curvature $\kappa(t)$ of the curve
+	\begin{equation*}
+		\mathbf{r}(t) = (3 \sin t)\mathbf{i} + (3\sin t)\mathbf{j} - \cos t \mathbf{k}\,.
+	\end{equation*}
+\end{question}
+
+\vspace{7cm}
+
+\begin{question}
+	From the arclength formula, define
+	\begin{equation*}
+		\ell(t) = \int_a^t \abs{\mathbf{r}'(q)} \, dq \,.
+	\end{equation*}
+	Observe, $L = \ell(b)$ and for a given $s \in [0 , \ell(b)]$
+	we have a unique $t$ so that $s = \ell(t)$.
+	That means, $t = \ell^{-1}(s)$.
+	Therefore, we can write
+	\begin{equation*}
+		\mathbf{r}(t) = \mathbf{r}(\ell^{-1}(s)) \,.
+	\end{equation*}
+	The RHS is called the parametrization by arclength because the RHS is a function by the arclength.
+
+	Show that
+	\begin{enumerate}
+		\item $$ \frac{ds}{dt} = \abs{\mathbf{r}'(t)} $$
+		      \vspace{7cm}
+		\item $$\left| \frac{ d}{ds} \mathbf{r}(t) \right| = 1$$
+		      \vspace{7cm}
+		\item \begin{equation*}
+			      \ell(s) = \int_0^s \left| \frac{ d}{ds} \mathbf{r}(t) \right| \, dt = s\,.
+		      \end{equation*}
+		      \vspace{7cm}
+	\end{enumerate}
 \end{question}
 
 \begin{question}
-    Explain the velocity vector of a parametrized curve $\gamma(t)$ in terms of the definition 
-    of a derivative.
+	Show that in the parametrization by arclength,
+	\begin{equation*}
+		\kappa(s) = \left| \frac{d \mathbf{T}(t)}{ds}  \right|
+	\end{equation*}
 \end{question}
-
+\vspace{7cm}
 \begin{question}
-    Consider the following 
-    \begin{equation*}
-        f
-        \begin{pmatrix}
-            u \\ v \\ w
-        \end{pmatrix}
-        =
-        \begin{pmatrix}
-            u^2 v^{-3} w \\ 2u - 5w \\ uv - vw
-        \end{pmatrix} \,.
-    \end{equation*}
-    \begin{enumerate}
-        \item Compute the derivative $[Df]$.
-        \item Evaluate this derivative at the point where $u = 1, v = -1, w = 2$.
-        \item If, at this point,all the inputs are decreasing at the same rate, which output is increasing the most?
-    \end{enumerate}
+	[Hard] Show that
+	\begin{equation*}
+		\kappa(t) = \frac{\abs{\mathbf{r}'(t) \times \mathbf{r}''(t)}}{\abs{\mathbf{r}'(t)}^3}
+	\end{equation*}
+	Solution is on page 865 in the book.
 \end{question}
+\vspace{7cm}
 
-\begin{question}
-    From Calculus, we know that if $f:\R \to \R$ and $g: \R \to \R$, then
-    \begin{equation*}
-        (g\circ f)'(x) = g'(f(a)) f'(a) \,. 
-    \end{equation*}
-    Now, if we have $f: \R^n \to \R^m$ and $g: \R^m \to \R^l$, what is your guess of
-    $[D (g\circ f)]_a$?
-\end{question}
+
+
+
 
 \end{document}
