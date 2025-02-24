@@ -29,92 +29,55 @@
 \section{Concepts}
 
 \begin{enumerate}
-    \item Differentiation Rules 
+	\item Functions of two variables.
+	      A function $f$ of $n$ variables is a rule that assigns to each ordered pair of real numbers $\mathbf{x} \in \R^n$ in a set $D$ a unique real number denoted by $f(\mathbf{x})$.
+	      The set $D$ is the \textit{domain} of $f$ and its \textit{range} is the set of values that $f$ takes on, that is,
+	      \[
+		      \{ f(\mathbf{x}) \mid \mathbf{x} \in D \}.
+	      \]
+
+	\item Graph of a function.
+	      If $f$ is a function of $n$ variables with domain $D$, then the \textit{graph} of $f$ is the set of all points $(\mathbf{x}, z)$ in $\mathbb{R}^{n+1}$ such that
+	      \[
+		      z = f(\mathbf{x}) \quad \text{and} \quad \mathbf{x} \in D.
+	      \]
+
+	\item The \textit{level curves} (contour curves) of a function $f$ of two variables are the curves of $(x,y) $ in the domain with equations
+	      \[
+		      f(x, y) = k,
+	      \]
+	      where $k$ is a constant (in the range of $f$).
+
+	\item The \textit{level sets}  of a function $f$ of $n$ variables are the sets of $\mathbf{x}$ in the domain with equations
+	      \[
+		      f(\mathbf{x}) = k,
+	      \]
+	      where $k$ is a constant (in the range of $f$).
+
 \end{enumerate}
 
+\newpage
 \section{Discussions}
 
 \begin{question}
-    Consider the following three derivatives of functions
-    \begin{equation*}
-        [Df]_0 = 
-        \begin{bmatrix}
-            1 & -3 & 0 \\
-            2 & 7 & 1 \\
-            3 & 1 & 0 \\
-            -2 & 1 & -1 
-        \end{bmatrix}\,,
-    \end{equation*}
-
-    \begin{equation*}
-        [Dg]_0 = 
-        \begin{bmatrix}
-            4 & 1 \\
-            -2 & 0 \\
-            -1 & 1
-        \end{bmatrix} \,,
-    \end{equation*}
-
-    \begin{equation*}
-        [Dh]_0 =
-        \begin{bmatrix}
-            3 & -1 & 2 & 0 \\
-            -2 & -1 & 1 & 4 \\
-            5 & 0 & 4 & 2
-        \end{bmatrix} \,.
-    \end{equation*}
-
-    Which derivatives can you compute at the origin among:
-    \begin{equation*}
-        f\circ g \,, \quad g\circ f \,, \quad g \circ h \,, \quad h \circ g \,, \quad f \circ h \,, \quad h \circ f \,?
-    \end{equation*}
-\end{question}
-
-\begin{question}
-    Consider the functions
-    $$ f(x,y,z) = \begin{pmatrix}
-        x^2 + yz^2 \\ 2x + y^3 - z)
-    \end{pmatrix} $$
-    and
-    \begin{equation*}
-        g(u,v) = 
-        \begin{pmatrix}
-            u^2 - v^2 \\ uv \\ 3u - 2v
-        \end{pmatrix}
-    \end{equation*}
-
-    \begin{enumerate}
-        \item Compute $[Df]$ and $[Dg]$
-        \item Compute $[D (f\circ g)]_a$ where $a = (1,1,1)$.
-        \item If all inputs of $f\circ g$ equal $1$  
-            what is the most sensitive output of $f\circ g$?
-    \end{enumerate}
-\end{question}
-
-\begin{question}
-    Consider the function $f(x) = u(x)^{v(x)}$, where $f, u, v: \R \to \R$ are all
-    single variable functions.
-    \begin{enumerate}
-        \item Compute $f'(x)$ using you technique from Calculus.
-        \item Find $g: \R^2 \to \R$ and $h:\R \to \R^2$ so that you 
-            can rephrase $f = g\circ h$.
-            Compute $[Df]_x$ using the multivariable chain rule and compare with the previous result.
-    \end{enumerate}
+	Find and sketch the domain of
+	\begin{enumerate}
+		\item $$ f(x,y) = \frac{\sqrt{x+y+1}}{x-1}  $$
+		      \vspace{7cm}
+		\item $$ f(x,y) = x \ln (y^2 - x) $$
+		      \vspace{7cm}
+	\end{enumerate}
 \end{question}
 
 
-\begin{question}
-    What is the derivative of the function $f(x) = (Q(x))^2$ where
-    $Q(x) = x\cdot A x $?
 
-    Here, $A$ is a square $n\times n$  matrix and $x \in \R^n$.
-\end{question}
-
+\newpage
 \begin{question}
-    Let $f, h:\R \to \R$ and define
-    $$F(x) = \int_0^{h(x)} f(t) \, dt. $$
-    Determine $[DF]$ using what we learn in this class.
-    Check your answer with what you learned in Calculus.
+	The Cobb-Douglas function:
+	\begin{equation*}
+		P(L, K) = b L^\alpha K^{1-\alpha} \,.
+	\end{equation*}
+	Sketch the level curves of the function $P$.
 \end{question}
 
 \end{document}
