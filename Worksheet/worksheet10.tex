@@ -29,58 +29,72 @@
 
 \section{Concepts}
 
-(1) Gradient
+\begin{enumerate}
+	\item Partial derivative
+	      \begin{equation*}
+		      \partial_x f (x,y,z) = f_x (x,y,z) =
+		      \lim_{h\to 0} \frac{ f(x+h, y,z) - f(x,y,z) }{h}
+	      \end{equation*}
+	      \begin{equation*}
+		      \partial_y f (x,y,z) = f_y (x,y,z) =
+		      \lim_{h\to 0} \frac{ f(x, y+h,z) - f(x,y,z) }{h}
+	      \end{equation*}
+	      \begin{equation*}
+		      \partial_z f (x,y,z) = f_z (x,y,z) =
+		      \lim_{h\to 0} \frac{ f(x, y, z+ h) - f(x,y, z) }{h}
+	      \end{equation*}
+	\item Gradient
+	      \begin{equation*}
+		      \grad f(x,y,z) = \langle f_x (x,y,z), f_y (x,y,z), f_z  (x,y,z)\rangle \,.
+	      \end{equation*}
+\end{enumerate}
 
-(2) Tangent plane
-
-(3) Linear approximation
-
-(4) Steepest Ascent
 
 \section{Discussions}
 
-This part really is starting to get to the applications of the theory we learned before.
+\begin{question}
+	Find all partial derivatives of
+	\begin{enumerate}
+		\item  $$ f(x,y) = 3x^3 - 2x^2y^5$$
+		      \vspace{7cm}
+		\item  $$ f(x,y) = \frac{xy^2}{x+1} $$
+		      \vspace{7cm}
+		\item  \[ g(r,s) = rs \cos(r) \]
+		      \vspace{7cm}
+		\item  \[ f(w,x,y) = (6w+1) \cos(3x^2 + 4xy^3 + y) \]
+		      \vspace{7cm}
+		\item
+		      \[
+			      q(x,t,z) = \frac{x 2^t z^3}{1 + x^2}.
+		      \]
+		      \vspace{7cm}
+	\end{enumerate}
+\end{question}
 
-Question 1. Let $f: \mathbb{R}^{n} \rightarrow \mathbb{R}$. What are the differences of the derivative of $f$ and the gradient of $f$ ?
+\begin{question}
+	Consider the following picture
+	\begin{figure}[ht]
+		\begin{center}
+			\includegraphics[width=0.8\textwidth]{fig/worksheet10-contour.pdf}
+		\end{center}
+	\end{figure}
 
-Question 2. Compute the gradient of the function
+	\begin{enumerate}
+		\item Estimate the partial derivative \( f_x(-2, -1) \). (Hint: How can values of \( f \) that are of the form \( f(-2 + h) \) and \( f(-2 - h) \) be used to compute a symmetric difference quotient?)
+		      \vspace{4cm}
+		\item Estimate the partial derivative \( f_y(-2, -1) \).
+		      \vspace{4cm}
+		\item Estimate the partial derivatives \( f_x(-1,2) \) and \( f_y(-1,2) \).
+		      \vspace{4cm}
+		\item Locate, if possible, one point \( (x,y) \) where \( f_x(x,y) = 0 \).
+		      \vspace{4cm}
+		\item Locate, if possible, one point \( (x,y) \) where \( f_x(x,y) < 0 \).
+		      \vspace{4cm}
+		\item Locate, if possible, one point \( (x,y) \) where \( f_y(x,y) > 0 \).
+		      \vspace{4cm}
+	\end{enumerate}
 
-$$
-f(x, y)=a x^{2}+b y^{2}-2 x y .
-$$
 
-Question 3. At what points in the plane are level sets of $g=x^{2}+y^{2}-2 x y$ and $f=2 y-3 x$ are orthogonal?
-
-Question 4. Why is the gradient orthogonal to the level set?
-
-Question 5. Compute the tangent spaces to the following:
-
-(1) Implicit tangent plane to $x y z-2 x y^{3}+3 z^{2}=0$ at the point $(3,1,1)$.
-
-(2) Parametrized tangent line to
-
-$$
-\gamma(t)=\left(\begin{array}{c}
-t^{2} \\
--3 t \\
-t^{3}
-\end{array}\right)
-$$
-
-(3) Parametrized tangent plane to
-
-$$
-S\left(t_{1}, t_{2}\right)=\left(\begin{array}{c}
-t_{1}+3 t_{2} \\
-t_{1} t_{2} \\
-2 t_{1}^{2}-t_{2}^{3}
-\end{array}\right)
-$$
-
-Question 6. What are the linear approximations of the following
-
-(1) 1D: $f(x)=e^{-x^{2}}$ around the point $a=1$
-
-(2) 2D: $f(\mathbf{x})=e^{-|\mathbf{x}|^{2}}$ around the point $a=(1,1)$
+\end{question}
 
 \end{document}
