@@ -12,14 +12,14 @@
 \newcommand{\SV}[2][]{\sidenote[colback=green!10]{\textbf{SV\xspace #1:} #2}}
 
 %% Title 
-\title{ MATH 104: Worksheet 9}
+\title{ MATH 104: Worksheet 8}
 \author{}
 
 %\author{Co-author}
 %\address{  }
 %\email {  }
 %
-\date{02/28/2024}
+\date{02/26/2024}
 
 \begin{document}
 
@@ -29,51 +29,39 @@
 \section{Concepts}
 
 \begin{enumerate}
-    \item Inverse and Implicit Theorems 
+    \item Limit and continuity
+
+If \( f(x, y) \to L_1 \) as \( (x, y) \to (a, b) \) along a path \( C_1 \) and \( f(x, y) \to L_2 \) as \( (x, y) \to (a, b) \) along a path \( C_2 \), where \( L_1 \neq L_2 \), then
+
+\[
+\lim_{(x, y) \to (a, b)} f(x, y) \text{ does not exist.}
+\]
+
 \end{enumerate}
 
 \section{Discussions}
-
 \begin{question}
+    Do the limits below exist?
     \begin{enumerate}
-        \item What is the inverse function theorem?
-        \item What is the implicit function theorem?
+        \item 
+            \begin{equation*}
+        \lim_{(x,y) \to (0,0)} \frac{x^2 - y^2}{x^2 +y^2} 
+    \end{equation*}
+    \vspace{7cm}
+
+
+\item 
+    \begin{equation*}
+        \frac{xy}{x^2 +y^2} 
+    \end{equation*}
+    \vspace{7cm}
+
+    \item
+        \begin{equation*}
+            \lim_{(x,y) \to (0,0)} \frac{3x^2 y}{x^2 +y^2} 
+        \end{equation*}
     \end{enumerate}
-\end{question}
+    \vspace{7cm}
 
-\begin{question}
-    Consider the function $F:\R^3 \to \R^3$ given by
-    $$ F(x,y,z) = \begin{pmatrix}
-        \arctan (x + y) \\
-        3x - 2z \\
-        1 + e^{y+z}
-    \end{pmatrix} \,.$$
-    Is this function locally invertible near $x = y = z = 0$?
-    Is it everywhere locally invertible?
 \end{question}
-
-\begin{question}[Difficult]
-    The following are three implicitly defined surfaces:
-    \begin{align*}
-        x^2 + y^2 + z^2 = C_1 \\
-        z - \cosh x - \cosh y = C_2 \\
-        x - 2yz + y^3 = C_3 \,.
-    \end{align*}
-    The surfaces all intersect at one point $(1,1,2)$ when $C_1 = \sqrt{6}, C_2 = 2 - e - 1/e, 
-    C_3 = -2$.
-    What does this point of mutual intersection do when you wiggle the three constants $C_1, C_2, C_3$?
-    Does it fill in a neighborhood of $(1,1,2)$? Or does it trace out some lower-dimensional set?
-\end{question}
-
-\begin{question}
-    Where can we solve for $y = y(x)$ given that
-    $x e^y - y e^x = 1$?
-\end{question}
-
-\begin{question}
-    Can you solve for $c,d$ as functions of $a,b$ given that 
-    $ ab - bc + cd = 8 $ and $a + 2b -2c +4d = 12$,
-    and you are near $a = 1, b = 2, c = 3, d = 4$?
-\end{question}
-
 \end{document}
