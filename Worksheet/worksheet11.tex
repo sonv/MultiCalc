@@ -30,37 +30,55 @@
 \section{Concepts}
 
 \begin{enumerate}
-    \item Optimization
-    \item Necessary condition
-    \item Second derivative test for 2D
+	\item Tangent plane
+	\item Differential: for $z = f(x,y)$, the differential (or total differential) $dz$ around $(a,b)$ is defined as
+	      \begin{equation*}
+		      dz = f_x (a,b) \, dx + f_y(a,b) \, dy \,.
+	      \end{equation*}
+	\item $\Delta z = f(a+ \Delta x, b+ \Delta y) - f(a,b)$
+	\item Linear approximation
+	      \begin{equation*}
+		      f(x,y,z) \approx f(a,b,c) + f_x(a,b,c) (x-a) + f_y(a,b,c) (y-b) + f_z(a,b,c) (z-c) = L(x,y,z)
+	      \end{equation*}
 \end{enumerate}
 
 \section{Discussions}
 
-\begin{problem}
-    \begin{enumerate}
-        \item Find critical points of the following functions:
-        \begin{enumerate}
-            \item $f(x,y) = | x | + | y |$.
-            \item $f(x,y) = x^2 + y^2 - qxy$ where $q\in \R$ is a given constant.
-            \item $xy + \frac{2}{x} + \frac{4}{y}$
-        \end{enumerate}
-        \item Are the critical points you found above minima,maxima or neither.
-    \end{enumerate}
-\end{problem}
+\begin{question}
+	\begin{enumerate}
+		\item What is the vector equation for the tangent plane to the surface $z = f(x,y)$?
+		      \vspace{7cm}
+		\item What is the scalar equation for the tangent plane to the surface $z = f(x,y)$?
+		      \vspace{7cm}
+	\end{enumerate}
+\end{question}
+
+\begin{question}
+	Let $z = f(x,y) = x^2 + 3xy - y^2$. The input changes from $(2,3)$ to $(2.05, 2.96)$, compare $\Delta z$ and $dz$.
+	\vspace{7cm}
+\end{question}
+
+\begin{question}
+	Find the tangent plane to the surface at the specified point:
+
+	\begin{enumerate}
+		\item $z = e^{x-y}$ at $(2,2,1)$
+		      \vspace{7cm}
+		\item $z = x\sin (x+y)$ at $(-1,1,0)$
+		      \vspace{7cm}
+	\end{enumerate}
+\end{question}
 
 
-\begin{problem}
-    A rectangular box without a lid is to be made from \(12 \, \text{m}^2\) of cardboard. 
-    Find the maximum volume of such a box.
-\end{problem}
+\begin{question}
+	Find the linearization $L(x,y)$ of
+	\begin{enumerate}
+		\item $f(x,y) = 1 + x\ln (xy - 5)$ at $(2,3)$
+		      \vspace{7cm}
+		\item $f(x,y) = x^2 e^y$ at $(1,0)$
+		      \vspace{7cm}
+	\end{enumerate}
+\end{question}
 
-\begin{problem}
-    A model for the yield $Y$ of an agricultural crop as a function of the nitrogen level $N$ and phosphorus level $P$ in the soil (measured in appropriate units) is
-$$
-Y(N, P)=k N P e^{-N-P}
-$$
-where $k$ is a positive constant. What levels of nitrogen and phosphorus result in the best yield?
-\end{problem}
 
 \end{document}
