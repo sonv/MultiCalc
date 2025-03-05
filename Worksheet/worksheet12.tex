@@ -12,14 +12,14 @@
 \newcommand{\SV}[2][]{\sidenote[colback=green!10]{\textbf{SV\xspace #1:} #2}}
 
 %% Title 
-\title{ MATH 104: Worksheet 11}
+\title{ MATH 104: Worksheet 12}
 \author{}
 
 %\author{Co-author}
 %\address{  }
 %\email {  }
 %
-\date{04/01/2024}
+\date{02/05/2025}
 
 \begin{document}
 
@@ -30,46 +30,67 @@
 \section{Concepts}
 
 \begin{enumerate}
-    \item Optimization practice
-    \item Zero-sum  game theory
+	\item Implicit differentiation
+	\item Chain rule.
+	      Suppose that $u$ is a differentiable function of the $n$ variables $x_1, x_2, \dots, x_n$ and each $x_j$ is a differentiable function of the $m$ variables $t_1, t_2, \dots, t_m$. Then $u$ is a function of $t_1, t_2, \dots, t_m$ and
+	      \[
+		      \frac{\partial u}{\partial t_i} = \frac{\partial u}{\partial x_1} \frac{\partial x_1}{\partial t_i} + \frac{\partial u}{\partial x_2} \frac{\partial x_2}{\partial t_i} + \dots + \frac{\partial u}{\partial x_n} \frac{\partial x_n}{\partial t_i}
+	      \]
+	      for each $i = 1, 2, \dots, m$.
 \end{enumerate}
 
 \section{Discussions}
 
+\begin{question}
+	Suppose $F(x,y,z) = C$.
+	Find formulas for
+	\begin{equation*}
+		\frac{\partial z}{\partial x} =
+	\end{equation*}
+	\vspace{3cm}
+	\begin{equation*}
+		\frac{\partial z}{\partial y} =
+	\end{equation*}
+	\vspace{3cm}
+\end{question}
 
-\begin{problem}
-         Find the points on the sphere $x^2 + y^2 + z^2 =4$
-            that are closest to and farthest from the point 
-            $(1,1,1)$.
-\end{problem}
+\newpage
+\begin{question}
+	Find $\partial z / \partial x$ and $\partial z/ \partial y$ of
+	\begin{equation*}
+		yz + x \ln y = z^2 \,.
+	\end{equation*}
+\end{question}
 
-\begin{problem}
-        Problem 15 from \url{https://activecalculus.org/multi/S-10-8-Lagrange-Multipliers.html}.
-\end{problem}
+\vspace{7cm}
 
+\begin{question}
+	Let $f(x,y)$, $g(s,t)$, $h(s,t)$ be functions.
+	Compute $\frac{\partial f}{\partial t}$ and $\frac{\partial f}{\partial s}$ if
+	\begin{equation*}
+		f(x,y) = x\sin y
+	\end{equation*}
+	\begin{equation*}
+		g(s,t) = s^5 + \frac{1}{t} \,,
+	\end{equation*}
+	\begin{equation*}
+		h(s,t) = e^{s^2} + \ln (st) \,.
+	\end{equation*}
+\end{question}
+\vspace{7cm}
 
-\begin{problem}
-    Compute the Nash equilibrium for the 2-player game, where, the convention is for player 
-    A to receive from player B the amount of the corresponding entry of the matrix
-    \begin{equation*}
-        P = 
-        \begin{pmatrix}
-            -1 & 2 \\ 3 & -2
-        \end{pmatrix}
-    \end{equation*}
-\end{problem}
+\begin{question}
+	If $z = f(x, y)$, where $x = r \cos\theta$ and $y = r \sin\theta$, then:
 
-\begin{problem}
-    This is called the Mendelsohn game.
-    Each player choosses 1,2, or 3 simultaneously.
-    If they get the same number, no one gets anything.
-    If $A$ is higher than $B$ by 1, $A$ loses 1 point.
-    If $A$ is higher than $B$ by 2, $A$ wins 2 points.
+	\begin{enumerate}
+		\item[(a)] Find $\frac{\partial z}{\partial r}$ and $\frac{\partial z}{\partial \theta}$.
+		\item[(b)] Show that:
+		      \[
+			      \left( \frac{\partial z}{\partial x} \right)^2 + \left( \frac{\partial z}{\partial y} \right)^2 = \left( \frac{\partial z}{\partial r} \right)^2 + \frac{1}{r^2} \left( \frac{\partial z}{\partial \theta} \right)^2.
+		      \]
+	\end{enumerate}
+\end{question}
+\vspace{7cm}
 
-    \begin{enumerate}
-        \item Write down the payoff matrix for $A$.
-        \item What is the Nash equilibrium?
-    \end{enumerate}
-\end{problem}
 
 \end{document}
