@@ -1,0 +1,89 @@
+\documentclass[12pt]{amsart}
+\usepackage{amsaddr}
+\usepackage{marktext} 
+%% Remove draft for real article, put twocolumn for two columns
+\usepackage{svmacro}
+\usepackage[utf8]{inputenc}
+\usepackage{lineno}
+\usepackage[style=alphabetic, backend=biber]{biblatex}
+\addbibresource{bibliography.bib}
+
+%% commentary bubble
+\newcommand{\SV}[2][]{\sidenote[colback=green!10]{\textbf{SV\xspace #1:} #2}}
+
+%% Title 
+\title{ MATH 104: Worksheet 14}
+\author{}
+
+%\author{Co-author}
+%\address{  }
+%\email {  }
+%
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Concepts}
+
+\begin{enumerate}
+	\item Maximum and minimum values
+\end{enumerate}
+
+A function of two variables has a \textbf{local maximum} at $(a, b)$ if
+\[
+	f(x, y) \leq f(a, b)
+\]
+when $(x, y)$ is near $(a, b)$. [This means that $f(x, y) \leq f(a, b)$ for all points $(x, y)$ in some disk with center $(a, b)$.] The number $f(a, b)$ is called a \textbf{local maximum value}. If
+\[
+	f(x, y) \geq f(a, b)
+\]
+when $(x, y)$ is near $(a, b)$, then $f$ has a \textbf{local minimum} at $(a, b)$ and $f(a, b)$ is a \textbf{local minimum value}.
+
+
+If the inequalities in Definition 1 hold for \textit{all} points $(x, y)$ in the domain of $f$, then $f$ has an \textbf{absolute maximum} (or \textbf{absolute minimum}) at $(a, b)$.
+
+\begin{theorem}
+	If $f$ has a local maximum or minimum at $(a,b)$ and the first-order partial derivatives of $f$
+	exist here, then $f_(a,b) = f_y(a,b) = 0$.
+\end{theorem}
+
+\begin{enumerate}
+	\item Critical points: $\grad f (x,y) = 0$ or if one of the partial
+	      derivatives doesn't exist.
+\end{enumerate}
+
+\begin{theorem}[Second derivative test]
+	Suppose the second partial derivatives of \( f \) are continuous on a disk with center \( (a, b) \), and suppose that
+	\( f_x(a, b) = 0 \) and \( f_y(a, b) = 0 \) [that is, \( (a, b) \) is a critical point of \( f \)]. Let
+	\[
+		D = D(a, b) = f_{xx}(a, b) f_{yy}(a, b) - [f_{xy}(a, b)]^2
+	\]
+
+	\begin{itemize}
+		\item[(a)] If \( D > 0 \) and \( f_{xx}(a, b) > 0 \), then \( f(a, b) \) is a local minimum.
+		\item[(b)] If \( D > 0 \) and \( f_{xx}(a, b) < 0 \), then \( f(a, b) \) is a local maximum.
+		\item[(c)] If \( D < 0 \), then \( f(a, b) \) is not a local maximum or minimum.
+	\end{itemize}
+\end{theorem}
+\section{Discussions}
+
+\begin{problem}
+Find the local maximum/minimum values and saddle points.
+
+\begin{enumerate}
+	\item $ f(x,y) = x^2 + xy + y^2 + y$
+	      \vspace{7cm}
+	\item $f(x,y) = e^x \cos y$
+	      \vspace{7cm}
+\end{enumerate}
+\end{problem}
+
+
+\begin{problem}
+Show that $f(x,y) = x^2 + 4y^2 - 4xy +2$ has infinite number of critical points and that $D = 0$ at each one.
+Then show that $f$ has a local (and absolute) minimum at each critical point.
+\end{problem}
+
+\end{document}
