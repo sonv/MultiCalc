@@ -1,0 +1,70 @@
+\documentclass[12pt]{amsart}
+\usepackage{amsaddr}
+\usepackage{marktext} 
+%% Remove draft for real article, put twocolumn for two columns
+\usepackage{svmacro}
+\usepackage[utf8]{inputenc}
+\usepackage{lineno}
+\usepackage[style=alphabetic, backend=biber]{biblatex}
+\addbibresource{bibliography.bib}
+
+%% commentary bubble
+\newcommand{\SV}[2][]{\sidenote[colback=green!10]{\textbf{SV\xspace #1:} #2}}
+
+%% Title 
+\title{ MATH 104: Worksheet 16}
+\author{}
+
+%\author{Co-author}
+%\address{  }
+%\email {  }
+%
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Concepts}
+
+\begin{definition}
+	A \emph{closed set} is one that contains all of its boundary.
+
+	A \emph{bounded set} is one that is contained in some disk.
+\end{definition}
+
+\begin{theorem}[Extreme Value Theorem for functions of two variables]
+	If $f$ is continuous on a closed, bounded set $D$ in $\R^2$, then $f$ attains
+	an absolute maximum value $M=f(x_1, y_2)$ and an absolute minimum value $m = f(x_1,y_2)$ in $D$.
+\end{theorem}
+
+\begin{theorem}
+	To find the absolute maximum and minimum values of a continuous function $f$ on a closed, bounded set $D$:
+	\begin{enumerate}
+		\item Find the values of $f$ at the critical points of $f$ in $D$.
+		\item Find the extreme values of $f$ on the boundary of $D$.
+		\item The largest of the values from steps 1 and 2 is the absolute maximum value; the smallest of these values is the absolute minimum value.
+	\end{enumerate}
+\end{theorem}
+
+
+\newpage
+\section{Discussions}
+
+\begin{problem}
+Find absolute max/min values of the function
+\begin{equation*}
+	f(x,y) = x^2 - 2xy + 2y
+\end{equation*}
+on the rectangle $D = \set{ (x,y) \st 0 \leq x \leq 3, 0 \leq y \leq 2  }$.
+
+\end{problem}
+
+\vspace{7cm}
+
+\begin{problem}
+Find the shortest distance from the point $(2,0,-3)$ to the plane $x+y+z = 1$.
+\end{problem}
+
+
+\end{document}
