@@ -1,0 +1,66 @@
+\documentclass[12pt]{amsart}
+\usepackage{amsaddr}
+\usepackage{marktext} 
+%% Remove draft for real article, put twocolumn for two columns
+\usepackage{svmacro}
+\usepackage[utf8]{inputenc}
+\usepackage{lineno}
+\usepackage[style=alphabetic, backend=biber]{biblatex}
+\addbibresource{bibliography.bib}
+
+%% commentary bubble
+\newcommand{\SV}[2][]{\sidenote[colback=green!10]{\textbf{SV\xspace #1:} #2}}
+
+%% Title 
+\title{ MATH 104: Worksheet 18}
+\author{}
+
+%\author{Co-author}
+%\address{  }
+%\email {  }
+%
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+
+\begin{question}
+	The total production $P$ of a certain product depends on the amount $L$ of labor used and the amount $K$ of capital investment. In Sections 14.1 and 14.3 we discussed how the Cobb-Douglas model $P = bL^{\alpha}K^{1 - \alpha}$ follows from certain economic assumptions, where $b$ and $\alpha$ are positive constants and $\alpha < 1$. If the cost of a unit of labor is $m$ and the cost of a unit of capital is $n$, and the company can spend only $p$ dollars as its total budget, then maximizing the production $P$ is subject to the constraint $mL + nK = p$. Show that the maximum production occurs when
+	\[
+		L = \frac{\alpha p}{m} \quad \text{and} \quad K = \frac{(1 - \alpha)p}{n}
+	\]
+\end{question}
+
+\vspace{7cm}
+
+
+\begin{question}
+	Referring to Exercise 27, we now suppose that the production is fixed at $bL^{\alpha}K^{1 - \alpha} = Q$, where $Q$ is a constant. What values of $L$ and $K$ minimize the cost function $C(L, K) = mL + nK$?
+
+\end{question}
+
+
+\vspace{7cm}
+
+\begin{question}
+	Use Lagrange multipliers to prove that the rectangle with maximum area that has a given perimeter $p$ is a square.
+\end{question}
+
+
+\vspace{7cm}
+
+\begin{question}
+	Use Lagrange multipliers to prove that the triangle with maximum area that has a given perimeter $p$ is equilateral.\\
+	\textit{Hint:} Use Heron’s formula for the area:
+	\[
+		A = \sqrt{s(s - x)(s - y)(s - z)}
+	\]
+	where $s = p/2$ and $x$, $y$, $z$ are the lengths of the sides.
+\end{question}
+
+
+\vspace{7cm}
+
+\end{document}
