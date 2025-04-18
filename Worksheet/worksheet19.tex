@@ -1,0 +1,92 @@
+\documentclass[12pt]{amsart}
+\usepackage{amsaddr}
+\usepackage{marktext} 
+%% Remove draft for real article, put twocolumn for two columns
+\usepackage{svmacro}
+\usepackage[utf8]{inputenc}
+\usepackage{lineno}
+\usepackage[style=alphabetic, backend=biber]{biblatex}
+\addbibresource{bibliography.bib}
+
+%% commentary bubble
+\newcommand{\SV}[2][]{\sidenote[colback=green!10]{\textbf{SV\xspace #1:} #2}}
+
+%% Title 
+\title{ MATH 104: Worksheet 19}
+\author{}
+
+%\author{Co-author}
+%\address{  }
+%\email {  }
+%
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+
+\section{Concepts}
+
+$R = [a,b]\times [c,d]$.
+\begin{definition}
+	The double integral of $f$ over the rectangle $R$ is
+	\begin{equation*}
+		\iint_{R} f(x,y) \, dA = \lim_{m,n \to \infty} \sum_{i=1}^m \sum_{j=1}^n f(x_{ij}^*, y_{ij}^*) \Delta A
+	\end{equation*}
+	if the limit exists.
+\end{definition}
+
+
+
+\begin{theorem}[Fubini]
+	If $f$ is continuous, then
+	\begin{equation*}
+		\int_{R} f(x,y) \, dA = \int_a^b \left[\int_c^d f(x,y) dy \right] dx = \int_c^d \left[\int_a^b f(x,y) dx \right] dy \,.
+	\end{equation*}
+\end{theorem}
+
+\begin{definition}[Average]
+	\begin{equation*}
+		f_{\mathrm{ave}} = \frac{1}{A(R)} \iint_R f(x,y) \, dA \,.
+	\end{equation*}
+\end{definition}
+
+\section{Discussions}
+
+
+\begin{question}
+	Evaluate the integrals
+	\begin{enumerate}
+		\item $\iint_R x^2 y \, dA$ where $R = [0,1]\times [1,2]$.
+		      \vspace{7cm}
+		\item $\iint_R (x- 3y^2) \, dA$ where $ R = \set{(x,y) \st 0\leq x \leq 2, 1 \leq y \leq 2}$
+		      \vspace{7cm}
+		\item $\iint_R y \sin(xy) \, dA$ where $R = [1,2]\times [0,\pi]$.
+		      \vspace{7cm}
+	\end{enumerate}
+\end{question}
+
+\begin{question}
+	Consider the solid that lies above the square (in the $xy$-plane)
+	\[
+		R = [0,1] \times [0,1],
+	\]
+	and below the elliptic paraboloid
+	\[
+		z = 25 - x^2 + xy - 4y^2.
+	\]
+
+	\noindent
+	Estimate the volume by dividing $R$ into 9 equal squares and choosing the sample points to lie in the midpoints of each square.
+\end{question}
+\vspace{7cm}
+
+\begin{question}
+	Find the average value of $f$ over the given rectangle:
+	\[
+		f(x, y) = e^y \sqrt{x + e^y}, \quad R = [0,4] \times [0,1].
+	\]
+\end{question}
+\vspace{7cm}
+\end{document}
