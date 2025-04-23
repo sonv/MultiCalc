@@ -1,0 +1,122 @@
+\documentclass[12pt]{amsart}
+\usepackage{amsaddr}
+\usepackage{marktext} 
+%% Remove draft for real article, put twocolumn for two columns
+\usepackage{svmacro}
+\usepackage[utf8]{inputenc}
+\usepackage{lineno}
+\usepackage[style=alphabetic, backend=biber]{biblatex}
+\addbibresource{bibliography.bib}
+
+%% commentary bubble
+\newcommand{\SV}[2][]{\sidenote[colback=green!10]{\textbf{SV\xspace #1:} #2}}
+
+%% Title 
+\title{ MATH 104: Worksheet 20}
+\author{}
+
+%\author{Co-author}
+%\address{  }
+%\email {  }
+%
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+
+\section{Concepts}
+
+Double integral over general regions
+
+
+\begin{definition}
+	A plane region $D$ is said to be of \emph{type I} if it lies between the graphs
+	of two continuous functions of $x$
+	\begin{equation*}
+		D = \set{ (x,y) \st a\leq x \leq b\,, g_1(x) \leq y \leq g_2(x)  }
+	\end{equation*}
+\end{definition}
+The integral over type I would be
+\begin{equation*}
+	\iint_D f(x,y) \, dA \int_a^b \int_{g_1(x)}^{g_2(x)} f(x,y) \, dy dx \,.
+\end{equation*}
+
+\begin{definition}
+	A plane region $D$ is said to be of \emph{type II} if it lies between the graphs
+	of two continuous functions of $x$
+	\begin{equation*}
+		D = \set{ (x,y) \st c\leq y \leq d \,, h_1(y) \leq x \leq h_2(y)  }
+	\end{equation*}
+\end{definition}
+The integral over type II would be
+\begin{equation*}
+	\iint_D f(x,y) \, dA \int_a^b \int_{h_1(y)}^{h_2(y)} f(x,y) \, dx dy \,.
+\end{equation*}
+
+
+If $D = D_1 \cup D_2$ where $D_1$ and $D_2$ don't overlap, then
+\begin{equation*}
+	\iint_D f(x,y) \, dA = \iint_{D_1} f(x,y) \, dA + \iint_{D_2} f(x,y) dA \,.
+\end{equation*}
+
+The area of a region
+\begin{equation*}
+	A(D) = \iint_D 1 \, dA \,.
+\end{equation*}
+
+
+If $m \leq f(x,y) \leq M$, then
+\begin{equation*}
+	m A(D) \leq \iint_D f(x,y) \,dA \leq M A(D) \,.
+\end{equation*}
+
+
+
+
+\section{Discussions}
+
+\begin{qusetion}
+	Evaluate
+	\begin{enumerate}
+		\item $\iint_D x \cos y \, dA$ where $D$ is the region bounded by $y = 0, y = x^2, x = 1$
+		      \vspace{7cm}
+		\item $\iint_D (x^2 + 2y) \, dA$ where $D$ is bounded by $y = x, y = x^3, x\geq 0$.
+		      \vspace{7cm}
+	\end{enumerate}
+\end{qusetion}
+
+
+\begin{question}
+	Find the volume of the given solid under the plane $3x + 2y - z = 0$ and above the region enclosed by the parabolas $y = x^2$ and $x = y^2$.
+\end{question}
+
+\vspace{7cm}
+
+\begin{question}
+	Evaluate
+	\begin{enumerate}
+		\item
+		      \begin{equation*}
+			      \int_0^1 \int_x^1 \sin (y^2) \, dy \, dx
+		      \end{equation*}
+		      \vspace{7cm}
+
+		\item
+		      \begin{equation*}
+			      \int_0^1 \int_{\sqrt{x}}^1 \sqrt{y^3 + 1} \, dy dx
+		      \end{equation*}
+		      \vspace{7cm}
+	\end{enumerate}
+\end{question}
+
+\begin{question}
+	Estimate upper and lower bound of the integral
+	\begin{equation*}
+		\iint_S \sqrt{4 - x^2y^2} \, dA
+	\end{equation*}
+	where $S = \set{(x,y) \st x^2+y^2 \leq 1\,, x\geq 0}$.
+\end{question}
+
+\end{document}
