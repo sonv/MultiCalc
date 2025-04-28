@@ -1,0 +1,67 @@
+\documentclass[12pt]{amsart}
+\usepackage{amsaddr}
+\usepackage{marktext} 
+%% Remove draft for real article, put twocolumn for two columns
+\usepackage{svmacro}
+\usepackage[utf8]{inputenc}
+\usepackage{lineno}
+\usepackage[style=alphabetic, backend=biber]{biblatex}
+\addbibresource{bibliography.bib}
+
+%% commentary bubble
+\newcommand{\SV}[2][]{\sidenote[colback=green!10]{\textbf{SV\xspace #1:} #2}}
+
+%% Title 
+\title{ MATH 104: Worksheet 21}
+\author{}
+
+%\author{Co-author}
+%\address{  }
+%\email {  }
+%
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+
+\section{Concepts}
+
+Double integral in polar coordinates
+
+\section{Concept}
+
+\begin{definition}
+	We can represent the points on th Cartesian plane using polar coordinates $(r,\theta)$ and $(x,y)$ by writing
+	\begin{equation*}
+		r^2 = x^2 + y^2 \qquad x = r\cos \theta \qquad y = r\sin \theta
+	\end{equation*}
+\end{definition}
+
+If $f$ is continuous on a polar region of the form
+\begin{equation*}
+	D = \set{ (r,\theta) \st \alpha \leq \theta \leq \beta \,, h_1(\theta) \leq r \leq h_2(\theta)  }
+\end{equation*}
+then
+\begin{equation*}
+	\iint_D f(x,y) \, dA = \int_\alpha^\beta \int_{h_1(\theta)}^{h_2(\theta)} f(r \cos \theta, r\sin \theta) r dr d\theta \,.
+\end{equation*}
+
+\section{Discussion}
+
+\begin{question}
+	Compute the integral
+	\begin{equation*}
+		\int_{\R} e^{-x^2} \, dx \,.
+	\end{equation*}
+\end{question}
+\begin{question}
+	Find the volume of the solid bounded by the plane $z = 0$ and the paraboloid $z = 1 - x^2 - y^2$.
+\end{question}
+
+\begin{question}
+	Find the volume of the solid that lies under the paraboloid $z = x^2 + y^2$, above the $xy$-plane, and inside the cylinder $x^2 + y^2 = 2x$.
+\end{question}
+
+\end{document}
