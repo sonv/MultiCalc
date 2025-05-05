@@ -1,0 +1,86 @@
+\documentclass[12pt]{amsart}
+\usepackage{amsaddr}
+\usepackage{marktext} 
+%% Remove draft for real article, put twocolumn for two columns
+\usepackage{svmacro}
+\usepackage[utf8]{inputenc}
+\usepackage{lineno}
+\usepackage[style=alphabetic, backend=biber]{biblatex}
+\addbibresource{bibliography.bib}
+
+%% commentary bubble
+\newcommand{\SV}[2][]{\sidenote[colback=green!10]{\textbf{SV\xspace #1:} #2}}
+
+%% Title 
+\title{ MATH 104: Worksheet 22}
+\author{}
+
+%\author{Co-author}
+%\address{  }
+%\email {  }
+%
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+
+\section{Concepts}
+
+Triple integrals and change of variables
+
+\section{Concept}
+
+\subsection{Triple integral}
+Given a function $f(x,y,z)$ and a 3D region $E$, the triple integral
+is denoted by
+\begin{equation*}
+	\iiint_E f(x,y,z) dV \,.
+\end{equation*}
+Depending on the description of the region, one may set up the integral differently.
+For example,
+if
+$$ E = \left\{ (x,y,z) \st a \leq x \leq b, g_1(x) \leq y \leq g_2(x), u_1(x,y) \leq z \leq u_2(x,y)  \right\}$$
+then the integral becomes
+\begin{equation*}
+	\int_a^b \int_{g_1(x)}^{g_2(x)} \int_{u_1(x,y)}^{u_2(x,y)} f(x,y,z) \, dz dy dz \,.
+\end{equation*}
+
+
+\subsection{Change of variables}
+If $x = x(s,t)$, $y = y(s,t)$, then
+$$ \iint f(x,y) \, dx dy = \iint f(x(s,t), y(s,t)) \left| \frac{\partial(x,y)}{\partial(s,t)}  \right| \, ds dt $$
+
+If $x = x(s,t,u)$, $y = y(s,t, u)$, $z = z(s,t,u)$ then
+$$ \iiint f(x,y,z) \, dx dy dz = \iiint f(x(s,t,u), y(s,t,u), z(s,t,u)) \left| \frac{\partial(x,y,z)}{\partial(s,t,u)}  \right| \, ds dt du $$
+
+
+
+\section{Discussion}
+
+\begin{question}
+	Find the triple integral of the function $f(x,y,z) = x^4 \cos (y+z)$ over the cube
+	$2 \leq x \leq 5$, $0 \leq y \leq \pi$, $0 \leq z \leq \pi$.
+\end{question}
+
+\begin{question}
+	Find the mass of the tetrahedron in the first octant bounded by the coordinate
+	planes and the plane $x+ 2y + 3z = 6$ if the density point $(x,y,z)$ is given by
+	$\delta (x,y,z)$ = x + y + z$.
+
+	(Hint: mass = integral of density)
+\end{question}
+
+\begin{question}
+	\begin{enumerate}
+		\item Set up and evaluate the triple integral of $f(x,y,z) = x-y+2z$ over
+		      the box $ B = [-2,3] \times [1,4] \times [0,2]$
+		\item Let $S$ be the solid cone bounded by $z = \sqrt{x^2 + y^2}$ and $z=3$.
+		      Draw a picture of this and set up the integral of $f$ over $S$.
+	\end{enumerate}
+\end{question}
+
+
+
+\end{document}
